@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "costos",
+  "info": {
+    "singularName": "costo",
+    "pluralName": "costos",
+    "displayName": "Costo"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descripcion": {
+      "type": "string"
+    },
+    "cantidad": {
+      "type": "integer"
+    },
+    "valor": {
+      "type": "decimal"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Costo Fijo",
+        "Costo Variable"
+      ]
+    },
+    "modelo_negocio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modelo-negocio.modelo-negocio",
+      "inversedBy": "costos"
+    }
+  }
+}

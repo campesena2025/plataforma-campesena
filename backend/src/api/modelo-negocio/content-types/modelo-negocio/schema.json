@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modelo_negocios",
+  "info": {
+    "singularName": "modelo-negocio",
+    "pluralName": "modelo-negocios",
+    "displayName": "ModeloNegocio"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mision": {
+      "type": "text"
+    },
+    "vision": {
+      "type": "text"
+    },
+    "alianzas": {
+      "type": "text"
+    },
+    "actividadesClave": {
+      "type": "text"
+    },
+    "propuestaValor": {
+      "type": "text"
+    },
+    "relacionesClientes": {
+      "type": "text"
+    },
+    "segmentosMercado": {
+      "type": "text"
+    },
+    "recursosClave": {
+      "type": "text"
+    },
+    "canales": {
+      "type": "text"
+    },
+    "estructuraCosto": {
+      "type": "text"
+    },
+    "FuentesIngreso": {
+      "type": "text"
+    },
+    "proyeccion_financieras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyeccion-financiera.proyeccion-financiera",
+      "mappedBy": "modelo_negocio"
+    },
+    "costos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::costo.costo",
+      "mappedBy": "modelo_negocio"
+    },
+    "inversions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inversion.inversion",
+      "mappedBy": "modelo_negocio"
+    },
+    "proyecto_productivo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proyecto-productivo.proyecto-productivo",
+      "inversedBy": "modelo_negocio"
+    }
+  }
+}

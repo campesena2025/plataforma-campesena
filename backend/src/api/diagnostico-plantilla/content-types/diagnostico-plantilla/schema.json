@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diagnostico_plantillas",
+  "info": {
+    "singularName": "diagnostico-plantilla",
+    "pluralName": "diagnostico-plantillas",
+    "displayName": "DiagnosticoPlantilla"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombrePlantilla": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "seccion_diagnosticos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::seccion-diagnostico.seccion-diagnostico",
+      "mappedBy": "diagnostico_plantilla"
+    },
+    "evaluacion_diagnosticos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::evaluacion-diagnostico.evaluacion-diagnostico",
+      "mappedBy": "diagnostico_plantilla"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "participantes",
+  "info": {
+    "singularName": "participante",
+    "pluralName": "participantes",
+    "displayName": "Participante"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "numeroDocumento": {
+      "type": "string"
+    },
+    "nombreCompleto": {
+      "type": "string"
+    },
+    "genero": {
+      "type": "enumeration",
+      "enum": [
+        "Masculino",
+        "Femenino",
+        "No Binario"
+      ]
+    },
+    "correoElectronico": {
+      "type": "email"
+    },
+    "numeroContacto": {
+      "type": "integer"
+    },
+    "tipoParticipante": {
+      "type": "enumeration",
+      "enum": [
+        "Representante Legal",
+        "Participante Asociacion",
+        "Otro"
+      ]
+    },
+    "participante_asociacion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::participante-asociacion.participante-asociacion",
+      "inversedBy": "participante"
+    },
+    "tipoPoblacion": {
+      "type": "enumeration",
+      "enum": [
+        "VULNERABLE",
+        "PALENQUERO",
+        "RAIZAL",
+        "AFROCOLOMBIANO",
+        "AFROCOLOMBIANOS_DESPLAZADOS_POR_LA_VIOLENCIA",
+        "CABEZA DE FAMILIA",
+        "ARTESANOS",
+        "DESPLAZADOS_DISCAPACITADOS",
+        "MUJERCABEZA DE_AMILIA",
+        "DESPLAZADOS_POR_FENOMENOS_NATURALES",
+        "DISCAPACITADO COGNITIVO",
+        "DESPLAZADOS POR LA VIOLENCIA",
+        "DESPLAZADOS_POR LA VIOLENCIA CABEZA DE FAMILIA",
+        "JOVEN RURAL",
+        "DISCAPACITADO_LIMITACION_FISICA",
+        "SOBREVIVIENTES MINAS ANTIPERSONALES",
+        "DISCAPACIDAD LIMITACION AUDITIVA",
+        "DISCAPACIDAD LIMITACION VISUAL",
+        "DISCAPACIDAD_MENTAL",
+        "EN CONDICION DE DISCAPACIDAD",
+        "ROM ",
+        "NEGRITUDES",
+        "EMPRENDEDOR",
+        "INDIGENAS",
+        "PROC_REINTEGRACION / REINCORPORACION",
+        "INDIGENAS_DESPLAZADOS_POR_LA VIOLENCIA",
+        "INDIGENAS DESPLAZADOS POR LA VIOLENCIA CABEZA DE FAMILIA",
+        "INPEC",
+        "JOVENES_VULNERABLES",
+        "SOLDADOS_CAMPESINOS",
+        "TERCERA_EDAD",
+        "CAMPESINO",
+        "NINGUNA",
+        "PEQUEÑO PRODUCTOR",
+        "OTRO"
+      ]
+    },
+    "edad": {
+      "type": "integer"
+    },
+    "nivelEstudio": {
+      "type": "enumeration",
+      "enum": [
+        "Ninguno",
+        "Primaria",
+        "Básica",
+        "Profesional",
+        "Postgrado"
+      ]
+    }
+  }
+}

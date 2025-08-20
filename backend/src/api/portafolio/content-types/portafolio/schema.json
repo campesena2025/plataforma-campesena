@@ -1,0 +1,119 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portafolios",
+  "info": {
+    "singularName": "portafolio",
+    "pluralName": "portafolios",
+    "displayName": "Portafolio"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipoPortafolio": {
+      "type": "enumeration",
+      "enum": [
+        "Producto",
+        "Servicio"
+      ]
+    },
+    "codigoUNSPSC": {
+      "type": "string"
+    },
+    "latitud": {
+      "type": "decimal"
+    },
+    "longitud": {
+      "type": "decimal"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "nombreComercial": {
+      "type": "string"
+    },
+    "uso": {
+      "type": "string"
+    },
+    "magnitud": {
+      "type": "string"
+    },
+    "unidadMedida": {
+      "type": "string"
+    },
+    "presentacionComercial": {
+      "type": "text"
+    },
+    "horarioAtencion": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "proyecto_productivo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proyecto-productivo.proyecto-productivo",
+      "inversedBy": "portafolio"
+    },
+    "composicionProducto": {
+      "type": "text"
+    },
+    "caracteristicasSensoriales": {
+      "type": "text"
+    },
+    "caracterisiticasFisicas": {
+      "type": "text"
+    },
+    "condicionesConservacion": {
+      "type": "text"
+    },
+    "vidaUtil": {
+      "type": "integer"
+    },
+    "precauciones": {
+      "type": "text"
+    },
+    "componentesServicio": {
+      "type": "text"
+    },
+    "caracteristicasServicio": {
+      "type": "text"
+    },
+    "condicionesServicio": {
+      "type": "string"
+    },
+    "costoServicio": {
+      "type": "decimal"
+    },
+    "recomendacionesServicio": {
+      "type": "text"
+    },
+    "Decreto": {
+      "type": "string"
+    },
+    "resolucion": {
+      "type": "string"
+    },
+    "normaTecnica": {
+      "type": "string"
+    },
+    "resolucionRotulado": {
+      "type": "string"
+    },
+    "conceptoSanitario": {
+      "type": "string"
+    }
+  }
+}

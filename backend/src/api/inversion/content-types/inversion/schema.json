@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inversions",
+  "info": {
+    "singularName": "inversion",
+    "pluralName": "inversions",
+    "displayName": "Inversion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descripcion": {
+      "type": "string"
+    },
+    "tipoInversion": {
+      "type": "enumeration",
+      "enum": [
+        "Inicial",
+        "Capital de Trabajo"
+      ]
+    },
+    "modelo_negocio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modelo-negocio.modelo-negocio",
+      "inversedBy": "inversions"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "centro_formacions",
+  "info": {
+    "singularName": "centro-formacion",
+    "pluralName": "centro-formacions",
+    "displayName": "CentroFormacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "regional": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::regional.regional",
+      "inversedBy": "centro_formacions"
+    },
+    "servicio_participantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::servicio-participante.servicio-participante",
+      "mappedBy": "centro_formacion"
+    }
+  }
+}

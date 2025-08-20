@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subregion_pdets",
+  "info": {
+    "singularName": "subregion-pdet",
+    "pluralName": "subregion-pdets",
+    "displayName": "SubregionPdet"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "abreviacion": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "municipio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::municipio.municipio",
+      "inversedBy": "subregion_pdet"
+    }
+  }
+}

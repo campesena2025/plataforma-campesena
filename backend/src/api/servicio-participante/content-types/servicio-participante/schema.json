@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicio_participantes",
+  "info": {
+    "singularName": "servicio-participante",
+    "pluralName": "servicio-participantes",
+    "displayName": "ServicioParticipante"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fechaInicio": {
+      "type": "date"
+    },
+    "numeroFicha": {
+      "type": "string"
+    },
+    "municipio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::municipio.municipio",
+      "mappedBy": "servicio_participante"
+    },
+    "vereda": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vereda.vereda",
+      "inversedBy": "servicio_participante"
+    },
+    "centro_formacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::centro-formacion.centro-formacion",
+      "inversedBy": "servicio_participantes"
+    },
+    "formacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::formacion.formacion",
+      "inversedBy": "servicio_participantes"
+    },
+    "participante_asociacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::participante-asociacion.participante-asociacion",
+      "inversedBy": "servicio_participantes"
+    },
+    "proyecto_productivo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proyecto-productivo.proyecto-productivo",
+      "mappedBy": "servicio_participante"
+    }
+  }
+}

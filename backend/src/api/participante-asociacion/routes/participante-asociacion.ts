@@ -1,0 +1,7 @@
+/**
+ * participante-asociacion router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::participante-asociacion.participante-asociacion');

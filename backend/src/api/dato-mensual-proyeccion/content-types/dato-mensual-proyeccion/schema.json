@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dato_mensual_proyeccions",
+  "info": {
+    "singularName": "dato-mensual-proyeccion",
+    "pluralName": "dato-mensual-proyeccions",
+    "displayName": "DatoMensualProyeccion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mes": {
+      "type": "integer"
+    },
+    "proyeccion_financiera": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::proyeccion-financiera.proyeccion-financiera",
+      "inversedBy": "dato_mensual_proyeccions"
+    }
+  }
+}

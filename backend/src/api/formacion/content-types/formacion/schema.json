@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formacions",
+  "info": {
+    "singularName": "formacion",
+    "pluralName": "formacions",
+    "displayName": "Formacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigoFormacion": {
+      "type": "string"
+    },
+    "nombreDiseno": {
+      "type": "string"
+    },
+    "codigoDiseno": {
+      "type": "string"
+    },
+    "versionDiseno": {
+      "type": "string"
+    },
+    "codigoSofia": {
+      "type": "string"
+    },
+    "servicio_participantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::servicio-participante.servicio-participante",
+      "mappedBy": "formacion"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plan_mercadeos",
+  "info": {
+    "singularName": "plan-mercadeo",
+    "pluralName": "plan-mercadeos",
+    "displayName": "PlanMercadeo"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "analisisSector": {
+      "type": "text"
+    },
+    "analisisMercado": {
+      "type": "text"
+    },
+    "analisisCompetencia": {
+      "type": "text"
+    },
+    "analisisProyecto": {
+      "type": "text"
+    },
+    "propuestaValor": {
+      "type": "text"
+    },
+    "ventajaCompetitiva": {
+      "type": "text"
+    },
+    "segmentoClientes": {
+      "type": "text"
+    },
+    "posicionamiento": {
+      "type": "text"
+    },
+    "objetivos": {
+      "type": "text"
+    },
+    "concepto": {
+      "type": "text"
+    },
+    "estrategiaPrecio": {
+      "type": "text"
+    },
+    "estrategiaComunicacion": {
+      "type": "text"
+    },
+    "estrategiaServicio": {
+      "type": "text"
+    },
+    "propuestaMercadeo": {
+      "type": "text"
+    },
+    "proyecto_productivo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proyecto-productivo.proyecto-productivo",
+      "inversedBy": "plan_mercadeo"
+    }
+  }
+}

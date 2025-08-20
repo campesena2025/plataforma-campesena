@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "regionals",
+  "info": {
+    "singularName": "regional",
+    "pluralName": "regionals",
+    "displayName": "Regional"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "centro_formacions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::centro-formacion.centro-formacion",
+      "mappedBy": "regional"
+    }
+  }
+}

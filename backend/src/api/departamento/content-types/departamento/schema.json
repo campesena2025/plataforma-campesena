@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "departamentos",
+  "info": {
+    "singularName": "departamento",
+    "pluralName": "departamentos",
+    "displayName": "Departamento"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "divipola": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "municipios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::municipio.municipio",
+      "mappedBy": "departamento"
+    },
+    "regionGeografica": {
+      "type": "string"
+    },
+    "abreviatura": {
+      "type": "string"
+    },
+    "zonaSena": {
+      "type": "string"
+    },
+    "latitud": {
+      "type": "string"
+    },
+    "longitud": {
+      "type": "string"
+    }
+  }
+}

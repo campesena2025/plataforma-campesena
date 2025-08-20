@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "zonas_reserva_campesinas",
+  "info": {
+    "singularName": "zonas-reserva-campesina",
+    "pluralName": "zonas-reserva-campesinas",
+    "displayName": "ZonasReservaCampesina"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descripcion": {
+      "type": "string"
+    },
+    "resolucion": {
+      "type": "string"
+    },
+    "municipio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::municipio.municipio",
+      "mappedBy": "zonas_reserva_campesina"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+/**
+ * centro-formacion router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::centro-formacion.centro-formacion');

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flujo_caja_anuals",
+  "info": {
+    "singularName": "flujo-caja-anual",
+    "pluralName": "flujo-caja-anuals",
+    "displayName": "FlujoCajaAnual"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ano": {
+      "type": "integer"
+    },
+    "resumen_mensual_cajas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resumen-mensual-caja.resumen-mensual-caja",
+      "mappedBy": "flujo_caja_anual"
+    }
+  }
+}

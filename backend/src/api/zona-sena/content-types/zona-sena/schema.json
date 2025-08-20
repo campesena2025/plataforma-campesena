@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "zona_senas",
+  "info": {
+    "singularName": "zona-sena",
+    "pluralName": "zona-senas",
+    "displayName": "zonaSena"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    }
+  }
+}

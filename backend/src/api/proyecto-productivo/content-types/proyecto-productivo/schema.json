@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proyecto_productivos",
+  "info": {
+    "singularName": "proyecto-productivo",
+    "pluralName": "proyecto-productivos",
+    "displayName": "ProyectoProductivo"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombreProyecto": {
+      "type": "text"
+    },
+    "tiempoEstimado": {
+      "type": "integer"
+    },
+    "Planteamiento": {
+      "type": "text"
+    },
+    "justificacion": {
+      "type": "text"
+    },
+    "beneficiarios": {
+      "type": "text"
+    },
+    "impactoSocial": {
+      "type": "text"
+    },
+    "impactoEconomico": {
+      "type": "text"
+    },
+    "impactoAmbiental": {
+      "type": "text"
+    },
+    "impactoTecnologico": {
+      "type": "text"
+    },
+    "analisisTendencias": {
+      "type": "text"
+    },
+    "factoresPoliticos": {
+      "type": "string"
+    },
+    "factoresEconomicos": {
+      "type": "text"
+    },
+    "factoresSociales": {
+      "type": "text"
+    },
+    "factoresTecnologicos": {
+      "type": "text"
+    },
+    "incertidumbres": {
+      "type": "text"
+    },
+    "portafolio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::portafolio.portafolio",
+      "mappedBy": "proyecto_productivo"
+    },
+    "plan_mercadeo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::plan-mercadeo.plan-mercadeo",
+      "mappedBy": "proyecto_productivo"
+    },
+    "servicio_participante": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::servicio-participante.servicio-participante",
+      "inversedBy": "proyecto_productivo"
+    },
+    "modelo_negocio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::modelo-negocio.modelo-negocio",
+      "mappedBy": "proyecto_productivo"
+    },
+    "plan_de_accion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::plan-de-accion.plan-de-accion",
+      "mappedBy": "proyecto_productivo"
+    }
+  }
+}

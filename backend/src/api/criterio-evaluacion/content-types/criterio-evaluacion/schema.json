@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "criterio_evaluacions",
+  "info": {
+    "singularName": "criterio-evaluacion",
+    "pluralName": "criterio-evaluacions",
+    "displayName": "criterioEvaluacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "textoPregunta": {
+      "type": "text"
+    },
+    "seccion_diagnostico": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seccion-diagnostico.seccion-diagnostico",
+      "inversedBy": "criterio_evaluacions"
+    },
+    "respuesta_criterios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::respuesta-criterio.respuesta-criterio",
+      "mappedBy": "criterio_evaluacion"
+    }
+  }
+}

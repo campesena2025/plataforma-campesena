@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "municipios",
+  "info": {
+    "singularName": "municipio",
+    "pluralName": "municipios",
+    "displayName": "Municipio"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "divipola": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "departamento": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::departamento.departamento",
+      "inversedBy": "municipios"
+    },
+    "veredas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vereda.vereda",
+      "mappedBy": "municipio"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::asociacion.asociacion",
+      "mappedBy": "municipio"
+    },
+    "latitud": {
+      "type": "decimal"
+    },
+    "longitud": {
+      "type": "decimal"
+    },
+    "subregion_pdet": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subregion-pdet.subregion-pdet",
+      "mappedBy": "municipio"
+    },
+    "zonas_reserva_campesina": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::zonas-reserva-campesina.zonas-reserva-campesina",
+      "inversedBy": "municipio"
+    },
+    "zonaConflicto": {
+      "type": "boolean"
+    },
+    "ruralidad": {
+      "type": "enumeration",
+      "enum": [
+        "Rural",
+        "Rural disperso",
+        "Intermedio",
+        "Ciudades y aglomeraciones"
+      ]
+    },
+    "restitucionTierras": {
+      "type": "boolean"
+    },
+    "zonaReformaRural": {
+      "type": "enumeration",
+      "enum": [
+        "No ZNRA",
+        "Cordoba",
+        "Sucre",
+        "Magdalena Medio",
+        "La Guajira"
+      ]
+    },
+    "servicio_participante": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::servicio-participante.servicio-participante",
+      "inversedBy": "municipio"
+    }
+  }
+}

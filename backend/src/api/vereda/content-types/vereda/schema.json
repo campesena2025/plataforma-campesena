@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "veredas",
+  "info": {
+    "singularName": "vereda",
+    "pluralName": "veredas",
+    "displayName": "Vereda"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "divipola": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "municipio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::municipio.municipio",
+      "inversedBy": "veredas"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::asociacion.asociacion",
+      "mappedBy": "vereda"
+    },
+    "servicio_participante": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::servicio-participante.servicio-participante",
+      "mappedBy": "vereda"
+    }
+  }
+}

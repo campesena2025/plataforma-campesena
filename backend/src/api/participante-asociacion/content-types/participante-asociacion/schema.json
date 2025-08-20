@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "participante_asociacions",
+  "info": {
+    "singularName": "participante-asociacion",
+    "pluralName": "participante-asociacions",
+    "displayName": "ParticipanteAsociacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "participante": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::participante.participante",
+      "mappedBy": "participante_asociacion"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::asociacion.asociacion",
+      "inversedBy": "participante_asociacions"
+    },
+    "rolAsociacion": {
+      "type": "string"
+    },
+    "ingresosMensuales": {
+      "type": "decimal"
+    },
+    "servicio_participantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::servicio-participante.servicio-participante",
+      "mappedBy": "participante_asociacion"
+    },
+    "tiempoAsociacion": {
+      "type": "integer"
+    },
+    "conocimientoTecnico": {
+      "type": "boolean"
+    },
+    "habilidadesGerenciales": {
+      "type": "boolean"
+    },
+    "temasInteres": {
+      "type": "text"
+    }
+  }
+}

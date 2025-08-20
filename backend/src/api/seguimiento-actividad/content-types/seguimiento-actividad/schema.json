@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seguimiento_actividads",
+  "info": {
+    "singularName": "seguimiento-actividad",
+    "pluralName": "seguimiento-actividads",
+    "displayName": "SeguimientoActividad"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "actividad_plan": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::actividad-plan.actividad-plan",
+      "inversedBy": "seguimiento_actividad"
+    },
+    "justificacion": {
+      "type": "text"
+    },
+    "acciones": {
+      "type": "text"
+    },
+    "responsable": {
+      "type": "string"
+    },
+    "ubicacion": {
+      "type": "string"
+    },
+    "fechaInicio": {
+      "type": "datetime"
+    },
+    "fechaFin": {
+      "type": "datetime"
+    },
+    "cumplimiento": {
+      "type": "decimal"
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  }
+}

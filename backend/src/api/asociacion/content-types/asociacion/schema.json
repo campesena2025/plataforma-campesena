@@ -1,0 +1,95 @@
+{
+  "kind": "collectionType",
+  "collectionName": "asociacions",
+  "info": {
+    "singularName": "asociacion",
+    "pluralName": "asociacions",
+    "displayName": "Asociacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nit": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "nombreAsociacion": {
+      "type": "text"
+    },
+    "formalizada": {
+      "type": "boolean",
+      "default": true
+    },
+    "municipio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::municipio.municipio",
+      "inversedBy": "asociacion"
+    },
+    "vereda": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vereda.vereda",
+      "inversedBy": "asociacion"
+    },
+    "participante_asociacions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::participante-asociacion.participante-asociacion",
+      "mappedBy": "asociacion"
+    },
+    "tipoOrganizacion": {
+      "type": "enumeration",
+      "enum": [
+        "Cabildos Indigenas",
+        "Consejos Comunitarios",
+        "Empresas Comunitarias",
+        "kumpanias",
+        "Asociacion",
+        "Cooperativa",
+        "Precooperativa",
+        "Sociedades agrarias de transformacion",
+        "Comunidad organizada",
+        "Comunidad sin organizar",
+        "Otro"
+      ]
+    },
+    "codigoInterno": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "enumeration",
+      "enum": [
+        "Cosntrucción",
+        "Cultura",
+        "Empresarial",
+        "Forestal",
+        "Gastronomía",
+        "Industria",
+        "Otros",
+        "Pecuario",
+        "Piscícola",
+        "Turismo",
+        "Servicios"
+      ]
+    },
+    "razonCreacion": {
+      "type": "text"
+    },
+    "productoServicio": {
+      "type": "string"
+    },
+    "codigoCIUU": {
+      "type": "string"
+    },
+    "evaluacion_diagnosticos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::evaluacion-diagnostico.evaluacion-diagnostico",
+      "mappedBy": "asociacion"
+    }
+  }
+}

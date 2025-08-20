@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plan_de_accions",
+  "info": {
+    "singularName": "plan-de-accion",
+    "pluralName": "plan-de-accions",
+    "displayName": "PlanDeAccion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fechaElaboracion": {
+      "type": "date"
+    },
+    "actividad_plans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::actividad-plan.actividad-plan",
+      "mappedBy": "plan_de_accion"
+    },
+    "proyecto_productivo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proyecto-productivo.proyecto-productivo",
+      "inversedBy": "plan_de_accion"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actividad_plans",
+  "info": {
+    "singularName": "actividad-plan",
+    "pluralName": "actividad-plans",
+    "displayName": "ActividadPlan"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aspecto": {
+      "type": "enumeration",
+      "enum": [
+        "Operacion",
+        "Mercadeo",
+        "Organizacional",
+        "Ambiental"
+      ]
+    },
+    "hallazgo": {
+      "type": "text"
+    },
+    "actividadPropuesta": {
+      "type": "text"
+    },
+    "plan_de_accion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::plan-de-accion.plan-de-accion",
+      "inversedBy": "actividad_plans"
+    },
+    "seguimiento_actividad": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::seguimiento-actividad.seguimiento-actividad",
+      "mappedBy": "actividad_plan"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proyeccion_financieras",
+  "info": {
+    "singularName": "proyeccion-financiera",
+    "pluralName": "proyeccion-financieras",
+    "displayName": "ProyeccionFinanciera"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "anoProyeccion": {
+      "type": "integer"
+    },
+    "modelo_negocio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modelo-negocio.modelo-negocio",
+      "inversedBy": "proyeccion_financieras"
+    },
+    "dato_mensual_proyeccions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dato-mensual-proyeccion.dato-mensual-proyeccion",
+      "mappedBy": "proyeccion_financiera"
+    }
+  }
+}

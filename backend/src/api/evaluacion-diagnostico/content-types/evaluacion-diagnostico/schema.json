@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "evaluacion_diagnosticos",
+  "info": {
+    "singularName": "evaluacion-diagnostico",
+    "pluralName": "evaluacion-diagnosticos",
+    "displayName": "EvaluacionDiagnostico"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fechaAplicacion": {
+      "type": "datetime"
+    },
+    "tipoDiagnostico": {
+      "type": "enumeration",
+      "enum": [
+        "Inicial",
+        "Final"
+      ]
+    },
+    "diagnostico_plantilla": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::diagnostico-plantilla.diagnostico-plantilla",
+      "inversedBy": "evaluacion_diagnosticos"
+    },
+    "respuesta_criterios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::respuesta-criterio.respuesta-criterio",
+      "mappedBy": "evaluacion_diagnostico"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::asociacion.asociacion",
+      "inversedBy": "evaluacion_diagnosticos"
+    }
+  }
+}

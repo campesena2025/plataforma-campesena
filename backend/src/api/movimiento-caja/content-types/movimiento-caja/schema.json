@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movimiento_cajas",
+  "info": {
+    "singularName": "movimiento-caja",
+    "pluralName": "movimiento-cajas",
+    "displayName": "MovimientoCaja"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descripcion": {
+      "type": "text"
+    },
+    "tipoMovimiento": {
+      "type": "enumeration",
+      "enum": [
+        "Ingreso",
+        "Egreso Fijo",
+        "Egreso Variable"
+      ]
+    },
+    "fechaMovimiento": {
+      "type": "datetime"
+    },
+    "resumen_mensual_caja": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resumen-mensual-caja.resumen-mensual-caja",
+      "inversedBy": "movimiento_cajas"
+    }
+  }
+}

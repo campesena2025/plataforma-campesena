@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "respuesta_criterios",
+  "info": {
+    "singularName": "respuesta-criterio",
+    "pluralName": "respuesta-criterios",
+    "displayName": "respuestaCriterio"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "puntaje": {
+      "type": "integer"
+    },
+    "hallazgos": {
+      "type": "text"
+    },
+    "evaluacion_diagnostico": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::evaluacion-diagnostico.evaluacion-diagnostico",
+      "inversedBy": "respuesta_criterios"
+    },
+    "criterio_evaluacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::criterio-evaluacion.criterio-evaluacion",
+      "inversedBy": "respuesta_criterios"
+    }
+  }
+}

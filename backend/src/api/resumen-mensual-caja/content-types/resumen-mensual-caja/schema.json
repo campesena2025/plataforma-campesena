@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resumen_mensual_cajas",
+  "info": {
+    "singularName": "resumen-mensual-caja",
+    "pluralName": "resumen-mensual-cajas",
+    "displayName": "ResumenMensualCaja"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mes": {
+      "type": "integer"
+    },
+    "flujo_caja_anual": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::flujo-caja-anual.flujo-caja-anual",
+      "inversedBy": "resumen_mensual_cajas"
+    },
+    "movimiento_cajas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::movimiento-caja.movimiento-caja",
+      "mappedBy": "resumen_mensual_caja"
+    }
+  }
+}

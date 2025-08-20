@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seccion_diagnosticos",
+  "info": {
+    "singularName": "seccion-diagnostico",
+    "pluralName": "seccion-diagnosticos",
+    "displayName": "SeccionDiagnostico"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombreSeccion": {
+      "type": "string"
+    },
+    "diagnostico_plantilla": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::diagnostico-plantilla.diagnostico-plantilla",
+      "inversedBy": "seccion_diagnosticos"
+    },
+    "criterio_evaluacions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::criterio-evaluacion.criterio-evaluacion",
+      "mappedBy": "seccion_diagnostico"
+    }
+  }
+}
