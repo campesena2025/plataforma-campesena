@@ -16,12 +16,6 @@
     },
     "descripcion": {
       "type": "string"
-    },
-    "municipio": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::municipio.municipio",
-      "inversedBy": "subregion_pdet"
     }
   }
 }

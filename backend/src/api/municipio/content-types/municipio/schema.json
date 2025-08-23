@@ -35,25 +35,7 @@
       "target": "api::asociacion.asociacion",
       "mappedBy": "municipio"
     },
-    "latitud": {
-      "type": "decimal"
-    },
-    "longitud": {
-      "type": "decimal"
-    },
-    "subregion_pdet": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::subregion-pdet.subregion-pdet",
-      "mappedBy": "municipio"
-    },
-    "zonas_reserva_campesina": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::zonas-reserva-campesina.zonas-reserva-campesina",
-      "inversedBy": "municipio"
-    },
-    "zonaConflicto": {
+    "zomac": {
       "type": "boolean"
     },
     "ruralidad": {
@@ -83,6 +65,21 @@
       "relation": "oneToOne",
       "target": "api::servicio-participante.servicio-participante",
       "inversedBy": "municipio"
+    },
+    "zonaReservaCampesina": {
+      "type": "string"
+    },
+    "subregionPDET": {
+      "type": "string"
+    },
+    "mape": {
+      "type": "string"
+    },
+    "latitud": {
+      "type": "string"
+    },
+    "longitud": {
+      "type": "string"
     }
   }
 }

@@ -16,12 +16,6 @@
     },
     "resolucion": {
       "type": "string"
-    },
-    "municipio": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::municipio.municipio",
-      "mappedBy": "zonas_reserva_campesina"
     }
   }
 }

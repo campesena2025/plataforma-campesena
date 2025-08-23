@@ -963,14 +963,15 @@ export interface ApiMunicipioMunicipio extends Struct.CollectionTypeSchema {
       'api::departamento.departamento'
     >;
     divipola: Schema.Attribute.String;
-    latitud: Schema.Attribute.Decimal;
+    latitud: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::municipio.municipio'
     > &
       Schema.Attribute.Private;
-    longitud: Schema.Attribute.Decimal;
+    longitud: Schema.Attribute.String;
+    mape: Schema.Attribute.String;
     nombre: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     restitucionTierras: Schema.Attribute.Boolean;
@@ -981,22 +982,16 @@ export interface ApiMunicipioMunicipio extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::servicio-participante.servicio-participante'
     >;
-    subregion_pdet: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::subregion-pdet.subregion-pdet'
-    >;
+    subregionPDET: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     veredas: Schema.Attribute.Relation<'oneToMany', 'api::vereda.vereda'>;
-    zonaConflicto: Schema.Attribute.Boolean;
+    zomac: Schema.Attribute.Boolean;
     zonaReformaRural: Schema.Attribute.Enumeration<
       ['No ZNRA', 'Cordoba', 'Sucre', 'Magdalena Medio', 'La Guajira']
     >;
-    zonas_reserva_campesina: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::zonas-reserva-campesina.zonas-reserva-campesina'
-    >;
+    zonaReservaCampesina: Schema.Attribute.String;
   };
 }
 
@@ -1663,10 +1658,6 @@ export interface ApiSubregionPdetSubregionPdet
       'api::subregion-pdet.subregion-pdet'
     > &
       Schema.Attribute.Private;
-    municipio: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::municipio.municipio'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1765,10 +1756,6 @@ export interface ApiZonasReservaCampesinaZonasReservaCampesina
       'api::zonas-reserva-campesina.zonas-reserva-campesina'
     > &
       Schema.Attribute.Private;
-    municipio: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::municipio.municipio'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     resolucion: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
