@@ -1,3 +1,5 @@
+import AsociadosTable from "@/components/asociados";
+
 export default function AdminPage() {
-  return <h1>Administración</h1>;
+  return <AsociadosTable />;
 }

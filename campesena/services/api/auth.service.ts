@@ -1,4 +1,4 @@
-import api, { withAuth } from "./axios-interceptor";
+import Strapi from "strapi-sdk-js";
 
 export interface LoginResponse {
   jwt: string;
@@ -9,26 +9,19 @@ export interface LoginResponse {
   };
 }
 
-export async function loginStrapi(
+export async function login(
   email: string,
   password: string,
 ): Promise<LoginResponse> {
+  const strapi = new Strapi({
+    url: process.env.NEXT_PUBLIC_API_URL || "",
+  });
+
   try {
-    const response = await api.post(
-      "/api/auth/local",
-      {
-        identifier: email,
-        password,
-      },
-      withAuth({}, false),
-    );
+    const response = await strapi.login({ identifier: email, password });
 
-    if (typeof window !== "undefined" && response.data?.jwt) {
-      localStorage.setItem("token", response.data.jwt);
-    }
-
-    return response.data;
+    return response as LoginResponse;
   } catch (error: any) {
-    throw error.response?.data || error;
+    throw error.response || error;
   }
 }

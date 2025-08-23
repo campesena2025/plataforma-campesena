@@ -6,13 +6,18 @@ import {
   DropdownItem,
   Avatar,
 } from "@heroui/react";
-import { useSession, signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+
+import getAllGeografia from "@/services/geografia.service";
 
 export default function UserMenu() {
   const { data: session } = useSession();
 
-  const handleLogout = async () =>
+  const handleLogout = async () => {
+    const data = await getAllGeografia();
+
     await signOut({ redirect: true, callbackUrl: "/" });
+  };
 
   return (
     <Dropdown placement="bottom-end">
@@ -35,7 +40,11 @@ export default function UserMenu() {
         </DropdownItem>
         <DropdownItem key="settings">Configuración</DropdownItem>
         <DropdownItem key="help">Ayuda</DropdownItem>
-        <DropdownItem key="logout" color="danger" onClick={handleLogout}>
+        <DropdownItem
+          key="logout"
+          color="danger"
+          onClick={() => handleLogout()}
+        >
           Cerrar sesión
         </DropdownItem>
       </DropdownMenu>
