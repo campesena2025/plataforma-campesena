@@ -7,7 +7,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { NavbarVisibility } from "@/components/NavbarVisibility";
-
+import Breadcrumbs from "@/components/breadCrumb";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -21,8 +21,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -36,6 +34,7 @@ export default function RootLayout({
           <div className="relative flex flex-col h-screen">
             <NavbarVisibility />
             <main className="container mx-auto max-w-7xl pt-1 px-6 flex-grow">
+              <Breadcrumbs titulo={""}/>
               {children}
             </main>
           </div>
