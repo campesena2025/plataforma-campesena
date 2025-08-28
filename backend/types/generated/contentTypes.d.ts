@@ -1706,6 +1706,35 @@ export interface ApiVeredaVereda extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVigenciaVigencia extends Struct.CollectionTypeSchema {
+  collectionName: 'vigencias';
+  info: {
+    displayName: 'Vigencia';
+    pluralName: 'vigencias';
+    singularName: 'vigencia';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vigencia.vigencia'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiZonaSenaZonaSena extends Struct.CollectionTypeSchema {
   collectionName: 'zona_senas';
   info: {
@@ -2304,6 +2333,7 @@ declare module '@strapi/strapi' {
       'api::servicio.servicio': ApiServicioServicio;
       'api::subregion-pdet.subregion-pdet': ApiSubregionPdetSubregionPdet;
       'api::vereda.vereda': ApiVeredaVereda;
+      'api::vigencia.vigencia': ApiVigenciaVigencia;
       'api::zona-sena.zona-sena': ApiZonaSenaZonaSena;
       'api::zonas-reserva-campesina.zonas-reserva-campesina': ApiZonasReservaCampesinaZonasReservaCampesina;
       'plugin::content-releases.release': PluginContentReleasesRelease;

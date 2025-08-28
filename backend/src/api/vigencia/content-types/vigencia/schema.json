@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vigencias",
+  "info": {
+    "singularName": "vigencia",
+    "pluralName": "vigencias",
+    "displayName": "Vigencia"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  }
+}
