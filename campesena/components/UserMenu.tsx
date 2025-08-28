@@ -8,13 +8,13 @@ import {
 } from "@heroui/react";
 import { signOut, useSession } from "next-auth/react";
 
-import getAllGeografia from "@/services/geografia.service";
+import getAllGeografia, { getAllMunicipios, getAllVeredas } from "@/services/geografia.service";
 
 export default function UserMenu() {
   const { data: session } = useSession();
 
   const handleLogout = async () => {
-    const data = await getAllGeografia();
+    //const data = await getAllGeografia();
 
     await signOut({ redirect: true, callbackUrl: "/" });
   };

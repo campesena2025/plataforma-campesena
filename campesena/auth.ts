@@ -1,11 +1,11 @@
 import NextAuth from "next-auth";
 import { ZodError } from "zod";
 import Credentials from "next-auth/providers/credentials";
+import { cookies } from "next/headers";
 
 import { signInSchema } from "./utils/zod";
 import { login } from "./services/api/auth.service";
-
-import strapiClientInstance from "./services/strapiClient"; 
+import strapiClientInstance from "./services/strapiClient";
 
 export const { handlers, auth } = NextAuth({
   providers: [
@@ -14,7 +14,9 @@ export const { handlers, auth } = NextAuth({
         email: {},
         password: {},
       },
-      authorize: async (credentials, req) => {
+      authorize: async (credentials) => {
+        const cookiesList = cookies();
+
         try {
           const { email, password } =
             await signInSchema.parseAsync(credentials);
@@ -27,7 +29,7 @@ export const { handlers, auth } = NextAuth({
           }
 
           // Map your LoginResponse to the expected User object
-          const user = {
+          let user = {
             user: {
               id: String(loginResponse.user.id),
               name: loginResponse.user.username,
@@ -37,6 +39,9 @@ export const { handlers, auth } = NextAuth({
           };
 
           strapiClientInstance.initializeToken();
+
+          (await cookiesList).set("session-token", user.user.jwt);
+          (await cookiesList).set("user-id", user.user.id, { sameSite: "lax" });
 
           return user.user;
         } catch (error) {
