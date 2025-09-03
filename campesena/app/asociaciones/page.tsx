@@ -1,23 +1,22 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@heroui/button";
+import { Spinner } from "@heroui/react";
 
 import CardAssociation from "@/components/CardAssociation";
-import { Asociaciones } from "@/types/asociacion";
-import { getAllAsociaciones } from "@/services/asociaciones.service";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 export default function AsociacionesPage() {
   const router = useRouter();
-  const [asociaciones, setAsociaciones] = useState<Asociaciones>();
+  const { asociaciones, fetchAsociaciones, loading } = useAsociacionesStore();
 
   useEffect(() => {
-    getAllAsociaciones().then((data) => {
-      setAsociaciones(data);
-    });
-
-    return;
-  }, []);
+    // Solo buscamos las asociaciones si no están ya en el store.
+    if (!asociaciones) {
+      fetchAsociaciones();
+    }
+  }, [asociaciones, fetchAsociaciones]);
 
   const procedimientoListener = (accion: string, id: string | number) => {
     router.push(`/asociaciones/${id}/${accion}`);
@@ -35,6 +34,11 @@ export default function AsociacionesPage() {
           Crear Asociación
         </Button>
       </div>
+      {loading && (
+        <div className="flex justify-center items-center h-40">
+          <Spinner label="Cargando asociaciones..." />
+        </div>
+      )}
       {asociaciones?.data.map((associationData) => (
         <CardAssociation
           key={associationData.id}

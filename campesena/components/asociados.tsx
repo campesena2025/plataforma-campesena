@@ -24,23 +24,12 @@ import {
 import { AddAssociateModal } from "./AddAssociateModal";
 import { EditAssociateModal } from "./EditAssociateModal";
 
-type Associate = {
-  id: number;
-  documentNumber: string;
-  fullName: string;
-  gender: string;
-  email: string;
-  contactNumber: string;
-  participantType: string;
-  populationType: string;
-  age: number;
-  educationLevel: string;
-};
+import { Participante } from "@/types/participante";
 
 export default function AsociadosTable({
   initialAssociates,
 }: {
-  initialAssociates: Associate[];
+  initialAssociates: Participante[];
 }) {
   const {
     isOpen: isAddOpen,
@@ -52,11 +41,11 @@ export default function AsociadosTable({
     onOpen: onEditOpen,
     onOpenChange: onEditOpenChange,
   } = useDisclosure();
-  const [associates, setAssociates] = useState<Associate[]>(initialAssociates);
+  const [associates, setAssociates] =
+    useState<Participante[]>(initialAssociates);
   const [legalRepresentativeId, setLegalRepresentativeId] = useState<number>(1);
-  const [selectedAssociate, setSelectedAssociate] = useState<Associate | null>(
-    null,
-  );
+  const [selectedAssociate, setSelectedAssociate] =
+    useState<Participante | null>(null);
 
   const handleSetLegalRepresentative = (associateId: number) => {
     setLegalRepresentativeId(associateId);
@@ -69,13 +58,16 @@ export default function AsociadosTable({
     );
   };
 
-  const handleEdit = (associate: Associate) => {
+  const handleEdit = (associate: Participante) => {
     setSelectedAssociate(associate);
     onEditOpen();
   };
 
-  const renderCell = (item: Associate, columnKey: React.Key) => {
-    const cellValue = item[columnKey as keyof Associate];
+  const renderCell = (
+    item: Participante,
+    columnKey: React.Key,
+  ): React.ReactNode => {
+    const cellValue = item[columnKey as keyof Participante];
 
     switch (columnKey) {
       case "actions":
@@ -103,7 +95,7 @@ export default function AsociadosTable({
                   Borrar
                 </DropdownItem>
                 <DropdownItem
-                  key={""}
+                  key="set-legal-rep"
                   isDisabled={legalRepresentativeId === item.id}
                   startContent={<UserPlusIcon className="w-4 h-4" />}
                   onClick={() => handleSetLegalRepresentative(item.id)}
@@ -115,7 +107,16 @@ export default function AsociadosTable({
           </div>
         );
       default:
-        return cellValue;
+        // Evita renderizar objetos directamente, que es la causa del error.
+        if (
+          typeof cellValue === "object" &&
+          cellValue !== null &&
+          !React.isValidElement(cellValue)
+        ) {
+          return null;
+        }
+
+        return cellValue as React.ReactNode;
     }
   };
 
@@ -136,17 +137,16 @@ export default function AsociadosTable({
           className="min-w-full divide-y divide-gray-200"
         >
           <TableHeader>
-            <TableColumn key="documentNumber">Documento</TableColumn>
-            <TableColumn key="fullName">Nombre Completo</TableColumn>
-            <TableColumn key="gender">Género</TableColumn>
-            <TableColumn key="email">Correo Electrónico</TableColumn>
-            <TableColumn key="contactNumber">Número de Contacto</TableColumn>
-            <TableColumn key="participantType">
-              Tipo de Participante
+            <TableColumn key="numeroDocumento">Documento</TableColumn>
+            <TableColumn key="nombreCompleto">Nombre Completo</TableColumn>
+            <TableColumn key="genero">Género</TableColumn>
+            <TableColumn key="correoElectronico">
+              Correo Electrónico
             </TableColumn>
-            <TableColumn key="populationType">Tipo de Población</TableColumn>
-            <TableColumn key="age">Edad</TableColumn>
-            <TableColumn key="educationLevel">Nivel de Estudio</TableColumn>
+            <TableColumn key="numeroContacto">Número de Contacto</TableColumn>
+            <TableColumn key="tipoPoblacion">Tipo de Población</TableColumn>
+            <TableColumn key="edad">Edad</TableColumn>
+            <TableColumn key="nivelEstudio">Nivel de Estudio</TableColumn>
             <TableColumn key="actions">Acciones</TableColumn>
           </TableHeader>
           <TableBody items={associates}>
