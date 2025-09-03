@@ -57,7 +57,7 @@
     "sector": {
       "type": "enumeration",
       "enum": [
-        "Cosntrucción",
+        "Construcción",
         "Cultura",
         "Empresarial",
         "Forestal",

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-03T13:30:26.268Z"
+    "x-generation-date": "2025-09-03T20:50:11.173Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -20182,7 +20182,7 @@
                                   "sector": {
                                     "type": "string",
                                     "enum": [
-                                      "Cosntrucción",
+                                      "Construcción",
                                       "Cultura",
                                       "Empresarial",
                                       "Forestal",
@@ -22316,7 +22316,7 @@
               "sector": {
                 "type": "string",
                 "enum": [
-                  "Cosntrucción",
+                  "Construcción",
                   "Cultura",
                   "Empresarial",
                   "Forestal",
@@ -24837,7 +24837,7 @@
                       "sector": {
                         "type": "string",
                         "enum": [
-                          "Cosntrucción",
+                          "Construcción",
                           "Cultura",
                           "Empresarial",
                           "Forestal",
@@ -25879,7 +25879,7 @@
           "sector": {
             "type": "string",
             "enum": [
-              "Cosntrucción",
+              "Construcción",
               "Cultura",
               "Empresarial",
               "Forestal",
@@ -26793,7 +26793,7 @@
                                       "sector": {
                                         "type": "string",
                                         "enum": [
-                                          "Cosntrucción",
+                                          "Construcción",
                                           "Cultura",
                                           "Empresarial",
                                           "Forestal",
@@ -31359,7 +31359,7 @@
                                   "sector": {
                                     "type": "string",
                                     "enum": [
-                                      "Cosntrucción",
+                                      "Construcción",
                                       "Cultura",
                                       "Empresarial",
                                       "Forestal",
@@ -36122,7 +36122,7 @@
                             "sector": {
                               "type": "string",
                               "enum": [
-                                "Cosntrucción",
+                                "Construcción",
                                 "Cultura",
                                 "Empresarial",
                                 "Forestal",
@@ -38277,7 +38277,7 @@
                                       "sector": {
                                         "type": "string",
                                         "enum": [
-                                          "Cosntrucción",
+                                          "Construcción",
                                           "Cultura",
                                           "Empresarial",
                                           "Forestal",
@@ -42767,7 +42767,7 @@
                         "sector": {
                           "type": "string",
                           "enum": [
-                            "Cosntrucción",
+                            "Construcción",
                             "Cultura",
                             "Empresarial",
                             "Forestal",
@@ -46758,7 +46758,7 @@
                               "sector": {
                                 "type": "string",
                                 "enum": [
-                                  "Cosntrucción",
+                                  "Construcción",
                                   "Cultura",
                                   "Empresarial",
                                   "Forestal",
@@ -50206,7 +50206,7 @@
                                         "sector": {
                                           "type": "string",
                                           "enum": [
-                                            "Cosntrucción",
+                                            "Construcción",
                                             "Cultura",
                                             "Empresarial",
                                             "Forestal",
@@ -52242,7 +52242,7 @@
                             "sector": {
                               "type": "string",
                               "enum": [
-                                "Cosntrucción",
+                                "Construcción",
                                 "Cultura",
                                 "Empresarial",
                                 "Forestal",
@@ -56826,7 +56826,7 @@
                                   "sector": {
                                     "type": "string",
                                     "enum": [
-                                      "Cosntrucción",
+                                      "Construcción",
                                       "Cultura",
                                       "Empresarial",
                                       "Forestal",
@@ -60309,7 +60309,7 @@
                                         "sector": {
                                           "type": "string",
                                           "enum": [
-                                            "Cosntrucción",
+                                            "Construcción",
                                             "Cultura",
                                             "Empresarial",
                                             "Forestal",
@@ -63336,7 +63336,7 @@
                               "sector": {
                                 "type": "string",
                                 "enum": [
-                                  "Cosntrucción",
+                                  "Construcción",
                                   "Cultura",
                                   "Empresarial",
                                   "Forestal",
@@ -69463,7 +69463,7 @@
                 "sector": {
                   "type": "string",
                   "enum": [
-                    "Cosntrucción",
+                    "Construcción",
                     "Cultura",
                     "Empresarial",
                     "Forestal",
@@ -70953,7 +70953,7 @@
                             "sector": {
                               "type": "string",
                               "enum": [
-                                "Cosntrucción",
+                                "Construcción",
                                 "Cultura",
                                 "Empresarial",
                                 "Forestal",
@@ -75225,7 +75225,7 @@
                                         "sector": {
                                           "type": "string",
                                           "enum": [
-                                            "Cosntrucción",
+                                            "Construcción",
                                             "Cultura",
                                             "Empresarial",
                                             "Forestal",
@@ -78775,7 +78775,7 @@
                               "sector": {
                                 "type": "string",
                                 "enum": [
-                                  "Cosntrucción",
+                                  "Construcción",
                                   "Cultura",
                                   "Empresarial",
                                   "Forestal",
@@ -82553,7 +82553,7 @@
                               "sector": {
                                 "type": "string",
                                 "enum": [
-                                  "Cosntrucción",
+                                  "Construcción",
                                   "Cultura",
                                   "Empresarial",
                                   "Forestal",
@@ -86506,7 +86506,7 @@
                                   "sector": {
                                     "type": "string",
                                     "enum": [
-                                      "Cosntrucción",
+                                      "Construcción",
                                       "Cultura",
                                       "Empresarial",
                                       "Forestal",
@@ -89678,7 +89678,7 @@
                                   "sector": {
                                     "type": "string",
                                     "enum": [
-                                      "Cosntrucción",
+                                      "Construcción",
                                       "Cultura",
                                       "Empresarial",
                                       "Forestal",
@@ -92766,7 +92766,7 @@
                                   "sector": {
                                     "type": "string",
                                     "enum": [
-                                      "Cosntrucción",
+                                      "Construcción",
                                       "Cultura",
                                       "Empresarial",
                                       "Forestal",
@@ -98613,7 +98613,7 @@
                   "sector": {
                     "type": "string",
                     "enum": [
-                      "Cosntrucción",
+                      "Construcción",
                       "Cultura",
                       "Empresarial",
                       "Forestal",
@@ -102579,7 +102579,7 @@
                                         "sector": {
                                           "type": "string",
                                           "enum": [
-                                            "Cosntrucción",
+                                            "Construcción",
                                             "Cultura",
                                             "Empresarial",
                                             "Forestal",
@@ -104678,7 +104678,7 @@
                                       "sector": {
                                         "type": "string",
                                         "enum": [
-                                          "Cosntrucción",
+                                          "Construcción",
                                           "Cultura",
                                           "Empresarial",
                                           "Forestal",
@@ -109885,7 +109885,7 @@
                       "sector": {
                         "type": "string",
                         "enum": [
-                          "Cosntrucción",
+                          "Construcción",
                           "Cultura",
                           "Empresarial",
                           "Forestal",
@@ -113938,7 +113938,7 @@
                       "sector": {
                         "type": "string",
                         "enum": [
-                          "Cosntrucción",
+                          "Construcción",
                           "Cultura",
                           "Empresarial",
                           "Forestal",

@@ -11,11 +11,11 @@ import { useRouter } from "next/navigation";
 import { createAsociacion } from "@/services/asociaciones.service";
 import { organizationTypes, sector } from "@/types/enumerators";
 import { LocationSelector } from "@/components/LocationSelector";
-import { AsociacionFormData } from "@/types/asociacion";
+import { AsociacionRequest } from "@/types/asociacion";
 
 const Page = () => {
   const router = useRouter();
-  const [formData, setFormData] = useState<Partial<AsociacionFormData>>({
+  const [formData, setFormData] = useState<Partial<AsociacionRequest>>({
     formalizada: false,
   });
 
@@ -39,9 +39,9 @@ const Page = () => {
   }) => {
     setFormData((prevData) => ({
       ...prevData,
-      departamentoId: selection.departamento?.id.toString() || "",
-      municipioId: selection.municipio?.id.toString() || "",
-      veredaId: selection.vereda?.id.toString() || "",
+      departamento: selection.departamento?.id.toString() || "",
+      municipio: selection.municipio?.id.toString() || "",
+      vereda: selection.vereda?.id.toString() || "",
     }));
   };
 
@@ -49,7 +49,7 @@ const Page = () => {
     e.preventDefault();
 
     try {
-      await createAsociacion(formData as AsociacionFormData);
+      await createAsociacion(formData as AsociacionRequest);
       router.push("/asociaciones");
       addToast({
         title: "Asociación creada",
@@ -107,7 +107,7 @@ const Page = () => {
           </RadioGroup>
           <div className="md:col-span-2">
             <LocationSelector
-              initialVeredaId={formData?.veredaId}
+              initialVeredaId={formData?.vereda}
               onChange={handleLocationChange}
             />
           </div>

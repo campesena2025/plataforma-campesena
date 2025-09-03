@@ -474,7 +474,7 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     >;
     sector: Schema.Attribute.Enumeration<
       [
-        'Cosntrucci\u00F3n',
+        'Construcci\u00F3n',
         'Cultura',
         'Empresarial',
         'Forestal',
