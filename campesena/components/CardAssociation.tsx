@@ -15,7 +15,7 @@ interface Props {
   estado: string;
   foto: string;
   warning: boolean;
-  procedimiento: (accion:string, id:number) => void;
+  procedimiento: (accion: string, id: number) => void;
 }
 
 export default function CardAssociation({
@@ -28,7 +28,7 @@ export default function CardAssociation({
   estado,
   foto,
   warning,
-  procedimiento
+  procedimiento,
 }: Props) {
   return (
     <Card
@@ -84,11 +84,9 @@ export default function CardAssociation({
                   </Badge>
                 )}
                 {!warning && (
-                 
-                    <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold mb-2">
-                      {estado}
-                    </span>
-               
+                  <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold mb-2">
+                    {estado}
+                  </span>
                 )}
                 <div className="flex flex-col gap-2">
                   <Button
@@ -117,22 +115,64 @@ export default function CardAssociation({
 
             {/* Regleta de botones inferior */}
             <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-6">
-              <Button color="warning" size="sm" variant="ghost" onPress={()=>{procedimiento("diagnostico", id)}}>
+              <Button
+                color="warning"
+                size="sm"
+                variant="ghost"
+                onPress={() => {
+                  procedimiento("diagnostico", id);
+                }}
+              >
                 Diagnóstico
               </Button>
-              <Button color="warning" size="sm" variant="ghost" onPress={()=>{procedimiento("formacion", id)}}>
+              <Button
+                color="warning"
+                size="sm"
+                variant="ghost"
+                onPress={() => {
+                  procedimiento("formacion", id);
+                }}
+              >
                 Formación
               </Button>
-              <Button color="warning" size="sm" variant="ghost" onPress={()=>{procedimiento("formulacion", id)}}>
+              <Button
+                color="warning"
+                size="sm"
+                variant="ghost"
+                onPress={() => {
+                  procedimiento("formulacion", id);
+                }}
+              >
                 Formulación
               </Button>
-              <Button color="warning" size="sm" variant="ghost" onPress={()=>{procedimiento("postulacion", id)}}>
+              <Button
+                color="warning"
+                size="sm"
+                variant="ghost"
+                onPress={() => {
+                  procedimiento("postulacion", id);
+                }}
+              >
                 Postulación
               </Button>
-              <Button color="warning" size="sm" variant="ghost" onPress={()=>{procedimiento("evaluacion", id)}}>
+              <Button
+                color="warning"
+                size="sm"
+                variant="ghost"
+                onPress={() => {
+                  procedimiento("evaluacion", id);
+                }}
+              >
                 Evaluación
               </Button>
-              <Button color="warning" size="sm" variant="ghost" onPress={()=>{procedimiento("kit", id)}}>
+              <Button
+                color="warning"
+                size="sm"
+                variant="ghost"
+                onPress={() => {
+                  procedimiento("kit", id);
+                }}
+              >
                 Kit de producto
               </Button>
             </div>

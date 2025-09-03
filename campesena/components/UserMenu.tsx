@@ -8,8 +8,6 @@ import {
 } from "@heroui/react";
 import { signOut, useSession } from "next-auth/react";
 
-import getAllGeografia, { getAllMunicipios, getAllVeredas } from "@/services/geografia.service";
-
 export default function UserMenu() {
   const { data: session } = useSession();
 

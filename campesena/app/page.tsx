@@ -4,8 +4,6 @@ import { Card } from "@heroui/react";
 import { Button } from "@heroui/react";
 import { useState } from "react";
 
-import { useAuthenticatedStrapi } from "@/hooks/useAuthenticatedStrapi";
-
 // Íconos de ejemplo, puedes reemplazarlos por los tuyos
 const AssociationIcon = () => (
   <span aria-label="asociaciones" role="img">
@@ -135,8 +133,6 @@ const PieChart = ({
 };
 
 export default function Home() {
-
-
   return (
     <section className="flex flex-col gap-8 py-3 md:py-10 w-full">
       <h1 className="text-2xl font-bold">Programa campesena</h1>

@@ -11,12 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "participante": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::participante.participante",
-      "mappedBy": "participante_asociacion"
-    },
     "asociacion": {
       "type": "relation",
       "relation": "manyToOne",

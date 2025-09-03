@@ -430,11 +430,16 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    departamento: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::departamento.departamento'
+    >;
     evaluacion_diagnosticos: Schema.Attribute.Relation<
       'oneToMany',
       'api::evaluacion-diagnostico.evaluacion-diagnostico'
     >;
     formalizada: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    foto: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -447,6 +452,14 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     >;
     nit: Schema.Attribute.String & Schema.Attribute.Unique;
     nombreAsociacion: Schema.Attribute.Text;
+    observaciones: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    participante: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::participante.participante'
+    >;
     participante_asociacions: Schema.Attribute.Relation<
       'oneToMany',
       'api::participante-asociacion.participante-asociacion'
@@ -641,6 +654,10 @@ export interface ApiDepartamentoDepartamento
   };
   attributes: {
     abreviatura: Schema.Attribute.String;
+    asociacion: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::asociacion.asociacion'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1023,10 +1040,6 @@ export interface ApiParticipanteAsociacionParticipanteAsociacion
       'api::participante-asociacion.participante-asociacion'
     > &
       Schema.Attribute.Private;
-    participante: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::participante.participante'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     rolAsociacion: Schema.Attribute.String;
     servicio_participantes: Schema.Attribute.Relation<
@@ -1053,6 +1066,10 @@ export interface ApiParticipanteParticipante
     draftAndPublish: false;
   };
   attributes: {
+    asociacions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::asociacion.asociacion'
+    >;
     correoElectronico: Schema.Attribute.Email;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1071,12 +1088,8 @@ export interface ApiParticipanteParticipante
       ['Ninguno', 'Primaria', 'B\u00E1sica', 'Profesional', 'Postgrado']
     >;
     nombreCompleto: Schema.Attribute.String;
-    numeroContacto: Schema.Attribute.Integer;
+    numeroContacto: Schema.Attribute.String;
     numeroDocumento: Schema.Attribute.String;
-    participante_asociacion: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::participante-asociacion.participante-asociacion'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     tipoParticipante: Schema.Attribute.Enumeration<
       ['Representante Legal', 'Participante Asociacion', 'Otro']

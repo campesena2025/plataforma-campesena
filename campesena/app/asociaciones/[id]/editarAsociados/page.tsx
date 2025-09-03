@@ -1,11 +1,8 @@
-'use client';
-import AsociadosTable from "@/components/asociados";
-import { Button } from "@heroui/button";
+"use client";
 import { Card, CardBody, CardHeader } from "@heroui/card";
-import { Input, Textarea } from "@heroui/input";
-import { Radio, RadioGroup } from "@heroui/radio";
-import { Select, SelectItem } from "@heroui/select";
 import React from "react";
+
+import AsociadosTable from "@/components/asociados";
 
 const initialAssociates = [
   {

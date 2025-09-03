@@ -18,7 +18,6 @@ class StrapiClient {
   }
 
   async initializeToken() {
-    debugger;
     const session = await getSession();
     const token = (session?.user as any)?.jwt;
 

@@ -25,5 +25,3 @@ export const sector = [
   "Turismo",
   "Servicios",
 ];
-
-

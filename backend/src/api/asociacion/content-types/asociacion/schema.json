@@ -90,6 +90,29 @@
       "relation": "oneToMany",
       "target": "api::evaluacion-diagnostico.evaluacion-diagnostico",
       "mappedBy": "asociacion"
+    },
+    "departamento": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::departamento.departamento",
+      "inversedBy": "asociacion"
+    },
+    "observaciones": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "participante": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::participante.participante",
+      "inversedBy": "asociacions"
     }
   }
 }

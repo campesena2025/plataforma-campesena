@@ -9,7 +9,6 @@ import {
   Input,
   Select,
   SelectItem,
-  Textarea,
   RadioGroup,
   Radio,
 } from "@heroui/react";
@@ -35,7 +34,7 @@ const educationLevels = [
 
 export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl">
+    <Modal isOpen={isOpen} size="4xl" onOpenChange={onOpenChange}>
       <ModalContent>
         {(onClose) => (
           <>
@@ -46,17 +45,17 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
               <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                   id="documentNumber"
-                  name="documentNumber"
-                  type="text"
                   label="Número de Documento"
                   labelPlacement="outside"
+                  name="documentNumber"
+                  type="text"
                 />
                 <Input
                   id="fullName"
-                  name="fullName"
-                  type="text"
                   label="Nombre Completo"
                   labelPlacement="outside"
+                  name="fullName"
+                  type="text"
                 />
                 <RadioGroup label="Género" orientation="horizontal">
                   <Radio value="Masculino">Masculino</Radio>
@@ -65,24 +64,27 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                 </RadioGroup>
                 <Input
                   id="email"
-                  name="email"
-                  type="email"
                   label="Correo Electrónico"
                   labelPlacement="outside"
+                  name="email"
+                  type="email"
                 />
                 <Input
                   id="contactNumber"
-                  name="contactNumber"
-                  type="text"
                   label="Número de Contacto"
                   labelPlacement="outside"
+                  name="contactNumber"
+                  type="text"
                 />
                 <Select
                   label="Tipo de Participante"
-                  name="participantType"
                   labelPlacement="outside"
+                  name="participantType"
                 >
-                  <SelectItem key="representante-legal" value="Representante legal">
+                  <SelectItem
+                    key="representante-legal"
+                    value="Representante legal"
+                  >
                     Representante legal
                   </SelectItem>
                   <SelectItem
@@ -97,8 +99,8 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                 </Select>
                 <Select
                   label="Tipo de Población"
-                  name="populationType"
                   labelPlacement="outside"
+                  name="populationType"
                 >
                   {populationTypes.map((type) => (
                     <SelectItem key={type} value={type}>
@@ -108,15 +110,15 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                 </Select>
                 <Input
                   id="age"
-                  name="age"
-                  type="number"
                   label="Edad"
                   labelPlacement="outside"
+                  name="age"
+                  type="number"
                 />
                 <Select
                   label="Nivel de Estudio"
-                  name="educationLevel"
                   labelPlacement="outside"
+                  name="educationLevel"
                 >
                   {educationLevels.map((level) => (
                     <SelectItem key={level} value={level}>

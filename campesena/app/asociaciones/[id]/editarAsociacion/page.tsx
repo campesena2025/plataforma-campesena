@@ -1,40 +1,89 @@
 "use client";
+import { addToast } from "@heroui/toast";
 import { Button } from "@heroui/button";
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import { Input, Textarea } from "@heroui/input";
 import { Radio, RadioGroup } from "@heroui/radio";
 import { Select, SelectItem } from "@heroui/select";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 
+import {
+  getAsociacionById,
+  updateAsociacion,
+} from "@/services/asociaciones.service";
 import { organizationTypes, sector } from "@/types/enumerators";
+import { LocationSelector } from "@/components/LocationSelector";
+import { AsociacionFormData } from "@/types/asociacion";
 
 const Page = () => {
-  const [formData, setFormData] = useState({
-    nit: "123456789-0",
-    nombreAsociacion: "Asociación de Agricultores de Ejemplo",
-    formalizada: "true",
-    municipio: "Municipio de Ejemplo",
-    vereda: "Vereda de Ejemplo",
-    participante_asociacions: "Participante de Ejemplo",
-    tipoOrganizacion: "Asociacion",
-    codigoInterno: "CI-001",
-    sector: "Construcción",
-    razonCreacion: "Razón de ejemplo para la creación de la asociación.",
-    productoServicio: "Café especial",
-    codigoCIUU: "C1234",
-  });
+  const { id } = useParams();
+  const router = useRouter();
+  const [formData, setFormData] = useState<AsociacionFormData>();
+
+  useEffect(() => {
+    if (id) {
+      getAsociacionById(id as string).then((res) => {
+        const { attributes, id: idAsoc } = res.data[0];
+        const data: AsociacionFormData = {
+          id: idAsoc,
+          ...attributes,
+          departamentoId:
+            attributes.municipio.data.attributes.departamento.data.id,
+          municipioId: attributes.municipio.data.id,
+          veredaId: attributes.vereda.data.id,
+        };
+
+        setFormData(data);
+      });
+    }
+  }, [id]);
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >,
   ) => {
+    e.preventDefault();
     const { name, value } = e.target;
 
     setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
+      ...(prevData as AsociacionFormData),
+      [name]: name === "formalizada" ? value === "true" : value,
     }));
+  };
+
+  const handleLocationChange = (selection: {
+    departamento?: { id: string | number };
+    municipio?: { id: string | number };
+    vereda?: { id: string | number };
+  }) => {
+    setFormData((prevData) => ({
+      ...(prevData as AsociacionFormData),
+      departamentoId: selection.departamento?.id.toString() || "",
+      municipioId: selection.municipio?.id.toString() || "",
+      veredaId: selection.vereda?.id.toString() || "",
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formData) return;
+    try {
+      await updateAsociacion(formData.id.toString(), formData);
+      addToast({
+        title: "Asociación actualizada",
+        description: "La asociación se ha actualizado correctamente.",
+        color: "success",
+      });
+      router.push("/asociaciones");
+    } catch (error) {
+      addToast({
+        title: "Error",
+        description: "Ha ocurrido un error al actualizar la asociación.",
+        color: "danger",
+      });
+    }
   };
 
   return (
@@ -43,14 +92,17 @@ const Page = () => {
         <h1 className="text-2xl font-bold">Editar Asociación</h1>
       </CardHeader>
       <CardBody>
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          onSubmit={handleSubmit}
+        >
           <Input
             id="nit"
             label="NIT"
             labelPlacement="outside"
             name="nit"
             type="text"
-            value={formData.nit}
+            value={formData?.nit || ""}
             onChange={handleChange}
           />
           <Textarea
@@ -58,43 +110,31 @@ const Page = () => {
             label="Nombre de la Asociación"
             labelPlacement="outside"
             name="nombreAsociacion"
-            value={formData.nombreAsociacion}
+            value={formData?.nombreAsociacion || ""}
             onChange={handleChange}
           />
           <RadioGroup
             label="Formalizada"
             name="formalizada"
             orientation="horizontal"
-            value={formData.formalizada}
+            value={formData?.formalizada?.toString() || "false"}
             onChange={handleChange}
           >
             <Radio value="false">No</Radio>
             <Radio value="true">Sí</Radio>
           </RadioGroup>
-          <Select
-            label="Municipio"
-            labelPlacement="outside"
-            name="municipio"
-            selectedKeys={[formData.municipio]}
-            onChange={handleChange}
-          >
-            <SelectItem key="none">Add or create a relation</SelectItem>
-          </Select>
-          <Select
-            label="Vereda"
-            labelPlacement="outside"
-            name="vereda"
-            selectedKeys={[formData.vereda]}
-            onChange={handleChange}
-          >
-            <SelectItem key="none">Add or create a relation</SelectItem>
-          </Select>
+          <div className="md:col-span-2">
+            <LocationSelector
+              initialVeredaId={formData?.veredaId}
+              onChange={handleLocationChange}
+            />
+          </div>
           <Select
             isRequired
             label="Tipo de Organización"
             labelPlacement="outside"
             name="tipoOrganizacion"
-            selectedKeys={[formData.tipoOrganizacion]}
+            selectedKeys={[formData?.tipoOrganizacion || ""]}
             onChange={handleChange}
           >
             {organizationTypes.map((type) => (
@@ -107,14 +147,14 @@ const Page = () => {
             labelPlacement="outside"
             name="codigoInterno"
             type="text"
-            value={formData.codigoInterno}
+            value={formData?.codigoInterno || ""}
             onChange={handleChange}
           />
           <Select
             label="Sector"
             labelPlacement="outside"
             name="sector"
-            selectedKeys={[formData.sector]}
+            selectedKeys={[formData?.sector || ""]}
             onChange={handleChange}
           >
             {sector.map((type) => (
@@ -126,7 +166,7 @@ const Page = () => {
             label="Razón de Creación"
             labelPlacement="outside"
             name="razonCreacion"
-            value={formData.razonCreacion}
+            value={formData?.razonCreacion || ""}
             onChange={handleChange}
           />
           <Input
@@ -135,7 +175,7 @@ const Page = () => {
             labelPlacement="outside"
             name="productoServicio"
             type="text"
-            value={formData.productoServicio}
+            value={formData?.productoServicio || ""}
             onChange={handleChange}
           />
           <Input
@@ -144,7 +184,18 @@ const Page = () => {
             labelPlacement="outside"
             name="codigoCIUU"
             type="text"
-            value={formData.codigoCIUU}
+            value={formData?.codigoCIUU || ""}
+            onChange={handleChange}
+          />
+          <Textarea
+            className="md:col-span-2"
+            id="observaciones"
+            label="Observaciones"
+            labelPlacement="outside"
+            maxLength={255}
+            name="observaciones"
+            placeholder="Si su vereda u otro dato no aparece en las listas, anótelo aquí."
+            value={formData?.observaciones || ""}
             onChange={handleChange}
           />
           <div className="md:col-span-2 flex justify-end mt-8">

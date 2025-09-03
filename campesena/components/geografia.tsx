@@ -1,8 +1,6 @@
 import { Select, SelectItem } from "@heroui/react";
 import React from "react";
 
-
-
 const geografia = () => {
   return (
     <>

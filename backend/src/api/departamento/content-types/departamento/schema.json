@@ -37,6 +37,12 @@
     },
     "longitud": {
       "type": "string"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::asociacion.asociacion",
+      "mappedBy": "departamento"
     }
   }
 }

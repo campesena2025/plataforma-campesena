@@ -28,9 +28,6 @@
     "correoElectronico": {
       "type": "email"
     },
-    "numeroContacto": {
-      "type": "integer"
-    },
     "tipoParticipante": {
       "type": "enumeration",
       "enum": [
@@ -38,12 +35,6 @@
         "Participante Asociacion",
         "Otro"
       ]
-    },
-    "participante_asociacion": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::participante-asociacion.participante-asociacion",
-      "inversedBy": "participante"
     },
     "tipoPoblacion": {
       "type": "enumeration",
@@ -97,6 +88,15 @@
         "Profesional",
         "Postgrado"
       ]
+    },
+    "asociacions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::asociacion.asociacion",
+      "mappedBy": "participante"
+    },
+    "numeroContacto": {
+      "type": "string"
     }
   }
 }

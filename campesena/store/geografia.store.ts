@@ -1,50 +1,29 @@
 import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
-
-import { Departamento, Geografia, Municipio, Vereda } from "../types/geografia";
-
 interface GeografiaState {
-  geografia: Geografia | null;
-  setGeografia: (geografia: Geografia) => void;
-  getDepartamentos: () => Departamento[];
-  getMunicipiosByDepartamento: (divipolaDepartamento: string) => Municipio[];
-  getVeredasByMunicipio: (divipolaMunicipio: string) => Vereda[];
+  data: Departamento[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
 }
 
-export const useGeografiaStore = create<GeografiaState>()(
-  persist(
-    (set, get) => ({
-      geografia: null,
-      setGeografia: (geografia) => set({ geografia }),
-      getDepartamentos: () => {
-        return get().geografia?.departamentos || [];
-      },
-      getMunicipiosByDepartamento: (divipolaDepartamento: string) => {
-        const departamento = get().geografia?.departamentos.find(
-          (dep) => dep.divipola === divipolaDepartamento,
-        );
+import { Departamento } from "@/types/geografia";
+// Importamos los datos directamente del archivo JSON y aseguramos el tipo
+import geografiaData from "@/assets/meta/geografia.json";
 
-        return departamento?.municipios || [];
-      },
-      getVeredasByMunicipio: (divipolaMunicipio: string) => {
-        let veredas: Vereda[] = [];
-
-        get().geografia?.departamentos.forEach((departamento) => {
-          const municipio = departamento.municipios.find(
-            (mun) => mun.divipola === divipolaMunicipio,
-          );
-
-          if (municipio) {
-            veredas = municipio.veredas;
-          }
-        });
-
-        return veredas;
-      },
-    }),
-    {
-      name: "geografia-storage",
-      storage: createJSONStorage(() => localStorage),
+// Los datos se cargan de forma síncrona y se establecen como el estado inicial.
+export const useGeografiaStore = create<GeografiaState>(() => ({
+  data: (geografiaData as { data: Departamento[] }).data,
+  meta: {
+    pagination: {
+      page: 1,
+      pageSize: 25,
+      pageCount: 2,
+      total: 33,
     },
-  ),
-);
+  },
+}));
