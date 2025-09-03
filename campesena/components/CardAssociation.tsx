@@ -4,6 +4,7 @@ import { Card, CardBody } from "@heroui/card";
 import React from "react";
 import Image from "next/image";
 import { Badge } from "@heroui/badge";
+import { Skeleton } from "@heroui/react";
 
 import { Asociacion } from "@/types/asociacion";
 
@@ -23,13 +24,17 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
           {/* Imagen de la asociación */}
           <div className="relative col-span-6 md:col-span-2 flex justify-center">
-            <Image
-              alt="Imagen Asociación"
-              className="object-cover rounded-lg border"
-              height={120}
-              src={process.env.NEXT_PUBLIC_API_URL + asociacion.foto?.url}
-              width={120}
-            />
+            {asociacion.foto?.url ? (
+              <Image
+                alt="Imagen Asociación"
+                className="object-cover rounded-lg border"
+                height={120}
+                src={process.env.NEXT_PUBLIC_API_URL + asociacion.foto.url}
+                width={120}
+              />
+            ) : (
+              <Skeleton className="rounded-lg w-[120px] h-[120px]" />
+            )}
           </div>
 
           {/* Información principal */}

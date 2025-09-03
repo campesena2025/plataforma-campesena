@@ -11,7 +11,6 @@ import { useParams, useRouter } from "next/navigation";
 import {
   getAsociacionById,
   updateAsociacion,
-  uploadFile,
 } from "@/services/asociaciones.service";
 import { organizationTypes, sector } from "@/types/enumerators";
 import { LocationSelector } from "@/components/LocationSelector";
@@ -21,6 +20,7 @@ import {
   toAsociacionRequest,
 } from "@/types/asociacion";
 import { FotoUpload } from "@/components/FotoUpload";
+import { uploadFile } from "@/services/media.service";
 
 const Page = () => {
   const { id } = useParams();
@@ -146,7 +146,7 @@ const Page = () => {
           </RadioGroup>
           <div className="md:col-span-2">
             <FotoUpload
-              initialImageUrl={asociacion?.foto?.url}
+              initialImageUrl={asociacion?.foto}
               onFileChange={handleFotoChange}
             />
           </div>

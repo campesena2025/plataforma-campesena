@@ -7,7 +7,6 @@ import {
   Asociaciones,
   AsociacionRequest,
 } from "@/types/asociacion";
-import { Media } from "@/types/media";
 
 export const getAllAsociaciones = async (): Promise<Asociaciones> => {
   const query = qs.stringify(
@@ -78,21 +77,6 @@ export const updateAsociacion = async (id: string, data: AsociacionRequest) => {
     { data: strapiData },
     withAuth(),
   );
-
-  return response.data;
-};
-
-export const uploadFile = async (file: File): Promise<Media[]> => {
-  const formData = new FormData();
-
-  formData.append("files", file);
-
-  const response = await api.post("/upload", formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-    ...withAuth(),
-  });
 
   return response.data;
 };

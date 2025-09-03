@@ -185,3 +185,38 @@ export const SearchIcon = (props: IconSvgProps) => (
     />
   </svg>
 );
+
+export const ImageIcon = (props: IconSvgProps) => (
+  <svg
+    aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="presentation"
+    viewBox="0 0 24 24"
+    width="1em"
+    {...props}
+  >
+    <path
+      d="M21 12.79V9c0-4-1-5-5-5H8c-4 0-5 1-5 5v6c0 4 1 5 5 5h3.79"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M10 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M2.95 15.37l2.66-2.66c.63-.63 1.74-.18 1.74.71v.13c0 .28.11.55.31.74l2.8 2.8c.3.3.79.3 1.09 0l4.44-4.44c.52-.52 1.43-.1 1.43.64v4.03M18.21 16.42l3.54 3.54c.2.2.2.51 0 .71l-1.06 1.06c-.2.2-.51.2-.71 0l-3.54-3.54c-.2-.2-.2-.51 0-.71l1.06-1.06c.2-.2.51-.2.71 0z"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+    />
+  </svg>
+);
