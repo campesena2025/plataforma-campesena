@@ -58,9 +58,9 @@ const Page = () => {
   }) => {
     setFormData((prevData) => ({
       ...(prevData as AsociacionRequest),
-      departamentoId: selection.departamento?.id.toString() || "",
-      municipioId: selection.municipio?.id.toString() || "",
-      veredaId: selection.vereda?.id.toString() || "",
+      departamento: selection.departamento?.id || "",
+      municipio: selection.municipio?.id || "",
+      vereda: selection.vereda?.id || "",
     }));
   };
 
@@ -70,34 +70,44 @@ const Page = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData) return;
 
     try {
-      if (asociacion) {
-        let updatedFormData = { ...formData };
-
-        if (fotoFile) {
-          const uploadedFiles = await uploadFile(fotoFile);
-
-          if (uploadedFiles && uploadedFiles.length > 0) {
-            updatedFormData.foto = uploadedFiles[0].id;
-          }
-        }
-
-        await updateAsociacion(asociacion.id.toString(), updatedFormData);
-        addToast({
-          title: "Asociación actualizada",
-          description: "La asociación se ha actualizado correctamente.",
-          color: "success",
-        });
-        router.push("/asociaciones");
-      } else {
+      if (!formData) {
         addToast({
           title: "Error",
           description: "Ha ocurrido un error al actualizar la asociación.",
           color: "danger",
         });
+
+        return;
       }
+
+      if (!asociacion) {
+        addToast({
+          title: "Error",
+          description: "Ha ocurrido un error al actualizar la asociación.",
+          color: "danger",
+        });
+
+        return;
+      }
+      let updatedFormData = { ...formData };
+
+      if (fotoFile) {
+        const uploadedFiles = await uploadFile(fotoFile);
+
+        if (uploadedFiles && uploadedFiles.length > 0) {
+          updatedFormData.foto = uploadedFiles[0].id;
+        }
+      }
+
+      await updateAsociacion(asociacion.documentId, updatedFormData);
+      addToast({
+        title: "Asociación actualizada",
+        description: "La asociación se ha actualizado correctamente.",
+        color: "success",
+      });
+      router.push("/asociaciones");
     } catch {
       addToast({
         title: "Error",

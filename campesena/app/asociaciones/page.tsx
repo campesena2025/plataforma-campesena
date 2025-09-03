@@ -19,7 +19,7 @@ export default function AsociacionesPage() {
     return;
   }, []);
 
-  const procedimientoListener = (accion: string, id: number) => {
+  const procedimientoListener = (accion: string, id: string | number) => {
     router.push(`/asociaciones/${id}/${accion}`);
   };
 
