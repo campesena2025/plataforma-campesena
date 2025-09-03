@@ -1,9 +1,9 @@
+import { Departamento } from "./departamento";
 import { Media } from "./media";
-import { Pagination } from "./pagination";
 import { Municipio } from "./municipio";
+import { Pagination } from "./pagination";
+import { Participante } from "./participante";
 import { Vereda } from "./vereda";
-import { EvaluacionDiagnostico } from "./evaluacionDiagnostico";
-import { User } from "./user";
 
 export interface AsociacionRequest {
   nit: string;
@@ -12,7 +12,6 @@ export interface AsociacionRequest {
   departamento: number | string;
   municipio: number | string;
   vereda: number | string;
-  asociacions?: (number | string)[];
   tipoOrganizacion: string;
   codigoInterno?: string;
   sector: string;
@@ -24,6 +23,10 @@ export interface AsociacionRequest {
   foto?: number | string;
   localizations?: (number | string)[];
   observaciones?: string;
+  representanteLegal?: (number | string)[];
+  participantes?: (number | string)[];
+  estado: string;
+  warning?: boolean;
 }
 
 export interface Asociaciones {
@@ -39,6 +42,9 @@ export interface Asociacion {
   nit: string;
   nombreAsociacion: string;
   formalizada: boolean;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
   tipoOrganizacion: string;
   codigoInterno: string;
   sector: string;
@@ -46,16 +52,37 @@ export interface Asociacion {
   productoServicio: string;
   codigoCIUU: string;
   observaciones: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  locale: string;
+  representanteLegal: Participante | null;
+  participantes: Participante[];
   foto: Media;
-  municipio: { data: Municipio };
-  vereda: { data: Vereda };
-  asociacions: { data: Asociacion[] };
-  evaluacion_diagnosticos: { data: EvaluacionDiagnostico[] };
-  createdBy: { data: User };
-  updatedBy: { data: User };
-  localizations: { data: Asociacion[] };
+  departamento: Departamento;
+  municipio: Municipio;
+  vereda: Vereda;
+  estado: string;
+  warning?: boolean;
 }
+
+export const toAsociacionRequest = (
+  asociacion: Asociacion,
+): AsociacionRequest => ({
+  nit: asociacion.nit,
+  nombreAsociacion: asociacion.nombreAsociacion,
+  formalizada: asociacion.formalizada,
+  departamento: asociacion.departamento.id,
+  municipio: asociacion.municipio.id,
+  vereda: asociacion.vereda.id,
+  tipoOrganizacion: asociacion.tipoOrganizacion,
+  codigoInterno: asociacion.codigoInterno,
+  sector: asociacion.sector,
+  razonCreacion: asociacion.razonCreacion,
+  productoServicio: asociacion.productoServicio,
+  codigoCIUU: asociacion.codigoCIUU,
+  observaciones: asociacion.observaciones,
+  estado: asociacion.estado,
+  warning: asociacion.warning,
+  representanteLegal: asociacion.representanteLegal
+    ? [asociacion.representanteLegal.id]
+    : [],
+  participantes: asociacion.participantes?.map((p) => p.id) ?? [],
+  foto: asociacion.foto?.id,
+});

@@ -35,12 +35,6 @@
       "target": "api::vereda.vereda",
       "inversedBy": "asociacion"
     },
-    "participante_asociacions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::participante-asociacion.participante-asociacion",
-      "mappedBy": "asociacion"
-    },
     "tipoOrganizacion": {
       "type": "enumeration",
       "enum": [
@@ -108,11 +102,30 @@
         "images"
       ]
     },
-    "participante": {
+    "participantes": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::participante.participante",
       "inversedBy": "asociacions"
+    },
+    "estado": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Activo",
+      "enum": [
+        "Activo",
+        "Inactivo",
+        "En Evalucación"
+      ]
+    },
+    "warning": {
+      "type": "boolean",
+      "default": false
+    },
+    "representanteLegal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::participante.participante"
     }
   }
 }

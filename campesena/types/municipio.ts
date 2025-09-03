@@ -29,14 +29,14 @@ export interface Municipio {
   documentId: string;
   divipola: string;
   nombre: string;
-  departamento: { data: Departamento };
-  veredas: { data: Vereda[] };
-  asociacion: { data: Asociacion };
+  departamento: Departamento;
+  veredas: Vereda[];
+  asociacion: Asociacion;
   zomac: boolean;
   ruralidad: "Rural" | "Urbano";
   restitucionTierras: boolean;
   zonaReformaRural: "No ZNRA" | "ZNRA";
-  servicio_participante: { data: ServicioParticipante };
+  servicio_participante: ServicioParticipante;
   zonaReservaCampesina: string;
   subregionPDET: string;
   mape: string;
@@ -45,10 +45,9 @@ export interface Municipio {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  createdBy: { data: User | null };
-  updatedBy: { data: User | null };
+  createdBy: User | null;
+  updatedBy: User | null;
   locale: string;
-  localizations: { data: Municipio[] };
 }
 
 export interface Municipios {

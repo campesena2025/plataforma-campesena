@@ -11,12 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "asociacion": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::asociacion.asociacion",
-      "inversedBy": "participante_asociacions"
-    },
     "rolAsociacion": {
       "type": "string"
     },

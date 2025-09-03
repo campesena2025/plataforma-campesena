@@ -28,14 +28,6 @@
     "correoElectronico": {
       "type": "email"
     },
-    "tipoParticipante": {
-      "type": "enumeration",
-      "enum": [
-        "Representante Legal",
-        "Participante Asociacion",
-        "Otro"
-      ]
-    },
     "tipoPoblacion": {
       "type": "enumeration",
       "enum": [
@@ -91,9 +83,9 @@
     },
     "asociacions": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::asociacion.asociacion",
-      "mappedBy": "participante"
+      "mappedBy": "participantes"
     },
     "numeroContacto": {
       "type": "string"

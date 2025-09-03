@@ -12,6 +12,7 @@
     "@heroicons/react": "^2.2.0",
     "@heroui/button": "2.2.24",
     "@heroui/code": "2.2.18",
+    "@heroui/image": "^2.2.16",
     "@heroui/input": "2.4.25",
     "@heroui/kbd": "2.2.19",
     "@heroui/link": "2.2.21",
@@ -38,6 +39,7 @@
     "qs": "^6.14.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-dropzone": "^14.3.8",
     "strapi-sdk-js": "^3.0.0",
     "zod": "^4.0.17",
     "zustand": "^5.0.8"

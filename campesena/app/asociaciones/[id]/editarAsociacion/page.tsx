@@ -11,30 +11,29 @@ import { useParams, useRouter } from "next/navigation";
 import {
   getAsociacionById,
   updateAsociacion,
+  uploadFile,
 } from "@/services/asociaciones.service";
 import { organizationTypes, sector } from "@/types/enumerators";
 import { LocationSelector } from "@/components/LocationSelector";
-import { AsociacionFormData } from "@/types/asociacion";
+import {
+  Asociacion,
+  AsociacionRequest,
+  toAsociacionRequest,
+} from "@/types/asociacion";
+import { FotoUpload } from "@/components/FotoUpload";
 
 const Page = () => {
   const { id } = useParams();
   const router = useRouter();
-  const [formData, setFormData] = useState<AsociacionFormData>();
+  const [formData, setFormData] = useState<AsociacionRequest>();
+  const [asociacion, setAsociacion] = useState<Asociacion>();
+  const [fotoFile, setFotoFile] = useState<File | null>(null);
 
   useEffect(() => {
     if (id) {
       getAsociacionById(id as string).then((res) => {
-        const { attributes, id: idAsoc } = res.data[0];
-        const data: AsociacionFormData = {
-          id: idAsoc,
-          ...attributes,
-          departamentoId:
-            attributes.municipio.data.attributes.departamento.data.id,
-          municipioId: attributes.municipio.data.id,
-          veredaId: attributes.vereda.data.id,
-        };
-
-        setFormData(data);
+        setFormData(toAsociacionRequest(res));
+        setAsociacion(res);
       });
     }
   }, [id]);
@@ -44,11 +43,10 @@ const Page = () => {
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >,
   ) => {
-    e.preventDefault();
     const { name, value } = e.target;
 
     setFormData((prevData) => ({
-      ...(prevData as AsociacionFormData),
+      ...(prevData as AsociacionRequest),
       [name]: name === "formalizada" ? value === "true" : value,
     }));
   };
@@ -59,25 +57,48 @@ const Page = () => {
     vereda?: { id: string | number };
   }) => {
     setFormData((prevData) => ({
-      ...(prevData as AsociacionFormData),
+      ...(prevData as AsociacionRequest),
       departamentoId: selection.departamento?.id.toString() || "",
       municipioId: selection.municipio?.id.toString() || "",
       veredaId: selection.vereda?.id.toString() || "",
     }));
   };
 
+  const handleFotoChange = (file: File) => {
+    setFotoFile(file);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData) return;
+
     try {
-      await updateAsociacion(formData.id.toString(), formData);
-      addToast({
-        title: "Asociación actualizada",
-        description: "La asociación se ha actualizado correctamente.",
-        color: "success",
-      });
-      router.push("/asociaciones");
-    } catch (error) {
+      if (asociacion) {
+        let updatedFormData = { ...formData };
+
+        if (fotoFile) {
+          const uploadedFiles = await uploadFile(fotoFile);
+
+          if (uploadedFiles && uploadedFiles.length > 0) {
+            updatedFormData.foto = uploadedFiles[0].id;
+          }
+        }
+
+        await updateAsociacion(asociacion.id.toString(), updatedFormData);
+        addToast({
+          title: "Asociación actualizada",
+          description: "La asociación se ha actualizado correctamente.",
+          color: "success",
+        });
+        router.push("/asociaciones");
+      } else {
+        addToast({
+          title: "Error",
+          description: "Ha ocurrido un error al actualizar la asociación.",
+          color: "danger",
+        });
+      }
+    } catch {
       addToast({
         title: "Error",
         description: "Ha ocurrido un error al actualizar la asociación.",
@@ -124,8 +145,14 @@ const Page = () => {
             <Radio value="true">Sí</Radio>
           </RadioGroup>
           <div className="md:col-span-2">
+            <FotoUpload
+              initialImageUrl={asociacion?.foto?.url}
+              onFileChange={handleFotoChange}
+            />
+          </div>
+          <div className="md:col-span-2">
             <LocationSelector
-              initialVeredaId={formData?.veredaId}
+              initialVeredaId={formData?.vereda}
               onChange={handleLocationChange}
             />
           </div>

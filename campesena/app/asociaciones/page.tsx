@@ -38,7 +38,7 @@ export default function AsociacionesPage() {
       {asociaciones?.data.map((associationData) => (
         <CardAssociation
           key={associationData.id}
-          {...associationData}
+          asociacion={associationData}
           procedimiento={procedimientoListener}
         />
       ))}

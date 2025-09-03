@@ -1,77 +1,39 @@
-import { User } from "./user";
-import { Pagination } from "./pagination";
-
-export interface Related {
-  id: number;
-  documentId: string;
-}
-
-export interface FolderRequest {
+export interface MediaFormat {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
   name: string;
-  pathId?: number;
-  parent?: number | string;
-  children?: (number | string)[];
-  files?: any[];
-  path: string;
-  locale?: string;
-}
-
-export interface Folder {
-  id: number;
-  documentId: string;
-  name: string;
-  pathId: number;
-  parent: { data: Folder };
-  children: { data: Folder[] };
-  files: any[];
-  path: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  createdBy: { data: User | null };
-  updatedBy: { data: User | null };
-  locale: string;
-  localizations: { data: Folder[] };
-}
-
-export interface Folders {
-  data: Folder[];
-  meta: {
-    pagination: Pagination;
-  };
+  path: string | null;
+  size: number;
+  width: number;
+  height: number;
+  sizeInBytes: number;
 }
 
 export interface Media {
-  data: MediaData;
-}
-
-export interface MediaData {
   id: number;
-  attributes: MediaAttributes;
-}
-
-export interface MediaAttributes {
+  documentId: string;
   name: string;
-  alternativeText: string;
-  caption: string;
+  alternativeText: string | null;
+  caption: string | null;
   width: number;
   height: number;
-  formats: any;
+  formats: {
+    large?: MediaFormat;
+    small?: MediaFormat;
+    medium?: MediaFormat;
+    thumbnail?: MediaFormat;
+  };
   hash: string;
   ext: string;
   mime: string;
   size: number;
   url: string;
-  previewUrl: string;
+  previewUrl: string | null;
   provider: string;
-  provider_metadata: any;
+  provider_metadata: any | null;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  folderPath: string;
-  folder: { data: Folder };
-  related: { data: Related[] };
-  createdBy: { data: User | null };
-  updatedBy: { data: User | null };
-  localizations: { data: any[] };
 }

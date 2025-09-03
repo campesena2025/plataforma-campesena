@@ -5,31 +5,14 @@ import React from "react";
 import Image from "next/image";
 import { Badge } from "@heroui/badge";
 
+import { Asociacion } from "@/types/asociacion";
+
 interface Props {
-  id: number;
-  nombreAsociacion: string;
-  nit: string;
-  celular: string;
-  correo: string;
-  representante: string;
-  estado: string;
-  foto: string;
-  warning: boolean;
-  procedimiento: (accion: string, id: number) => void;
+  asociacion: Asociacion;
+  procedimiento: (accion: string, id: number | string) => void;
 }
 
-export default function CardAssociation({
-  id,
-  nombreAsociacion,
-  nit,
-  celular,
-  correo,
-  representante,
-  estado,
-  foto,
-  warning,
-  procedimiento,
-}: Props) {
+export default function CardAssociation({ asociacion, procedimiento }: Props) {
   return (
     <Card
       isBlurred
@@ -44,7 +27,7 @@ export default function CardAssociation({
               alt="Imagen Asociación"
               className="object-cover rounded-lg border"
               height={120}
-              src={foto}
+              src={process.env.NEXT_PUBLIC_API_URL + asociacion.foto?.url}
               width={120}
             />
           </div>
@@ -54,24 +37,27 @@ export default function CardAssociation({
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
               <div className="flex flex-col gap-1">
                 <h1 className="text-xl font-bold text-foreground">
-                  {nombreAsociacion}
+                  {asociacion.nombreAsociacion}
                 </h1>
                 <p className="text-sm text-foreground/80">
-                  <strong>NIT:</strong> {nit}
+                  <strong>NIT:</strong> {asociacion.nit}
                 </p>
                 <p className="text-sm text-foreground/80">
-                  <strong>Celular:</strong> {celular}
+                  <strong>Celular:</strong>{" "}
+                  {asociacion.representanteLegal?.numeroContacto}
                 </p>
                 <p className="text-sm text-foreground/80">
-                  <strong>Correo:</strong> {correo}
+                  <strong>Correo:</strong>{" "}
+                  {asociacion.representanteLegal?.correoElectronico}
                 </p>
                 <p className="text-sm text-foreground/80">
-                  <strong>Representante:</strong> {representante}
+                  <strong>Representante:</strong>{" "}
+                  {asociacion.representanteLegal?.nombreCompleto}
                 </p>
               </div>
               {/* Estado y botones */}
               <div className="flex flex-col items-end gap-2 min-w-[160px]">
-                {warning && (
+                {asociacion.warning && (
                   <Badge
                     className=""
                     color="danger"
@@ -79,13 +65,13 @@ export default function CardAssociation({
                     placement="top-right"
                   >
                     <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold mb-2">
-                      {estado}
+                      {asociacion.estado}
                     </span>
                   </Badge>
                 )}
-                {!warning && (
+                {!asociacion.warning && (
                   <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold mb-2">
-                    {estado}
+                    {asociacion.estado}
                   </span>
                 )}
                 <div className="flex flex-col gap-2">
@@ -94,7 +80,7 @@ export default function CardAssociation({
                     size="sm"
                     variant="flat"
                     onPress={() => {
-                      procedimiento("editarAsociacion", id);
+                      procedimiento("editarAsociacion", asociacion.documentId);
                     }}
                   >
                     Editar Asociación
@@ -104,7 +90,7 @@ export default function CardAssociation({
                     size="sm"
                     variant="flat"
                     onPress={() => {
-                      procedimiento("editarAsociados", id);
+                      procedimiento("editarAsociados", asociacion.documentId);
                     }}
                   >
                     Administrar Asociados
@@ -120,7 +106,7 @@ export default function CardAssociation({
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("diagnostico", id);
+                  procedimiento("diagnostico", asociacion.id);
                 }}
               >
                 Diagnóstico
@@ -130,7 +116,7 @@ export default function CardAssociation({
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("formacion", id);
+                  procedimiento("formacion", asociacion.id);
                 }}
               >
                 Formación
@@ -140,7 +126,7 @@ export default function CardAssociation({
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("formulacion", id);
+                  procedimiento("formulacion", asociacion.id);
                 }}
               >
                 Formulación
@@ -150,7 +136,7 @@ export default function CardAssociation({
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("postulacion", id);
+                  procedimiento("postulacion", asociacion.id);
                 }}
               >
                 Postulación
@@ -160,7 +146,7 @@ export default function CardAssociation({
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("evaluacion", id);
+                  procedimiento("evaluacion", asociacion.id);
                 }}
               >
                 Evaluación
@@ -170,7 +156,7 @@ export default function CardAssociation({
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("kit", id);
+                  procedimiento("kit", asociacion.id);
                 }}
               >
                 Kit de producto

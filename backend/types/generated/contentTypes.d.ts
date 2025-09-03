@@ -434,6 +434,11 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::departamento.departamento'
     >;
+    estado: Schema.Attribute.Enumeration<
+      ['Activo', 'Inactivo', 'En Evalucaci\u00F3n']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Activo'>;
     evaluacion_diagnosticos: Schema.Attribute.Relation<
       'oneToMany',
       'api::evaluacion-diagnostico.evaluacion-diagnostico'
@@ -456,17 +461,17 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    participante: Schema.Attribute.Relation<
-      'manyToOne',
+    participantes: Schema.Attribute.Relation<
+      'manyToMany',
       'api::participante.participante'
-    >;
-    participante_asociacions: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::participante-asociacion.participante-asociacion'
     >;
     productoServicio: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     razonCreacion: Schema.Attribute.Text;
+    representanteLegal: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::participante.participante'
+    >;
     sector: Schema.Attribute.Enumeration<
       [
         'Cosntrucci\u00F3n',
@@ -501,6 +506,7 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     vereda: Schema.Attribute.Relation<'oneToOne', 'api::vereda.vereda'>;
+    warning: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -1024,10 +1030,6 @@ export interface ApiParticipanteAsociacionParticipanteAsociacion
     draftAndPublish: false;
   };
   attributes: {
-    asociacion: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::asociacion.asociacion'
-    >;
     conocimientoTecnico: Schema.Attribute.Boolean;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1067,7 +1069,7 @@ export interface ApiParticipanteParticipante
   };
   attributes: {
     asociacions: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::asociacion.asociacion'
     >;
     correoElectronico: Schema.Attribute.Email;
@@ -1091,9 +1093,6 @@ export interface ApiParticipanteParticipante
     numeroContacto: Schema.Attribute.String;
     numeroDocumento: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    tipoParticipante: Schema.Attribute.Enumeration<
-      ['Representante Legal', 'Participante Asociacion', 'Otro']
-    >;
     tipoPoblacion: Schema.Attribute.Enumeration<
       [
         'VULNERABLE',

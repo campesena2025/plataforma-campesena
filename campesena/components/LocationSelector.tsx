@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import { Select, SelectItem } from "@heroui/react";
 
 import { useGeografiaStore } from "@/store/geografia.store";
-import { Departamento, Municipio, Vereda } from "@/types/geografia";
+import { Municipio } from "@/types/municipio";
+import { Departamento } from "@/types/departamento";
+import { Vereda } from "@/types/vereda";
 
 interface LocationSelectorProps {
   initialVeredaId?: number | string;

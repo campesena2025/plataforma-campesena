@@ -21,18 +21,18 @@ export interface Departamento {
   documentId: string;
   divipola: string;
   nombre: string;
-  municipios: { data: Municipio[] };
+  municipios: Municipio[];
   regionGeografica: string;
   abreviatura: string;
   zonaSena: string;
   latitud: string;
   longitud: string;
-  asociacion: { data: Asociacion };
+  asociacion: Asociacion;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  createdBy: { data: User | null };
-  updatedBy: { data: User | null };
+  createdBy: User | null;
+  updatedBy: User | null;
   locale: string;
   localizations: { data: Departamento[] };
 }
