@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   EllipsisVerticalIcon,
   PencilIcon,
@@ -47,6 +47,10 @@ export default function AsociadosTable({
   const [selectedAssociate, setSelectedAssociate] =
     useState<Participante | null>(null);
 
+  useEffect(() => {
+    setAssociates(initialAssociates);
+  }, [initialAssociates]);
+
   const handleSetLegalRepresentative = (associateId: number) => {
     setLegalRepresentativeId(associateId);
     setAssociates(
@@ -61,6 +65,11 @@ export default function AsociadosTable({
   const handleEdit = (associate: Participante) => {
     setSelectedAssociate(associate);
     onEditOpen();
+  };
+
+  const updatedHandler = () => {
+    // actualizar la tabla con respecto a store de asociaciones
+    setAssociates([...associates]);
   };
 
   const renderCell = (
@@ -165,6 +174,7 @@ export default function AsociadosTable({
         associate={selectedAssociate}
         isOpen={isEditOpen}
         onOpenChange={onEditOpenChange}
+        onUpdated={updatedHandler}
       />
     </div>
   );
