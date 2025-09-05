@@ -16,18 +16,22 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
 
 import UserMenu from "./UserMenu";
 
+import { useAuth } from "@/app/auth-provider";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import logo_sena from "@/assets/imgs/Campesena_Logo.png";
 
 export const NavbarApp = () => {
   const router = useRouter();
-
-  const { data: session, status } = useSession();
+  const { user, loading } = useAuth();
+  const status = loading
+    ? "loading"
+    : user
+      ? "authenticated"
+      : "unauthenticated";
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -75,7 +79,7 @@ export const NavbarApp = () => {
               <Button
                 color="success"
                 variant="flat"
-                onPress={() => router.push("/login")}
+                onClick={() => router.push("/login")}
               >
                 Iniciar sesión
               </Button>

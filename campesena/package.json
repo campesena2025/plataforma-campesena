@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix"
+    "lint": "eslint --fix",
+    "debug": "set NODE_OPTIONS=--inspect && next dev"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -34,7 +35,7 @@
     "intl-messageformat": "10.7.16",
     "js-cookie": "^3.0.5",
     "next": "15.3.1",
-    "next-auth": "^5.0.0-beta.29",
+    
     "next-themes": "0.4.6",
     "qs": "^6.14.0",
     "react": "18.3.1",

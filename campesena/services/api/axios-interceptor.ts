@@ -1,5 +1,6 @@
-import axios, { AxiosResponse, AxiosError } from "axios";
-import Cookies from "js-cookie";
+import axios, { type AxiosResponse, type AxiosError } from "axios";
+
+import { getJwt } from "../auth";
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL + "/api",
@@ -14,11 +15,11 @@ api.interceptors.request.use(
     const useAuth = (config as any).useAuth;
 
     if (useAuth) {
-      const token = Cookies.get("session-token");
+      const token = getJwt();
 
       if (token) {
         config.headers = config.headers || {};
-        config.headers["Authorization"] = `Bearer ${token}`;
+        config.headers.Authorization = `Bearer ${token}`;
       }
     }
 

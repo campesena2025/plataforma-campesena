@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+
+import { login } from "@/services/api/auth.service";
+import { saveSession } from "@/services/auth";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -17,17 +19,10 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const res = await signIn("credentials", {
-        redirect: false,
-        email,
-        password,
-      });
+      const response = await login(email, password);
 
-      if (res?.error) {
-        setError("Credenciales incorrectas");
-      } else {
-        router.push("/"); // Redirige al dashboard o página principal
-      }
+      saveSession(response);
+      router.push("/"); // Redirige al dashboard o página principal
     } catch (error) {
       setError("Ocurrió un error inesperado. Intenta de nuevo.");
     } finally {
