@@ -6,12 +6,14 @@ export const saveSession = (response: LoginResponse) => {
   Cookies.set("session-token", response.jwt);
   localStorage.setItem("jwt", response.jwt);
   localStorage.setItem("user", JSON.stringify(response.user));
+  window.dispatchEvent(new Event("storage"));
 };
 
 export const clearSession = () => {
   Cookies.remove("session-token");
   localStorage.removeItem("jwt");
   localStorage.removeItem("user");
+  window.dispatchEvent(new Event("storage"));
 };
 
 export const getSession = (): LoginResponse | null => {

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -27,11 +27,17 @@ import logo_sena from "@/assets/imgs/Campesena_Logo.png";
 export const NavbarApp = () => {
   const router = useRouter();
   const { user, loading } = useAuth();
-  const status = loading
-    ? "loading"
-    : user
-      ? "authenticated"
-      : "unauthenticated";
+  const [status, setStatus] = useState("loading");
+
+  useEffect(() => {
+    const statusData = loading
+      ? "loading"
+      : user
+        ? "authenticated"
+        : "unauthenticated";
+
+    setStatus(statusData);
+  }, [loading]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
