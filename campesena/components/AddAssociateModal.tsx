@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalContent,
@@ -12,6 +12,10 @@ import {
   RadioGroup,
   Radio,
 } from "@heroui/react";
+import { addToast } from "@heroui/toast";
+
+import { ParticipanteRequest } from "@/types/participante";
+import { createAsociado } from "@/services/asociado.service";
 
 const populationTypes = [
   "VULNERABLE",
@@ -59,7 +63,64 @@ const educationLevels = [
   "Postgrado",
 ];
 
-export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
+interface AddAssociateModalProps {
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+  asociacionId: number;
+}
+
+export const AddAssociateModal = ({
+  isOpen,
+  onOpenChange,
+  asociacionId,
+}: AddAssociateModalProps) => {
+  const [formData, setFormData] = useState<ParticipanteRequest>({
+    numeroDocumento: "",
+    nombreCompleto: "",
+    genero: "Masculino",
+    correoElectronico: "",
+    numeroContacto: 0,
+    asociacions: [],
+    tipoPoblacion: "GENERAL",
+    edad: 0,
+    nivelEstudio: "Ninguno",
+    locale: "es",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const participanteData = {
+        ...formData,
+      };
+
+      await createAsociado(participanteData, asociacionId);
+      addToast({
+        title: "Éxito",
+        description: "El asociado se ha agregado correctamente.",
+        color: "success",
+      });
+      onOpenChange(false);
+    } catch (error) {
+      addToast({
+        title: "Error",
+        description: "Ha ocurrido un error al agregar el asociado.",
+        color: "danger",
+      });
+    }
+  };
+
   return (
     <Modal isOpen={isOpen} size="4xl" onOpenChange={onOpenChange}>
       <ModalContent>
@@ -69,13 +130,19 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
               Agregar Nuevo Asociado
             </ModalHeader>
             <ModalBody>
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                id="addAssociateForm"
+                onSubmit={handleSubmit}
+              >
                 <Input
                   id="numeroDocumento"
                   label="Número de Documento"
                   labelPlacement="outside"
                   name="numeroDocumento"
                   type="text"
+                  value={formData.numeroDocumento}
+                  onChange={handleChange}
                 />
                 <Input
                   id="nombreCompleto"
@@ -83,15 +150,18 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                   labelPlacement="outside"
                   name="nombreCompleto"
                   type="text"
+                  value={formData.nombreCompleto}
+                  onChange={handleChange}
                 />
                 <RadioGroup
                   label="Género"
                   name="genero"
                   orientation="horizontal"
+                  value={formData.genero}
+                  onChange={handleChange}
                 >
                   <Radio value="Masculino">Masculino</Radio>
                   <Radio value="Femenino">Femenino</Radio>
-                  <Radio value="No binario">No binario</Radio>
                 </RadioGroup>
                 <Input
                   id="correoElectronico"
@@ -99,6 +169,8 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                   labelPlacement="outside"
                   name="correoElectronico"
                   type="email"
+                  value={formData.correoElectronico}
+                  onChange={handleChange}
                 />
                 <Input
                   id="numeroContacto"
@@ -106,16 +178,20 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                   labelPlacement="outside"
                   name="numeroContacto"
                   type="text"
+                  value={formData.numeroContacto.toString()}
+                  onChange={handleChange}
                 />
                 <Select
                   label="Tipo de Población"
                   labelPlacement="outside"
                   name="tipoPoblacion"
+                  selectedKeys={
+                    formData.tipoPoblacion ? [formData.tipoPoblacion] : []
+                  }
+                  onChange={handleChange}
                 >
                   {populationTypes.map((type) => (
-                    <SelectItem key={type} value={type}>
-                      {type}
-                    </SelectItem>
+                    <SelectItem key={type}>{type}</SelectItem>
                   ))}
                 </Select>
                 <Input
@@ -124,16 +200,20 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                   labelPlacement="outside"
                   name="edad"
                   type="number"
+                  value={formData.edad.toString()}
+                  onChange={handleChange}
                 />
                 <Select
                   label="Nivel de Estudio"
                   labelPlacement="outside"
                   name="nivelEstudio"
+                  selectedKeys={
+                    formData.nivelEstudio ? [formData.nivelEstudio] : []
+                  }
+                  onChange={handleChange}
                 >
                   {educationLevels.map((level) => (
-                    <SelectItem key={level} value={level}>
-                      {level}
-                    </SelectItem>
+                    <SelectItem key={level}>{level}</SelectItem>
                   ))}
                 </Select>
               </form>
@@ -142,7 +222,7 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
               <Button color="danger" variant="light" onPress={onClose}>
                 Cerrar
               </Button>
-              <Button color="primary" onPress={onClose}>
+              <Button color="primary" form="addAssociateForm" type="submit">
                 Guardar
               </Button>
             </ModalFooter>

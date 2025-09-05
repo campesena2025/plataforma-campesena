@@ -45,11 +45,13 @@ const Page = () => {
       if (asociacionEncontrada) {
         setAsociacion(asociacionEncontrada);
         setFormData(toAsociacionRequest(asociacionEncontrada));
+        setSwitchCodigo(asociacionEncontrada.formalizada);
       } else {
         // Si no se encuentra en el store (ej. refrescar la página), se busca en la API
         getAsociacionById(id as string).then((res) => {
           setAsociacion(res);
           setFormData(toAsociacionRequest(res));
+          setSwitchCodigo(res.formalizada);
         });
       }
     }

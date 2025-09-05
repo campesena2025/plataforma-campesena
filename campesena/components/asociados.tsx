@@ -26,11 +26,15 @@ import { EditAssociateModal } from "./EditAssociateModal";
 
 import { Participante } from "@/types/participante";
 
+interface AsociadosTableProps {
+  initialAssociates: Participante[];
+  asociacion: number;
+}
+
 export default function AsociadosTable({
   initialAssociates,
-}: {
-  initialAssociates: Participante[];
-}) {
+  asociacion,
+}: AsociadosTableProps) {
   const {
     isOpen: isAddOpen,
     onOpen: onAddOpen,
@@ -169,7 +173,11 @@ export default function AsociadosTable({
           </TableBody>
         </Table>
       </div>
-      <AddAssociateModal isOpen={isAddOpen} onOpenChange={onAddOpenChange} />
+      <AddAssociateModal
+        asociacionId={asociacion}
+        isOpen={isAddOpen}
+        onOpenChange={onAddOpenChange}
+      />
       <EditAssociateModal
         associate={selectedAssociate}
         isOpen={isEditOpen}

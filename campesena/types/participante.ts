@@ -1,15 +1,14 @@
-import { ParticipanteAsociacion } from "./participanteAsociacion";
 import { User } from "./user";
 import { Pagination } from "./pagination";
+import { Asociacion } from "./asociacion";
 
 export interface ParticipanteRequest {
   numeroDocumento: string;
   nombreCompleto: string;
-  genero: "Masculino" | "Femenino";
+  genero: "Masculino" | "Femenino" | "No Binario";
   correoElectronico: string;
   numeroContacto: number;
-  tipoParticipante: "Representante Legal" | "Miembro" | "Otro";
-  participante_asociacion?: number | string;
+  asociacions: number[] | string[];
   tipoPoblacion: "VULNERABLE" | "GENERAL";
   edad: number;
   nivelEstudio:
@@ -31,8 +30,7 @@ export interface Participante {
   genero: "Masculino" | "Femenino";
   correoElectronico: string;
   numeroContacto: number;
-  tipoParticipante: "Representante Legal" | "Miembro" | "Otro";
-  participante_asociacion: { data: ParticipanteAsociacion };
+  asociacions: Asociacion[];
   tipoPoblacion: "VULNERABLE" | "GENERAL";
   edad: number;
   nivelEstudio:

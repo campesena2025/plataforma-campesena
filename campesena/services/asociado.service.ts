@@ -1,40 +1,30 @@
 import api, { withAuth } from "./api/axios-interceptor";
 
 import { Participante, ParticipanteRequest } from "@/types/participante";
-import { ParticipanteAsociacionRequest } from "@/types/participanteAsociacion";
 
 export const createAsociado = async (
-  participanteData: Omit<ParticipanteRequest, "tipoParticipante">,
-  asociacionId: string,
+  participanteData: ParticipanteRequest,
+  asociacionId: number,
 ): Promise<Participante> => {
-  const fullParticipanteData: ParticipanteRequest = {
-    ...participanteData,
-    tipoParticipante: "Miembro", // Assuming 'Miembro' for new associates
-  };
+  try {
+    const fullParticipanteData: ParticipanteRequest = {
+      ...participanteData,
+      asociacions: [asociacionId],
+    };
 
-  const {
-    data: { data: newParticipante },
-  } = await api.post(
-    `/participantes`,
-    { data: fullParticipanteData },
-    withAuth(),
-  );
+    const {
+      data: { data: newParticipante },
+    } = await api.post(
+      `/participantes`,
+      { data: fullParticipanteData },
+      withAuth(),
+    );
 
-  // This part creates the link between the new associate and the association.
-  // It might need more fields depending on the backend configuration.
-  const participanteAsociacionData: Partial<ParticipanteAsociacionRequest> = {
-    participante: newParticipante.id,
-    asociacion: asociacionId,
-    rolAsociacion: "Miembro", // Assuming 'Miembro'
-  };
-
-  await api.post(
-    `/participante-asociacions`,
-    { data: participanteAsociacionData },
-    withAuth(),
-  );
-
-  return newParticipante;
+    return newParticipante;
+  } catch (error) {
+    console.error("Error creating asociado:", error);
+    throw error;
+  }
 };
 
 export const updateAsociado = async (

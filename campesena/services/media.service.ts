@@ -1,5 +1,6 @@
-import { Media } from "@/types/media";
 import api, { withAuth } from "./api/axios-interceptor";
+
+import { Media } from "@/types/media";
 
 export const uploadFile = async (file: File): Promise<Media[]> => {
   const formData = new FormData();

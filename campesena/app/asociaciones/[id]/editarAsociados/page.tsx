@@ -15,6 +15,7 @@ const Page = () => {
     null,
   );
   const [nombreAsociacion, setNombreAsociacion] = useState("");
+  const [idAsociacion, setIdAsociacion] = useState(0);
 
   useEffect(() => {
     if (id && asociaciones) {
@@ -24,6 +25,7 @@ const Page = () => {
 
       if (asociacionEncontrada) {
         setNombreAsociacion(asociacionEncontrada.nombreAsociacion);
+        setIdAsociacion(asociacionEncontrada.id);
         setInitialAssociates(asociacionEncontrada.participantes || []);
       }
     }
@@ -41,7 +43,10 @@ const Page = () => {
       </CardHeader>
       <CardBody>
         {initialAssociates ? (
-          <AsociadosTable initialAssociates={initialAssociates} />
+          <AsociadosTable
+            asociacion={idAsociacion}
+            initialAssociates={initialAssociates}
+          />
         ) : (
           <div className="flex justify-center items-center h-40">
             <Spinner label="Cargando asociados..." />
