@@ -492,7 +492,7 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
         'Cabildos Indigenas',
         'Consejos Comunitarios',
         'Empresas Comunitarias',
-        'kumpanias',
+        'Kumpanias',
         'Asociacion',
         'Cooperativa',
         'Precooperativa',

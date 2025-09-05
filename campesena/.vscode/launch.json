@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Next.js: Debug with Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "sourceMapPathOverrides": {
+                "webpack://_N_E/*": "${webRoot}/*"
+            }
+        }
+    ]
+}

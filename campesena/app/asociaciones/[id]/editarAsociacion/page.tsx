@@ -32,7 +32,9 @@ const Page = () => {
   useEffect(() => {
     if (id) {
       getAsociacionById(id as string).then((res) => {
-        setFormData(toAsociacionRequest(res));
+        const ar = toAsociacionRequest(res);
+
+        setFormData(ar);
         setAsociacion(res);
       });
     }
