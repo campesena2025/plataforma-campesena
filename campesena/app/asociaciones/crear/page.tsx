@@ -12,9 +12,14 @@ import { createAsociacion } from "@/services/asociaciones.service";
 import { organizationTypes, sector } from "@/types/enumerators";
 import { LocationSelector } from "@/components/LocationSelector";
 import { AsociacionRequest } from "@/types/asociacion";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 const Page = () => {
   const router = useRouter();
+  const [switchCodigo, setSwitchCodigo] = useState(false);
+  const invalidateAsociaciones = useAsociacionesStore(
+    (state) => state.invalidate,
+  );
   const [formData, setFormData] = useState<Partial<AsociacionRequest>>({
     formalizada: false,
   });
@@ -30,6 +35,12 @@ const Page = () => {
       ...prevData,
       [name]: name === "formalizada" ? value === "true" : value,
     }));
+
+    if (name === "formalizada" && value === "true") {
+      setSwitchCodigo(true);
+    } else {
+      setSwitchCodigo(false);
+    }
   };
 
   const handleLocationChange = (selection: {
@@ -50,6 +61,7 @@ const Page = () => {
 
     try {
       await createAsociacion(formData as AsociacionRequest);
+      invalidateAsociaciones();
       router.push("/asociaciones");
       addToast({
         title: "Asociación creada",
@@ -76,25 +88,6 @@ const Page = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           onSubmit={handleSubmit}
         >
-          <Input
-            isRequired
-            id="nit"
-            label="NIT"
-            labelPlacement="outside"
-            name="nit"
-            type="text"
-            value={formData?.nit || ""}
-            onChange={handleChange}
-          />
-          <Textarea
-            isRequired
-            id="nombreAsociacion"
-            label="Nombre de la Asociación"
-            labelPlacement="outside"
-            name="nombreAsociacion"
-            value={formData?.nombreAsociacion || ""}
-            onChange={handleChange}
-          />
           <RadioGroup
             label="Formalizada"
             name="formalizada"
@@ -105,6 +98,38 @@ const Page = () => {
             <Radio value="false">No</Radio>
             <Radio value="true">Sí</Radio>
           </RadioGroup>
+
+          {switchCodigo ? (
+            <Input
+              id="nit"
+              label="NIT"
+              labelPlacement="outside"
+              name="nit"
+              type="text"
+              value={formData?.nit || ""}
+              onChange={handleChange}
+            />
+          ) : (
+            <Input
+              id="codigoInterno"
+              label="Código Interno"
+              labelPlacement="outside"
+              name="codigoInterno"
+              type="text"
+              value={formData?.codigoInterno || ""}
+              onChange={handleChange}
+            />
+          )}
+          <Textarea
+            isRequired
+            id="nombreAsociacion"
+            label="Nombre de la Asociación"
+            labelPlacement="outside"
+            name="nombreAsociacion"
+            value={formData?.nombreAsociacion || ""}
+            onChange={handleChange}
+          />
+
           <div className="md:col-span-2">
             <LocationSelector
               initialVeredaId={formData?.vereda}
@@ -123,15 +148,7 @@ const Page = () => {
               <SelectItem key={type}>{type}</SelectItem>
             ))}
           </Select>
-          <Input
-            id="codigoInterno"
-            label="Código Interno"
-            labelPlacement="outside"
-            name="codigoInterno"
-            type="text"
-            value={formData?.codigoInterno || ""}
-            onChange={handleChange}
-          />
+
           <Select
             isRequired
             label="Sector"

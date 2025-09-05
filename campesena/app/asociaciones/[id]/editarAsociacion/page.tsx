@@ -21,24 +21,39 @@ import {
 } from "@/types/asociacion";
 import { FotoUpload } from "@/components/FotoUpload";
 import { uploadFile } from "@/services/media.service";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 const Page = () => {
   const { id } = useParams();
   const router = useRouter();
+  const invalidateAsociaciones = useAsociacionesStore(
+    (state) => state.invalidate,
+  );
+  const asociaciones = useAsociacionesStore((state) => state.asociaciones);
   const [formData, setFormData] = useState<AsociacionRequest>();
   const [asociacion, setAsociacion] = useState<Asociacion>();
   const [fotoFile, setFotoFile] = useState<File | null>(null);
+  const [switchCodigo, setSwitchCodigo] = useState(false);
 
   useEffect(() => {
     if (id) {
-      getAsociacionById(id as string).then((res) => {
-        const ar = toAsociacionRequest(res);
+      // Prioriza la búsqueda de la asociación en el store para evitar una llamada extra a la API
+      const asociacionEncontrada = asociaciones?.data.find(
+        (a) => a.documentId === (id as string),
+      );
 
-        setFormData(ar);
-        setAsociacion(res);
-      });
+      if (asociacionEncontrada) {
+        setAsociacion(asociacionEncontrada);
+        setFormData(toAsociacionRequest(asociacionEncontrada));
+      } else {
+        // Si no se encuentra en el store (ej. refrescar la página), se busca en la API
+        getAsociacionById(id as string).then((res) => {
+          setAsociacion(res);
+          setFormData(toAsociacionRequest(res));
+        });
+      }
     }
-  }, [id]);
+  }, [id, asociaciones]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -51,6 +66,12 @@ const Page = () => {
       ...(prevData as AsociacionRequest),
       [name]: name === "formalizada" ? value === "true" : value,
     }));
+
+    if (name === "formalizada" && value === "true") {
+      setSwitchCodigo(true);
+    } else {
+      setSwitchCodigo(false);
+    }
   };
 
   const handleLocationChange = (selection: {
@@ -104,6 +125,7 @@ const Page = () => {
       }
 
       await updateAsociacion(asociacion.documentId, updatedFormData);
+      invalidateAsociaciones();
       addToast({
         title: "Asociación actualizada",
         description: "La asociación se ha actualizado correctamente.",
@@ -129,23 +151,6 @@ const Page = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           onSubmit={handleSubmit}
         >
-          <Input
-            id="nit"
-            label="NIT"
-            labelPlacement="outside"
-            name="nit"
-            type="text"
-            value={formData?.nit || ""}
-            onChange={handleChange}
-          />
-          <Textarea
-            id="nombreAsociacion"
-            label="Nombre de la Asociación"
-            labelPlacement="outside"
-            name="nombreAsociacion"
-            value={formData?.nombreAsociacion || ""}
-            onChange={handleChange}
-          />
           <RadioGroup
             label="Formalizada"
             name="formalizada"
@@ -156,6 +161,38 @@ const Page = () => {
             <Radio value="false">No</Radio>
             <Radio value="true">Sí</Radio>
           </RadioGroup>
+
+          {switchCodigo ? (
+            <Input
+              id="nit"
+              label="NIT"
+              labelPlacement="outside"
+              name="nit"
+              type="text"
+              value={formData?.nit || ""}
+              onChange={handleChange}
+            />
+          ) : (
+            <Input
+              id="codigoInterno"
+              label="Código Interno"
+              labelPlacement="outside"
+              name="codigoInterno"
+              type="text"
+              value={formData?.codigoInterno || ""}
+              onChange={handleChange}
+            />
+          )}
+
+          <Textarea
+            id="nombreAsociacion"
+            label="Nombre de la Asociación"
+            labelPlacement="outside"
+            name="nombreAsociacion"
+            value={formData?.nombreAsociacion || ""}
+            onChange={handleChange}
+          />
+
           <div className="md:col-span-2">
             <FotoUpload
               initialImageUrl={asociacion?.foto}
@@ -180,15 +217,7 @@ const Page = () => {
               <SelectItem key={type}>{type}</SelectItem>
             ))}
           </Select>
-          <Input
-            id="codigoInterno"
-            label="Código Interno"
-            labelPlacement="outside"
-            name="codigoInterno"
-            type="text"
-            value={formData?.codigoInterno || ""}
-            onChange={handleChange}
-          />
+
           <Select
             label="Sector"
             labelPlacement="outside"

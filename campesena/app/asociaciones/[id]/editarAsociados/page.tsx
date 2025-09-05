@@ -1,56 +1,52 @@
 "use client";
 import { Card, CardBody, CardHeader } from "@heroui/card";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { Spinner } from "@heroui/react";
 
 import AsociadosTable from "@/components/asociados";
-
-const initialAssociates = [
-  {
-    id: 1,
-    documentNumber: "123456789",
-    fullName: "Juan Perez",
-    gender: "Masculino",
-    email: "juan.perez@example.com",
-    contactNumber: "3001234567",
-    participantType: "Representante legal",
-    populationType: "Campesino",
-    age: 35,
-    educationLevel: "Profesional",
-  },
-  {
-    id: 2,
-    documentNumber: "987654321",
-    fullName: "Maria Rodriguez",
-    gender: "Femenino",
-    email: "maria.rodriguez@example.com",
-    contactNumber: "3109876543",
-    participantType: "Participante Asociacion",
-    populationType: "Indigena",
-    age: 28,
-    educationLevel: "Secundaria",
-  },
-  {
-    id: 3,
-    documentNumber: "1122334455",
-    fullName: "Carlos Gomez",
-    gender: "Masculino",
-    email: "carlos.gomez@example.com",
-    contactNumber: "3215556677",
-    participantType: "Participante Asociacion",
-    populationType: "Raizal",
-    age: 42,
-    educationLevel: "Técnico",
-  },
-];
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 const Page = () => {
+  const { id } = useParams();
+  const asociaciones = useAsociacionesStore((state) => state.asociaciones);
+
+  const [initialAssociates, setInitialAssociates] = useState<any[] | null>(
+    null,
+  );
+  const [nombreAsociacion, setNombreAsociacion] = useState("");
+
+  useEffect(() => {
+    if (id && asociaciones) {
+      const asociacionEncontrada = asociaciones.data.find(
+        (a) => a.documentId === (id as string),
+      );
+
+      if (asociacionEncontrada) {
+        setNombreAsociacion(asociacionEncontrada.nombreAsociacion);
+        setInitialAssociates(asociacionEncontrada.participantes || []);
+      }
+    }
+  }, [id, asociaciones]);
+
   return (
     <Card className="rounded-lg w-full max-w-7xl mx-auto mt-6">
       <CardHeader>
-        <h1 className="text-2xl font-bold">Editar Asociados</h1>
+        <div className="flex flex-col">
+          <h1 className="text-2xl font-bold">Administrar Asociados</h1>
+          {nombreAsociacion && (
+            <p className="text-lg text-default-500">{nombreAsociacion}</p>
+          )}
+        </div>
       </CardHeader>
       <CardBody>
-        <AsociadosTable initialAssociates={initialAssociates} />
+        {initialAssociates ? (
+          <AsociadosTable initialAssociates={initialAssociates} />
+        ) : (
+          <div className="flex justify-center items-center h-40">
+            <Spinner label="Cargando asociados..." />
+          </div>
+        )}
       </CardBody>
     </Card>
   );

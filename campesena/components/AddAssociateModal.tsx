@@ -14,22 +14,49 @@ import {
 } from "@heroui/react";
 
 const populationTypes = [
-  "Campesino",
-  "Indigena",
-  "Raizal",
-  "Afrocolombiano",
-  "Otro",
+  "VULNERABLE",
+  "PALENQUERO",
+  "RAIZAL",
+  "AFROCOLOMBIANO",
+  "AFROCOLOMBIANOS_DESPLAZADOS_POR_LA_VIOLENCIA",
+  "CABEZA DE FAMILIA",
+  "ARTESANOS",
+  "DESPLAZADOS_DISCAPACITADOS",
+  "MUJERCABEZA DE_AMILIA",
+  "DESPLAZADOS_POR_FENOMENOS_NATURALES",
+  "DISCAPACITADO COGNITIVO",
+  "DESPLAZADOS POR LA VIOLENCIA",
+  "DESPLAZADOS_POR LA VIOLENCIA CABEZA DE FAMILIA",
+  "JOVEN RURAL",
+  "DISCAPACITADO_LIMITACION_FISICA",
+  "SOBREVIVIENTES MINAS ANTIPERSONALES",
+  "DISCAPACIDAD LIMITACION AUDITIVA",
+  "DISCAPACIDAD LIMITACION VISUAL",
+  "DISCAPACIDAD_MENTAL",
+  "EN CONDICION DE DISCAPACIDAD",
+  "ROM",
+  "NEGRITUDES",
+  "EMPRENDEDOR",
+  "INDIGENAS",
+  "PROC_REINTEGRACION / REINCORPORACION",
+  "INDIGENAS_DESPLAZADOS_POR_LA VIOLENCIA",
+  "INDIGENAS DESPLAZADOS POR LA VIOLENCIA CABEZA DE FAMILIA",
+  "INPEC",
+  "JOVENES_VULNERABLES",
+  "SOLDADOS_CAMPESINOS",
+  "TERCERA_EDAD",
+  "CAMPESINO",
+  "NINGUNA",
+  "PEQUEÑO PRODUCTOR",
+  "OTRO",
 ];
 
 const educationLevels = [
+  "Ninguno",
   "Primaria",
-  "Bachillerato",
-  "Técnico",
-  "Tecnólogo",
+  "Básica",
   "Profesional",
-  "Especialización",
-  "Maestría",
-  "Doctorado",
+  "Postgrado",
 ];
 
 export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
@@ -44,63 +71,46 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
             <ModalBody>
               <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
-                  id="documentNumber"
+                  id="numeroDocumento"
                   label="Número de Documento"
                   labelPlacement="outside"
-                  name="documentNumber"
+                  name="numeroDocumento"
                   type="text"
                 />
                 <Input
-                  id="fullName"
+                  id="nombreCompleto"
                   label="Nombre Completo"
                   labelPlacement="outside"
-                  name="fullName"
+                  name="nombreCompleto"
                   type="text"
                 />
-                <RadioGroup label="Género" orientation="horizontal">
+                <RadioGroup
+                  label="Género"
+                  name="genero"
+                  orientation="horizontal"
+                >
                   <Radio value="Masculino">Masculino</Radio>
                   <Radio value="Femenino">Femenino</Radio>
                   <Radio value="No binario">No binario</Radio>
                 </RadioGroup>
                 <Input
-                  id="email"
+                  id="correoElectronico"
                   label="Correo Electrónico"
                   labelPlacement="outside"
-                  name="email"
+                  name="correoElectronico"
                   type="email"
                 />
                 <Input
-                  id="contactNumber"
+                  id="numeroContacto"
                   label="Número de Contacto"
                   labelPlacement="outside"
-                  name="contactNumber"
+                  name="numeroContacto"
                   type="text"
                 />
                 <Select
-                  label="Tipo de Participante"
-                  labelPlacement="outside"
-                  name="participantType"
-                >
-                  <SelectItem
-                    key="representante-legal"
-                    value="Representante legal"
-                  >
-                    Representante legal
-                  </SelectItem>
-                  <SelectItem
-                    key="participante-asociacion"
-                    value="Participante Asociacion"
-                  >
-                    Participante Asociación
-                  </SelectItem>
-                  <SelectItem key="otro" value="Otro">
-                    Otro
-                  </SelectItem>
-                </Select>
-                <Select
                   label="Tipo de Población"
                   labelPlacement="outside"
-                  name="populationType"
+                  name="tipoPoblacion"
                 >
                   {populationTypes.map((type) => (
                     <SelectItem key={type} value={type}>
@@ -109,16 +119,16 @@ export const AddAssociateModal = ({ isOpen, onOpenChange }) => {
                   ))}
                 </Select>
                 <Input
-                  id="age"
+                  id="edad"
                   label="Edad"
                   labelPlacement="outside"
-                  name="age"
+                  name="edad"
                   type="number"
                 />
                 <Select
                   label="Nivel de Estudio"
                   labelPlacement="outside"
-                  name="educationLevel"
+                  name="nivelEstudio"
                 >
                   {educationLevels.map((level) => (
                     <SelectItem key={level} value={level}>

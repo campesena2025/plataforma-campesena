@@ -59,8 +59,23 @@ export const createAsociacion = async (data: AsociacionRequest) => {
   const strapiData: AsociacionRequest = {
     ...data,
   };
+  const query = qs.stringify(
+    {
+      populate: [
+        "departamento",
+        "municipio",
+        "vereda",
+        "participantes",
+        "representanteLegal",
+        "foto",
+      ],
+    },
+    {
+      encodeValuesOnly: true,
+    },
+  );
   const response = await api.post(
-    "/asociacions",
+    `/asociacions?${query}`,
     { data: strapiData },
     withAuth(),
   );
@@ -72,8 +87,23 @@ export const updateAsociacion = async (id: string, data: AsociacionRequest) => {
   const strapiData: AsociacionRequest = {
     ...data,
   };
+  const query = qs.stringify(
+    {
+      populate: [
+        "departamento",
+        "municipio",
+        "vereda",
+        "participantes",
+        "representanteLegal",
+        "foto",
+      ],
+    },
+    {
+      encodeValuesOnly: true,
+    },
+  );
   const response = await api.put(
-    `/asociacions/${id}`,
+    `/asociacions/${id}?${query}`,
     { data: strapiData },
     withAuth(),
   );
