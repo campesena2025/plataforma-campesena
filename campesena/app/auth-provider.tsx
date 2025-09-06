@@ -29,6 +29,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const handleStorageChange = () => {
       const session = getSession();
+
       if (session) {
         setUser(session.user);
       } else {

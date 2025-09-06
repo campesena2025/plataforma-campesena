@@ -11,6 +11,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Button,
+  Spinner,
 } from "@heroui/react";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
@@ -37,7 +38,7 @@ export const NavbarApp = () => {
         : "unauthenticated";
 
     setStatus(statusData);
-  }, [loading]);
+  }, [loading, user]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -80,7 +81,9 @@ export const NavbarApp = () => {
               </NavbarItem>
             ))}
           {/* Mostrar botón de login solo si el usuario NO está autenticado */}
-          {status !== "authenticated" ? (
+          {status === "loading" ? (
+            <Spinner color="success" />
+          ) : status !== "authenticated" ? (
             <NavbarItem>
               <Button
                 color="success"
@@ -130,7 +133,9 @@ export const NavbarApp = () => {
               </NavbarMenuItem>
             ))}
           {/* Mostrar UserMenu solo si está autenticado, si no mostrar botón de login */}
-          {status === "authenticated" ? (
+          {status === "loading" ? (
+            <Spinner color="success" />
+          ) : status === "authenticated" ? (
             <UserMenu />
           ) : (
             <Button
