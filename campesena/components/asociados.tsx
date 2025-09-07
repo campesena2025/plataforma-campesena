@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   EllipsisVerticalIcon,
   PencilIcon,
@@ -25,6 +25,7 @@ import { AddAssociateModal } from "./AddAssociateModal";
 import { EditAssociateModal } from "./EditAssociateModal";
 
 import { Participante } from "@/types/participante";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 interface AsociadosTableProps {
   initialAssociates: Participante[];
@@ -45,35 +46,27 @@ export default function AsociadosTable({
     onOpen: onEditOpen,
     onOpenChange: onEditOpenChange,
   } = useDisclosure();
-  const [associates, setAssociates] =
-    useState<Participante[]>(initialAssociates);
+
+  // Leemos los asociados directamente del store para que la tabla sea reactiva a los cambios.
+  const associates =
+    useAsociacionesStore((state) =>
+      state.data.find((a) => a.id === asociacion),
+    )?.participantes ?? initialAssociates;
+
   const [legalRepresentativeId, setLegalRepresentativeId] = useState<number>(1);
   const [selectedAssociate, setSelectedAssociate] =
     useState<Participante | null>(null);
 
-  useEffect(() => {
-    setAssociates(initialAssociates);
-  }, [initialAssociates]);
-
   const handleSetLegalRepresentative = (associateId: number) => {
     setLegalRepresentativeId(associateId);
-    setAssociates(
-      associates.map((associate) =>
-        associate.id === associateId
-          ? { ...associate, participantType: "Representante legal" }
-          : { ...associate, participantType: "Participante Asociacion" },
-      ),
-    );
+    // TODO: Esta lógica debe ser adaptada para actualizar el store de Zustand.
+    // Se necesitará una nueva acción en el store, por ejemplo `setRepresentanteLegal(asociacionId, participanteId)`,
+    // y probablemente una llamada a la API para persistir el cambio.
   };
 
   const handleEdit = (associate: Participante) => {
     setSelectedAssociate(associate);
     onEditOpen();
-  };
-
-  const updatedHandler = () => {
-    // actualizar la tabla con respecto a store de asociaciones
-    setAssociates([...associates]);
   };
 
   const renderCell = (
@@ -182,7 +175,6 @@ export default function AsociadosTable({
         associate={selectedAssociate}
         isOpen={isEditOpen}
         onOpenChange={onEditOpenChange}
-        onUpdated={updatedHandler}
       />
     </div>
   );

@@ -1,38 +1,78 @@
 import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
 
+import { Asociacion } from "@/types/asociacion";
+import { Participante } from "@/types/participante";
 import { getAllAsociaciones } from "@/services/asociaciones.service";
-import { Asociaciones } from "@/types/asociacion";
 
 interface AsociacionesState {
-  asociaciones: Asociaciones | null;
+  data: Asociacion[];
   loading: boolean;
-  error: unknown;
   fetchAsociaciones: () => Promise<void>;
-  invalidate: () => void;
+  invalidate: () => Promise<void>;
+  addAsociado: (asociacionId: number, newAsociado: Participante) => void;
+  updateAsociado: (
+    asociacionId: number,
+    updatedAsociado: Partial<Participante> & { id: number },
+  ) => void;
 }
 
-export const useAsociacionesStore = create<AsociacionesState>()(
-  persist(
-    (set) => ({
-      asociaciones: null,
-      loading: false,
-      error: null,
-      fetchAsociaciones: async () => {
-        set({ loading: true, error: null });
-        try {
-          const data = await getAllAsociaciones();
-          set({ asociaciones: data, loading: false });
-        } catch (error) {
-          set({ error, loading: false });
+export const useAsociacionesStore = create<AsociacionesState>((set, get) => ({
+  data: [],
+  loading: false,
+
+  fetchAsociaciones: async () => {
+    // Evita recargas si ya tenemos datos
+    if (get().data.length > 0) return;
+    set({ loading: true });
+    try {
+      const asociaciones = await getAllAsociaciones();
+
+      set({ data: asociaciones.data, loading: false });
+    } catch {
+      set({ loading: false });
+    }
+  },
+
+  invalidate: async () => {
+    set({ loading: true });
+    try {
+      const asociaciones = await getAllAsociaciones();
+
+      set({ data: asociaciones.data, loading: false });
+    } catch {
+      set({ loading: false });
+    }
+  },
+
+  addAsociado: (asociacionId, newAsociado) => {
+    set((state) => ({
+      data: state.data.map((asociacion) => {
+        if (asociacion.id !== asociacionId) {
+          return asociacion;
         }
-      },
-      invalidate: () => set({ asociaciones: null }),
-    }),
-    {
-      name: "asociaciones-storage",
-      storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({ asociaciones: state.asociaciones }),
-    },
-  ),
-);
+
+        return {
+          ...asociacion,
+          participantes: [...(asociacion.participantes || []), newAsociado],
+        };
+      }),
+    }));
+  },
+
+  updateAsociado: (asociacionId, updatedAsociado) => {
+    set((state) => ({
+      data: state.data.map((asociacion) => {
+        if (asociacion.id !== asociacionId) {
+          return asociacion;
+        }
+
+        return {
+          ...asociacion,
+          participantes: (asociacion.participantes || []).map((p) =>
+            p.id === updatedAsociado.id ? { ...p, ...updatedAsociado } : p,
+          ),
+        };
+      }),
+    }));
+  },
+}));

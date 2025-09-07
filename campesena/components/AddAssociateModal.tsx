@@ -16,6 +16,7 @@ import { addToast } from "@heroui/toast";
 
 import { ParticipanteRequest } from "@/types/participante";
 import { createAsociado } from "@/services/asociado.service";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 const populationTypes = [
   "VULNERABLE",
@@ -74,6 +75,7 @@ export const AddAssociateModal = ({
   onOpenChange,
   asociacionId,
 }: AddAssociateModalProps) => {
+  const addAsociadoToStore = useAsociacionesStore((state) => state.addAsociado);
   const [formData, setFormData] = useState<ParticipanteRequest>({
     numeroDocumento: "",
     nombreCompleto: "",
@@ -105,7 +107,10 @@ export const AddAssociateModal = ({
         ...formData,
       };
 
-      await createAsociado(participanteData, asociacionId);
+      // Asumimos que createAsociado devuelve el participante recién creado con su ID
+      const newAsociado = await createAsociado(participanteData, asociacionId);
+      // Actualizamos el store localmente sin necesidad de un refetch
+      addAsociadoToStore(asociacionId, newAsociado);
       addToast({
         title: "Éxito",
         description: "El asociado se ha agregado correctamente.",
