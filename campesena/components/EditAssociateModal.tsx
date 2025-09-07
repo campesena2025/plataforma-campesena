@@ -15,8 +15,8 @@ import {
 import { addToast } from "@heroui/toast";
 
 import { updateAsociado } from "@/services/asociado.service";
-import { useAsociacionesStore } from "@/store/asociaciones.store";
-import { ParticipanteRequest } from "@/types/participante";
+import { useAsociacionesStore } from "@/store/asociaciones.store"; // Asegúrate que la ruta sea correcta
+import { Participante, ParticipanteRequest } from "@/types/participante";
 
 const populationTypes = [
   "VULNERABLE",
@@ -64,15 +64,21 @@ const educationLevels = [
   "Postgrado",
 ];
 
+interface EditAssociateModalProps {
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+  associate: Participante | null;
+}
+
 export const EditAssociateModal = ({
   isOpen,
   onOpenChange,
   associate,
-  onUpdated,
-}) => {
+}: EditAssociateModalProps) => {
   const [formData, setFormData] = useState<Partial<ParticipanteRequest>>({});
-  const invalidateAsociaciones = useAsociacionesStore(
-    (state) => state.invalidate,
+  // Obtenemos la acción para actualizar del store
+  const updateAsociadoInStore = useAsociacionesStore(
+    (state) => state.updateAsociado,
   );
 
   useEffect(() => {
@@ -118,21 +124,31 @@ export const EditAssociateModal = ({
       return;
     }
 
+    const originalAssociate = { ...associate }; // Guardamos el estado original para el rollback
+    const updatedData = { ...associate, ...formData };
+
+    // 1. Actualización Optimista: Actualizamos la UI inmediatamente
+    updateAsociadoInStore(associate.asociacions[0].id, updatedData);
+    onClose(); // Cerramos el modal para que el usuario vea el cambio en la tabla
+
     try {
-      await updateAsociado(associate.documentId, formData);
+      // 2. Llamada a la API
+      await updateAsociado(associate.id, formData); // Asumo que el ID del asociado es `associate.id`
       addToast({
         title: "Asociado actualizado",
         description: "El asociado ha sido actualizado correctamente.",
         color: "success",
       });
-      invalidateAsociaciones();
-      onClose();
+      // Si la API tiene éxito, no hacemos nada más. La UI ya está actualizada.
     } catch (error) {
+      // 3. Rollback en caso de error
       addToast({
         title: "Error",
         description: "Hubo un error al actualizar el asociado.",
         color: "danger",
       });
+      // Revertimos el cambio en el store al estado original
+      updateAsociadoInStore(associate.asociacions[0].id, originalAssociate);
     }
   };
 
