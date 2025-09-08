@@ -6,20 +6,24 @@ import { Spinner } from "@heroui/react";
 
 import AsociadosTable from "@/components/asociados";
 import { useAsociacionesStore } from "@/store/asociaciones.store";
+import { Participante } from "@/types/participante";
 
 const Page = () => {
   const { id } = useParams();
-  const asociaciones = useAsociacionesStore((state) => state.asociaciones);
+  const asociaciones = useAsociacionesStore((state) => state.data);
 
-  const [initialAssociates, setInitialAssociates] = useState<any[] | null>(
-    null,
-  );
+  const [initialAssociates, setInitialAssociates] = useState<
+    Participante[] | null
+  >(null);
   const [nombreAsociacion, setNombreAsociacion] = useState("");
   const [idAsociacion, setIdAsociacion] = useState(0);
+  const [representanteLegalId, setRepresentanteLegalId] = useState<
+    number | undefined
+  >();
 
   useEffect(() => {
     if (id && asociaciones) {
-      const asociacionEncontrada = asociaciones.data.find(
+      const asociacionEncontrada = asociaciones.find(
         (a) => a.documentId === (id as string),
       );
 
@@ -27,6 +31,7 @@ const Page = () => {
         setNombreAsociacion(asociacionEncontrada.nombreAsociacion);
         setIdAsociacion(asociacionEncontrada.id);
         setInitialAssociates(asociacionEncontrada.participantes || []);
+        setRepresentanteLegalId(asociacionEncontrada.representanteLegal?.id);
       }
     }
   }, [id, asociaciones]);

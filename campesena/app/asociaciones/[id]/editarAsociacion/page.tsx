@@ -284,6 +284,14 @@ const Page = () => {
             onChange={handleChange}
           />
           <div className="md:col-span-2 flex justify-end mt-8">
+            <Button
+              color="warning"
+              size="lg"
+              type="button"
+              onClick={() => router.back()}
+            >
+              Volver
+            </Button>
             <Button color="primary" size="lg" type="submit">
               Guardar
             </Button>

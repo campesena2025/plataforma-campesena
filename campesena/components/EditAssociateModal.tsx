@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Modal,
   ModalContent,
@@ -16,7 +16,11 @@ import { addToast } from "@heroui/toast";
 
 import { updateAsociado } from "@/services/asociado.service";
 import { useAsociacionesStore } from "@/store/asociaciones.store"; // Asegúrate que la ruta sea correcta
-import { Participante, ParticipanteRequest } from "@/types/participante";
+import {
+  Participante,
+  ParticipanteRequest,
+  toParticipanteRequest,
+} from "@/types/participante";
 
 const populationTypes = [
   "VULNERABLE",
@@ -65,36 +69,29 @@ const educationLevels = [
 ];
 
 interface EditAssociateModalProps {
+  asociacionId: number;
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   associate: Participante | null;
 }
 
 export const EditAssociateModal = ({
+  asociacionId,
   isOpen,
   onOpenChange,
   associate,
 }: EditAssociateModalProps) => {
-  const [formData, setFormData] = useState<Partial<ParticipanteRequest>>({});
+  const [formData, setFormData] = useState<ParticipanteRequest>(
+    toParticipanteRequest(associate as Participante),
+  );
   // Obtenemos la acción para actualizar del store
   const updateAsociadoInStore = useAsociacionesStore(
     (state) => state.updateAsociado,
   );
 
   useEffect(() => {
-    if (associate) {
-      setFormData({
-        numeroDocumento: associate.numeroDocumento,
-        nombreCompleto: associate.nombreCompleto,
-        genero: associate.genero,
-        correoElectronico: associate.correoElectronico,
-        numeroContacto: associate.numeroContacto,
-        tipoPoblacion: associate.tipoPoblacion,
-        edad: associate.edad,
-        nivelEstudio: associate.nivelEstudio,
-      });
-    }
-  }, [associate]);
+    setFormData(toParticipanteRequest(associate as Participante));
+  }, [isOpen]);
 
   if (!associate) return null;
 
@@ -124,30 +121,24 @@ export const EditAssociateModal = ({
       return;
     }
 
-    const originalAssociate = { ...associate }; // Guardamos el estado original para el rollback
-    const updatedData = { ...associate, ...formData };
-
-    // 1. Actualización Optimista: Actualizamos la UI inmediatamente
-    updateAsociadoInStore(associate.asociacions[0].id, updatedData);
-    onClose(); // Cerramos el modal para que el usuario vea el cambio en la tabla
+    const originalAssociate = { ...associate };
 
     try {
-      // 2. Llamada a la API
-      await updateAsociado(associate.id, formData); // Asumo que el ID del asociado es `associate.id`
+      await updateAsociado(asociacionId, formData);
       addToast({
         title: "Asociado actualizado",
         description: "El asociado ha sido actualizado correctamente.",
         color: "success",
       });
-      // Si la API tiene éxito, no hacemos nada más. La UI ya está actualizada.
-    } catch (error) {
-      // 3. Rollback en caso de error
+
+      onClose();
+    } catch {
       addToast({
         title: "Error",
         description: "Hubo un error al actualizar el asociado.",
         color: "danger",
       });
-      // Revertimos el cambio en el store al estado original
+
       updateAsociadoInStore(associate.asociacions[0].id, originalAssociate);
     }
   };
@@ -219,10 +210,8 @@ export const EditAssociateModal = ({
                   }
                   onChange={handleChange}
                 >
-                  {populationTypes.map((type) => (
-                    <SelectItem key={type} value={type}>
-                      {type}
-                    </SelectItem>
+                  {populationTypes.map((type: string) => (
+                    <SelectItem key={type}>{type}</SelectItem>
                   ))}
                 </Select>
                 <Input
@@ -243,10 +232,8 @@ export const EditAssociateModal = ({
                   }
                   onChange={handleChange}
                 >
-                  {educationLevels.map((level) => (
-                    <SelectItem key={level} value={level}>
-                      {level}
-                    </SelectItem>
+                  {educationLevels.map((level: string) => (
+                    <SelectItem key={level}>{level}</SelectItem>
                   ))}
                 </Select>
               </form>

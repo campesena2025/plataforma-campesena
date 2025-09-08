@@ -23,7 +23,7 @@ export interface AsociacionRequest {
   foto?: number | string;
   localizations?: (number | string)[];
   observaciones?: string;
-  representanteLegal?: (number | string)[];
+  representanteLegal?: number | string;
   participantes?: (number | string)[];
   estado: string;
   warning?: boolean;
@@ -80,9 +80,7 @@ export const toAsociacionRequest = (
   observaciones: asociacion.observaciones,
   estado: asociacion.estado,
   warning: asociacion.warning,
-  representanteLegal: asociacion.representanteLegal
-    ? [asociacion.representanteLegal.id]
-    : [],
+  representanteLegal: asociacion.representanteLegal?.id,
   participantes: asociacion.participantes?.map((p) => p.id) ?? [],
   foto: asociacion.foto?.id,
 });

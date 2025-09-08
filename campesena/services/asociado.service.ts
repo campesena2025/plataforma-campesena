@@ -1,13 +1,13 @@
-import { Participante } from "@/types/participante";
+import { Participante, ParticipanteRequest } from "@/types/participante";
 import { useAsociacionesStore } from "@/store/asociaciones.store";
 import ApiClient from "@/app/api/axios/apiClient";
 
 export const createAsociado = async (
-  asociado: Omit<Participante, "id">,
+  asociado: Omit<ParticipanteRequest, "id">,
   asociacionId: number,
 ) => {
   const { data: response } = await ApiClient.post("/participantes", {
-    data: { ...asociado, asociacion: asociacionId },
+    data: { ...asociado, asociacions: [asociacionId] },
   });
 
   // Una vez creado en el backend, actualizamos el estado en el frontend
@@ -19,13 +19,16 @@ export const createAsociado = async (
 };
 
 export const updateAsociado = async (
-  asociacionId: number, // Se necesita para encontrar la asociación en el store
-  asociado: Omit<Partial<Participante>, "id"> & { id: number },
+  asociacionId: number,
+  asociado: ParticipanteRequest,
 ) => {
-  const { id, ...asociadoData } = asociado;
-  const { data: response } = await ApiClient.put(`/participantes/${id}`, {
-    data: asociadoData,
-  });
+  const { documentId, ...rest } = asociado;
+  const { data: response } = await ApiClient.put(
+    `/participantes/${documentId}`,
+    {
+      data: rest,
+    },
+  );
 
   // Una vez actualizado en el backend, actualizamos el estado
   const updatedAsociado = response.data as Participante;

@@ -1,6 +1,10 @@
 import qs from "qs";
 
-import { Asociacion, AsociacionRequest } from "@/types/asociacion";
+import {
+  Asociacion,
+  AsociacionRequest,
+  toAsociacionRequest,
+} from "@/types/asociacion";
 import { useAsociacionesStore } from "@/store/asociaciones.store";
 import ApiClient from "@/app/api/axios/apiClient";
 
@@ -118,4 +122,22 @@ export const updateAsociacion = async (
   useAsociacionesStore.getState().updateAsociacion(id, updatedAsociacion);
 
   return response;
+};
+
+export const setRepresentanteLegalId = async (
+  asociacionId: string,
+  participanteId: number,
+) => {
+  // Obtener la asociación actual
+  const asociacion = useAsociacionesStore
+    .getState()
+    .data.find((a) => a.documentId === asociacionId);
+
+  if (!asociacion) {
+    throw new Error("Asociación no encontrada");
+  }
+  const asociacionRequest = toAsociacionRequest(asociacion);
+
+  asociacionRequest.representanteLegal = participanteId;
+  await updateAsociacion(asociacionId, asociacionRequest);
 };

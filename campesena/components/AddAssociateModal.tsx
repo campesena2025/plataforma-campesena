@@ -75,7 +75,6 @@ export const AddAssociateModal = ({
   onOpenChange,
   asociacionId,
 }: AddAssociateModalProps) => {
-  const addAsociadoToStore = useAsociacionesStore((state) => state.addAsociado);
   const [formData, setFormData] = useState<ParticipanteRequest>({
     numeroDocumento: "",
     nombreCompleto: "",
@@ -108,9 +107,8 @@ export const AddAssociateModal = ({
       };
 
       // Asumimos que createAsociado devuelve el participante recién creado con su ID
-      const newAsociado = await createAsociado(participanteData, asociacionId);
-      // Actualizamos el store localmente sin necesidad de un refetch
-      addAsociadoToStore(asociacionId, newAsociado);
+      await createAsociado(participanteData, asociacionId);
+
       addToast({
         title: "Éxito",
         description: "El asociado se ha agregado correctamente.",

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   EllipsisVerticalIcon,
   PencilIcon,
@@ -26,6 +26,8 @@ import { EditAssociateModal } from "./EditAssociateModal";
 
 import { Participante } from "@/types/participante";
 import { useAsociacionesStore } from "@/store/asociaciones.store";
+import { setRepresentanteLegalId } from "@/services/asociaciones.service";
+import { Asociacion } from "@/types/asociacion";
 
 interface AsociadosTableProps {
   initialAssociates: Participante[];
@@ -49,25 +51,41 @@ export default function AsociadosTable({
 
   // Leemos los asociados directamente del store para que la tabla sea reactiva a los cambios.
   const associates =
-    useAsociacionesStore((state) =>
-      state.data.find((a) => a.id === asociacion),
-    )?.participantes ?? initialAssociates;
+    useAsociacionesStore((state) => state.data.find((a) => a.id === asociacion))
+      ?.participantes ?? initialAssociates;
 
-  const [legalRepresentativeId, setLegalRepresentativeId] = useState<number>(1);
   const [selectedAssociate, setSelectedAssociate] =
     useState<Participante | null>(null);
 
+  const [asociacionSelected] = useState<Asociacion>(
+    useAsociacionesStore((state) =>
+      state.data.find((a) => a.id === asociacion),
+    )!,
+  );
+
+  const [legalRepresentativeId, setLegalRepresentativeId] = useState<number>(
+    asociacionSelected.representanteLegal?.id || 0,
+  );
+
+  const [representanteLegalData, setRepresentanteLegalData] =
+    useState<Participante | null>(
+      asociacionSelected.representanteLegal || null,
+    );
+
   const handleSetLegalRepresentative = (associateId: number) => {
+    setRepresentanteLegalId(asociacionSelected.documentId, associateId);
     setLegalRepresentativeId(associateId);
-    // TODO: Esta lógica debe ser adaptada para actualizar el store de Zustand.
-    // Se necesitará una nueva acción en el store, por ejemplo `setRepresentanteLegal(asociacionId, participanteId)`,
-    // y probablemente una llamada a la API para persistir el cambio.
+    setRepresentanteLegalData(
+      associates.find((a) => a.id === associateId) || null,
+    );
   };
 
   const handleEdit = (associate: Participante) => {
     setSelectedAssociate(associate);
     onEditOpen();
   };
+
+  useEffect(() => {}, [legalRepresentativeId]);
 
   const renderCell = (
     item: Participante,
@@ -137,6 +155,19 @@ export default function AsociadosTable({
           Agregar Asociado
         </Button>
       </div>
+      <>
+        {representanteLegalData && (
+          <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded">
+            <h2 className="text-lg font-semibold mb-2 text-blue-800">
+              Representante Legal:
+              {` ${representanteLegalData.nombreCompleto}`}
+            </h2>
+            <small className="text-blue-700">
+              Telefono: {` ${representanteLegalData.numeroContacto} | Correo: ${representanteLegalData.correoElectronico}`}
+            </small>
+          </div>
+        )}
+      </>
       <div className="overflow-x-auto">
         <Table
           aria-label="Tabla de asociados"
@@ -172,6 +203,7 @@ export default function AsociadosTable({
         onOpenChange={onAddOpenChange}
       />
       <EditAssociateModal
+        asociacionId={asociacion}
         associate={selectedAssociate}
         isOpen={isEditOpen}
         onOpenChange={onEditOpenChange}
