@@ -1,0 +1,34 @@
+﻿divipola;nombre;Latitud;Longitud;regionGeografica;abreviatura;ZonaSena
+05;Antioquia;6,2466310;-75,581775;Andina;ANT;Zona 3
+08;Atlántico;10,9779610;-74,815546;Caribe;ATL;Zona 5
+11;Bogotá, D.C.;4,6492510;-74,106992;Andina;BTA;Zona 1
+13;Bolívar;10,3851260;-75,496269;Caribe;BOL;Zona 4
+15;Boyacá;5,5398800;-73,355539;Andina;BOY;Zona 1
+17;Caldas;5,0576570;-75,491025;Andina;CAL;Zona 3
+18;Caquetá;1,6181960;-75,609831;Amazonía;CAQ;Zona 8
+19;Cauca;2,4596410;-76,599377;Pacífica;CAU;Zona 7
+20;Cesar;10,4604720;-73,259398;Caribe;CES;Zona 5
+23;Córdoba;8,7597890;-75,873096;Caribe;COR;Zona 4
+25;Cundinamarca;4,3753090;-74,669221;Andina;CUN;Zona 2
+27;Chocó;5,6821660;-76,638144;Pacífica;CHO;Zona 7
+41;Huila;2,9354320;-75,277327;Andina;HUI;Zona 2
+44;La guajira;11,5285880;-72,911795;Caribe;LAG;Zona 5
+47;Magdalena;11,2046790;-74,199829;Caribe;MAG;Zona 5
+50;Meta;4,1263690;-73,622601;Orinoquía;MET;Zona 6
+52;Nariño;1,2123520;-77,278795;Pacífica;NAR;Zona 7
+54;Norte de santander;7,9057250;-72,508178;Andina;NSA;Zona 1
+63;Quindío;4,5359800;-75,680786;Andina;QUI;Zona 3
+66;Risaralda;4,8049850;-75,719711;Andina;RIS;Zona 3
+68;Santander;7,1164700;-73,132562;Andina;SAN;Zona 1
+70;Sucre;9,3023220;-75,395445;Caribe;SUC;Zona 4
+73;Tolima;4,4322480;-75,19425;Andina;TOL;Zona 2
+76;Valle del cauca;3,4136860;-76,52133;Pacífica;VAC;Zona 7
+81;Arauca;7,0727260;-70,747408;Orinoquía;ARA;Zona 6
+85;Casanare;5,3271020;-72,396132;Orinoquía;CAS;Zona 6
+86;Putumayo;1,1511720;-76,654238;Amazonía;PUT;Zona 8
+88;San andrés y Prov.;12,5781080;-81,707181;Insular;SAP;Zona 4
+91;Amazonas;-4,1989500;-69,941721;Amazonía;AMA;Zona 8
+94;Guainía;3,8667640;-67,918613;Amazonía;GUA;Zona 8
+95;Guaviare;2,5659320;-72,639254;Amazonía;GUV;Zona 6
+97;Vaupés;1,2531510;-70,232641;Amazonía;VAU;Zona 8
+99;Vichada;6,1866360;-67,487095;Orinoquía;VID;Zona 6

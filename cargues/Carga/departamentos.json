@@ -1,0 +1,299 @@
+[
+  {
+    "divipola":  "05",
+    "nombre": "Antioquia",
+    "latitud": "6,2466310",
+    "longitud": "-75,581775",
+    "regionGeografica": "Andina",
+    "abreviatura": "ANT",
+    "zonaSena": "Zona 3"
+  },
+  {
+    "divipola":  "08",
+    "nombre": "Atlántico",
+    "latitud": "10,9779610",
+    "longitud": "-74,815546",
+    "regionGeografica": "Caribe",
+    "abreviatura": "ATL",
+    "zonaSena": "Zona 5"
+  },
+  {
+    "divipola":  "11",
+    "nombre": "Bogotá, D.C.",
+    "latitud": "4,6492510",
+    "longitud": "-74,106992",
+    "regionGeografica": "Andina",
+    "abreviatura": "BTA",
+    "zonaSena": "Zona 1"
+  },
+  {
+    "divipola":  "13",
+    "nombre": "Bolívar",
+    "latitud": "10,3851260",
+    "longitud": "-75,496269",
+    "regionGeografica": "Caribe",
+    "abreviatura": "BOL",
+    "zonaSena": "Zona 4"
+  },
+  {
+    "divipola":  "15",
+    "nombre": "Boyacá",
+    "latitud": "5,5398800",
+    "longitud": "-73,355539",
+    "regionGeografica": "Andina",
+    "abreviatura": "BOY",
+    "zonaSena": "Zona 1"
+  },
+  {
+    "divipola":  "17",
+    "nombre": "Caldas",
+    "latitud": "5,0576570",
+    "longitud": "-75,491025",
+    "regionGeografica": "Andina",
+    "abreviatura": "CAL",
+    "zonaSena": "Zona 3"
+  },
+  {
+    "divipola":  "18",
+    "nombre": "Caquetá",
+    "latitud": "1,6181960",
+    "longitud": "-75,609831",
+    "regionGeografica": "Amazonía",
+    "abreviatura": "CAQ",
+    "zonaSena": "Zona 8"
+  },
+  {
+    "divipola":  "19",
+    "nombre": "Cauca",
+    "latitud": "2,4596410",
+    "longitud": "-76,599377",
+    "regionGeografica": "Pacífica",
+    "abreviatura": "CAU",
+    "zonaSena": "Zona 7"
+  },
+  {
+    "divipola":  "20",
+    "nombre": "Cesar",
+    "latitud": "10,4604720",
+    "longitud": "-73,259398",
+    "regionGeografica": "Caribe",
+    "abreviatura": "CES",
+    "zonaSena": "Zona 5"
+  },
+  {
+    "divipola":  "23",
+    "nombre": "Córdoba",
+    "latitud": "8,7597890",
+    "longitud": "-75,873096",
+    "regionGeografica": "Caribe",
+    "abreviatura": "COR",
+    "zonaSena": "Zona 4"
+  },
+  {
+    "divipola":  "25",
+    "nombre": "Cundinamarca",
+    "latitud": "4,3753090",
+    "longitud": "-74,669221",
+    "regionGeografica": "Andina",
+    "abreviatura": "CUN",
+    "zonaSena": "Zona 2"
+  },
+  {
+    "divipola":  "27",
+    "nombre": "Chocó",
+    "latitud": "5,6821660",
+    "longitud": "-76,638144",
+    "regionGeografica": "Pacífica",
+    "abreviatura": "CHO",
+    "zonaSena": "Zona 7"
+  },
+  {
+    "divipola":  "41",
+    "nombre": "Huila",
+    "latitud": "2,9354320",
+    "longitud": "-75,277327",
+    "regionGeografica": "Andina",
+    "abreviatura": "HUI",
+    "zonaSena": "Zona 2"
+  },
+  {
+    "divipola":  "44",
+    "nombre": "La guajira",
+    "latitud": "11,5285880",
+    "longitud": "-72,911795",
+    "regionGeografica": "Caribe",
+    "abreviatura": "LAG",
+    "zonaSena": "Zona 5"
+  },
+  {
+    "divipola":  "47",
+    "nombre": "Magdalena",
+    "latitud": "11,2046790",
+    "longitud": "-74,199829",
+    "regionGeografica": "Caribe",
+    "abreviatura": "MAG",
+    "zonaSena": "Zona 5"
+  },
+  {
+    "divipola":  "50",
+    "nombre": "Meta",
+    "latitud": "4,1263690",
+    "longitud": "-73,622601",
+    "regionGeografica": "Orinoquía",
+    "abreviatura": "MET",
+    "zonaSena": "Zona 6"
+  },
+  {
+    "divipola":  "52",
+    "nombre": "Nariño",
+    "latitud": "1,2123520",
+    "longitud": "-77,278795",
+    "regionGeografica": "Pacífica",
+    "abreviatura": "NAR",
+    "zonaSena": "Zona 7"
+  },
+  {
+    "divipola":  "54",
+    "nombre": "Norte de santander",
+    "latitud": "7,9057250",
+    "longitud": "-72,508178",
+    "regionGeografica": "Andina",
+    "abreviatura": "NSA",
+    "zonaSena": "Zona 1"
+  },
+  {
+    "divipola":  "63",
+    "nombre": "Quindío",
+    "latitud": "4,5359800",
+    "longitud": "-75,680786",
+    "regionGeografica": "Andina",
+    "abreviatura": "QUI",
+    "zonaSena": "Zona 3"
+  },
+  {
+    "divipola":  "66",
+    "nombre": "Risaralda",
+    "latitud": "4,8049850",
+    "longitud": "-75,719711",
+    "regionGeografica": "Andina",
+    "abreviatura": "RIS",
+    "zonaSena": "Zona 3"
+  },
+  {
+    "divipola":  "68",
+    "nombre": "Santander",
+    "latitud": "7,1164700",
+    "longitud": "-73,132562",
+    "regionGeografica": "Andina",
+    "abreviatura": "SAN",
+    "zonaSena": "Zona 1"
+  },
+  {
+    "divipola":  "70",
+    "nombre": "Sucre",
+    "latitud": "9,3023220",
+    "longitud": "-75,395445",
+    "regionGeografica": "Caribe",
+    "abreviatura": "SUC",
+    "zonaSena": "Zona 4"
+  },
+  {
+    "divipola":  "73",
+    "nombre": "Tolima",
+    "latitud": "4,4322480",
+    "longitud": "-75,19425",
+    "regionGeografica": "Andina",
+    "abreviatura": "TOL",
+    "zonaSena": "Zona 2"
+  },
+  {
+    "divipola":  "76",
+    "nombre": "Valle del cauca",
+    "latitud": "3,4136860",
+    "longitud": "-76,52133",
+    "regionGeografica": "Pacífica",
+    "abreviatura": "VAC",
+    "zonaSena": "Zona 7"
+  },
+  {
+    "divipola":  "81",
+    "nombre": "Arauca",
+    "latitud": "7,0727260",
+    "longitud": "-70,747408",
+    "regionGeografica": "Orinoquía",
+    "abreviatura": "ARA",
+    "zonaSena": "Zona 6"
+  },
+  {
+    "divipola":  "85",
+    "nombre": "Casanare",
+    "latitud": "5,3271020",
+    "longitud": "-72,396132",
+    "regionGeografica": "Orinoquía",
+    "abreviatura": "CAS",
+    "zonaSena": "Zona 6"
+  },
+  {
+    "divipola":  "86",
+    "nombre": "Putumayo",
+    "latitud": "1,1511720",
+    "longitud": "-76,654238",
+    "regionGeografica": "Amazonía",
+    "abreviatura": "PUT",
+    "zonaSena": "Zona 8"
+  },
+  {
+    "divipola":  "88",
+    "nombre": "San andrés y Prov.",
+    "latitud": "12,5781080",
+    "longitud": "-81,707181",
+    "regionGeografica": "Insular",
+    "abreviatura": "SAP",
+    "zonaSena": "Zona 4"
+  },
+  {
+    "divipola":  "91",
+    "nombre": "Amazonas",
+    "latitud": "-4,1989500",
+    "longitud": "-69,941721",
+    "regionGeografica": "Amazonía",
+    "abreviatura": "AMA",
+    "zonaSena": "Zona 8"
+  },
+  {
+    "divipola":  "94",
+    "nombre": "Guainía",
+    "latitud": "3,8667640",
+    "longitud": "-67,918613",
+    "regionGeografica": "Amazonía",
+    "abreviatura": "GUA",
+    "zonaSena": "Zona 8"
+  },
+  {
+    "divipola":  "95",
+    "nombre": "Guaviare",
+    "latitud": "2,5659320",
+    "longitud": "-72,639254",
+    "regionGeografica": "Amazonía",
+    "abreviatura": "GUV",
+    "zonaSena": "Zona 6"
+  },
+  {
+    "divipola":  "97",
+    "nombre": "Vaupés",
+    "latitud": "1,2531510",
+    "longitud": "-70,232641",
+    "regionGeografica": "Amazonía",
+    "abreviatura": "VAU",
+    "zonaSena": "Zona 8"
+  },
+  {
+    "divipola":  "99",
+    "nombre": "Vichada",
+    "latitud": "6,1866360",
+    "longitud": "-67,487095",
+    "regionGeografica": "Orinoquía",
+    "abreviatura": "VID",
+    "zonaSena": "Zona 6"
+  }
+]

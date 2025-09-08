@@ -1,0 +1,1124 @@
+﻿id_dpto;divipola;nombre;latitud;Longitud;SubregionPDET;zonaReservaCampesina;zomac ;ruralidad;restitucionTierras;zonaNucleoReforma;mape
+05;5001;Medellín;6,246631;-75,581775;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5002;Abejorral;5,789315;-75,428739;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5004;Abriaquí;6,632282;-76,064304;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5021;Alejandría;6,376061;-75,141346;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5030;Amagá;6,038708;-75,702188;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5031;Amalfi;6,909655;-75,077501;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural;true;No ZNRA;Presencia
+05;5034;Andes;5,657194;-75,878828;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5036;Angelópolis;6,109719;-75,711389;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5038;Angostura;6,885175;-75,335116;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5040;Anorí;7,074703;-75,148355;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural;true;No ZNRA;Presencia
+05;5042;Santa fé de antioquia;6,556484;-75,826648;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5044;Anzá;6,302641;-75,854442;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+05;5045;Apartadó;7,882968;-76,625279;URABÁ ANTIOQUEÑO;San José Apartadó;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5051;Arboletes;8,849317;-76,426708;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5055;Argelia;5,731474;-75,14107;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5059;Armenia;6,155667;-75,786647;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5079;Barbosa;6,439195;-75,331627;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5086;Belmira;6,606319;-75,667779;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+05;5088;Bello;6,333587;-75,555245;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5091;Betania;5,74615;-75,97679;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5093;Betulia;6,115208;-75,984452;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5101;Ciudad bolívar;5,850273;-76,021509;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5107;Briceño;7,112803;-75,55036;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5113;Buriticá;6,720759;-75,907;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+05;5120;Cáceres;7,578366;-75,35205;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural disperso;true;Cordoba;Presencia
+05;5125;Caicedo;6,405607;-75,98293;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5129;Caldas;6,091077;-75,633673;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5134;Campamento;6,979771;-75,298091;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5138;Cañasgordas;6,753859;-76,028228;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+05;5142;Caracolí;6,409829;-74,757421;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5145;Caramanta;5,54853;-75,643868;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5147;Carepa;7,755148;-76,652652;URABÁ ANTIOQUEÑO;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+05;5148;El carmen de viboral;6,082885;-75,333901;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5150;Carolina;6,725995;-75,283192;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5154;Caucasia;7,977278;-75,197996;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Ciudades y aglomeraciones;true;Cordoba;Presencia
+05;5172;Chigorodó;7,666147;-76,681531;URABÁ ANTIOQUEÑO;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+05;5190;Cisneros;6,537829;-75,087047;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5197;Cocorná;6,058295;-75,185483;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5206;Concepción;6,394348;-75,257587;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5209;Concordia;6,045738;-75,908448;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5212;Copacabana;6,348557;-75,509384;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5234;Dabeiba;6,998112;-76,261614;URABÁ ANTIOQUEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5237;Donmatías;6,485603;-75,39263;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5240;Ebéjico;6,325615;-75,766413;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5250;El bagre;7,5975;-74,799097;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+05;5264;Entrerríos;6,566273;-75,517685;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5266;Envigado;6,166695;-75,582192;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5282;Fredonia;5,928039;-75,675072;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5284;Frontino;6,776066;-76,130765;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+05;5306;Giraldo;6,680808;-75,952158;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5308;Girardota;6,379472;-75,444238;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5310;Gómez plata;6,683269;-75,220018;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5313;Granada;6,142892;-75,184446;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+05;5315;Guadalupe;6,815069;-75,239862;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+05;5318;Guarne;6,27787;-75,441612;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5321;Guatapé;6,232461;-75,160041;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5347;Heliconia;6,206757;-75,734322;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5353;Hispania;5,799461;-75,906587;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5360;Itagüí;6,175079;-75,612056;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5361;Ituango;7,171629;-75,764673;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5364;Jardín;5,597542;-75,818982;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5368;Jericó;5,789748;-75,785499;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5376;La ceja;6,028062;-75,429433;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5380;La estrella;6,145238;-75,637708;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5390;La pintada;5,743808;-75,60781;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5400;La unión;5,973845;-75,360874;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5411;Liborina;6,677316;-75,812838;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+05;5425;Maceo;6,552116;-74,78716;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5440;Marinilla;6,173995;-75,339345;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5467;Montebello;5,946313;-75,523455;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+05;5475;Murindó;6,97771;-76,817485;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5480;Mutatá;7,242875;-76,435875;URABÁ ANTIOQUEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5483;Nariño;5,610777;-75,176262;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5490;Necoclí;8,434526;-76,787271;URABÁ ANTIOQUEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5495;Nechí;8,094129;-74,77647;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural;true;No ZNRA;Presencia
+05;5501;Olaya;6,626492;-75,811773;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+05;5541;Peñol;6,219349;-75,242693;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5543;Peque;7,021029;-75,910357;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+05;5576;Pueblorrico;5,79158;-75,839903;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5579;Puerto berrío;6,487028;-74,410016;No PDET;Sin zona;true;Intermedio;true;Magdalena Medio;Ausencia
+05;5585;Puerto nare;6,186025;-74,583012;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+05;5591;Puerto triunfo;5,871318;-74,64119;No PDET;Sin zona;false;Intermedio;true;Magdalena Medio;Ausencia
+05;5604;Remedios;7,029424;-74,698135;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Valle del río Cimitarra;true;Rural;true;No ZNRA;Presencia
+05;5607;Retiro;6,062454;-75,501301;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5615;Rionegro;6,147148;-75,377316;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5628;Sabanalarga;6,850028;-75,816645;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5631;Sabaneta;6,149903;-75,615479;No PDET;Sin zona;false;Ciudades y aglomeraciones;false;No ZNRA;Ausencia
+05;5642;Salgar;5,964198;-75,976807;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5647;San andrés de cuerquía;6,916676;-75,674564;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5649;San carlos;6,187746;-74,988097;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5652;San francisco;5,963476;-75,101562;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5656;San jerónimo;6,44809;-75,726975;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5658;San josé de la montaña;6,85009;-75,683352;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5659;San juan de urabá;8,758964;-76,52857;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5660;San luis;6,043017;-74,993619;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5664;San pedro de los milagros;6,46012;-75,556743;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+05;5665;San pedro de urabá;8,276884;-76,380567;URABÁ ANTIOQUEÑO;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+05;5667;San rafael;6,293759;-75,02849;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5670;San roque;6,485939;-75,019109;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+05;5674;San vicente ferrer;6,282164;-75,332616;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+05;5679;Santa bárbara;5,875527;-75,567351;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5686;Santa rosa de osos;6,643366;-75,460723;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5690;Santo domingo;6,473032;-75,164903;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5697;El santuario;6,136871;-75,265465;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5736;Segovia;7,079648;-74,701596;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+05;5756;Sonsón;5,714851;-75,309596;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5761;Sopetrán;6,500745;-75,747378;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5789;Támesis;5,664645;-75,714429;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5790;Tarazá;7,580127;-75,401407;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Tarazá;true;Intermedio;true;Cordoba;Presencia
+05;5792;Tarso;5,864542;-75,822956;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5809;Titiribí;6,062391;-75,791887;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5819;Toledo;7,010328;-75,692281;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5837;Turbo;8,089929;-76,728858;URABÁ ANTIOQUEÑO;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+05;5842;Uramita;6,898393;-76,173284;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5847;Urrao;6,317343;-76,133951;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5854;Valdivia;7,1652;-75,439274;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5856;Valparaíso;5,614555;-75,624452;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+05;5858;Vegachí;6,773525;-74,798714;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+05;5861;Venecia;5,964693;-75,735544;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+05;5873;Vigía del fuerte;6,588164;-76,896004;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+05;5885;Yalí;6,676554;-74,840059;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5887;Yarumal;6,963832;-75,418828;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+05;5890;Yolombó;6,594511;-75,013385;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+05;5893;Yondó;7,00396;-73,912445;SUR DE BOLÍVAR;Valle del río Cimitarra;true;Rural disperso;true;Magdalena Medio;Ausencia
+05;5895;Zaragoza;7,488583;-74,867075;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural;true;No ZNRA;Presencia
+08;8001;Barranquilla;10,977961;-74,815546;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8078;Baranoa;10,79445;-74,916077;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8137;Campo de la cruz;10,378291;-74,880847;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+08;8141;Candelaria;10,461903;-74,879717;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+08;8296;Galapa;10,919033;-74,870385;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8372;Juan de acosta;10,83254;-75,041032;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+08;8421;Luruaco;10,610491;-75,14199;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+08;8433;Malambo;10,857086;-74,776923;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8436;Manatí;10,449089;-74,956867;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+08;8520;Palmar de varela;10,738591;-74,754765;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8549;Piojó;10,749216;-75,107592;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+08;8558;Polonuevo;10,777363;-74,852981;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8560;Ponedera;10,641779;-74,753885;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8573;Puerto colombia;11,015322;-74,888627;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8606;Repelón;10,493357;-75,125534;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+08;8634;Sabanagrande;10,792453;-74,759496;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8638;Sabanalarga;10,632091;-74,921256;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8675;Santa lucía;10,324303;-74,959204;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+08;8685;Santo tomás;10,758735;-74,757859;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8758;Soledad;10,909921;-74,786054;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8770;Suan;10,335432;-74,881687;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+08;8832;Tubará;10,873586;-74,978704;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+08;8849;Usiacurí;10,74298;-74,976985;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+11;11001;Bogotá, D.C.;4,649251;-74,106992;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13001;Cartagena de indias;10,385126;-75,496269;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13006;Achí;8,570107;-74,557676;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+13;13030;Altos del rosario;8,791865;-74,164905;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+13;13042;Arenal;8,458865;-73,941099;SUR DE BOLÍVAR;Arenal Morales - Sur de Bolívar;true;Rural disperso;true;No ZNRA;Ausencia
+13;13052;Arjona;10,25666;-75,344332;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13062;Arroyohondo;10,250075;-75,019215;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13074;Barranco de loba;8,947787;-74,104391;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+13;13140;Calamar;10,250431;-74,916144;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13160;Cantagallo;7,378678;-73,914605;SUR DE BOLÍVAR;Valle del río Cimitarra;true;Rural;true;No ZNRA;Ausencia
+13;13188;Cicuco;9,274281;-74,645981;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13212;Córdoba;9,586942;-74,827399;MONTES DE MARÍA;Montes de Maria II;true;Rural disperso;true;Sucre;Ausencia
+13;13222;Clemencia;10,567452;-75,328469;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13244;El carmen de bolívar;9,718653;-75,121178;MONTES DE MARÍA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+13;13248;El guamo;10,030958;-74,976084;MONTES DE MARÍA;Montes de Maria II;true;Rural;true;No ZNRA;Ausencia
+13;13268;El peñón;8,988271;-73,949274;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+13;13300;Hatillo de loba;8,956014;-74,077912;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+13;13430;Magangué;9,263799;-74,766742;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+13;13433;Mahates;10,233285;-75,191643;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13440;Margarita;9,15784;-74,285137;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+13;13442;María la baja;9,982402;-75,300516;MONTES DE MARÍA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+13;13458;Montecristo;8,297234;-74,471176;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+13;13468;Mompós;9,244241;-74,42818;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13473;Morales;8,276558;-73,868172;SUR DE BOLÍVAR;Arenal Morales - Sur de Bolívar;true;Rural disperso;true;Magdalena Medio;Presencia
+13;13490;Norosí;8,526259;-74,038003;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+13;13549;Pinillos;8,914947;-74,462279;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+13;13580;Regidor;8,666258;-73,821638;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13600;Río viejo;8,58795;-73,840466;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+13;13620;San cristóbal;10,392836;-75,065076;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13647;San estanislao;10,398602;-75,153101;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13650;San fernando;9,214183;-74,323811;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+13;13654;San jacinto;9,830275;-75,12105;MONTES DE MARÍA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+13;13655;San jacinto del cauca;8,25158;-74,721156;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+13;13657;San juan nepomuceno;9,953751;-75,081761;MONTES DE MARÍA;Montes de Maria II;true;Intermedio;true;No ZNRA;Ausencia
+13;13667;San martín de loba;8,937485;-74,039134;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+13;13670;San pablo;7,476747;-73,924602;SUR DE BOLÍVAR;Valle del río Cimitarra;true;Intermedio;true;No ZNRA;Presencia
+13;13673;Santa catalina;10,605294;-75,287855;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13683;Santa rosa de lima;10,444396;-75,369824;No PDET;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13688;Santa rosa del sur;7,963938;-74,052243;SUR DE BOLÍVAR;Sin zona;true;Rural;true;No ZNRA;Presencia
+13;13744;Simití;7,953916;-73,947264;SUR DE BOLÍVAR;Sin zona;true;Rural;true;Magdalena Medio;Presencia
+13;13760;Soplaviento;10,38839;-75,136404;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+13;13780;Talaigua nuevo;9,30403;-74,567479;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+13;13810;Tiquisio;8,558666;-74,262922;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+13;13836;Turbaco;10,348316;-75,427249;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13838;Turbaná;10,274585;-75,44265;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13873;Villanueva;10,444089;-75,275613;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+13;13894;Zambrano;9,746306;-74,817879;MONTES DE MARÍA;Montes de Maria II;true;Rural;true;Sucre;Ausencia
+15;15001;Tunja;5,53988;-73,355539;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+15;15022;Almeida;4,970857;-73,378933;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15047;Aquitania;5,518602;-72,88399;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15051;Arcabuco;5,755673;-73,437503;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15087;Belén;5,98923;-72,911641;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15090;Berbeo;5,227451;-73,12721;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15092;Betéitiva;5,909978;-72,809014;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15097;Boavita;6,330703;-72,584905;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15104;Boyacá;5,454578;-73,361945;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15106;Briceño;5,690879;-73,92326;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15109;Buenavista;5,512594;-73,94217;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15114;Busbanzá;5,831393;-72,884158;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15131;Caldas;5,55458;-73,865553;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15135;Campohermoso;5,031676;-73,104173;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15162;Cerinza;5,955939;-72,947918;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15172;Chinavita;5,167486;-73,368476;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15176;Chiquinquirá;5,61379;-73,818745;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15180;Chiscas;6,553136;-72,500957;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15183;Chita;6,187083;-72,471892;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15185;Chitaraque;6,027425;-73,4471;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15187;Chivatá;5,558949;-73,282529;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15189;Ciénega;5,408694;-73,296049;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15204;Cómbita;5,634545;-73,323957;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15212;Coper;5,475074;-74,045636;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15215;Corrales;5,828064;-72,844795;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15218;Covarachía;6,500177;-72,738978;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15223;Cubará;6,997275;-72,107939;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15224;Cucaita;5,544452;-73,454338;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15226;Cuítiva;5,580367;-72,965923;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15232;Chíquiza;5,639834;-73,449463;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15236;Chivor;4,888173;-73,368398;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+15;15238;Duitama;5,822964;-73,03063;No PDET;Sin zona;false;Ciudades y aglomeraciones;false;No ZNRA;Ausencia
+15;15244;El cocuy;6,407738;-72,444537;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15248;El espino;6,483027;-72,497007;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15272;Firavitoba;5,668885;-72,993392;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15276;Floresta;5,859519;-72,918111;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15293;Gachantivá;5,751891;-73,549092;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15296;Gámeza;5,802333;-72,80553;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15299;Garagoa;5,083234;-73,364413;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15317;Guacamayas;6,459667;-72,500812;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15322;Guateque;5,007321;-73,471207;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15325;Guayatá;4,967122;-73,489698;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15332;Güicán de la sierra;6,462864;-72,411763;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15362;Iza;5,611577;-72,979559;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15367;Jenesano;5,385813;-73,363738;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15368;Jericó;6,145735;-72,571122;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15377;Labranzagrande;5,562687;-72,57777;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+15;15380;La capilla;5,095687;-73,444347;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15401;La victoria;5,523792;-74,234393;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15403;La uvita;6,31616;-72,559982;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15407;Villa de leyva;5,632455;-73,524948;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15425;Macanal;4,972464;-73,319593;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15442;Maripí;5,550091;-74,00405;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15455;Miraflores;5,196515;-73,14563;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15464;Mongua;5,754242;-72,79809;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15466;Monguí;5,723486;-72,849292;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15469;Moniquirá;5,876331;-73,573374;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15476;Motavita;5,5777;-73,367841;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15480;Muzo;5,532758;-74,10269;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15491;Nobsa;5,768046;-72,937042;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15494;Nuevo colón;5,355317;-73,456759;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15500;Oicatá;5,595235;-73,308399;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15507;Otanche;5,657536;-74,180965;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15511;Pachavita;5,140065;-73,396953;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15514;Páez;5,097319;-73,052737;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15516;Paipa;5,779894;-73,11782;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15518;Pajarito;5,293783;-72,703231;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+15;15522;Panqueba;6,443416;-72,459424;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15531;Pauna;5,656323;-73,978449;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15533;Paya;5,625699;-72,423775;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+15;15537;Paz de río;5,987645;-72,749137;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15542;Pesca;5,558808;-73,050872;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15550;Pisba;5,72141;-72,486023;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+15;15572;Puerto boyacá;5,976646;-74,587782;No PDET;Sin zona;false;Intermedio;true;Magdalena Medio;Ausencia
+15;15580;Quípama;5,52055;-74,180033;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15599;Ramiriquí;5,400303;-73,334839;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15600;Ráquira;5,539136;-73,632543;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15621;Rondón;5,357378;-73,208474;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15632;Saboyá;5,697756;-73,764456;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15638;Sáchica;5,584305;-73,542539;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15646;Samacá;5,492161;-73,485589;No PDET;Santuario de Rabanal;false;Intermedio;true;No ZNRA;Ausencia
+15;15660;San eduardo;5,22401;-73,077747;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15664;San josé de pare;6,018924;-73,545397;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15667;San luis de gaceno;4,81976;-73,168076;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15673;San mateo;6,401683;-72,555264;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15676;San miguel de sema;5,518083;-73,722009;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15681;San pablo de borbur;5,650743;-74,069963;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15686;Santana;6,056866;-73,481639;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15690;Santa maría;4,857193;-73,263518;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15693;Santa rosa de viterbo;5,874547;-72,982461;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15696;Santa sofía;5,713269;-73,602707;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15720;Sativanorte;6,131132;-72,708458;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15723;Sativasur;6,093183;-72,712435;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15740;Siachoque;5,511811;-73,24466;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15753;Soatá;6,331945;-72,684051;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15755;Socotá;6,041162;-72,636653;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15757;Socha;5,996717;-72,691963;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15759;Sogamoso;5,723976;-72,924355;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+15;15761;Somondoco;4,985726;-73,433393;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15762;Sora;5,56684;-73,450153;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15763;Sotaquirá;5,764986;-73,246585;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15764;Soracá;5,500898;-73,332804;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15774;Susacón;6,230332;-72,690289;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15776;Sutamarchán;5,619781;-73,620536;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15778;Sutatenza;5,022989;-73,452317;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15790;Tasco;5,909821;-72,781011;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15798;Tenza;5,076781;-73,421176;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15804;Tibaná;5,317251;-73,396457;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+15;15806;Tibasosa;5,74723;-72,999449;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15808;Tinjacá;5,579713;-73,646847;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+15;15810;Tipacoque;6,419203;-72,691729;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15814;Toca;5,566464;-73,184794;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15816;Togüí;5,937438;-73,513655;No PDET;Toguí parte alta;false;Rural disperso;true;No ZNRA;Ausencia
+15;15820;Tópaga;5,768201;-72,832245;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+15;15822;Tota;5,560497;-72,985898;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15832;Tununguá;5,730582;-73,933155;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15835;Turmequé;5,323261;-73,491825;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+15;15837;Tuta;5,689082;-73,230285;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15839;Tutazá;6,032608;-72,856035;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+15;15842;Úmbita;5,221176;-73,456917;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15861;Ventaquemada;5,368739;-73,522368;No PDET;Santuario de Rabanal;false;Intermedio;false;No ZNRA;Ausencia
+15;15879;Viracachá;5,436833;-73,296894;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+15;15897;Zetaquira;5,283443;-73,17098;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+17;17001;Manizales;5,057657;-75,491025;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+17;17013;Aguadas;5,610244;-75,45487;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+17;17042;Anserma;5,236471;-75,784343;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+17;17050;Aranzazu;5,271195;-75,49129;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+17;17088;Belalcázar;4,993785;-75,811918;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+17;17174;Chinchiná;4,985227;-75,607529;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+17;17272;Filadelfia;5,297091;-75,562474;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+17;17380;La dorada;5,460834;-74,668819;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+17;17388;La merced;5,39647;-75,546486;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+17;17433;Manzanares;5,255699;-75,152829;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+17;17442;Marmato;5,47422;-75,600049;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+17;17444;Marquetalia;5,297525;-75,053097;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+17;17446;Marulanda;5,284304;-75,259721;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+17;17486;Neira;5,166895;-75,520006;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+17;17495;Norcasia;5,574796;-74,889543;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+17;17513;Pácora;5,527172;-75,459621;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+17;17524;Palestina;5,017879;-75,624577;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+17;17541;Pensilvania;5,383281;-75,160299;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+17;17614;Riosucio;5,423673;-75,702104;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+17;17616;Risaralda;5,164509;-75,76722;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+17;17653;Salamina;5,403025;-75,487223;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+17;17662;Samaná;5,41308;-74,992263;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+17;17665;San josé;5,08231;-75,792063;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+17;17777;Supía;5,446843;-75,64966;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+17;17867;Victoria;5,317437;-74,911239;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+17;17873;Villamaría;5,038925;-75,502487;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+17;17877;Viterbo;5,062664;-75,87061;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+18;18001;Florencia;1,618196;-75,609831;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+18;18029;Albania;1,328526;-75,878375;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18094;Belén de los andaquíes;1,415812;-75,872405;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18150;Cartagena del chairá;1,332371;-74,847867;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+18;18205;Curillo;1,033473;-75,919205;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18247;El doncello;1,679951;-75,283631;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18256;El paujíl;1,570226;-75,326093;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18410;La montañita;1,479173;-75,436408;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+18;18460;Milán;1,29021;-75,506926;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+18;18479;Morelia;1,486611;-75,724146;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+18;18592;Puerto rico;1,909063;-75,157604;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18610;San josé del fragua;1,330266;-75,973796;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18753;San vicente del caguán;2,119413;-74,767894;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Cuenca Río Pato y Valle de Balsillas;true;Rural;true;No ZNRA;Ausencia
+18;18756;Solano;0,699077;-75,253702;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+18;18785;Solita;0,87654;-75,619902;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+18;18860;Valparaíso;1,194619;-75,70671;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+19;19001;Popayán;2,459641;-76,599377;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+19;19022;Almaguer;1,913429;-76,85607;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+19;19050;Argelia;2,257427;-77,24905;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+19;19075;Balboa;2,040998;-77,215773;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+19;19100;Bolívar;1,837538;-76,966215;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+19;19110;Buenos aires;3,015382;-76,642238;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+19;19130;Cajibío;2,623371;-76,570682;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+19;19137;Caldono;2,798059;-76,484319;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+19;19142;Caloto;3,034531;-76,408941;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+19;19212;Corinto;3,173854;-76,261866;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+19;19256;El tambo;2,451409;-76,810911;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+19;19290;Florencia;1,682535;-77,072547;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+19;19300;Guachené;3,134153;-76,392189;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+19;19318;Guapi;2,571337;-77,88797;PACÍFICO MEDIO;Sin zona;true;Rural;true;No ZNRA;Presencia
+19;19355;Inzá;2,549183;-76,063503;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+19;19364;Jambaló;2,777834;-76,323877;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+19;19392;La sierra;2,179383;-76,763278;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+19;19397;La vega;2,001803;-76,778771;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+19;19418;López de micay;2,846788;-77,247803;PACÍFICO MEDIO;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+19;19450;Mercaderes;1,789193;-77,164319;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+19;19455;Miranda;3,254651;-76,228722;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+19;19473;Morales;2,754684;-76,629106;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+19;19513;Padilla;3,220984;-76,313265;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+19;19517;Páez;2,645724;-75,970685;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+19;19532;Patía;2,115875;-76,981075;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+19;19533;Piamonte;1,11754;-76,327588;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+19;19548;Piendamó - tunía;2,64228;-76,528615;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+19;19573;Puerto tejada;3,233254;-76,417673;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+19;19585;Puracé;2,341507;-76,496698;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+19;19622;Rosas;2,260941;-76,740336;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+19;19693;San sebastián;1,838451;-76,769467;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+19;19698;Santander de quilichao;3,015008;-76,485141;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+19;19701;Santa rosa;1,700916;-76,573252;No PDET;La Tuna;true;Rural disperso;true;No ZNRA;Presencia
+19;19743;Silvia;2,611927;-76,379753;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+19;19760;Sotará paispamba;2,253156;-76,613365;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+19;19780;Suárez;2,959785;-76,69357;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+19;19785;Sucre;2,038237;-76,926279;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+19;19807;Timbío;2,349686;-76,684476;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+19;19809;Timbiquí;2,777312;-77,667541;PACÍFICO MEDIO;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+19;19821;Toribío;2,953017;-76,270284;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+19;19824;Totoró;2,510252;-76,403628;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+19;19845;Villa rica;3,17762;-76,458025;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+20;20001;Valledupar;10,460472;-73,259398;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+20;20011;Aguachica;8,306811;-73,614027;No PDET;Sin zona;true;Intermedio;true;Magdalena Medio;Ausencia
+20;20013;Agustín codazzi;10,040454;-73,238389;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+20;20032;Astrea;9,498062;-73,975842;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+20;20045;Becerril;9,704404;-73,278707;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20060;Bosconia;9,975098;-73,888761;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+20;20175;Chimichagua;9,25875;-73,813278;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+20;20178;Chiriguaná;9,361058;-73,599913;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20228;Curumaní;9,201716;-73,540843;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20238;El copey;10,149883;-73,962703;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20250;El paso;9,668461;-73,742012;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+20;20295;Gamarra;8,324793;-73,737558;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+20;20310;González;8,389604;-73,38004;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+20;20383;La gloria;8,619298;-73,80321;No PDET;Sin zona;true;Rural;true;Magdalena Medio;Ausencia
+20;20400;La jagua de ibirico;9,563752;-73,334143;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20443;Manaure balcón del cesar;10,390776;-73,029472;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+20;20517;Pailitas;8,959399;-73,625825;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20550;Pelaya;8,689451;-73,666735;No PDET;Sin zona;true;Rural;true;Magdalena Medio;Ausencia
+20;20570;Pueblo bello;10,417321;-73,586211;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+20;20614;Río de oro;8,292292;-73,386393;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+20;20621;La paz;10,387552;-73,171365;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20710;San alberto;7,76111;-73,393889;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+20;20750;San diego;10,333039;-73,181208;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+20;20770;San martín;7,999855;-73,510914;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+20;20787;Tamalameque;8,861725;-73,812172;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+23;23001;Montería;8,759789;-75,873096;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;Cordoba;Ausencia
+23;23068;Ayapel;8,313838;-75,146048;No PDET;Sin zona;false;Intermedio;true;Cordoba;Presencia
+23;23079;Buenavista;8,221187;-75,480897;No PDET;Sin zona;false;Rural;true;Cordoba;Ausencia
+23;23090;Canalete;8,786939;-76,241476;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+23;23162;Cereté;8,888532;-75,796093;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23168;Chimá;9,149698;-75,626886;No PDET;Sin zona;false;Rural disperso;true;Cordoba;Ausencia
+23;23182;Chinú;9,105473;-75,399633;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23189;Ciénaga de oro;8,875794;-75,620807;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23300;Cotorra;9,037163;-75,799216;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23350;La apartada;8,050125;-75,336031;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23417;Lorica;9,240789;-75,816084;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23419;Los córdobas;8,892098;-76,35518;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+23;23464;Momil;9,240707;-75,67796;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23466;Montelíbano;7,973777;-75,416818;SUR DE CÓRDOBA;Sin zona;true;Intermedio;true;Cordoba;Presencia
+23;23500;Moñitos;9,245223;-76,1291;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+23;23555;Planeta rica;8,4082;-75,583241;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23570;Pueblo nuevo;8,504099;-75,508035;No PDET;Sin zona;false;Rural;true;Cordoba;Ausencia
+23;23574;Puerto escondido;9,005372;-76,260411;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+23;23580;Puerto libertador;7,888859;-75,671761;SUR DE CÓRDOBA;Sin zona;true;Rural;true;No ZNRA;Presencia
+23;23586;Purísima de la concepción;9,239295;-75,724987;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23660;Sahagún;8,943048;-75,445834;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23670;San andrés de sotavento;9,145448;-75,50879;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23672;San antero;9,376434;-75,76112;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+23;23675;San bernardo del viento;9,35247;-75,955107;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+23;23678;San carlos;8,799282;-75,698799;No PDET;Sin zona;false;Rural;true;Cordoba;Ausencia
+23;23682;San josé de uré;7,787303;-75,533476;SUR DE CÓRDOBA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+23;23686;San pelayo;8,958436;-75,835615;No PDET;Sin zona;false;Rural;true;Cordoba;Ausencia
+23;23807;Tierralta;8,170612;-76,059797;SUR DE CÓRDOBA;Alto Sinú;true;Intermedio;true;No ZNRA;Ausencia
+23;23815;Tuchín;9,186625;-75,553962;No PDET;Sin zona;false;Intermedio;true;Cordoba;Ausencia
+23;23855;Valencia;8,255016;-76,150756;SUR DE CÓRDOBA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+25;25001;Agua de dios;4,375309;-74,669221;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25019;Albán;4,878022;-74,438261;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25035;Anapoima;4,562737;-74,528676;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25040;Anolaima;4,7617;-74,46384;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25053;Arbeláez;4,272534;-74,414901;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25086;Beltrán;4,802832;-74,741666;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25095;Bituima;4,872171;-74,539609;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25099;Bojacá;4,737205;-74,344594;No PDET;Sin zona;false;Ciudades y aglomeraciones;false;No ZNRA;Ausencia
+25;25120;Cabrera;3,985164;-74,484549;No PDET;Cabrera;true;Rural disperso;true;No ZNRA;Ausencia
+25;25123;Cachipay;4,730957;-74,435711;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25126;Cajicá;4,920009;-74,02298;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25148;Caparrapí;5,34758;-74,491045;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25151;Cáqueza;4,404112;-73,946473;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25154;Carmen de carupa;5,349119;-73,901357;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25168;Chaguaní;4,948916;-74,593455;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+25;25175;Chía;4,866508;-74,05;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25178;Chipaque;4,442671;-74,044876;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25181;Choachí;4,527048;-73,922894;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25183;Chocontá;5,145224;-73,683533;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25200;Cogua;5,061842;-73,978497;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25214;Cota;4,812564;-74,102569;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25224;Cucunubá;5,249795;-73,766113;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+25;25245;El colegio;4,577951;-74,442261;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25258;El peñón;5,248747;-74,290207;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+25;25260;El rosal;4,850589;-74,263103;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25269;Facatativá;4,813353;-74,350085;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25279;Fómeque;4,485474;-73,892523;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25281;Fosca;4,339093;-73,93902;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25286;Funza;4,710412;-74,201528;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25288;Fúquene;5,403997;-73,795855;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+25;25290;Fusagasugá;4,336723;-74,37543;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25293;Gachalá;4,693579;-73,520161;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25295;Gachancipá;4,990947;-73,873464;No PDET;Sin zona;false;Ciudades y aglomeraciones;false;No ZNRA;Ausencia
+25;25297;Gachetá;4,816411;-73,636377;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25299;Gama;4,763325;-73,611037;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25307;Girardot;4,313069;-74,798201;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25312;Granada;4,519763;-74,350766;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25317;Guachetá;5,383378;-73,686972;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25320;Guaduas;5,072076;-74,603402;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25322;Guasca;4,866719;-73,877143;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25324;Guataquí;4,517517;-74,790058;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25326;Guatavita;4,935211;-73,83293;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25328;Guayabal de síquima;4,877968;-74,467437;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+25;25335;Guayabetal;4,215306;-73,815107;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+25;25339;Gutiérrez;4,254679;-74,003042;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25368;Jerusalén;4,562273;-74,695474;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25372;Junín;4,79057;-73,662961;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25377;La calera;4,721104;-73,968161;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25386;La mesa;4,631028;-74,461588;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25394;La palma;5,358816;-74,391022;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+25;25398;La peña;5,198945;-74,394105;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25402;La vega;4,997768;-74,336885;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25407;Lenguazaque;5,306131;-73,711512;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+25;25426;Machetá;5,08007;-73,608226;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25430;Madrid;4,732791;-74,265854;No PDET;Sin zona;false;Ciudades y aglomeraciones;false;No ZNRA;Ausencia
+25;25436;Manta;5,009008;-73,540444;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25438;Medina;4,506298;-73,348449;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+25;25473;Mosquera;4,70653;-74,221154;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25483;Nariño;4,399837;-74,824732;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25486;Nemocón;5,068705;-73,877888;No PDET;Sin zona;false;Ciudades y aglomeraciones;false;No ZNRA;Ausencia
+25;25488;Nilo;4,305838;-74,620009;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25489;Nimaima;5,125992;-74,38604;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25491;Nocaima;5,069466;-74,379093;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25506;Venecia;4,089056;-74,478301;No PDET;Venecia;false;Rural disperso;true;No ZNRA;Ausencia
+25;25513;Pacho;5,136907;-74,156132;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25518;Paime;5,370487;-74,152213;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25524;Pandi;4,190393;-74,486641;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25530;Paratebueno;4,374832;-73,212825;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+25;25535;Pasca;4,308979;-74,302276;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25572;Puerto salgar;5,465413;-74,653695;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25580;Pulí;4,682022;-74,71438;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+25;25592;Quebradanegra;5,118076;-74,48014;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25594;Quetame;4,329884;-73,863214;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25596;Quipile;4,74481;-74,533705;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25599;Apulo;4,520304;-74,593926;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25612;Ricaurte;4,282113;-74,772861;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25645;San antonio del tequendama;4,616138;-74,351443;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25649;San bernardo;4,179433;-74,42296;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25653;San cayetano;5,332938;-74,024754;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25658;San francisco;4,972917;-74,289672;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25662;San juan de rioseco;4,847575;-74,621919;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25718;Sasaima;4,962167;-74,432628;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25736;Sesquilé;5,04476;-73,796099;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25740;Sibaté;4,492625;-74,257874;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25743;Silvania;4,381981;-74,405534;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+25;25745;Simijaca;5,505231;-73,850703;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25754;Soacha;4,579268;-74,215463;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25758;Sopó;4,915395;-73,943328;No PDET;Sin zona;false;Ciudades y aglomeraciones;false;No ZNRA;Ausencia
+25;25769;Subachoque;4,929118;-74,172773;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+25;25772;Suesca;5,103495;-73,798227;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+25;25777;Supatá;5,06162;-74,235403;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25779;Susa;5,455291;-73,813938;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+25;25781;Sutatausa;5,247482;-73,853159;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25785;Tabio;4,916832;-74,096461;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25793;Tausa;5,196333;-73,887813;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+25;25797;Tena;4,655286;-74,389193;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25799;Tenjo;4,872014;-74,143724;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25805;Tibacuy;4,348605;-74,452662;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25807;Tibirita;5,052278;-73,504514;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+25;25815;Tocaima;4,459279;-74,636296;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25817;Tocancipá;4,964641;-73,91207;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+25;25823;Topaipí;5,336224;-74,300626;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+25;25839;Ubalá;4,74762;-73,531489;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25841;Ubaque;4,483788;-73,933477;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25843;Villa de san diego de ubaté;5,307463;-73,814367;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25845;Une;4,40245;-74,025183;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25851;Útica;5,19055;-74,483154;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25862;Vergara;5,117258;-74,346163;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+25;25867;Vianí;4,875208;-74,56132;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25871;Villagómez;5,273024;-74,195145;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25873;Villapinzón;5,216393;-73,595704;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25875;Villeta;5,012754;-74,469686;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+25;25878;Viotá;4,43935;-74,523131;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+25;25885;Yacopí;5,459272;-74,33806;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+25;25898;Zipacón;4,759932;-74,379566;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+25;25899;Zipaquirá;5,025477;-73,994444;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+27;27001;Quibdó;5,682166;-76,638144;No PDET;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+27;27006;Acandí;8,512178;-77,279951;CHOCÓ;Sin zona;true;Rural;true;No ZNRA;Ausencia
+27;27025;Alto baudó;5,516221;-76,974373;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+27;27050;Atrato;5,531419;-76,635674;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+27;27073;Bagadó;5,409681;-76,416063;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27075;Bahía solano;6,222807;-77,401359;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+27;27077;Bajo baudó;4,954576;-77,365717;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27099;Bojayá;6,559708;-76,886773;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27135;El cantón del san pablo;5,335321;-76,726844;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+27;27150;Carmen del darién;7,158294;-76,970798;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27160;Cértegui;5,371373;-76,607619;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+27;27205;Condoto;5,091003;-76,650683;CHOCÓ;Sin zona;true;Rural;true;No ZNRA;Presencia
+27;27245;El carmen de atrato;5,899789;-76,142112;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+27;27250;El litoral del san juan;4,259564;-77,363702;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27361;Istmina;5,153946;-76,68518;CHOCÓ;Sin zona;true;Rural;true;No ZNRA;Presencia
+27;27372;Juradó;7,103619;-77,762751;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+27;27413;Lloró;5,49789;-76,545147;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+27;27425;Medio atrato;5,994935;-76,783042;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27430;Medio baudó;5,192471;-76,950891;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+27;27450;Medio san juan;5,098291;-76,694409;CHOCÓ;Sin zona;true;Rural;true;No ZNRA;Ausencia
+27;27491;Nóvita;4,956063;-76,609467;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+27;27493;Nuevo belén de bajirá;7,3719;-76,71727;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+27;27495;Nuquí;5,709812;-77,265507;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+27;27580;Río iró;5,1863;-76,472925;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+27;27600;Río quito;5,483667;-76,740684;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+27;27615;Riosucio;7,436704;-77,113156;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27660;San josé del palmar;4,896954;-76,234227;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27745;Sipí;4,65262;-76,643453;CHOCÓ;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27787;Tadó;5,264873;-76,558571;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+27;27800;Unguía;8,04406;-77,092538;CHOCÓ;Sin zona;true;Rural;true;No ZNRA;Ausencia
+27;27810;Unión panamericana;5,281108;-76,630143;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+41;41001;Neiva;2,935432;-75,277327;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+41;41006;Acevedo;1,805173;-75,888706;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+41;41013;Agrado;2,25987;-75,772022;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41016;Aipe;3,223996;-75,239017;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41020;Algeciras;2,521674;-75,315389;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+41;41026;Altamira;2,063841;-75,788471;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41078;Baraya;3,152204;-75,054843;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+41;41132;Campoalegre;2,686767;-75,325748;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+41;41206;Colombia;3,376745;-74,802815;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+41;41244;Elías;2,012854;-75,938301;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41298;Garzón;2,196493;-75,627057;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+41;41306;Gigante;2,384031;-75,547681;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+41;41319;Guadalupe;2,02426;-75,757185;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41349;Hobo;2,580812;-75,447697;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+41;41357;Íquira;2,649359;-75,634497;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+41;41359;Isnos;1,929467;-76,217637;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+41;41378;La argentina;2,198496;-75,979763;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41396;La plata;2,389263;-75,891254;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+41;41483;Nátaga;2,5451;-75,808756;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41503;Oporapa;2,025088;-75,995165;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41518;Paicol;2,449651;-75,773158;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41524;Palermo;2,889649;-75,435296;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+41;41530;Palestina;1,723725;-76,133251;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41548;Pital;2,266618;-75,804544;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+41;41551;Pitalito;1,852631;-76,049441;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+41;41615;Rivera;2,777586;-75,258753;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+41;41660;Saladoblanco;1,9934;-76,044747;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+41;41668;San agustín;1,881081;-76,27036;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41676;Santa maría;2,939603;-75,586223;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+41;41770;Suaza;1,976051;-75,79525;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+41;41791;Tarqui;2,111325;-75,823976;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41797;Tesalia;2,486364;-75,730271;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+41;41799;Tello;3,067538;-75,138773;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+41;41801;Teruel;2,740968;-75,567034;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+41;41807;Timaná;1,974539;-75,932167;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+41;41872;Villavieja;3,218822;-75,217174;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+41;41885;Yaguará;2,664694;-75,518023;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+44;44001;Riohacha;11,528588;-72,911795;No PDET;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+44;44035;Albania;11,151628;-72,61232;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+44;44078;Barrancas;10,958669;-72,793639;No PDET;Sin zona;false;Rural;true;La Guajira;Ausencia
+44;44090;Dibulla;11,27155;-73,307598;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+44;44098;Distracción;10,898414;-72,887405;No PDET;Sin zona;false;Intermedio;true;La Guajira;Ausencia
+44;44110;El molino;10,653505;-72,92673;No PDET;Sin zona;true;Rural;true;La Guajira;Ausencia
+44;44279;Fonseca;10,886734;-72,846319;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Intermedio;true;La Guajira;Ausencia
+44;44378;Hatonuevo;11,068864;-72,75904;No PDET;Sin zona;false;Intermedio;true;La Guajira;Ausencia
+44;44420;La jagua del pilar;10,511862;-73,072638;No PDET;Sin zona;true;Rural;true;La Guajira;Ausencia
+44;44430;Maicao;11,378535;-72,242738;No PDET;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+44;44560;Manaure;11,773767;-72,438739;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+44;44650;San juan del cesar;10,769546;-73,000629;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Rural;true;La Guajira;Ausencia
+44;44847;Uribia;11,711904;-72,265906;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+44;44855;Urumita;10,560169;-73,012507;No PDET;Sin zona;true;Intermedio;true;La Guajira;Ausencia
+44;44874;Villanueva;10,608774;-72,977583;No PDET;Sin zona;true;Intermedio;true;La Guajira;Ausencia
+47;47001;Santa marta;11,204679;-74,199829;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+47;47030;Algarrobo;10,188059;-74,061132;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47053;Aracataca;10,589791;-74,186702;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+47;47058;Ariguaní;9,847047;-74,236515;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47161;Cerro de san antonio;10,325531;-74,868474;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47170;Chivolo;10,026631;-74,622242;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47189;Ciénaga;11,006654;-74,241286;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+47;47205;Concordia;10,257314;-74,83303;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+47;47245;El banco;9,008503;-73,97437;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+47;47258;El piñón;10,402781;-74,823094;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47268;El retén;10,610488;-74,268444;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+47;47288;Fundación;10,514146;-74,191453;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+47;47318;Guamal;9,144354;-74,223689;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+47;47460;Nueva granada;9,80186;-74,391841;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47541;Pedraza;10,18825;-74,9154;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47545;Pijiño del carmen;9,331922;-74,459034;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47551;Pivijay;10,460707;-74,613312;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47555;Plato;9,796713;-74,784549;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+47;47570;Puebloviejo;10,994766;-74,28253;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47605;Remolino;10,701952;-74,716172;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47660;Sabanas de san ángel;10,032536;-74,213946;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+47;47675;Salamina;10,491229;-74,794189;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47692;San sebastián de buenavista;9,241656;-74,351498;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47703;San zenón;9,245061;-74,498992;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+47;47707;Santa ana;9,324294;-74,566845;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47720;Santa bárbara de pinto;9,432263;-74,704667;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47745;Sitionuevo;10,775285;-74,720021;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47798;Tenerife;9,898273;-74,859783;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47960;Zapayán;10,168297;-74,716878;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+47;47980;Zona bananera;10,763024;-74,140091;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+50;50001;Villavicencio;4,126369;-73,622601;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+50;50006;Acacías;3,990413;-73,766034;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+50;50110;Barranca de upía;4,566225;-72,961083;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50124;Cabuyaro;4,286705;-72,791768;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+50;50150;Castilla la nueva;3,830005;-73,687302;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+50;50223;Cubarral;3,793653;-73,837999;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50226;Cumaral;4,270042;-73,487052;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+50;50245;El calvario;4,352665;-73,713325;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50251;El castillo;3,563907;-73,794225;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+50;50270;El dorado;3,739984;-73,835264;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+50;50287;Fuente de oro;3,462875;-73,618121;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+50;50313;Granada;3,547147;-73,705815;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+50;50318;Guamal;3,879657;-73,768815;No PDET;Losada Guayabero;false;Rural;true;No ZNRA;Ausencia
+50;50325;Mapiripán;2,896617;-72,135509;MACARENA GUAVIARE;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50330;Mesetas;3,382732;-74,044328;MACARENA GUAVIARE;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50350;La macarena;2,177143;-73,78661;MACARENA GUAVIARE;Losada Guayabero;true;Rural disperso;true;No ZNRA;Ausencia
+50;50370;Uribe;3,239634;-74,351508;MACARENA GUAVIARE;Losada Guayabero;true;Rural disperso;true;No ZNRA;Ausencia
+50;50400;Lejanías;3,525115;-74,023514;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+50;50450;Puerto concordia;2,624006;-72,760209;MACARENA GUAVIARE;Sin zona;true;Rural;true;No ZNRA;Ausencia
+50;50568;Puerto gaitán;4,314905;-72,087649;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50573;Puerto lópez;4,09349;-72,957324;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+50;50577;Puerto lleras;3,272117;-73,37385;MACARENA GUAVIARE;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50590;Puerto rico;2,939621;-73,206314;MACARENA GUAVIARE;Guejar - Cafre;true;Rural disperso;true;No ZNRA;Ausencia
+50;50606;Restrepo;4,259556;-73,565408;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+50;50680;San carlos de guaroa;3,71065;-73,242253;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+50;50683;San juan de arama;3,373728;-73,875832;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50686;San juanito;4,458181;-73,676699;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+50;50689;San martín;3,701899;-73,695812;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+50;50711;Vistahermosa;3,125579;-73,750966;MACARENA GUAVIARE;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+52;52001;Pasto;1,212352;-77,278795;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+52;52019;Albán;1,474978;-77,080712;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52022;Aldana;0,882381;-77,700564;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52036;Ancuya;1,263276;-77,514512;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52051;Arboleda;1,503418;-77,135467;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52079;Barbacoas;1,671733;-78,13765;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural;true;No ZNRA;Presencia
+52;52083;Belén;1,595681;-77,015619;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52110;Buesaco;1,381453;-77,156463;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+52;52203;Colón;1,643878;-77,019777;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52207;Consacá;1,207854;-77,466136;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52210;Contadero;0,910458;-77,549409;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52215;Córdoba;0,854564;-77,517897;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+52;52224;Cuaspud carlosama;0,862978;-77,728947;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52227;Cumbal;0,906367;-77,792505;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+52;52233;Cumbitara;1,647163;-77,578616;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+52;52240;Chachagüí;1,360545;-77,281869;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52250;El charco;2,479688;-78,110217;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+52;52254;El peñol;1,453567;-77,438522;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52256;El rosario;1,745309;-77,33417;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52258;El tablón de gómez;1,427277;-77,097101;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52260;El tambo;1,407913;-77,390772;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52287;Funes;1,001159;-77,448913;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52317;Guachucal;0,959744;-77,731589;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52320;Guaitarilla;1,129574;-77,549824;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52323;Gualmatán;0,919652;-77,568701;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+52;52352;Iles;0,96952;-77,521227;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52354;Imués;1,05506;-77,496339;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+52;52356;Ipiales;0,827732;-77,646367;No PDET;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+52;52378;La cruz;1,601318;-76,970504;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+52;52381;La florida;1,29753;-77,402882;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52385;La llanada;1,472892;-77,58091;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+52;52390;La tola;2,398999;-78,189725;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52399;La unión;1,600219;-77,131316;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52405;Leiva;1,934453;-77,306135;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+52;52411;Linares;1,350814;-77,523953;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52418;Los andes;1,494587;-77,521303;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural;true;No ZNRA;Presencia
+52;52427;Magüí;1,765633;-78,182924;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+52;52435;Mallama;1,141037;-77,864549;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+52;52473;Mosquera;2,507139;-78,452992;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52480;Nariño;1,288979;-77,357972;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+52;52490;Olaya herrera;2,347457;-78,325814;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52506;Ospina;1,058433;-77,566082;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+52;52520;Francisco pizarro;2,040629;-78,658361;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52540;Policarpa;1,627196;-77,458686;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+52;52560;Potosí;0,806639;-77,573003;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+52;52565;Providencia;1,237814;-77,596794;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52573;Puerres;0,885125;-77,504211;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+52;52585;Pupiales;0,870442;-77,636042;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52612;Ricaurte;1,212492;-77,995153;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+52;52621;Roberto payán;1,697492;-78,245716;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+52;52678;Samaniego;1,335438;-77,594341;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+52;52683;Sandoná;1,283438;-77,47313;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52685;San bernardo;1,513762;-77,0475;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52687;San lorenzo;1,503362;-77,21542;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52693;San pablo;1,669429;-77,013984;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52694;San pedro de cartago;1,551572;-77,11941;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52696;Santa bárbara;2,449653;-77,979916;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+52;52699;Santacruz;1,222589;-77,677035;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+52;52720;Sapuyes;1,037536;-77,62028;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+52;52786;Taminango;1,570358;-77,2808;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+52;52788;Tangua;1,09482;-77,393735;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+52;52835;Tumaco;1,807399;-78,764073;PACÍFICO Y FRONTERA NARIÑENSE;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+52;52838;Túquerres;1,085044;-77,61672;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+52;52885;Yacuanquer;1,115937;-77,400169;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54001;San josé de cúcuta;7,905725;-72,508178;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+54;54003;Ábrego;8,081616;-73,221722;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54051;Arboledas;7,642985;-72,798952;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54099;Bochalema;7,612192;-72,64701;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54109;Bucarasica;8,041299;-72,868231;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+54;54125;Cácota;7,268705;-72,642059;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+54;54128;Cáchira;7,741248;-73,048983;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54172;Chinácota;7,603112;-72,601162;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+54;54174;Chitagá;7,138187;-72,665468;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54206;Convención;8,470374;-73,3372;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+54;54223;Cucutilla;7,539633;-72,772816;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54239;Durania;7,714804;-72,658491;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54245;El carmen;8,510579;-73,446687;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+54;54250;El tarra;8,574281;-73,09614;CATATUMBO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+54;54261;El zulia;7,938572;-72,604717;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+54;54313;Gramalote;7,916946;-72,787233;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54344;Hacarí;8,321506;-73,145997;CATATUMBO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+54;54347;Herrán;7,506541;-72,483519;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54377;Labateca;7,298414;-72,495983;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54385;La esperanza;7,639839;-73,328126;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54398;La playa;8,21124;-73,239986;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+54;54405;Los patios;7,833186;-72,505612;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+54;54418;Lourdes;7,945631;-72,832376;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54480;Mutiscua;7,300469;-72,747169;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+54;54498;Ocaña;8,248574;-73,35607;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+54;54518;Pamplona;7,372802;-72,647714;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+54;54520;Pamplonita;7,436745;-72,639111;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54553;Puerto santander;8,359993;-72,411363;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+54;54599;Ragonvalia;7,577861;-72,476708;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+54;54660;Salazar;7,773683;-72,813064;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54670;San calixto;8,40214;-73,208622;CATATUMBO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+54;54673;San cayetano;7,875695;-72,625459;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54680;Santiago;7,865856;-72,716203;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+54;54720;Sardinata;8,082105;-72,800577;CATATUMBO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+54;54743;Silos;7,204736;-72,757128;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54800;Teorama;8,438134;-73,28707;CATATUMBO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+54;54810;Tibú;8,639891;-72,734496;CATATUMBO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+54;54820;Toledo;7,307692;-72,481915;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+54;54871;Villa caro;7,914244;-72,973601;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+54;54874;Villa del rosario;7,847672;-72,469758;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+63;63001;Armenia;4,53598;-75,680786;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+63;63111;Buenavista;4,360029;-75,739572;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+63;63130;Calarcá;4,520982;-75,646085;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+63;63190;Circasia;4,617759;-75,636533;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+63;63212;Córdoba;4,392485;-75,687866;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+63;63272;Filandia;4,674338;-75,658387;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+63;63302;Génova;4,206641;-75,790402;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+63;63401;La tebaida;4,453755;-75,786887;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+63;63470;Montenegro;4,565057;-75,749827;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+63;63548;Pijao;4,335036;-75,703329;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+63;63594;Quimbaya;4,624387;-75,765074;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+63;63690;Salento;4,637157;-75,570844;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+66;66001;Pereira;4,804985;-75,719711;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+66;66045;Apía;5,106526;-75,942356;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+66;66075;Balboa;4,949096;-75,958663;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+66;66088;Belén de umbría;5,200793;-75,868334;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+66;66170;Dosquebradas;4,833131;-75,675371;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+66;66318;Guática;5,315367;-75,799005;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+66;66383;La celia;5,002787;-76,0032;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+66;66400;La virginia;4,896624;-75,880394;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+66;66440;Marsella;4,935771;-75,73879;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+66;66456;Mistrató;5,297039;-75,882886;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+66;66572;Pueblo rico;5,222043;-76,030801;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+66;66594;Quinchía;5,340456;-75,730431;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+66;66682;Santa rosa de cabal;4,876271;-75,623268;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+66;66687;Santuario;5,074911;-75,964628;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68001;Bucaramanga;7,11647;-73,132562;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+68;68013;Aguada;6,162355;-73,523132;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68020;Albania;5,759166;-73,91336;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68051;Aratoca;6,694418;-73,01786;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68077;Barbosa;5,932531;-73,615965;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68079;Barichara;6,634111;-73,223047;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+68;68081;Barrancabermeja;7,064857;-73,849243;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;Magdalena Medio;Ausencia
+68;68092;Betulia;6,899525;-73,283669;No PDET;Sin zona;false;Rural disperso;true;Magdalena Medio;Ausencia
+68;68101;Bolívar;5,988953;-73,771346;No PDET;Sin zona;true;Rural disperso;true;Magdalena Medio;Ausencia
+68;68121;Cabrera;6,592118;-73,246475;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68132;California;7,347989;-72,946491;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+68;68147;Capitanejo;6,527394;-72,695427;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68152;Carcasí;6,629016;-72,627099;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68160;Cepitá;6,753518;-72,973536;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68162;Cerrito;6,840405;-72,694851;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68167;Charalá;6,284339;-73,146873;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68169;Charta;7,28082;-72,968798;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+68;68176;Chima;6,344348;-73,373656;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68179;Chipatá;6,062521;-73,637111;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68190;Cimitarra;6,320886;-73,953011;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+68;68207;Concepción;6,768908;-72,694567;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68209;Confines;6,357327;-73,240554;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68211;Contratación;6,290561;-73,474426;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68217;Coromoro;6,294999;-73,040816;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68229;Curití;6,605099;-73,069383;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68235;El carmen de chucuri;6,700038;-73,51066;No PDET;Sin zona;false;Rural disperso;true;Magdalena Medio;Ausencia
+68;68245;El guacamayo;6,245111;-73,496908;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68250;El peñón;6,05537;-73,815532;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68255;El playón;7,470715;-73,20287;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+68;68264;Encino;6,137429;-73,098749;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68266;Enciso;6,668034;-72,699647;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68271;Florián;5,804659;-73,97143;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68276;Floridablanca;7,072329;-73,099104;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+68;68296;Galán;6,638423;-73,287769;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68298;Gámbita;5,945998;-73,344185;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68307;Girón;7,070432;-73,166832;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+68;68318;Guaca;6,876563;-72,856322;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68320;Guadalupe;6,245847;-73,419292;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68322;Guapotá;6,308635;-73,320732;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+68;68324;Guavatá;5,954348;-73,700906;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68327;Güepsa;6,025013;-73,575146;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68344;Hato;6,543957;-73,308399;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68368;Jesús maría;5,876497;-73,783396;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68370;Jordán;6,732727;-73,096053;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+68;68377;La belleza;5,85925;-73,965494;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+68;68385;Landázuri;6,218812;-73,811359;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+68;68397;La paz;6,178509;-73,58959;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68406;Lebrija;7,113351;-73,219524;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68418;Los santos;6,755203;-73,102739;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68425;Macaravita;6,50658;-72,593105;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68432;Málaga;6,703081;-72,732089;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+68;68444;Matanza;7,323175;-73,015566;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+68;68464;Mogotes;6,475246;-72,969807;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68468;Molagavita;6,67432;-72,809175;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68498;Ocamonte;6,339988;-73,122563;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+68;68500;Oiba;6,26521;-73,299791;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68502;Onzaga;6,344104;-72,816766;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68522;Palmar;6,537789;-73,29109;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+68;68524;Palmas del socorro;6,406139;-73,287764;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+68;68533;Páramo;6,416811;-73,17022;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68547;Piedecuesta;6,997245;-73,054795;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+68;68549;Pinchote;6,531552;-73,174209;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
+68;68572;Puente nacional;5,878381;-73,677567;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68573;Puerto parra;6,650785;-74,056129;No PDET;Sin zona;false;Rural disperso;true;Magdalena Medio;Ausencia
+68;68575;Puerto wilches;7,344057;-73,899909;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+68;68615;Rionegro;7,265014;-73,150177;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+68;68655;Sabana de torres;7,391919;-73,49906;No PDET;Sin zona;true;Rural;true;Magdalena Medio;Ausencia
+68;68669;San andrés;6,811511;-72,848864;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68673;San benito;6,126656;-73,50907;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68679;San gil;6,551952;-73,134776;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+68;68682;San joaquín;6,427548;-72,867638;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68684;San josé de miranda;6,658995;-72,733616;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68686;San miguel;6,575315;-72,644123;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68689;San vicente de chucurí;6,880383;-73,411024;No PDET;Sin zona;false;Rural;true;Magdalena Medio;Ausencia
+68;68705;Santa bárbara;6,990996;-72,907445;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68720;Santa helena del opón;6,339565;-73,616716;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68745;Simacota;6,443469;-73,337368;No PDET;Sin zona;false;Rural disperso;true;Magdalena Medio;Ausencia
+68;68755;Socorro;6,46387;-73,261198;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68770;Suaita;6,101329;-73,44165;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68773;Sucre;5,918743;-73,790975;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+68;68780;Suratá;7,36658;-72,984232;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+68;68820;Tona;7,201417;-72,967023;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+68;68855;Valle de san josé;6,448028;-73,143507;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68861;Vélez;6,009275;-73,672447;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+68;68867;Vetas;7,30981;-72,871041;No PDET;Sin zona;false;Rural;false;No ZNRA;Presencia
+68;68872;Villanueva;6,670078;-73,174307;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+68;68895;Zapatoca;6,814387;-73,268034;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+70;70001;Sincelejo;9,302322;-75,395445;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;Sucre;Ausencia
+70;70110;Buenavista;9,319794;-74,972827;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70124;Caimito;8,789324;-75,117141;No PDET;Sin zona;false;Rural disperso;true;Sucre;Ausencia
+70;70204;Colosó;9,494192;-75,353256;MONTES DE MARÍA;Sin zona;true;Rural;true;Sucre;Ausencia
+70;70215;Corozal;9,318749;-75,293048;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70221;Coveñas;9,402779;-75,680158;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70230;Chalán;9,545352;-75,312697;MONTES DE MARÍA;Sin zona;true;Intermedio;true;Sucre;Ausencia
+70;70233;El roble;9,100647;-75,198378;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70235;Galeras;9,160379;-75,04959;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70265;Guaranda;8,468556;-74,537749;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+70;70400;La unión;8,853975;-75,276056;No PDET;Sin zona;false;Rural;true;Cordoba;Ausencia
+70;70418;Los palmitos;9,380269;-75,268716;MONTES DE MARÍA;Sin zona;true;Intermedio;true;Sucre;Ausencia
+70;70429;Majagual;8,541163;-74,628077;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+70;70473;Morroa;9,331395;-75,305949;MONTES DE MARÍA;Sin zona;true;Intermedio;true;Sucre;Ausencia
+70;70508;Ovejas;9,527176;-75,229037;MONTES DE MARÍA;Sin zona;true;Rural;true;Sucre;Ausencia
+70;70523;Palmito;9,333157;-75,541264;MONTES DE MARÍA;Sin zona;true;Intermedio;true;Sucre;Ausencia
+70;70670;Sampués;9,183193;-75,380222;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70678;San benito abad;8,930108;-75,031089;No PDET;Sin zona;false;Rural disperso;true;Sucre;Ausencia
+70;70702;San juan de betulia;9,273066;-75,243565;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70708;San marcos;8,661774;-75,133831;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70713;San onofre;9,736955;-75,522398;MONTES DE MARÍA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+70;70717;San pedro;9,39625;-75,063647;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70742;San luis de sincé;9,244308;-75,145999;No PDET;Sin zona;false;Intermedio;false;Sucre;Ausencia
+70;70771;Sucre;8,811737;-74,723175;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+70;70820;Santiago de tolú;9,525387;-75,581112;No PDET;Sin zona;false;Intermedio;true;Sucre;Ausencia
+70;70823;San josé de toluviejo;9,451819;-75,44085;MONTES DE MARÍA;Sin zona;true;Rural;true;Sucre;Ausencia
+73;73001;Ibagué;4,432248;-75,19425;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+73;73024;Alpujarra;3,391548;-74,9329;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+73;73026;Alvarado;4,567356;-74,953418;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+73;73030;Ambalema;4,782682;-74,764429;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+73;73043;Anzoátegui;4,631756;-75,093772;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+73;73055;Armero;5,030744;-74,884438;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+73;73067;Ataco;3,590591;-75,382545;SUR DEL TOLIMA;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+73;73124;Cajamarca;4,438812;-75,431971;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+73;73148;Carmen de apicalá;4,152334;-74,717633;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+73;73152;Casabianca;5,078465;-75,120966;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+73;73168;Chaparral;3,722918;-75,480765;SUR DEL TOLIMA;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+73;73200;Coello;4,287276;-74,898464;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+73;73217;Coyaima;3,798036;-75,193862;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+73;73226;Cunday;4,059259;-74,692227;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+73;73236;Dolores;3,539072;-74,896761;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+73;73268;Espinal;4,151314;-74,885446;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73270;Falan;5,123104;-74,953007;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+73;73275;Flandes;4,276373;-74,818763;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73283;Fresno;5,153576;-75,035722;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+73;73319;Guamo;4,030992;-74,968135;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73347;Herveo;5,080228;-75,177151;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+73;73349;Honda;5,211816;-74,75699;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+73;73352;Icononzo;4,176487;-74,531969;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73408;Lérida;4,862046;-74,910716;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+73;73411;Líbano;4,92042;-75,061959;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+73;73443;Mariquita;5,199708;-74,889276;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+73;73449;Melgar;4,203655;-74,641317;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73461;Murillo;4,874341;-75,171022;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+73;73483;Natagaima;3,624324;-75,093182;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+73;73504;Ortega;3,934916;-75,222601;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+73;73520;Palocabildo;5,120918;-75,022167;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73547;Piedras;4,543951;-74,878106;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+73;73555;Planadas;3,197911;-75,644163;SUR DEL TOLIMA;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+73;73563;Prado;3,750939;-74,927447;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+73;73585;Purificación;3,857246;-74,935555;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73616;Rioblanco;3,529932;-75,644069;SUR DEL TOLIMA;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+73;73622;Roncesvalles;4,011567;-75,605959;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+73;73624;Rovira;4,239019;-75,240648;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+73;73671;Saldaña;3,929815;-75,016852;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+73;73675;San antonio;3,914146;-75,480074;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+73;73678;San luis;4,133721;-75,095804;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Presencia
+73;73686;Santa isabel;4,713606;-75,097934;No PDET;Santa Isabel - Anzoátegui;true;Rural;true;No ZNRA;Presencia
+73;73770;Suárez;4,048891;-74,831885;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+73;73854;Valle de san juan;4,197494;-75,115669;No PDET;Sin zona;false;Rural;true;No ZNRA;Presencia
+73;73861;Venadillo;4,717878;-74,929333;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+73;73870;Villahermosa;5,030452;-75,117729;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+73;73873;Villarrica;3,936902;-74,600285;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+76;76001;Cali;3,413686;-76,52133;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+76;76020;Alcalá;4,674994;-75,779792;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76036;Andalucía;4,171713;-76,167925;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76041;Ansermanuevo;4,794984;-75,992003;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+76;76054;Argelia;4,726945;-76,119905;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+76;76100;Bolívar;4,337846;-76,183583;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+76;76109;Buenaventura;3,875708;-77,01074;PACÍFICO MEDIO;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+76;76111;Buga;3,900736;-76,298979;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+76;76113;Bugalagrande;4,208358;-76,15682;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+76;76122;Caicedonia;4,334808;-75,830594;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+76;76126;Calima;3,933664;-76,484132;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+76;76130;Candelaria;3,408354;-76,346519;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+76;76147;Cartago;4,742192;-75,924374;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+76;76233;Dagua;3,657318;-76,68886;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+76;76243;El águila;4,906062;-76,042779;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+76;76246;El cairo;4,760874;-76,221611;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+76;76248;El cerrito;3,684229;-76,311972;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76250;El dovio;4,510452;-76,237084;No PDET;Sin zona;true;Rural;true;No ZNRA;Presencia
+76;76275;Florida;3,324118;-76,234199;ALTO PATÍA Y NORTE DEL CAUCA;Sin zona;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+76;76306;Ginebra;3,724181;-76,268068;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+76;76318;Guacarí;3,761815;-76,330911;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+76;76364;Jamundí;3,258751;-76,538472;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+76;76377;La cumbre;3,649268;-76,56805;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+76;76400;La unión;4,533869;-76,099661;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76403;La victoria;4,523603;-76,036529;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+76;76497;Obando;4,575712;-75,974709;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76520;Palmira;3,531544;-76,298846;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+76;76563;Pradera;3,419793;-76,241799;ALTO PATÍA Y NORTE DEL CAUCA;Pradera;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+76;76606;Restrepo;3,821351;-76,523329;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76616;Riofrío;4,156908;-76,288313;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+76;76622;Roldanillo;4,413601;-76,152277;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+76;76670;San pedro;3,995073;-76,228692;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76736;Sevilla;4,270714;-75,931629;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76823;Toro;4,608085;-76,076859;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76828;Trujillo;4,212037;-76,318818;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76834;Tuluá;4,085399;-76,197731;No PDET;Tuluá;false;Ciudades y aglomeraciones;true;No ZNRA;Presencia
+76;76845;Ulloa;4,703623;-75,737808;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+76;76863;Versalles;4,575019;-76,199203;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+76;76869;Vijes;3,698686;-76,441804;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+76;76890;Yotoco;3,861241;-76,382698;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+76;76892;Yumbo;3,540097;-76,499893;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+76;76895;Zarzal;4,392658;-76,070795;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+81;81001;Arauca;7,072726;-70,747408;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+81;81065;Arauquita;7,02702;-71,426733;ARAUCA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+81;81220;Cravo norte;6,303913;-70,204286;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+81;81300;Fortul;6,796695;-71,76877;ARAUCA;Sin zona;true;Rural;true;No ZNRA;Ausencia
+81;81591;Puerto rondón;6,281461;-71,10339;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+81;81736;Saravena;6,953926;-71,872812;ARAUCA;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+81;81794;Tame;6,453324;-71,754427;ARAUCA;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85001;Yopal;5,327102;-72,396132;No PDET;Sin zona;false;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+85;85010;Aguazul;5,172641;-72,546838;No PDET;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+85;85015;Chámeza;5,214527;-72,87016;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85125;Hato corozal;6,154099;-71,764213;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85136;La salina;6,127762;-72,334978;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85139;Maní;4,81681;-72,281384;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85162;Monterrey;4,877017;-72,894065;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+85;85225;Nunchía;5,636474;-72,195323;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+85;85230;Orocué;4,790258;-71,338533;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+85;85250;Paz de ariporo;5,879827;-71,890348;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85263;Pore;5,72773;-71,99286;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+85;85279;Recetor;5,229181;-72,760991;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+85;85300;Sabanalarga;4,854787;-73,038696;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85315;Sácama;6,096738;-72,250157;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85325;San luis de palenque;5,422397;-71,732198;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+85;85400;Támara;5,829543;-72,16165;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85410;Tauramena;5,018977;-72,74662;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+85;85430;Trinidad;5,412178;-71,662812;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+85;85440;Villanueva;4,61035;-72,927797;No PDET;Sin zona;true;Rural;true;No ZNRA;Ausencia
+86;86001;Mocoa;1,151172;-76,654238;PUTUMAYO;Sin zona;true;Intermedio;true;No ZNRA;Presencia
+86;86219;Colón;1,190133;-76,972566;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+86;86320;Orito;0,663593;-76,873276;PUTUMAYO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+86;86568;Puerto asís;0,505627;-76,496887;PUTUMAYO;Perla Amazónica;true;Ciudades y aglomeraciones;true;No ZNRA;Ausencia
+86;86569;Puerto caicedo;0,687784;-76,606118;PUTUMAYO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+86;86571;Puerto guzmán;0,962854;-76,407663;PUTUMAYO;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+86;86573;Puerto leguízamo;-0,192318;-74,781842;PUTUMAYO;Sin zona;true;Rural disperso;true;No ZNRA;Presencia
+86;86749;Sibundoy;1,20026;-76,917814;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Presencia
+86;86755;San francisco;1,174194;-76,879283;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+86;86757;San miguel;0,34346;-76,91217;PUTUMAYO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+86;86760;Santiago;1,147076;-77,002641;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+86;86865;Valle del guamuez;0,423506;-76,906751;PUTUMAYO;Sin zona;true;Intermedio;true;No ZNRA;Ausencia
+86;86885;Villagarzón;1,028821;-76,61721;PUTUMAYO;Sin zona;true;Rural;true;No ZNRA;Ausencia
+88;88001;San andrés;12,578108;-81,707181;No PDET;Sin zona;false;Intermedio;true;No ZNRA;Ausencia
+88;88564;Providencia;13,373185;-81,368386;No PDET;Sin zona;false;Intermedio;false;No ZNRA;Ausencia
+91;91001;Leticia;-4,19895;-69,941721;No PDET;Sin zona;false;Rural;true;No ZNRA;Ausencia
+91;91263;El encanto;-1,74806;-73,207114;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91405;La chorrera;-1,442617;-72,791889;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91407;La pedrera;-1,320301;-69,585499;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91430;La victoria;0,054936;-71,223208;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91460;Mirití - paraná;-0,888833;-70,98893;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91530;Puerto alegría;-1,005674;-74,014461;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91536;Puerto arica;-2,147039;-71,752186;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91540;Puerto nariño;-3,779934;-70,364937;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+91;91669;Puerto santander;-0,621184;-72,384213;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+91;91798;Tarapacá;-2,890126;-69,741745;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+94;94001;Inírida;3,866764;-67,918613;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+94;94343;Barrancominas;3,494178;-69,814066;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+94;94883;San felipe;1,912495;-67,067848;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+94;94884;Puerto colombia;2,726438;-67,566774;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+94;94885;La guadalupe;1,632464;-66,963692;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+94;94886;Cacahual;3,52617;-67,413312;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+94;94887;Pana pana;1,865668;-69,0099;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+94;94888;Morichal;2,265132;-69,919404;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+95;95001;San josé del guaviare;2,565932;-72,639254;MACARENA GUAVIARE;Guaviare;true;Rural;true;No ZNRA;Ausencia
+95;95015;Calamar;1,960982;-72,655197;MACARENA GUAVIARE;Guaviare;true;Rural disperso;true;No ZNRA;Ausencia
+95;95025;El retorno;2,330164;-72,627304;MACARENA GUAVIARE;Guaviare;true;Rural disperso;true;No ZNRA;Ausencia
+95;95200;Miraflores;1,337539;-71,950416;MACARENA GUAVIARE;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+97;97001;Mitú;1,253151;-70,232641;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+97;97161;Carurú;1,016116;-71,30221;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+97;97511;Pacoa;0,020698;-71,004339;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+97;97666;Taraira;-0,564984;-69,635497;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+97;97777;Papunahua;1,908124;-70,76091;No PDET;Sin zona;false;Rural disperso;false;No ZNRA;Ausencia
+97;97889;Yavaraté;0,609142;-69,203337;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+99;99001;Puerto carreño;6,186636;-67,487095;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+99;99524;La primavera;5,486309;-70,410515;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+99;99624;Santa rosalía;5,136393;-70,859499;No PDET;Sin zona;false;Rural disperso;true;No ZNRA;Ausencia
+99;99773;Cumaribo;4,446352;-69,795533;No PDET;Sin zona;true;Rural disperso;true;No ZNRA;Ausencia
+27;27086;Belén de bajira;7,221259;-76,423179;No PDET;Sin zona;false;Rural;false;No ZNRA;Ausencia
