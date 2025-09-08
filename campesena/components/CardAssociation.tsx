@@ -45,7 +45,16 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                   {asociacion.nombreAsociacion}
                 </h1>
                 <p className="text-sm text-foreground/80">
-                  <strong>NIT:</strong> {asociacion.nit}
+                  {asociacion.formalizada ? (
+                    <>
+                      <strong>NIT:</strong> {asociacion.nit}
+                    </>
+                  ) : (
+                    <>
+                      <strong>Código Interno:</strong>{" "}
+                      {asociacion.codigoInterno}
+                    </>
+                  )}
                 </p>
                 <p className="text-sm text-foreground/80">
                   <strong>Celular:</strong>{" "}

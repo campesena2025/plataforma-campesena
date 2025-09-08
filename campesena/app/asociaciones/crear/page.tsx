@@ -71,7 +71,7 @@ const Page = () => {
       ...prevData,
       departamento: selection.departamento?.id.toString() || "",
       municipio: selection.municipio?.id.toString() || "",
-      vereda: selection.vereda?.id.toString() || "",
+      vereda: selection.vereda?.id.toString() || null,
     }));
   };
 

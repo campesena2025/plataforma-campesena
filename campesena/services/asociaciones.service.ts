@@ -54,7 +54,23 @@ export const getAsociacionById = async (id: string) => {
 export const createAsociacion = async (
   asociacion: Omit<AsociacionRequest, "id">,
 ) => {
-  const { data: response } = await ApiClient.post("/asociacions", {
+  const query = qs.stringify(
+    {
+      populate: [
+        "departamento",
+        "municipio",
+        "vereda",
+        "participantes",
+        "representanteLegal",
+        "foto",
+      ],
+    },
+    {
+      encodeValuesOnly: true,
+    },
+  );
+
+  const { data: response } = await ApiClient.post(`/asociacions?${query}`, {
     data: asociacion,
   });
 

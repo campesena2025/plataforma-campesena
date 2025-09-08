@@ -8,7 +8,7 @@ import { Departamento } from "@/types/departamento";
 import { Vereda } from "@/types/vereda";
 
 interface LocationSelectorProps {
-  initialVeredaId?: number | string;
+  initialVeredaId?: number | string | null;
   onChange: (selection: {
     departamento?: Departamento;
     municipio?: Municipio;
@@ -28,10 +28,10 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
   const [selectedMunicipio, setSelectedMunicipio] = useState<
     Municipio | undefined
   >();
-  const [selectedVereda, setSelectedVereda] = useState<Vereda | undefined>();
+  const [selectedVereda, setSelectedVereda] = useState<any>();
 
   const [municipios, setMunicipios] = useState<Municipio[]>([]);
-  const [veredas, setVeredas] = useState<Vereda[]>([]);
+  const [veredas, setVeredas] = useState<any[]>([]);
 
   useEffect(() => {
     if (initialVeredaId && departamentos.length > 0) {
@@ -69,7 +69,10 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
     if (selectedMunicipio) {
       const veredasData = selectedMunicipio.veredas || [];
 
-      setVeredas(veredasData);
+      setVeredas([
+        { id: "null", nombre: "Cabecera Municipio" },
+        ...veredasData,
+      ]);
     } else {
       setVeredas([]);
     }
@@ -104,6 +107,17 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
 
   const handleVeredaChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedId = event.target.value;
+
+    if (selectedId === "null") {
+      setSelectedVereda({ id: "null", nombre: "Cabecera Municipio" });
+      onChange({
+        departamento: selectedDepartamento,
+        municipio: selectedMunicipio,
+        vereda: undefined,
+      });
+
+      return;
+    }
     const ver = veredas.find((v) => v.id == parseInt(selectedId));
 
     if (ver) {

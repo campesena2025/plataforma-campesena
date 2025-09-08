@@ -11,7 +11,7 @@ export interface AsociacionRequest {
   formalizada: boolean;
   departamento: number | string;
   municipio: number | string;
-  vereda: number | string;
+  vereda: number | string | null;
   tipoOrganizacion: string;
   codigoInterno?: string;
   sector: string;
