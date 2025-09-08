@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import { devtools } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
 
 import { Asociacion } from "@/types/asociacion";
 import { Participante } from "@/types/participante";
@@ -9,70 +11,102 @@ interface AsociacionesState {
   loading: boolean;
   fetchAsociaciones: () => Promise<void>;
   invalidate: () => Promise<void>;
+  addAsociacion: (newAsociacion: Asociacion) => void;
+  updateAsociacion: (
+    asociacionId: string,
+    updatedFields: Partial<Asociacion>,
+  ) => void;
   addAsociado: (asociacionId: number, newAsociado: Participante) => void;
   updateAsociado: (
     asociacionId: number,
     updatedAsociado: Partial<Participante> & { id: number },
   ) => void;
+  reset: () => void;
 }
 
-export const useAsociacionesStore = create<AsociacionesState>((set, get) => ({
+const initialState = {
   data: [],
   loading: false,
+};
 
-  fetchAsociaciones: async () => {
-    // Evita recargas si ya tenemos datos
-    if (get().data.length > 0) return;
-    set({ loading: true });
-    try {
-      const asociaciones = await getAllAsociaciones();
+export const useAsociacionesStore = create(
+  devtools(
+    immer<AsociacionesState>((set, get) => ({
+      ...initialState,
 
-      set({ data: asociaciones.data, loading: false });
-    } catch {
-      set({ loading: false });
-    }
-  },
-
-  invalidate: async () => {
-    set({ loading: true });
-    try {
-      const asociaciones = await getAllAsociaciones();
-
-      set({ data: asociaciones.data, loading: false });
-    } catch {
-      set({ loading: false });
-    }
-  },
-
-  addAsociado: (asociacionId, newAsociado) => {
-    set((state) => ({
-      data: state.data.map((asociacion) => {
-        if (asociacion.id !== asociacionId) {
-          return asociacion;
+      fetchAsociaciones: async () => {
+        if (get().data.length > 0) return;
+        set({ loading: true });
+        try {
+          const asociaciones = await getAllAsociaciones();
+          set({ data: asociaciones.data, loading: false });
+        } catch {
+          set({ loading: false });
         }
+      },
 
-        return {
-          ...asociacion,
-          participantes: [...(asociacion.participantes || []), newAsociado],
-        };
-      }),
-    }));
-  },
-
-  updateAsociado: (asociacionId, updatedAsociado) => {
-    set((state) => ({
-      data: state.data.map((asociacion) => {
-        if (asociacion.id !== asociacionId) {
-          return asociacion;
+      invalidate: async () => {
+        set({ loading: true });
+        try {
+          const asociaciones = await getAllAsociaciones();
+          set({ data: asociaciones.data, loading: false });
+        } catch {
+          set({ loading: false });
         }
+      },
 
-        return {
-          ...asociacion,
-          participantes: (asociacion.participantes || []).map((p) =>
-            p.id === updatedAsociado.id ? { ...p, ...updatedAsociado } : p,
-          ),
-        };
-      }),
-    }));
-  },
-}));
+      addAsociacion: (newAsociacion) => {
+        set((state) => {
+          state.data.push(newAsociacion);
+        });
+      },
+
+      updateAsociacion: (asociacionId, updatedFields) => {
+        set((state) => {
+          const asociacion = state.data.find(
+            (a) => a.documentId === asociacionId,
+          );
+          if (asociacion) {
+            Object.assign(asociacion, updatedFields);
+          }
+        });
+      },
+
+      addAsociado: (asociacionId, newAsociado) => {
+        set((state) => {
+          const asociacion = state.data.find((a) => a.id === asociacionId);
+          if (asociacion) {
+            if (asociacion.participantes) {
+              asociacion.participantes.push(newAsociado);
+            } else {
+              asociacion.participantes = [newAsociado];
+            }
+          }
+        });
+      },
+
+      updateAsociado: (asociacionId, updatedAsociado) => {
+        set((state) => {
+          const asociacion = state.data.find((a) => a.id === asociacionId);
+          if (asociacion && asociacion.participantes) {
+            const participanteIndex = asociacion.participantes.findIndex(
+              (p) => p.id === updatedAsociado.id,
+            );
+            if (participanteIndex !== -1) {
+              asociacion.participantes[participanteIndex] = {
+                ...asociacion.participantes[participanteIndex],
+                ...updatedAsociado,
+              };
+            }
+          }
+        });
+      },
+      reset: () => {
+        set(initialState);
+      },
+    })),
+    {
+      name: "asociaciones-store",
+    },
+  ),
+);

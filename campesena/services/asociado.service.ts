@@ -1,39 +1,36 @@
-import api, { withAuth } from "./api/axios-interceptor";
-
-import { Participante, ParticipanteRequest } from "@/types/participante";
+import { Participante } from "@/types/participante";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
+import ApiClient from "@/app/api/axios/apiClient";
 
 export const createAsociado = async (
-  participanteData: ParticipanteRequest,
+  asociado: Omit<Participante, "id">,
   asociacionId: number,
-): Promise<Participante> => {
-  try {
-    const fullParticipanteData: ParticipanteRequest = {
-      ...participanteData,
-      asociacions: [asociacionId],
-    };
+) => {
+  const { data: response } = await ApiClient.post("/participantes", {
+    data: { ...asociado, asociacion: asociacionId },
+  });
 
-    const {
-      data: { data: newParticipante },
-    } = await api.post(
-      `/participantes`,
-      { data: fullParticipanteData },
-      withAuth(),
-    );
+  // Una vez creado en el backend, actualizamos el estado en el frontend
+  const newAsociado = response.data as Participante;
 
-    return newParticipante;
-  } catch (error) {
-    console.error("Error creating asociado:", error);
-    throw error;
-  }
+  useAsociacionesStore.getState().addAsociado(asociacionId, newAsociado);
+
+  return response;
 };
 
 export const updateAsociado = async (
-  id: number,
-  data: Partial<ParticipanteRequest>,
-): Promise<Participante> => {
-  const {
-    data: { data: updatedParticipante },
-  } = await api.put(`/participantes/${id}`, { data }, withAuth());
+  asociacionId: number, // Se necesita para encontrar la asociación en el store
+  asociado: Omit<Partial<Participante>, "id"> & { id: number },
+) => {
+  const { id, ...asociadoData } = asociado;
+  const { data: response } = await ApiClient.put(`/participantes/${id}`, {
+    data: asociadoData,
+  });
 
-  return updatedParticipante;
+  // Una vez actualizado en el backend, actualizamos el estado
+  const updatedAsociado = response.data as Participante;
+
+  useAsociacionesStore.getState().updateAsociado(asociacionId, updatedAsociado);
+
+  return response;
 };

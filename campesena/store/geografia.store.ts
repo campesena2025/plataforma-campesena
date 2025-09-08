@@ -11,9 +11,9 @@ interface GeografiaState {
   };
 }
 
-import { Departamento } from "@/types/geografia";
 // Importamos los datos directamente del archivo JSON y aseguramos el tipo
 import geografiaData from "@/assets/meta/geografia.json";
+import { Departamento } from "@/types/departamento";
 
 // Los datos se cargan de forma síncrona y se establecen como el estado inicial.
 export const useGeografiaStore = create<GeografiaState>(() => ({

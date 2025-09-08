@@ -29,7 +29,7 @@ const Page = () => {
   const invalidateAsociaciones = useAsociacionesStore(
     (state) => state.invalidate,
   );
-  const asociaciones = useAsociacionesStore((state) => state.asociaciones);
+  const asociaciones = useAsociacionesStore((state) => state.data);
   const [formData, setFormData] = useState<AsociacionRequest>();
   const [asociacion, setAsociacion] = useState<Asociacion>();
   const [fotoFile, setFotoFile] = useState<File | null>(null);
@@ -38,7 +38,7 @@ const Page = () => {
   useEffect(() => {
     if (id) {
       // Prioriza la búsqueda de la asociación en el store para evitar una llamada extra a la API
-      const asociacionEncontrada = asociaciones?.data.find(
+      const asociacionEncontrada = asociaciones?.find(
         (a) => a.documentId === (id as string),
       );
 
@@ -58,6 +58,19 @@ const Page = () => {
   }, [id, asociaciones]);
 
   const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prevData) => ({
+      ...(prevData as AsociacionRequest),
+      [name]: name === "formalizada" ? value === "true" : value,
+    }));
+  };
+
+  const handleChangeEstadoAsociacion = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >,
@@ -158,7 +171,7 @@ const Page = () => {
             name="formalizada"
             orientation="horizontal"
             value={formData?.formalizada?.toString() || "false"}
-            onChange={handleChange}
+            onChange={handleChangeEstadoAsociacion}
           >
             <Radio value="false">No</Radio>
             <Radio value="true">Sí</Radio>

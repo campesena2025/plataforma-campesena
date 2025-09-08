@@ -1,7 +1,7 @@
 import axios, { type AxiosError } from "axios";
 import Cookies from "js-cookie";
 
-const apiUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+const apiUrl = ` ${process.env.NEXT_PUBLIC_API_URL}/api`;
 const ApiClient = axios.create({
   baseURL: apiUrl,
 });

@@ -2,6 +2,8 @@ import Cookies from "js-cookie";
 
 import { LoginResponse } from "./api/auth.service";
 
+import { resetAllStores } from "@/store/reset";
+
 export const saveSession = (response: LoginResponse) => {
   Cookies.set("session-token", response.jwt);
   localStorage.setItem("jwt", response.jwt);
@@ -14,6 +16,7 @@ export const clearSession = () => {
   localStorage.removeItem("jwt");
   localStorage.removeItem("user");
   window.dispatchEvent(new Event("storage"));
+  resetAllStores();
 };
 
 export const getSession = (): LoginResponse | null => {

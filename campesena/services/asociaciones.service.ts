@@ -1,14 +1,10 @@
 import qs from "qs";
 
-import api, { withAuth } from "./api/axios-interceptor";
+import { Asociacion, AsociacionRequest } from "@/types/asociacion";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
+import ApiClient from "@/app/api/axios/apiClient";
 
-import {
-  Asociacion,
-  Asociaciones,
-  AsociacionRequest,
-} from "@/types/asociacion";
-
-export const getAllAsociaciones = async (): Promise<Asociaciones> => {
+export const getAllAsociaciones = async () => {
   const query = qs.stringify(
     {
       populate: [
@@ -29,12 +25,12 @@ export const getAllAsociaciones = async (): Promise<Asociaciones> => {
     },
   );
 
-  const response = await api.get(`/asociacions?${query}`, withAuth());
+  const response = await ApiClient.get(`/asociacions?${query}`);
 
   return response.data;
 };
 
-export const getAsociacionById = async (id: string): Promise<Asociacion> => {
+export const getAsociacionById = async (id: string) => {
   const query = qs.stringify(
     {
       populate: [
@@ -50,43 +46,32 @@ export const getAsociacionById = async (id: string): Promise<Asociacion> => {
       encodeValuesOnly: true,
     },
   );
-  const response = await api.get(`/asociacions/${id}?${query}`, withAuth());
+  const response = await ApiClient.get(`/asociacions/${id}?${query}`);
 
   return response.data.data;
 };
 
-export const createAsociacion = async (data: AsociacionRequest) => {
-  const strapiData: AsociacionRequest = {
-    ...data,
-  };
-  const query = qs.stringify(
-    {
-      populate: [
-        "departamento",
-        "municipio",
-        "vereda",
-        "participantes",
-        "representanteLegal",
-        "foto",
-      ],
-    },
-    {
-      encodeValuesOnly: true,
-    },
-  );
-  const response = await api.post(
-    `/asociacions?${query}`,
-    { data: strapiData },
-    withAuth(),
-  );
+export const createAsociacion = async (
+  asociacion: Omit<AsociacionRequest, "id">,
+) => {
+  const { data: response } = await ApiClient.post("/asociacions", {
+    data: asociacion,
+  });
 
-  return response.data;
+  // Actualizar el estado global con la nueva asociación
+  const newAsociacion = response.data as Asociacion;
+
+  useAsociacionesStore.getState().addAsociacion(newAsociacion);
+
+  return response;
 };
 
-export const updateAsociacion = async (id: string, data: AsociacionRequest) => {
-  const strapiData: AsociacionRequest = {
-    ...data,
-  };
+export const updateAsociacion = async (
+  id: string,
+  asociacion: AsociacionRequest,
+) => {
+  const { ...asociacionData } = asociacion;
+
   const query = qs.stringify(
     {
       populate: [
@@ -102,11 +87,18 @@ export const updateAsociacion = async (id: string, data: AsociacionRequest) => {
       encodeValuesOnly: true,
     },
   );
-  const response = await api.put(
+
+  const { data: response } = await ApiClient.put(
     `/asociacions/${id}?${query}`,
-    { data: strapiData },
-    withAuth(),
+    {
+      data: asociacionData,
+    },
   );
 
-  return response.data;
+  // Actualizar el estado global con los cambios
+  const updatedAsociacion = response.data as Asociacion;
+
+  useAsociacionesStore.getState().updateAsociacion(id, updatedAsociacion);
+
+  return response;
 };

@@ -43,6 +43,25 @@ const Page = () => {
     }
   };
 
+  const handleChangeEstadoAsociacion = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prevData) => ({
+      ...(prevData as AsociacionRequest),
+      [name]: name === "formalizada" ? value === "true" : value,
+    }));
+
+    if (name === "formalizada" && value === "true") {
+      setSwitchCodigo(true);
+    } else {
+      setSwitchCodigo(false);
+    }
+  };
+
   const handleLocationChange = (selection: {
     departamento?: { id: string | number };
     municipio?: { id: string | number };
@@ -60,7 +79,7 @@ const Page = () => {
     e.preventDefault();
 
     try {
-      await createAsociacion(formData as AsociacionRequest);
+      await createAsociacion(formData as Omit<AsociacionRequest, "id">);
       invalidateAsociaciones();
       router.push("/asociaciones");
       addToast({
@@ -68,8 +87,7 @@ const Page = () => {
         description: "La asociación se ha creado correctamente.",
         color: "success",
       });
-    } catch (error) {
-      debugger;
+    } catch {
       addToast({
         title: "Error",
         description: "Ha ocurrido un error al crear la asociación.",
@@ -93,7 +111,7 @@ const Page = () => {
             name="formalizada"
             orientation="horizontal"
             value={formData?.formalizada?.toString() || "false"}
-            onChange={handleChange}
+            onChange={handleChangeEstadoAsociacion}
           >
             <Radio value="false">No</Radio>
             <Radio value="true">Sí</Radio>
