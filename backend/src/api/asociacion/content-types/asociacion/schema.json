@@ -25,15 +25,15 @@
     },
     "municipio": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::municipio.municipio",
-      "inversedBy": "asociacion"
+      "inversedBy": "asociacions"
     },
     "vereda": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::vereda.vereda",
-      "inversedBy": "asociacion"
+      "inversedBy": "asociacions"
     },
     "tipoOrganizacion": {
       "type": "enumeration",
@@ -87,9 +87,9 @@
     },
     "departamento": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::departamento.departamento",
-      "inversedBy": "asociacion"
+      "inversedBy": "asociacions"
     },
     "observaciones": {
       "type": "string",

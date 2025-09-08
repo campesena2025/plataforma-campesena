@@ -98,7 +98,7 @@ const Page = () => {
       ...(prevData as AsociacionRequest),
       departamento: selection.departamento?.id || "",
       municipio: selection.municipio?.id || "",
-      vereda: selection.vereda?.id || "",
+      vereda: selection.vereda?.id || null,
     }));
   };
 
@@ -216,6 +216,8 @@ const Page = () => {
           </div>
           <div className="md:col-span-2">
             <LocationSelector
+              initialDepartamentoId={formData?.departamento}
+              initialMunicipioId={formData?.municipio}
               initialVeredaId={formData?.vereda}
               onChange={handleLocationChange}
             />

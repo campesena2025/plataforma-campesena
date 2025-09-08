@@ -39,6 +39,7 @@ export const useAsociacionesStore = create(
         set({ loading: true });
         try {
           const asociaciones = await getAllAsociaciones();
+
           set({ data: asociaciones.data, loading: false });
         } catch {
           set({ loading: false });
@@ -49,6 +50,7 @@ export const useAsociacionesStore = create(
         set({ loading: true });
         try {
           const asociaciones = await getAllAsociaciones();
+
           set({ data: asociaciones.data, loading: false });
         } catch {
           set({ loading: false });
@@ -66,6 +68,7 @@ export const useAsociacionesStore = create(
           const asociacion = state.data.find(
             (a) => a.documentId === asociacionId,
           );
+
           if (asociacion) {
             Object.assign(asociacion, updatedFields);
           }
@@ -75,6 +78,7 @@ export const useAsociacionesStore = create(
       addAsociado: (asociacionId, newAsociado) => {
         set((state) => {
           const asociacion = state.data.find((a) => a.id === asociacionId);
+
           if (asociacion) {
             if (asociacion.participantes) {
               asociacion.participantes.push(newAsociado);
@@ -88,10 +92,12 @@ export const useAsociacionesStore = create(
       updateAsociado: (asociacionId, updatedAsociado) => {
         set((state) => {
           const asociacion = state.data.find((a) => a.id === asociacionId);
+
           if (asociacion && asociacion.participantes) {
             const participanteIndex = asociacion.participantes.findIndex(
               (p) => p.id === updatedAsociado.id,
             );
+
             if (participanteIndex !== -1) {
               asociacion.participantes[participanteIndex] = {
                 ...asociacion.participantes[participanteIndex],

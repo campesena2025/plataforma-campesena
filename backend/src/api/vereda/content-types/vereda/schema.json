@@ -23,9 +23,9 @@
       "target": "api::municipio.municipio",
       "inversedBy": "veredas"
     },
-    "asociacion": {
+    "asociacions": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::asociacion.asociacion",
       "mappedBy": "vereda"
     },

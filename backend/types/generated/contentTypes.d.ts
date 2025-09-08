@@ -431,7 +431,7 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     departamento: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::departamento.departamento'
     >;
     estado: Schema.Attribute.Enumeration<
@@ -452,7 +452,7 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     municipio: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::municipio.municipio'
     >;
     nit: Schema.Attribute.String & Schema.Attribute.Unique;
@@ -505,7 +505,7 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    vereda: Schema.Attribute.Relation<'oneToOne', 'api::vereda.vereda'>;
+    vereda: Schema.Attribute.Relation<'manyToOne', 'api::vereda.vereda'>;
     warning: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
@@ -660,8 +660,8 @@ export interface ApiDepartamentoDepartamento
   };
   attributes: {
     abreviatura: Schema.Attribute.String;
-    asociacion: Schema.Attribute.Relation<
-      'oneToOne',
+    asociacions: Schema.Attribute.Relation<
+      'oneToMany',
       'api::asociacion.asociacion'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -974,8 +974,8 @@ export interface ApiMunicipioMunicipio extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    asociacion: Schema.Attribute.Relation<
-      'oneToOne',
+    asociacions: Schema.Attribute.Relation<
+      'oneToMany',
       'api::asociacion.asociacion'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1688,8 +1688,8 @@ export interface ApiVeredaVereda extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    asociacion: Schema.Attribute.Relation<
-      'oneToOne',
+    asociacions: Schema.Attribute.Relation<
+      'oneToMany',
       'api::asociacion.asociacion'
     >;
     createdAt: Schema.Attribute.DateTime;

@@ -29,9 +29,9 @@
       "target": "api::vereda.vereda",
       "mappedBy": "municipio"
     },
-    "asociacion": {
+    "asociacions": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::asociacion.asociacion",
       "mappedBy": "municipio"
     },

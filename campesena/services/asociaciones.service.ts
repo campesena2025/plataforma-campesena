@@ -19,6 +19,7 @@ export const getAllAsociaciones = async () => {
         page: 1,
         pageSize: 50,
       },
+      sort: ["nombreAsociacion:asc"],
     },
     {
       encodeValuesOnly: true,

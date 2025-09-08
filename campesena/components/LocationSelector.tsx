@@ -9,6 +9,8 @@ import { Vereda } from "@/types/vereda";
 
 interface LocationSelectorProps {
   initialVeredaId?: number | string | null;
+  initialMunicipioId?: number | string;
+  initialDepartamentoId?: number | string;
   onChange: (selection: {
     departamento?: Departamento;
     municipio?: Municipio;
@@ -18,6 +20,8 @@ interface LocationSelectorProps {
 
 export const LocationSelector: React.FC<LocationSelectorProps> = ({
   initialVeredaId,
+  initialMunicipioId,
+  initialDepartamentoId,
   onChange,
 }) => {
   const departamentos = useGeografiaStore((state) => state.data) || [];
@@ -34,26 +38,44 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
   const [veredas, setVeredas] = useState<any[]>([]);
 
   useEffect(() => {
-    if (initialVeredaId && departamentos.length > 0) {
-      for (const depto of departamentos) {
-        for (const mun of depto.municipios) {
-          const ver = mun.veredas.find(
-            (v: { id: { toString: () => string } }) =>
-              v.id.toString() === initialVeredaId.toString(),
+    if (!departamentos.length) return;
+
+    if (initialDepartamentoId) {
+      const depto = departamentos.find(
+        (d) => d.id.toString() === initialDepartamentoId.toString(),
+      );
+
+      if (depto) {
+        setSelectedDepartamento(depto);
+        if (initialMunicipioId) {
+          const mun = depto.municipios.find(
+            (m) => m.id.toString() === initialMunicipioId.toString(),
           );
 
-          if (ver) {
-            setSelectedDepartamento(depto);
+          if (mun) {
             setSelectedMunicipio(mun);
-            setSelectedVereda(ver);
-            onChange({ departamento: depto, municipio: mun, vereda: ver });
+            if (initialVeredaId) {
+              const ver = mun.veredas.find(
+                (v) => v.id.toString() === initialVeredaId.toString(),
+              );
 
-            return;
+              if (ver) {
+                setSelectedVereda(ver);
+              }
+            } else {
+              // Vereda is null (Cabecera Municipal)
+              setSelectedVereda({ id: "null", nombre: "Cabecera Municipio" });
+            }
           }
         }
       }
     }
-  }, [initialVeredaId, departamentos]);
+  }, [
+    initialDepartamentoId,
+    initialMunicipioId,
+    initialVeredaId,
+    departamentos,
+  ]);
 
   useEffect(() => {
     if (selectedDepartamento) {

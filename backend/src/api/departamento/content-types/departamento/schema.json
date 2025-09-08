@@ -38,9 +38,9 @@
     "longitud": {
       "type": "string"
     },
-    "asociacion": {
+    "asociacions": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::asociacion.asociacion",
       "mappedBy": "departamento"
     }
