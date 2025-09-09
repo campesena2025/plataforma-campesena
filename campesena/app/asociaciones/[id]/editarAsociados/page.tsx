@@ -17,9 +17,6 @@ const Page = () => {
   >(null);
   const [nombreAsociacion, setNombreAsociacion] = useState("");
   const [idAsociacion, setIdAsociacion] = useState(0);
-  const [representanteLegalId, setRepresentanteLegalId] = useState<
-    number | undefined
-  >();
 
   useEffect(() => {
     if (id && asociaciones) {
@@ -31,7 +28,6 @@ const Page = () => {
         setNombreAsociacion(asociacionEncontrada.nombreAsociacion);
         setIdAsociacion(asociacionEncontrada.id);
         setInitialAssociates(asociacionEncontrada.participantes || []);
-        setRepresentanteLegalId(asociacionEncontrada.representanteLegal?.id);
       }
     }
   }, [id, asociaciones]);

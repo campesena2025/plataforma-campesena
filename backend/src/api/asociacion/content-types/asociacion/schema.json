@@ -108,16 +108,6 @@
       "target": "api::participante.participante",
       "inversedBy": "asociacions"
     },
-    "estado": {
-      "type": "enumeration",
-      "required": true,
-      "default": "Activo",
-      "enum": [
-        "Activo",
-        "Inactivo",
-        "En Evalucación"
-      ]
-    },
     "warning": {
       "type": "boolean",
       "default": false
@@ -126,6 +116,25 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::participante.participante"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "asociacions"
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        " Registradas",
+        " Diagnosticadas",
+        " Asignadas a servicio",
+        " En formación",
+        " En formulación de proyecto",
+        " En evaluación de proyecto",
+        " Evaluada en impactos",
+        " En entrega de insumos"
+      ]
     }
   }
 }

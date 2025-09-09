@@ -1,3 +1,4 @@
+import { Asociacion } from "./asociacion";
 import { Role } from "./role";
 
 export interface User {
@@ -20,4 +21,5 @@ export interface User {
   updatedBy: User | null;
   locale: string;
   localizations: User[];
+  asociacions?: Asociacion[]; // Cambiar 'any' por el tipo correcto de Asociación si está definido
 }

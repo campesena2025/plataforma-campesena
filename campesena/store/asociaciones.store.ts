@@ -10,6 +10,7 @@ import { getAllAsociaciones } from "@/services/asociaciones.service";
 interface AsociacionesState {
   data: Asociacion[];
   loading: boolean;
+  setAsociaciones: (asociaciones: Asociacion[]) => void;
   fetchAsociaciones: () => Promise<void>;
   invalidate: () => Promise<void>;
   addAsociacion: (newAsociacion: Asociacion) => void;
@@ -35,6 +36,8 @@ export const useAsociacionesStore = create(
     persist(
       immer<AsociacionesState>((set, get) => ({
         ...initialState,
+
+        setAsociaciones: (asociaciones) => set({ data: asociaciones, loading: false }),
 
         fetchAsociaciones: async () => {
           if (get().data.length > 0) return;

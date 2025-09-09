@@ -435,10 +435,17 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
       'api::departamento.departamento'
     >;
     estado: Schema.Attribute.Enumeration<
-      ['Activo', 'Inactivo', 'En Evalucaci\u00F3n']
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Activo'>;
+      [
+        ' Registradas',
+        ' Diagnosticadas',
+        ' Asignadas a servicio',
+        ' En formaci\u00F3n',
+        ' En formulaci\u00F3n de proyecto',
+        ' En evaluaci\u00F3n de proyecto',
+        ' Evaluada en impactos',
+        ' En entrega de insumos',
+      ]
+    >;
     evaluacion_diagnosticos: Schema.Attribute.Relation<
       'oneToMany',
       'api::evaluacion-diagnostico.evaluacion-diagnostico'
@@ -505,6 +512,10 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     vereda: Schema.Attribute.Relation<'manyToOne', 'api::vereda.vereda'>;
     warning: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
@@ -2260,9 +2271,12 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
+    asociacions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::asociacion.asociacion'
+    >;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;

@@ -21,6 +21,9 @@ export default function LoginPage() {
     try {
       const response = await login(email, password);
 
+      //get role / datos / lista de empresas [ids]
+      //obtener la lista de emrpesas
+
       saveSession(response);
       router.push("/"); // Redirige al dashboard o página principal
     } catch (error) {

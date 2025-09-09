@@ -6,13 +6,14 @@ import { Spinner } from "@heroui/react";
 
 import CardAssociation from "@/components/CardAssociation";
 import { useAsociacionesStore } from "@/store/asociaciones.store";
+import { getSession } from "@/services/auth";
 
 export default function AsociacionesPage() {
   const router = useRouter();
   const { data, fetchAsociaciones, loading } = useAsociacionesStore();
 
   useEffect(() => {
-    if (data.length === 0) {
+    if (data.length === 0 && getSession()?.jwt) {
       fetchAsociaciones();
     }
   }, [data, fetchAsociaciones]);

@@ -2,7 +2,9 @@
 import { Link } from "@heroui/react";
 import { Card } from "@heroui/react";
 import { Button } from "@heroui/react";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
+
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 // Íconos de ejemplo, puedes reemplazarlos por los tuyos
 const AssociationIcon = () => (
@@ -10,33 +12,13 @@ const AssociationIcon = () => (
     🤝
   </span>
 );
-const CapacityIcon = () => (
-  <span aria-label="capacidades" role="img">
-    🧑‍🏫
-  </span>
-);
+
 const ReportsIcon = () => (
   <span aria-label="reportes" role="img">
     📊
   </span>
 );
 
-// --- DATOS DE EJEMPLO ---
-const estados = [
-  { label: "Registradas", value: 12, color: "bg-violet-500" },
-  { label: "Diagnosticadas", value: 8, color: "bg-blue-500" },
-  { label: "Asignadas a servicio", value: 6, color: "bg-green-500" },
-  { label: "En formación", value: 5, color: "bg-yellow-500" },
-  { label: "En formulación de proyecto", value: 3, color: "bg-pink-500" },
-  { label: "En evaluación de proyecto", value: 2, color: "bg-indigo-500" },
-  { label: "Evaluada en impactos", value: 1, color: "bg-red-500" },
-  { label: "En entrega de insumos", value: 4, color: "bg-teal-500" },
-];
-
-const totalAsociaciones = estados.reduce((acc, e) => acc + e.value, 0);
-const cursos = 7; // Dato de ejemplo
-
-// --- COMPONENTES DE GRÁFICOS (EJEMPLO) ---
 const PieChart = ({
   data,
 }: {
@@ -133,6 +115,40 @@ const PieChart = ({
 };
 
 export default function Home() {
+  const asociaciones = useAsociacionesStore((state) => state.data);
+  const loading = useAsociacionesStore((state) => state.loading);
+  const fetchAsociaciones = useAsociacionesStore(
+    (state) => state.fetchAsociaciones,
+  );
+
+  useEffect(() => {
+    fetchAsociaciones();
+  }, [fetchAsociaciones]);
+  const estados = useMemo(() => {
+    const estadosMap: { [key: string]: { value: number; color: string } } = {
+      Registradas: { value: 0, color: "bg-violet-500" },
+      Diagnosticadas: { value: 0, color: "bg-blue-500" },
+      "Asignadas a servicio": { value: 0, color: "bg-green-500" },
+      "En formación": { value: 0, color: "bg-yellow-500" },
+      "En formulación de proyecto": { value: 0, color: "bg-pink-500" },
+      "En evaluación de proyecto": { value: 0, color: "bg-indigo-500" },
+      "Evaluada en impactos": { value: 0, color: "bg-red-500" },
+      "En entrega de insumos": { value: 0, color: "bg-teal-500" },
+    };
+
+    asociaciones.forEach((asociacion) => {
+      if (estadosMap[asociacion.estado.trim()]) {
+        estadosMap[asociacion.estado.trim()].value++;
+      }
+    });
+
+    return Object.entries(estadosMap).map(([label, { value, color }]) => ({
+      label,
+      value,
+      color,
+    }));
+  }, [asociaciones]);
+
   return (
     <section className="flex flex-col gap-8 py-3 md:py-10 w-full">
       <h1 className="text-2xl font-bold">Programa campesena</h1>
@@ -140,7 +156,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-1 gap-4 w-full">
         <Card className="bg-gradient-to-br from-violet-100 to-white shadow-lg p-4 flex flex-col items-center justify-center">
           <span className="text-4xl font-bold text-violet-700">
-            {totalAsociaciones}
+            {loading ? "..." : asociaciones.length}
           </span>
           <span className="font-semibold mt-2 text-center">
             Asociaciones atendidas

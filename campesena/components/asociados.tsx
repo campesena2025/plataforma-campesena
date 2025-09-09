@@ -163,7 +163,8 @@ export default function AsociadosTable({
               {` ${representanteLegalData.nombreCompleto}`}
             </h2>
             <small className="text-blue-700">
-              Telefono: {` ${representanteLegalData.numeroContacto} | Correo: ${representanteLegalData.correoElectronico}`}
+              Telefono:{" "}
+              {` ${representanteLegalData.numeroContacto} | Correo: ${representanteLegalData.correoElectronico}`}
             </small>
           </div>
         )}
