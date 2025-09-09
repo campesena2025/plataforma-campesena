@@ -26,7 +26,7 @@ export default function LoginPage() {
 
       saveSession(response);
       router.push("/"); // Redirige al dashboard o página principal
-    } catch (error) {
+    } catch {
       setError("Ocurrió un error inesperado. Intenta de nuevo.");
     } finally {
       setLoading(false);

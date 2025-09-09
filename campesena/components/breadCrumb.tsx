@@ -38,7 +38,7 @@ const Breadcrumbs = ({ titulo }: { titulo: string }) => {
   const convertBreadcrumb = (stringPath: string) => {
     try {
       return decodeURIComponent(stringPath.replace(/-/g, " "));
-    } catch (e) {
+    } catch {
       return stringPath.replace(/-/g, " ");
     }
   };

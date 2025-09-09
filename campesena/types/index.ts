@@ -16,7 +16,6 @@ export * from "./diagnosticoPlantilla";
 export * from "./enumerators";
 export * from "./evaluacionDiagnostico";
 export * from "./formacion";
-export * from "./geografia";
 export * from "./inversion";
 export * from "./media";
 export * from "./modeloNegocio";

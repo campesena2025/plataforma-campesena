@@ -46,21 +46,21 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
       );
 
       if (depto) {
-        setSelectedDepartamento(depto);
+        setSelectedDepartamento(depto as Departamento);
         if (initialMunicipioId) {
           const mun = depto.municipios.find(
             (m) => m.id.toString() === initialMunicipioId.toString(),
           );
 
           if (mun) {
-            setSelectedMunicipio(mun);
+            setSelectedMunicipio(mun as Municipio);
             if (initialVeredaId) {
               const ver = mun.veredas.find(
                 (v) => v.id.toString() === initialVeredaId.toString(),
               );
 
               if (ver) {
-                setSelectedVereda(ver);
+                setSelectedVereda(ver as Vereda);
               }
             } else {
               // Vereda is null (Cabecera Municipal)
@@ -107,10 +107,15 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
     const depto = departamentos.find((d) => d.id == parseInt(selectedId));
 
     if (depto) {
-      setSelectedDepartamento(depto);
+      // Cast depto to Departamento
+      setSelectedDepartamento(depto as Departamento);
       setSelectedMunicipio(undefined);
       setSelectedVereda(undefined);
-      onChange({ departamento: depto });
+      onChange({
+        departamento: depto,
+        municipio: undefined,
+        vereda: undefined,
+      });
     }
   };
 

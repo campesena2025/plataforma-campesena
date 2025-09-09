@@ -16,7 +16,6 @@ import { addToast } from "@heroui/toast";
 
 import { ParticipanteRequest } from "@/types/participante";
 import { createAsociado } from "@/services/asociado.service";
-import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 const populationTypes = [
   "VULNERABLE",
@@ -75,6 +74,7 @@ export const AddAssociateModal = ({
   onOpenChange,
   asociacionId,
 }: AddAssociateModalProps) => {
+  // Estado inicial del formulario para agregar un asociado
   const [formData, setFormData] = useState<ParticipanteRequest>({
     numeroDocumento: "",
     nombreCompleto: "",
@@ -85,6 +85,7 @@ export const AddAssociateModal = ({
     tipoPoblacion: "GENERAL",
     edad: 0,
     nivelEstudio: "Ninguno",
+    documentId: "", // Añadir documentId con un valor inicial vacío
     locale: "es",
   });
 
@@ -115,7 +116,7 @@ export const AddAssociateModal = ({
         color: "success",
       });
       onOpenChange(false);
-    } catch (error) {
+    } catch {
       addToast({
         title: "Error",
         description: "Ha ocurrido un error al agregar el asociado.",
