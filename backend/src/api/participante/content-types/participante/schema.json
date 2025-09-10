@@ -22,7 +22,7 @@
       "enum": [
         "Masculino",
         "Femenino",
-        "No Binario"
+        "No binario"
       ]
     },
     "correoElectronico": {
