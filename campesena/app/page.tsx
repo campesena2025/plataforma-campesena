@@ -117,13 +117,7 @@ const PieChart = ({
 export default function Home() {
   const asociaciones = useAsociacionesStore((state) => state.data);
   const loading = useAsociacionesStore((state) => state.loading);
-  const fetchAsociaciones = useAsociacionesStore(
-    (state) => state.fetchAsociaciones,
-  );
 
-  useEffect(() => {
-    fetchAsociaciones();
-  }, [fetchAsociaciones]);
   const estados = useMemo(() => {
     const estadosMap: { [key: string]: { value: number; color: string } } = {
       Registradas: { value: 0, color: "bg-violet-500" },
