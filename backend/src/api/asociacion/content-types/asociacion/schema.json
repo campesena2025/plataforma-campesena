@@ -126,8 +126,8 @@
     "estado": {
       "type": "enumeration",
       "enum": [
-        "Registradas",
-        "Diagnosticadas",
+        "Registrada",
+        "Diagnosticada",
         "Asignadas a servicio",
         "En formación",
         "En formulación de proyecto",
