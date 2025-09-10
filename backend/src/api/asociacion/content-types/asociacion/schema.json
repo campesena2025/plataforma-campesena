@@ -126,14 +126,14 @@
     "estado": {
       "type": "enumeration",
       "enum": [
-        " Registradas",
-        " Diagnosticadas",
-        " Asignadas a servicio",
-        " En formación",
-        " En formulación de proyecto",
-        " En evaluación de proyecto",
-        " Evaluada en impactos",
-        " En entrega de insumos"
+        "Registradas",
+        "Diagnosticadas",
+        "Asignadas a servicio",
+        "En formación",
+        "En formulación de proyecto",
+        "En evaluación de proyecto",
+        "Evaluada en impactos",
+        "En entrega de insumos"
       ]
     }
   }

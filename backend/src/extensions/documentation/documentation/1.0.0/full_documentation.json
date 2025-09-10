@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-08T17:27:05.408Z"
+    "x-generation-date": "2025-09-10T22:04:49.367Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -21218,14 +21218,14 @@
                                     "estado": {
                                       "type": "string",
                                       "enum": [
-                                        " Registradas",
-                                        " Diagnosticadas",
-                                        " Asignadas a servicio",
-                                        " En formación",
-                                        " En formulación de proyecto",
-                                        " En evaluación de proyecto",
-                                        " Evaluada en impactos",
-                                        " En entrega de insumos"
+                                        "Registradas",
+                                        "Diagnosticadas",
+                                        "Asignadas a servicio",
+                                        "En formación",
+                                        "En formulación de proyecto",
+                                        "En evaluación de proyecto",
+                                        "Evaluada en impactos",
+                                        "En entrega de insumos"
                                       ]
                                     },
                                     "createdAt": {
@@ -22692,14 +22692,14 @@
               "estado": {
                 "type": "string",
                 "enum": [
-                  " Registradas",
-                  " Diagnosticadas",
-                  " Asignadas a servicio",
-                  " En formación",
-                  " En formulación de proyecto",
-                  " En evaluación de proyecto",
-                  " Evaluada en impactos",
-                  " En entrega de insumos"
+                  "Registradas",
+                  "Diagnosticadas",
+                  "Asignadas a servicio",
+                  "En formación",
+                  "En formulación de proyecto",
+                  "En evaluación de proyecto",
+                  "Evaluada en impactos",
+                  "En entrega de insumos"
                 ]
               },
               "locale": {
@@ -26159,14 +26159,14 @@
                         "estado": {
                           "type": "string",
                           "enum": [
-                            " Registradas",
-                            " Diagnosticadas",
-                            " Asignadas a servicio",
-                            " En formación",
-                            " En formulación de proyecto",
-                            " En evaluación de proyecto",
-                            " Evaluada en impactos",
-                            " En entrega de insumos"
+                            "Registradas",
+                            "Diagnosticadas",
+                            "Asignadas a servicio",
+                            "En formación",
+                            "En formulación de proyecto",
+                            "En evaluación de proyecto",
+                            "Evaluada en impactos",
+                            "En entrega de insumos"
                           ]
                         },
                         "createdAt": {
@@ -26662,14 +26662,14 @@
           "estado": {
             "type": "string",
             "enum": [
-              " Registradas",
-              " Diagnosticadas",
-              " Asignadas a servicio",
-              " En formación",
-              " En formulación de proyecto",
-              " En evaluación de proyecto",
-              " Evaluada en impactos",
-              " En entrega de insumos"
+              "Registradas",
+              "Diagnosticadas",
+              "Asignadas a servicio",
+              "En formación",
+              "En formulación de proyecto",
+              "En evaluación de proyecto",
+              "Evaluada en impactos",
+              "En entrega de insumos"
             ]
           },
           "createdAt": {
@@ -28624,14 +28624,14 @@
                                         "estado": {
                                           "type": "string",
                                           "enum": [
-                                            " Registradas",
-                                            " Diagnosticadas",
-                                            " Asignadas a servicio",
-                                            " En formación",
-                                            " En formulación de proyecto",
-                                            " En evaluación de proyecto",
-                                            " Evaluada en impactos",
-                                            " En entrega de insumos"
+                                            "Registradas",
+                                            "Diagnosticadas",
+                                            "Asignadas a servicio",
+                                            "En formación",
+                                            "En formulación de proyecto",
+                                            "En evaluación de proyecto",
+                                            "Evaluada en impactos",
+                                            "En entrega de insumos"
                                           ]
                                         },
                                         "createdAt": {
@@ -33249,14 +33249,14 @@
                                     "estado": {
                                       "type": "string",
                                       "enum": [
-                                        " Registradas",
-                                        " Diagnosticadas",
-                                        " Asignadas a servicio",
-                                        " En formación",
-                                        " En formulación de proyecto",
-                                        " En evaluación de proyecto",
-                                        " Evaluada en impactos",
-                                        " En entrega de insumos"
+                                        "Registradas",
+                                        "Diagnosticadas",
+                                        "Asignadas a servicio",
+                                        "En formación",
+                                        "En formulación de proyecto",
+                                        "En evaluación de proyecto",
+                                        "Evaluada en impactos",
+                                        "En entrega de insumos"
                                       ]
                                     },
                                     "createdAt": {
@@ -37872,14 +37872,14 @@
                             "estado": {
                               "type": "string",
                               "enum": [
-                                " Registradas",
-                                " Diagnosticadas",
-                                " Asignadas a servicio",
-                                " En formación",
-                                " En formulación de proyecto",
-                                " En evaluación de proyecto",
-                                " Evaluada en impactos",
-                                " En entrega de insumos"
+                                "Registradas",
+                                "Diagnosticadas",
+                                "Asignadas a servicio",
+                                "En formación",
+                                "En formulación de proyecto",
+                                "En evaluación de proyecto",
+                                "Evaluada en impactos",
+                                "En entrega de insumos"
                               ]
                             },
                             "createdAt": {
@@ -40719,14 +40719,14 @@
                                         "estado": {
                                           "type": "string",
                                           "enum": [
-                                            " Registradas",
-                                            " Diagnosticadas",
-                                            " Asignadas a servicio",
-                                            " En formación",
-                                            " En formulación de proyecto",
-                                            " En evaluación de proyecto",
-                                            " Evaluada en impactos",
-                                            " En entrega de insumos"
+                                            "Registradas",
+                                            "Diagnosticadas",
+                                            "Asignadas a servicio",
+                                            "En formación",
+                                            "En formulación de proyecto",
+                                            "En evaluación de proyecto",
+                                            "Evaluada en impactos",
+                                            "En entrega de insumos"
                                           ]
                                         },
                                         "createdAt": {
@@ -45488,14 +45488,14 @@
                           "estado": {
                             "type": "string",
                             "enum": [
-                              " Registradas",
-                              " Diagnosticadas",
-                              " Asignadas a servicio",
-                              " En formación",
-                              " En formulación de proyecto",
-                              " En evaluación de proyecto",
-                              " Evaluada en impactos",
-                              " En entrega de insumos"
+                              "Registradas",
+                              "Diagnosticadas",
+                              "Asignadas a servicio",
+                              "En formación",
+                              "En formulación de proyecto",
+                              "En evaluación de proyecto",
+                              "Evaluada en impactos",
+                              "En entrega de insumos"
                             ]
                           },
                           "createdAt": {
@@ -49342,14 +49342,14 @@
                               "estado": {
                                 "type": "string",
                                 "enum": [
-                                  " Registradas",
-                                  " Diagnosticadas",
-                                  " Asignadas a servicio",
-                                  " En formación",
-                                  " En formulación de proyecto",
-                                  " En evaluación de proyecto",
-                                  " Evaluada en impactos",
-                                  " En entrega de insumos"
+                                  "Registradas",
+                                  "Diagnosticadas",
+                                  "Asignadas a servicio",
+                                  "En formación",
+                                  "En formulación de proyecto",
+                                  "En evaluación de proyecto",
+                                  "Evaluada en impactos",
+                                  "En entrega de insumos"
                                 ]
                               },
                               "createdAt": {
@@ -53066,14 +53066,14 @@
                                         "estado": {
                                           "type": "string",
                                           "enum": [
-                                            " Registradas",
-                                            " Diagnosticadas",
-                                            " Asignadas a servicio",
-                                            " En formación",
-                                            " En formulación de proyecto",
-                                            " En evaluación de proyecto",
-                                            " Evaluada en impactos",
-                                            " En entrega de insumos"
+                                            "Registradas",
+                                            "Diagnosticadas",
+                                            "Asignadas a servicio",
+                                            "En formación",
+                                            "En formulación de proyecto",
+                                            "En evaluación de proyecto",
+                                            "Evaluada en impactos",
+                                            "En entrega de insumos"
                                           ]
                                         },
                                         "createdAt": {
@@ -56011,14 +56011,14 @@
                               "estado": {
                                 "type": "string",
                                 "enum": [
-                                  " Registradas",
-                                  " Diagnosticadas",
-                                  " Asignadas a servicio",
-                                  " En formación",
-                                  " En formulación de proyecto",
-                                  " En evaluación de proyecto",
-                                  " Evaluada en impactos",
-                                  " En entrega de insumos"
+                                  "Registradas",
+                                  "Diagnosticadas",
+                                  "Asignadas a servicio",
+                                  "En formación",
+                                  "En formulación de proyecto",
+                                  "En evaluación de proyecto",
+                                  "Evaluada en impactos",
+                                  "En entrega de insumos"
                                 ]
                               },
                               "createdAt": {
@@ -60654,14 +60654,14 @@
                                     "estado": {
                                       "type": "string",
                                       "enum": [
-                                        " Registradas",
-                                        " Diagnosticadas",
-                                        " Asignadas a servicio",
-                                        " En formación",
-                                        " En formulación de proyecto",
-                                        " En evaluación de proyecto",
-                                        " Evaluada en impactos",
-                                        " En entrega de insumos"
+                                        "Registradas",
+                                        "Diagnosticadas",
+                                        "Asignadas a servicio",
+                                        "En formación",
+                                        "En formulación de proyecto",
+                                        "En evaluación de proyecto",
+                                        "Evaluada en impactos",
+                                        "En entrega de insumos"
                                       ]
                                     },
                                     "createdAt": {
@@ -64413,14 +64413,14 @@
                                           "estado": {
                                             "type": "string",
                                             "enum": [
-                                              " Registradas",
-                                              " Diagnosticadas",
-                                              " Asignadas a servicio",
-                                              " En formación",
-                                              " En formulación de proyecto",
-                                              " En evaluación de proyecto",
-                                              " Evaluada en impactos",
-                                              " En entrega de insumos"
+                                              "Registradas",
+                                              "Diagnosticadas",
+                                              "Asignadas a servicio",
+                                              "En formación",
+                                              "En formulación de proyecto",
+                                              "En evaluación de proyecto",
+                                              "Evaluada en impactos",
+                                              "En entrega de insumos"
                                             ]
                                           },
                                           "createdAt": {
@@ -68185,14 +68185,14 @@
                                 "estado": {
                                   "type": "string",
                                   "enum": [
-                                    " Registradas",
-                                    " Diagnosticadas",
-                                    " Asignadas a servicio",
-                                    " En formación",
-                                    " En formulación de proyecto",
-                                    " En evaluación de proyecto",
-                                    " Evaluada en impactos",
-                                    " En entrega de insumos"
+                                    "Registradas",
+                                    "Diagnosticadas",
+                                    "Asignadas a servicio",
+                                    "En formación",
+                                    "En formulación de proyecto",
+                                    "En evaluación de proyecto",
+                                    "Evaluada en impactos",
+                                    "En entrega de insumos"
                                   ]
                                 },
                                 "createdAt": {
@@ -74129,14 +74129,14 @@
                 "estado": {
                   "type": "string",
                   "enum": [
-                    " Registradas",
-                    " Diagnosticadas",
-                    " Asignadas a servicio",
-                    " En formación",
-                    " En formulación de proyecto",
-                    " En evaluación de proyecto",
-                    " Evaluada en impactos",
-                    " En entrega de insumos"
+                    "Registradas",
+                    "Diagnosticadas",
+                    "Asignadas a servicio",
+                    "En formación",
+                    "En formulación de proyecto",
+                    "En evaluación de proyecto",
+                    "Evaluada en impactos",
+                    "En entrega de insumos"
                   ]
                 },
                 "createdAt": {
@@ -76108,14 +76108,14 @@
                               "estado": {
                                 "type": "string",
                                 "enum": [
-                                  " Registradas",
-                                  " Diagnosticadas",
-                                  " Asignadas a servicio",
-                                  " En formación",
-                                  " En formulación de proyecto",
-                                  " En evaluación de proyecto",
-                                  " Evaluada en impactos",
-                                  " En entrega de insumos"
+                                  "Registradas",
+                                  "Diagnosticadas",
+                                  "Asignadas a servicio",
+                                  "En formación",
+                                  "En formulación de proyecto",
+                                  "En evaluación de proyecto",
+                                  "Evaluada en impactos",
+                                  "En entrega de insumos"
                                 ]
                               },
                               "createdAt": {
@@ -80439,14 +80439,14 @@
                                           "estado": {
                                             "type": "string",
                                             "enum": [
-                                              " Registradas",
-                                              " Diagnosticadas",
-                                              " Asignadas a servicio",
-                                              " En formación",
-                                              " En formulación de proyecto",
-                                              " En evaluación de proyecto",
-                                              " Evaluada en impactos",
-                                              " En entrega de insumos"
+                                              "Registradas",
+                                              "Diagnosticadas",
+                                              "Asignadas a servicio",
+                                              "En formación",
+                                              "En formulación de proyecto",
+                                              "En evaluación de proyecto",
+                                              "Evaluada en impactos",
+                                              "En entrega de insumos"
                                             ]
                                           },
                                           "createdAt": {
@@ -84265,14 +84265,14 @@
                                 "estado": {
                                   "type": "string",
                                   "enum": [
-                                    " Registradas",
-                                    " Diagnosticadas",
-                                    " Asignadas a servicio",
-                                    " En formación",
-                                    " En formulación de proyecto",
-                                    " En evaluación de proyecto",
-                                    " Evaluada en impactos",
-                                    " En entrega de insumos"
+                                    "Registradas",
+                                    "Diagnosticadas",
+                                    "Asignadas a servicio",
+                                    "En formación",
+                                    "En formulación de proyecto",
+                                    "En evaluación de proyecto",
+                                    "Evaluada en impactos",
+                                    "En entrega de insumos"
                                   ]
                                 },
                                 "createdAt": {
@@ -88319,14 +88319,14 @@
                                 "estado": {
                                   "type": "string",
                                   "enum": [
-                                    " Registradas",
-                                    " Diagnosticadas",
-                                    " Asignadas a servicio",
-                                    " En formación",
-                                    " En formulación de proyecto",
-                                    " En evaluación de proyecto",
-                                    " Evaluada en impactos",
-                                    " En entrega de insumos"
+                                    "Registradas",
+                                    "Diagnosticadas",
+                                    "Asignadas a servicio",
+                                    "En formación",
+                                    "En formulación de proyecto",
+                                    "En evaluación de proyecto",
+                                    "Evaluada en impactos",
+                                    "En entrega de insumos"
                                   ]
                                 },
                                 "createdAt": {
@@ -92548,14 +92548,14 @@
                                     "estado": {
                                       "type": "string",
                                       "enum": [
-                                        " Registradas",
-                                        " Diagnosticadas",
-                                        " Asignadas a servicio",
-                                        " En formación",
-                                        " En formulación de proyecto",
-                                        " En evaluación de proyecto",
-                                        " Evaluada en impactos",
-                                        " En entrega de insumos"
+                                        "Registradas",
+                                        "Diagnosticadas",
+                                        "Asignadas a servicio",
+                                        "En formación",
+                                        "En formulación de proyecto",
+                                        "En evaluación de proyecto",
+                                        "Evaluada en impactos",
+                                        "En entrega de insumos"
                                       ]
                                     },
                                     "createdAt": {
@@ -95996,14 +95996,14 @@
                                     "estado": {
                                       "type": "string",
                                       "enum": [
-                                        " Registradas",
-                                        " Diagnosticadas",
-                                        " Asignadas a servicio",
-                                        " En formación",
-                                        " En formulación de proyecto",
-                                        " En evaluación de proyecto",
-                                        " Evaluada en impactos",
-                                        " En entrega de insumos"
+                                        "Registradas",
+                                        "Diagnosticadas",
+                                        "Asignadas a servicio",
+                                        "En formación",
+                                        "En formulación de proyecto",
+                                        "En evaluación de proyecto",
+                                        "Evaluada en impactos",
+                                        "En entrega de insumos"
                                       ]
                                     },
                                     "createdAt": {
@@ -99577,14 +99577,14 @@
                                     "estado": {
                                       "type": "string",
                                       "enum": [
-                                        " Registradas",
-                                        " Diagnosticadas",
-                                        " Asignadas a servicio",
-                                        " En formación",
-                                        " En formulación de proyecto",
-                                        " En evaluación de proyecto",
-                                        " Evaluada en impactos",
-                                        " En entrega de insumos"
+                                        "Registradas",
+                                        "Diagnosticadas",
+                                        "Asignadas a servicio",
+                                        "En formación",
+                                        "En formulación de proyecto",
+                                        "En evaluación de proyecto",
+                                        "Evaluada en impactos",
+                                        "En entrega de insumos"
                                       ]
                                     },
                                     "createdAt": {
@@ -105067,14 +105067,14 @@
                   "estado": {
                     "type": "string",
                     "enum": [
-                      " Registradas",
-                      " Diagnosticadas",
-                      " Asignadas a servicio",
-                      " En formación",
-                      " En formulación de proyecto",
-                      " En evaluación de proyecto",
-                      " Evaluada en impactos",
-                      " En entrega de insumos"
+                      "Registradas",
+                      "Diagnosticadas",
+                      "Asignadas a servicio",
+                      "En formación",
+                      "En formulación de proyecto",
+                      "En evaluación de proyecto",
+                      "Evaluada en impactos",
+                      "En entrega de insumos"
                     ]
                   },
                   "createdAt": {
@@ -109309,14 +109309,14 @@
                                         "estado": {
                                           "type": "string",
                                           "enum": [
-                                            " Registradas",
-                                            " Diagnosticadas",
-                                            " Asignadas a servicio",
-                                            " En formación",
-                                            " En formulación de proyecto",
-                                            " En evaluación de proyecto",
-                                            " Evaluada en impactos",
-                                            " En entrega de insumos"
+                                            "Registradas",
+                                            "Diagnosticadas",
+                                            "Asignadas a servicio",
+                                            "En formación",
+                                            "En formulación de proyecto",
+                                            "En evaluación de proyecto",
+                                            "Evaluada en impactos",
+                                            "En entrega de insumos"
                                           ]
                                         },
                                         "createdAt": {
@@ -112100,14 +112100,14 @@
                                         "estado": {
                                           "type": "string",
                                           "enum": [
-                                            " Registradas",
-                                            " Diagnosticadas",
-                                            " Asignadas a servicio",
-                                            " En formación",
-                                            " En formulación de proyecto",
-                                            " En evaluación de proyecto",
-                                            " Evaluada en impactos",
-                                            " En entrega de insumos"
+                                            "Registradas",
+                                            "Diagnosticadas",
+                                            "Asignadas a servicio",
+                                            "En formación",
+                                            "En formulación de proyecto",
+                                            "En evaluación de proyecto",
+                                            "Evaluada en impactos",
+                                            "En entrega de insumos"
                                           ]
                                         },
                                         "createdAt": {
@@ -117583,14 +117583,14 @@
                         "estado": {
                           "type": "string",
                           "enum": [
-                            " Registradas",
-                            " Diagnosticadas",
-                            " Asignadas a servicio",
-                            " En formación",
-                            " En formulación de proyecto",
-                            " En evaluación de proyecto",
-                            " Evaluada en impactos",
-                            " En entrega de insumos"
+                            "Registradas",
+                            "Diagnosticadas",
+                            "Asignadas a servicio",
+                            "En formación",
+                            "En formulación de proyecto",
+                            "En evaluación de proyecto",
+                            "Evaluada en impactos",
+                            "En entrega de insumos"
                           ]
                         },
                         "createdAt": {
@@ -121915,14 +121915,14 @@
                         "estado": {
                           "type": "string",
                           "enum": [
-                            " Registradas",
-                            " Diagnosticadas",
-                            " Asignadas a servicio",
-                            " En formación",
-                            " En formulación de proyecto",
-                            " En evaluación de proyecto",
-                            " Evaluada en impactos",
-                            " En entrega de insumos"
+                            "Registradas",
+                            "Diagnosticadas",
+                            "Asignadas a servicio",
+                            "En formación",
+                            "En formulación de proyecto",
+                            "En evaluación de proyecto",
+                            "Evaluada en impactos",
+                            "En entrega de insumos"
                           ]
                         },
                         "createdAt": {

@@ -1,8 +1,10 @@
+import { getSession } from "@/services/auth";
 import { Departamento } from "./departamento";
 import { Media } from "./media";
 import { Municipio } from "./municipio";
 import { Pagination } from "./pagination";
 import { Participante } from "./participante";
+import { User } from "./user";
 import { Vereda } from "./vereda";
 
 export interface AsociacionRequest {
@@ -27,6 +29,7 @@ export interface AsociacionRequest {
   participantes?: (number | string)[];
   estado: string;
   warning?: boolean;
+  users_permissions_user: number | string;
 }
 
 export interface Asociaciones {
@@ -60,6 +63,7 @@ export interface Asociacion {
   vereda: Vereda;
   estado: string;
   warning?: boolean;
+  users_permissions_user: User;
 }
 
 export const toAsociacionRequest = (
@@ -83,4 +87,5 @@ export const toAsociacionRequest = (
   representanteLegal: asociacion.representanteLegal?.id,
   participantes: asociacion.participantes?.map((p) => p.id) ?? [],
   foto: asociacion.foto?.id,
+  users_permissions_user: getSession()?.user.id ?? 0,
 });

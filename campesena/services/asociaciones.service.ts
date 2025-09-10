@@ -7,6 +7,7 @@ import {
 } from "@/types/asociacion";
 import { useAsociacionesStore } from "@/store/asociaciones.store";
 import ApiClient from "@/app/api/axios/apiClient";
+import { getSession } from "./auth";
 
 export const getAllAsociaciones = async () => {
   const query = qs.stringify(
@@ -74,6 +75,9 @@ export const createAsociacion = async (
       encodeValuesOnly: true,
     },
   );
+
+  asociacion.estado = "Registrada";
+  asociacion.users_permissions_user = getSession()?.user.id ?? 0;
 
   const { data: response } = await ApiClient.post(`/asociacions?${query}`, {
     data: asociacion,

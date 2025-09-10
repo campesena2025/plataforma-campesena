@@ -436,14 +436,14 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
     >;
     estado: Schema.Attribute.Enumeration<
       [
-        ' Registradas',
-        ' Diagnosticadas',
-        ' Asignadas a servicio',
-        ' En formaci\u00F3n',
-        ' En formulaci\u00F3n de proyecto',
-        ' En evaluaci\u00F3n de proyecto',
-        ' Evaluada en impactos',
-        ' En entrega de insumos',
+        'Registradas',
+        'Diagnosticadas',
+        'Asignadas a servicio',
+        'En formaci\u00F3n',
+        'En formulaci\u00F3n de proyecto',
+        'En evaluaci\u00F3n de proyecto',
+        'Evaluada en impactos',
+        'En entrega de insumos',
       ]
     >;
     evaluacion_diagnosticos: Schema.Attribute.Relation<
