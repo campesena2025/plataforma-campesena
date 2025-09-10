@@ -166,6 +166,7 @@ export const AddAssociateModal = ({
                 >
                   <Radio value="Masculino">Masculino</Radio>
                   <Radio value="Femenino">Femenino</Radio>
+                  <Radio value="No binario">No binario</Radio>
                 </RadioGroup>
                 <Input
                   id="correoElectronico"
