@@ -2,7 +2,7 @@
 import { Link } from "@heroui/react";
 import { Card } from "@heroui/react";
 import { Button } from "@heroui/react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 
 import { useAsociacionesStore } from "@/store/asociaciones.store";
 

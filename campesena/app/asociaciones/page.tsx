@@ -33,7 +33,9 @@ export default function AsociacionesPage() {
       )}
       {!loading && data?.length === 0 && (
         <div className="flex justify-center items-center h-40 text-center">
-          <p className="text-lg text-gray-500">No hay asociaciones creadas para el instructor.</p>
+          <p className="text-lg text-gray-500">
+            No hay asociaciones creadas para el instructor.
+          </p>
         </div>
       )}
       {data?.map((associationData) => (

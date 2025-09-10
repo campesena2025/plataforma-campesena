@@ -3,11 +3,14 @@ import { useAsociacionesStore } from "@/store/asociaciones.store";
 import ApiClient from "@/app/api/axios/apiClient";
 
 export const createAsociado = async (
-  asociado: Omit<ParticipanteRequest, "id">,
+  asociado: ParticipanteRequest,
   asociacionId: number,
 ) => {
+  // Excluimos documentId del objeto que se envía, ya que es generado por el backend.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { documentId, ...restOfAsociado } = asociado;
   const { data: response } = await ApiClient.post("/participantes", {
-    data: { ...asociado, asociacions: [asociacionId] },
+    data: { ...restOfAsociado, asociacions: [asociacionId] },
   });
 
   // Una vez creado en el backend, actualizamos el estado en el frontend

@@ -37,7 +37,8 @@ export const useAsociacionesStore = create(
       immer<AsociacionesState>((set, get) => ({
         ...initialState,
 
-        setAsociaciones: (asociaciones) => set({ data: asociaciones, loading: false }),
+        setAsociaciones: (asociaciones) =>
+          set({ data: asociaciones, loading: false }),
 
         fetchAsociaciones: async () => {
           if (get().data.length > 0) return;

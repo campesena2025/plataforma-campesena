@@ -1,0 +1,11 @@
+# Archivos de entorno (se deben pasar en tiempo de ejecución)
+.env
+.env*.local
+
+# Dependencias y caché
+node_modules
+.next
+
+# Metadatos y logs
+.git
+.vscode
