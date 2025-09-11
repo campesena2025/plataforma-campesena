@@ -1,63 +1,53 @@
-# Ejecución del Proyecto Campesena con Docker
+# Ejecución del Proyecto Campesena con Docker Compose
 
-Esta guía describe los pasos necesarios para construir y ejecutar la aplicación Campesena utilizando Docker.
+Esta guía describe los pasos necesarios para ejecutar la aplicación Campesena utilizando Docker Compose.
 
 ## Prerrequisitos
-
--   Tener [Docker](https://www.docker.com/get-started) instalado en tu sistema.
--   Conocer la URL de la API a la que se conectará la aplicación (ej. `http://host.docker.internal:1337`).
+-   Tener [Docker](https://www.docker.com/get-started) y [Docker Compose](https://docs.docker.com/compose/install/) instalados en tu sistema.
+-   Un archivo `.env` en la raíz del proyecto con las siguientes variables de entorno:
+    ```
+    AUTH_SECRET="tu_secreto_de_autenticacion"
+    NEXT_PUBLIC_API_URL="http://host.docker.internal:1337"
+    NEXTAUTH_URL="http://localhost:3000"
+    ```
+    **Nota:** Reemplaza `"tu_secreto_de_autenticacion"` y la URL de la API con tus valores reales. `host.docker.internal` es una forma de que el contenedor se comunique con servicios que se ejecutan en tu máquina anfitriona.
 
 ## Pasos para la Ejecución
 
-### 1. Construir la Imagen de Docker
+### 1. Construir y Ejecutar los Contenedores
 
-Navega a la raíz del proyecto en tu terminal y ejecuta el siguiente comando para construir la imagen de Docker. Esto creará una imagen llamada `campesena-app`.
-
-```bash
-docker build -t campesena-app .
-```
-
-### 2. Ejecutar el Contenedor
-
-Una vez que la imagen se ha construido, puedes iniciar un contenedor. A continuación se muestran los comandos para diferentes sistemas operativos.
-
-**Importante:** Reemplaza los valores de ejemplo (`http://host.docker.internal:1337`, `tu_auth_secret_aqui`) con tu configuración real.
-
-**En Windows o macOS (con Docker Desktop):**
-
-Usa el siguiente comando, pasando la URL de la API directamente con la bandera `-e`.
+Navega a la raíz del proyecto en tu terminal y ejecuta el siguiente comando. Este comando construirá la imagen de la aplicación (si no existe o si el código ha cambiado) y la iniciará en segundo plano.
 
 ```bash
-docker run -p 3000:3000 \
-  -e "NEXT_PUBLIC_API_URL=http://host.docker.internal:1337" \
-  -e "NEXTAUTH_URL=http://localhost:3000" \
-  -e "AUTH_SECRET=u+mX91LuAGNfSvzm1QcJOTZSucM/YYpDXFxw2Uug4Ts=" \
-  --name campesena \
-  campesena-app
-```
-
-**En Linux:**
-
-En Linux, es crucial añadir la bandera `--add-host` para que el contenedor pueda comunicarse con tu máquina local a través de `host.docker.internal`.
-
-```bash
-docker run -p 3000:3000 -e "NEXT_PUBLIC_API_URL=http://host.docker.internal:8000" --add-host=host.docker.internal:host-gateway --name campesena campesena-app
+docker-compose up -d --build
 ```
 
 **Desglose del comando:**
+-   `up`: Crea e inicia los contenedores.
+-   `-d`: Modo "detached", ejecuta los contenedores en segundo plano.
+-   `--build`: Fuerza la reconstrucción de la imagen antes de iniciar los contenedores.
 
--   `-p 3000:3000`: Mapea el puerto `3000` de tu máquina al puerto `3000` del contenedor.
--   `-e "VARIABLE=VALOR"`: Pasa una variable de entorno directamente al contenedor. Es el método más explícito.
--   `--add-host=host.docker.internal:host-gateway` (Solo Linux): Permite que el contenedor resuelva `host.docker.internal` a la IP de la máquina anfitriona.
--   `--name campesena`: Asigna un nombre legible al contenedor.
--   `campesena-app`: El nombre de la imagen a usar.
+### 2. Verificar el Contenedor
 
-### 3. Verificar el Contenedor (Opcional)
+Para verificar que el contenedor está en ejecución, puedes usar:
+```bash
+docker-compose ps
+```
+O el comando estándar de Docker:
+```bash
+docker ps
+```
 
-Para verificar que el contenedor está en ejecución, puedes usar: `docker ps`
+### 3. Ver los Logs de la Aplicación
 
-### 4. Detener y Eliminar el Contenedor (Opcional)
+Para ver los logs del servicio `nextjs-app` en tiempo real:
+```bash
+docker-compose logs -f nextjs-app
+```
 
-Para detener el contenedor, ejecuta: `docker stop campesena`
+### 4. Detener los Contenedores
 
-Para eliminarlo (después de detenerlo): `docker rm campesena`
+Para detener y eliminar los contenedores, redes y volúmenes creados por `docker-compose up`, ejecuta:
+```bash
+docker-compose down
+```
