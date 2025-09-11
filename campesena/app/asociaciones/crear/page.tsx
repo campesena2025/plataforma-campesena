@@ -35,12 +35,6 @@ const Page = () => {
       ...prevData,
       [name]: name === "formalizada" ? value === "true" : value,
     }));
-
-    if (name === "formalizada" && value === "true") {
-      setSwitchCodigo(true);
-    } else {
-      setSwitchCodigo(false);
-    }
   };
 
   const handleChangeEstadoAsociacion = (
@@ -53,6 +47,8 @@ const Page = () => {
     setFormData((prevData) => ({
       ...(prevData as AsociacionRequest),
       [name]: name === "formalizada" ? value === "true" : value,
+      nit: "",
+      codigoInterno: "",
     }));
 
     if (name === "formalizada" && value === "true") {
