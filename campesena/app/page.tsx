@@ -115,6 +115,7 @@ const PieChart = ({
 };
 
 export default function Home() {
+  console.log("Renderizando Home");
   const asociaciones = useAsociacionesStore((state) => state.data);
   const loading = useAsociacionesStore((state) => state.loading);
 

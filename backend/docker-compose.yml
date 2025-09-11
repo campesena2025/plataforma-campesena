@@ -1,14 +1,14 @@
-version: '3'
+version: "3"
 
 services:
   strapi:
     container_name: strapi
     restart: unless-stopped
     ports:
-      - '1337:1337'
+      - "1337:1337"
     volumes:
       - ./:/srv/app
-      - /home/lgabrielcor/strapi_media_uploads:/srv/app/public/uploads
+      - /home/lgabrielcor/strapi_media_uploads:/opt/app/public/uploads
     env_file:
       - .env
     environment:
@@ -29,3 +29,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

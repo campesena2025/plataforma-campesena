@@ -1,23 +1,26 @@
-# Usa una imagen base de Node
-FROM node:18
+# Usar una imagen base de Node.js LTS
+FROM node:22-alpine
 
-# Establece el directorio de trabajo en el contenedor
-WORKDIR /srv/app
+# Instalar dependencias necesarias para compilar algunas dependencias de Strapi
+RUN apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev
 
-# Copia package.json y package-lock.json o yarn.lock
+# Establecer el directorio de trabajo
+WORKDIR /opt/app
+
+# Copiar package.json y package-lock.json
 COPY package*.json ./
 
-# Instala dependencias
-RUN npm install
+# Instalar dependencias de producción
+RUN npm install --production
 
-# Copia el resto del código
+# Copiar el resto de la aplicación
 COPY . .
 
-# Construye el proyecto (opcional, depende del setup)
+# Construir la aplicación Strapi
 RUN npm run build
 
-# Exponer el puerto para acceder a Strapi
+# Exponer el puerto que Strapi usa por defecto
 EXPOSE 1337
 
-# Comando para correr Strapi
-CMD ["npm", "run", "develop"]
+# Comando para iniciar la aplicación en modo producción
+CMD ["npm", "start"]

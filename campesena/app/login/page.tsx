@@ -25,7 +25,10 @@ export default function LoginPage() {
       //obtener la lista de emrpesas
 
       saveSession(response);
+      console.log("Login exitoso:", response);      
       router.push("/"); // Redirige al dashboard o página principal
+      router.refresh();
+      console.log("Redirigiendo a la página principal...");
     } catch {
       setError("Ocurrió un error inesperado. Intenta de nuevo.");
     } finally {
