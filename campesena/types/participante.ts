@@ -8,7 +8,7 @@ export interface ParticipanteRequest {
   genero: "Masculino" | "Femenino" | "No Binario";
   correoElectronico: string;
   numeroContacto: number;
-  asociacions: number[] | string[];
+  asociacions: number[] | string[] | null;
   tipoPoblacion: "VULNERABLE" | "GENERAL";
   edad: number;
   nivelEstudio:
@@ -61,7 +61,7 @@ export const toParticipanteRequest = (
       genero: "No Binario",
       correoElectronico: "",
       numeroContacto: 0,
-      asociacions: [],
+      asociacions: null,
       tipoPoblacion: "GENERAL",
       edad: 0,
       nivelEstudio: "Ninguno",
@@ -76,7 +76,7 @@ export const toParticipanteRequest = (
     genero: participante.genero,
     correoElectronico: participante.correoElectronico,
     numeroContacto: participante.numeroContacto,
-    asociacions: participante.asociacions?.map((a) => a.id) ?? [],
+    asociacions: participante.asociacions?.map((a) => a.id) ?? null,
     tipoPoblacion: participante.tipoPoblacion,
     edad: participante.edad,
     nivelEstudio: participante.nivelEstudio,

@@ -1,4 +1,3 @@
-import { getSession } from "@/services/auth";
 import { Departamento } from "./departamento";
 import { Media } from "./media";
 import { Municipio } from "./municipio";
@@ -6,6 +5,8 @@ import { Pagination } from "./pagination";
 import { Participante } from "./participante";
 import { User } from "./user";
 import { Vereda } from "./vereda";
+
+import { getSession } from "@/services/auth";
 
 export interface AsociacionRequest {
   nit: string;

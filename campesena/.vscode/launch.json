@@ -1,15 +1,17 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Next.js: Debug with Chrome",
-            "type": "chrome",
+            "type": "nextjs",
             "request": "launch",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}",
             "sourceMapPathOverrides": {
                 "webpack://_N_E/*": "${webRoot}/*"
-            }
+            },
+            "runtimeExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
         }
     ]
 }

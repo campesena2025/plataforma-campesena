@@ -79,12 +79,6 @@
     "codigoCIUU": {
       "type": "string"
     },
-    "evaluacion_diagnosticos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::evaluacion-diagnostico.evaluacion-diagnostico",
-      "mappedBy": "asociacion"
-    },
     "departamento": {
       "type": "relation",
       "relation": "manyToOne",
@@ -135,6 +129,12 @@
         "Evaluada en impactos",
         "En entrega de insumos"
       ]
+    },
+    "diagnostico_asociacions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::diagnostico-asociacion.diagnostico-asociacion",
+      "mappedBy": "asociacion"
     }
   }
 }

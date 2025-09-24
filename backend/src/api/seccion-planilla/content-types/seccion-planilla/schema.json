@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seccion_planillas",
+  "info": {
+    "singularName": "seccion-planilla",
+    "pluralName": "seccion-planillas",
+    "displayName": "SeccionPlanilla"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombreSeccion": {
+      "type": "string"
+    },
+    "diagnostico_plantilla": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::diagnostico-plantilla.diagnostico-plantilla",
+      "inversedBy": "seccion_planillas"
+    },
+    "pregunta_seccions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pregunta-seccion.pregunta-seccion",
+      "mappedBy": "seccion_planilla"
+    }
+  }
+}

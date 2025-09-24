@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diagnostico_asociacions",
+  "info": {
+    "singularName": "diagnostico-asociacion",
+    "pluralName": "diagnostico-asociacions",
+    "displayName": "DiagnosticoAsociacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombrePlantila": {
+      "type": "string"
+    },
+    "fechaAplicacion": {
+      "type": "datetime"
+    },
+    "tipoDiagnostico": {
+      "type": "enumeration",
+      "enum": [
+        "Inicial",
+        "Final"
+      ]
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "totalPuntaje": {
+      "type": "integer"
+    },
+    "resultado": {
+      "type": "string"
+    },
+    "seccion_diagnosticos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::seccion-diagnostico.seccion-diagnostico",
+      "mappedBy": "diagnostico_asociacion"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::asociacion.asociacion",
+      "inversedBy": "diagnostico_asociacions"
+    }
+  }
+}

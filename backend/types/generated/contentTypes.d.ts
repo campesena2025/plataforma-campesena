@@ -434,10 +434,14 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::departamento.departamento'
     >;
+    diagnostico_asociacions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::diagnostico-asociacion.diagnostico-asociacion'
+    >;
     estado: Schema.Attribute.Enumeration<
       [
-        'Registradas',
-        'Diagnosticadas',
+        'Registrada',
+        'Diagnosticada',
         'Asignadas a servicio',
         'En formaci\u00F3n',
         'En formulaci\u00F3n de proyecto',
@@ -445,10 +449,6 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
         'Evaluada en impactos',
         'En entrega de insumos',
       ]
-    >;
-    evaluacion_diagnosticos: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::evaluacion-diagnostico.evaluacion-diagnostico'
     >;
     formalizada: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     foto: Schema.Attribute.Media<'images'>;
@@ -588,43 +588,6 @@ export interface ApiCostoCosto extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCriterioEvaluacionCriterioEvaluacion
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'criterio_evaluacions';
-  info: {
-    displayName: 'criterioEvaluacion';
-    pluralName: 'criterio-evaluacions';
-    singularName: 'criterio-evaluacion';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::criterio-evaluacion.criterio-evaluacion'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    respuesta_criterios: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::respuesta-criterio.respuesta-criterio'
-    >;
-    seccion_diagnostico: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::seccion-diagnostico.seccion-diagnostico'
-    >;
-    textoPregunta: Schema.Attribute.Text;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiDatoMensualProyeccionDatoMensualProyeccion
   extends Struct.CollectionTypeSchema {
   collectionName: 'dato_mensual_proyeccions';
@@ -701,6 +664,48 @@ export interface ApiDepartamentoDepartamento
   };
 }
 
+export interface ApiDiagnosticoAsociacionDiagnosticoAsociacion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'diagnostico_asociacions';
+  info: {
+    displayName: 'DiagnosticoAsociacion';
+    pluralName: 'diagnostico-asociacions';
+    singularName: 'diagnostico-asociacion';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    asociacion: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::asociacion.asociacion'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fechaAplicacion: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::diagnostico-asociacion.diagnostico-asociacion'
+    > &
+      Schema.Attribute.Private;
+    nombrePlantila: Schema.Attribute.String;
+    observaciones: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    resultado: Schema.Attribute.String;
+    seccion_diagnosticos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::seccion-diagnostico.seccion-diagnostico'
+    >;
+    tipoDiagnostico: Schema.Attribute.Enumeration<['Inicial', 'Final']>;
+    totalPuntaje: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDiagnosticoPlantillaDiagnosticoPlantilla
   extends Struct.CollectionTypeSchema {
   collectionName: 'diagnostico_plantillas';
@@ -716,10 +721,6 @@ export interface ApiDiagnosticoPlantillaDiagnosticoPlantilla
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    evaluacion_diagnosticos: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::evaluacion-diagnostico.evaluacion-diagnostico'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -728,56 +729,14 @@ export interface ApiDiagnosticoPlantillaDiagnosticoPlantilla
       Schema.Attribute.Private;
     nombrePlantilla: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    seccion_diagnosticos: Schema.Attribute.Relation<
+    seccion_planillas: Schema.Attribute.Relation<
       'oneToMany',
-      'api::seccion-diagnostico.seccion-diagnostico'
+      'api::seccion-planilla.seccion-planilla'
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     version: Schema.Attribute.String;
-  };
-}
-
-export interface ApiEvaluacionDiagnosticoEvaluacionDiagnostico
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'evaluacion_diagnosticos';
-  info: {
-    displayName: 'EvaluacionDiagnostico';
-    pluralName: 'evaluacion-diagnosticos';
-    singularName: 'evaluacion-diagnostico';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    asociacion: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::asociacion.asociacion'
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    diagnostico_plantilla: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::diagnostico-plantilla.diagnostico-plantilla'
-    >;
-    fechaAplicacion: Schema.Attribute.DateTime;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::evaluacion-diagnostico.evaluacion-diagnostico'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    respuesta_criterios: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::respuesta-criterio.respuesta-criterio'
-    >;
-    tipoDiagnostico: Schema.Attribute.Enumeration<['Inicial', 'Final']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -1089,7 +1048,7 @@ export interface ApiParticipanteParticipante
       Schema.Attribute.Private;
     edad: Schema.Attribute.Integer;
     genero: Schema.Attribute.Enumeration<
-      ['Masculino', 'Femenino', 'No Binario']
+      ['Masculino', 'Femenino', 'No binario']
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1292,6 +1251,39 @@ export interface ApiPortafolioPortafolio extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPreguntaSeccionPreguntaSeccion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'pregunta_seccions';
+  info: {
+    displayName: 'PreguntaSeccion';
+    pluralName: 'pregunta-seccions';
+    singularName: 'pregunta-seccion';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pregunta-seccion.pregunta-seccion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seccion_planilla: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::seccion-planilla.seccion-planilla'
+    >;
+    textoPregunta: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProyeccionFinancieraProyeccionFinanciera
   extends Struct.CollectionTypeSchema {
   collectionName: 'proyeccion_financieras';
@@ -1425,13 +1417,13 @@ export interface ApiRegionalRegional extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiRespuestaCriterioRespuestaCriterio
+export interface ApiRespuestaDiagnosticoRespuestaDiagnostico
   extends Struct.CollectionTypeSchema {
-  collectionName: 'respuesta_criterios';
+  collectionName: 'respuesta_diagnosticos';
   info: {
-    displayName: 'respuestaCriterio';
-    pluralName: 'respuesta-criterios';
-    singularName: 'respuesta-criterio';
+    displayName: 'RespuestaDiagnostico';
+    pluralName: 'respuesta-diagnosticos';
+    singularName: 'respuesta-diagnostico';
   };
   options: {
     draftAndPublish: false;
@@ -1440,23 +1432,20 @@ export interface ApiRespuestaCriterioRespuestaCriterio
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    criterio_evaluacion: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::criterio-evaluacion.criterio-evaluacion'
-    >;
-    evaluacion_diagnostico: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::evaluacion-diagnostico.evaluacion-diagnostico'
-    >;
     hallazgos: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::respuesta-criterio.respuesta-criterio'
+      'api::respuesta-diagnostico.respuesta-diagnostico'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     puntaje: Schema.Attribute.Integer;
+    seccion_diagnostico: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::seccion-diagnostico.seccion-diagnostico'
+    >;
+    textoPregunta: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1515,13 +1504,9 @@ export interface ApiSeccionDiagnosticoSeccionDiagnostico
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    criterio_evaluacions: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::criterio-evaluacion.criterio-evaluacion'
-    >;
-    diagnostico_plantilla: Schema.Attribute.Relation<
+    diagnostico_asociacion: Schema.Attribute.Relation<
       'manyToOne',
-      'api::diagnostico-plantilla.diagnostico-plantilla'
+      'api::diagnostico-asociacion.diagnostico-asociacion'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1530,6 +1515,48 @@ export interface ApiSeccionDiagnosticoSeccionDiagnostico
     > &
       Schema.Attribute.Private;
     nombreSeccion: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    puntajeSeccion: Schema.Attribute.Integer;
+    respuesta_diagnosticos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::respuesta-diagnostico.respuesta-diagnostico'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSeccionPlanillaSeccionPlanilla
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'seccion_planillas';
+  info: {
+    displayName: 'SeccionPlanilla';
+    pluralName: 'seccion-planillas';
+    singularName: 'seccion-planilla';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    diagnostico_plantilla: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::diagnostico-plantilla.diagnostico-plantilla'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::seccion-planilla.seccion-planilla'
+    > &
+      Schema.Attribute.Private;
+    nombreSeccion: Schema.Attribute.String;
+    pregunta_seccions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pregunta-seccion.pregunta-seccion'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2332,11 +2359,10 @@ declare module '@strapi/strapi' {
       'api::asociacion.asociacion': ApiAsociacionAsociacion;
       'api::centro-formacion.centro-formacion': ApiCentroFormacionCentroFormacion;
       'api::costo.costo': ApiCostoCosto;
-      'api::criterio-evaluacion.criterio-evaluacion': ApiCriterioEvaluacionCriterioEvaluacion;
       'api::dato-mensual-proyeccion.dato-mensual-proyeccion': ApiDatoMensualProyeccionDatoMensualProyeccion;
       'api::departamento.departamento': ApiDepartamentoDepartamento;
+      'api::diagnostico-asociacion.diagnostico-asociacion': ApiDiagnosticoAsociacionDiagnosticoAsociacion;
       'api::diagnostico-plantilla.diagnostico-plantilla': ApiDiagnosticoPlantillaDiagnosticoPlantilla;
-      'api::evaluacion-diagnostico.evaluacion-diagnostico': ApiEvaluacionDiagnosticoEvaluacionDiagnostico;
       'api::flujo-caja-anual.flujo-caja-anual': ApiFlujoCajaAnualFlujoCajaAnual;
       'api::formacion.formacion': ApiFormacionFormacion;
       'api::inversion.inversion': ApiInversionInversion;
@@ -2348,12 +2374,14 @@ declare module '@strapi/strapi' {
       'api::plan-de-accion.plan-de-accion': ApiPlanDeAccionPlanDeAccion;
       'api::plan-mercadeo.plan-mercadeo': ApiPlanMercadeoPlanMercadeo;
       'api::portafolio.portafolio': ApiPortafolioPortafolio;
+      'api::pregunta-seccion.pregunta-seccion': ApiPreguntaSeccionPreguntaSeccion;
       'api::proyeccion-financiera.proyeccion-financiera': ApiProyeccionFinancieraProyeccionFinanciera;
       'api::proyecto-productivo.proyecto-productivo': ApiProyectoProductivoProyectoProductivo;
       'api::regional.regional': ApiRegionalRegional;
-      'api::respuesta-criterio.respuesta-criterio': ApiRespuestaCriterioRespuestaCriterio;
+      'api::respuesta-diagnostico.respuesta-diagnostico': ApiRespuestaDiagnosticoRespuestaDiagnostico;
       'api::resumen-mensual-caja.resumen-mensual-caja': ApiResumenMensualCajaResumenMensualCaja;
       'api::seccion-diagnostico.seccion-diagnostico': ApiSeccionDiagnosticoSeccionDiagnostico;
+      'api::seccion-planilla.seccion-planilla': ApiSeccionPlanillaSeccionPlanilla;
       'api::seguimiento-actividad.seguimiento-actividad': ApiSeguimientoActividadSeguimientoActividad;
       'api::servicio-participante.servicio-participante': ApiServicioParticipanteServicioParticipante;
       'api::servicio.servicio': ApiServicioServicio;

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pregunta_seccions",
+  "info": {
+    "singularName": "pregunta-seccion",
+    "pluralName": "pregunta-seccions",
+    "displayName": "PreguntaSeccion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "textoPregunta": {
+      "type": "text"
+    },
+    "seccion_planilla": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seccion-planilla.seccion-planilla",
+      "inversedBy": "pregunta_seccions"
+    }
+  }
+}

@@ -14,16 +14,19 @@
     "nombreSeccion": {
       "type": "string"
     },
-    "diagnostico_plantilla": {
+    "puntajeSeccion": {
+      "type": "integer"
+    },
+    "diagnostico_asociacion": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::diagnostico-plantilla.diagnostico-plantilla",
+      "target": "api::diagnostico-asociacion.diagnostico-asociacion",
       "inversedBy": "seccion_diagnosticos"
     },
-    "criterio_evaluacions": {
+    "respuesta_diagnosticos": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::criterio-evaluacion.criterio-evaluacion",
+      "target": "api::respuesta-diagnostico.respuesta-diagnostico",
       "mappedBy": "seccion_diagnostico"
     }
   }

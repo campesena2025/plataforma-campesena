@@ -17,16 +17,10 @@
     "version": {
       "type": "string"
     },
-    "seccion_diagnosticos": {
+    "seccion_planillas": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::seccion-diagnostico.seccion-diagnostico",
-      "mappedBy": "diagnostico_plantilla"
-    },
-    "evaluacion_diagnosticos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::evaluacion-diagnostico.evaluacion-diagnostico",
+      "target": "api::seccion-planilla.seccion-planilla",
       "mappedBy": "diagnostico_plantilla"
     }
   }

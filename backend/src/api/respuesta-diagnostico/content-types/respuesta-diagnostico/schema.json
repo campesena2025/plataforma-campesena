@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "respuesta_diagnosticos",
+  "info": {
+    "singularName": "respuesta-diagnostico",
+    "pluralName": "respuesta-diagnosticos",
+    "displayName": "RespuestaDiagnostico"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "textoPregunta": {
+      "type": "text"
+    },
+    "puntaje": {
+      "type": "integer"
+    },
+    "hallazgos": {
+      "type": "text"
+    },
+    "seccion_diagnostico": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seccion-diagnostico.seccion-diagnostico",
+      "inversedBy": "respuesta_diagnosticos"
+    }
+  }
+}
