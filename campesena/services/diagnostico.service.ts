@@ -1,9 +1,15 @@
 import qs from "qs";
 
 import { getSession } from "./auth";
-import ApiClient from "@/app/api/axios/apiClient";
 
-import { castDiagnosticoAsociaciontoRequest, DiagnosticoAsociacion, DiagnosticoAsociacionRequest, RespuestaDiagnosticoRequest, SeccionDiagnosticoRequest } from "@/types/diagnostico";
+import ApiClient from "@/app/api/axios/apiClient";
+import {
+  castDiagnosticoAsociaciontoRequest,
+  DiagnosticoAsociacion,
+  DiagnosticoAsociacionRequest,
+  RespuestaDiagnosticoRequest,
+  SeccionDiagnosticoRequest,
+} from "@/types/diagnostico";
 
 export const getDiagnosticoByDocumentIdAsociacion = async (
   documentId: string,
@@ -12,6 +18,11 @@ export const getDiagnosticoByDocumentIdAsociacion = async (
     const session = await getSession();
 
     if (!session) throw new Error("No session found");
+
+    // Add validation for documentId
+    if (!documentId) {
+      throw new Error("Document ID is required");
+    }
 
     const query = qs.stringify(
       {
@@ -26,17 +37,36 @@ export const getDiagnosticoByDocumentIdAsociacion = async (
       },
     );
 
+    // Log the full URL to debug
+    console.log(`Requesting: /asociacions/${documentId}?${query}`);
+
     const response = await ApiClient.get(`/asociacions/${documentId}?${query}`);
+
+    // Add validation for response
+    if (!response.data) {
+      throw new Error("No data received from API");
+    }
+
     const diagnosticos = response.data.diagnostico_asociacions;
+
     if (!diagnosticos || diagnosticos.length === 0) {
-      const diagnosticoGenerado = await generateDiagnosticoAsociacion(documentId);
+      const diagnosticoGenerado =
+        await generateDiagnosticoAsociacion(documentId);
+
       return diagnosticoGenerado;
     }
 
     return diagnosticos[0]; // Assuming you want the first one if multiple exist
-  } catch (error) {
-    console.error("Error fetching session:", error);
-    throw error;
+  } catch (error: any) {
+    // Improve error handling
+    const errorMessage =
+      error.response?.data?.error || error.message || "Unknown error";
+
+    console.error(
+      "Error in getDiagnosticoByDocumentIdAsociacion:",
+      errorMessage,
+    );
+    throw new Error(`Failed to fetch diagnostico: ${errorMessage}`);
   }
 };
 
@@ -50,10 +80,7 @@ export const generateDiagnosticoAsociacion = async (
 
     const query = qs.stringify(
       {
-        populate: [
-          "seccion_diagnosticos",
-          "seccion_diagnosticos.criterio_evaluacions",
-        ],
+        populate: ["seccion_planillas", "seccion_planillas.pregunta_seccions"],
       },
       {
         encodeValuesOnly: true,
@@ -62,7 +89,8 @@ export const generateDiagnosticoAsociacion = async (
     // Assuming there's only one template or you want the first one
     const response = await ApiClient.get(`/diagnostico-plantillas?${query}`);
 
-    const diagnosticoAsociacion: DiagnosticoAsociacionRequest = poblarDiagnosticoAsociacion(documentIdAsociacion, response.data);
+    const diagnosticoAsociacion: DiagnosticoAsociacionRequest =
+      poblarDiagnosticoAsociacion(documentIdAsociacion, response.data);
 
     const querydiagnostico = qs.stringify(
       {
@@ -76,8 +104,10 @@ export const generateDiagnosticoAsociacion = async (
       },
     );
 
-
-    const response2 = await ApiClient.post(`/diagnostico-asociacions/${querydiagnostico}`, { data: diagnosticoAsociacion });
+    const response2 = await ApiClient.post(
+      `/diagnostico-asociacions/${querydiagnostico}`,
+      { data: diagnosticoAsociacion },
+    );
 
     return response2.data;
   } catch (error) {
@@ -86,17 +116,24 @@ export const generateDiagnosticoAsociacion = async (
   }
 };
 
-function poblarDiagnosticoAsociacion(documentIdAsociacion: string, data: any): DiagnosticoAsociacionRequest { // Changed data: any to data: DiagnosticoPlantilla
+function poblarDiagnosticoAsociacion(
+  documentIdAsociacion: string,
+  data: any,
+): DiagnosticoAsociacionRequest {
+  // Changed data: any to data: DiagnosticoPlantilla
   try {
+    const nombrePlantilla = data.data[0].nombrePlantilla;
     const diagnostico_asociacions: DiagnosticoAsociacionRequest = {
-      nombrePlantila: data.data[0].attributes.nombrePlantilla, // Accessing the first template's name
+      nombrePlantilla: nombrePlantilla, // Accessing the first template's name
       fechaAplicacion: new Date().toISOString(),
       tipoDiagnostico: "Inicial",
       observaciones: "",
       totalPuntaje: 0, // This will be calculated later
       resultado: "No evaluado",
       asociacion: documentIdAsociacion,
-      seccion_diagnosticos: poblarSeccionesDiagnostico(data.data[0].attributes.seccion_diagnosticos.data) // Accessing sections from the first template
+      seccion_diagnosticos: poblarSeccionesDiagnostico(
+        data.data[0].seccion_planillas,
+      ), // Accessing sections from the first template
     };
 
     return diagnostico_asociacions;
@@ -106,13 +143,20 @@ function poblarDiagnosticoAsociacion(documentIdAsociacion: string, data: any): D
   }
 }
 
-function poblarSeccionesDiagnostico(seccionesData: any[]): SeccionDiagnosticoRequest[] {
+function poblarSeccionesDiagnostico(
+  seccionesData: any[],
+): SeccionDiagnosticoRequest[] {
   try {
-    const seccion_diagnosticos: SeccionDiagnosticoRequest[] = seccionesData.map((seccion: any) => ({
-      nombreSeccion: seccion.attributes.nombreSeccion,
-      puntajeSeccion: 0, // This will be calculated later
-      respuesta_diagnosticos: poblarRespuestasDiagnostico(seccion.attributes.criterio_evaluacions.data)
-    }));
+    const seccion_diagnosticos: SeccionDiagnosticoRequest[] = seccionesData.map(
+      (seccion: any) => ({
+        nombreSeccion: seccion.nombreSeccion,
+        puntajeSeccion: 0, // This will be calculated later
+        respuesta_diagnosticos: poblarRespuestasDiagnostico(
+          seccion.pregunta_seccions,
+        ),
+      }),
+    );
+
     return seccion_diagnosticos;
   } catch (error) {
     console.error("Error fetching session:", error);
@@ -120,13 +164,16 @@ function poblarSeccionesDiagnostico(seccionesData: any[]): SeccionDiagnosticoReq
   }
 }
 
-function poblarRespuestasDiagnostico(criteriosData: any[]): RespuestaDiagnosticoRequest[] {
+function poblarRespuestasDiagnostico(
+  criteriosData: any[],
+): RespuestaDiagnosticoRequest[] {
   try {
     const respuesta_diagnosticos = criteriosData.map((criterio: any) => ({
-      pregunta: criterio.attributes.textoPregunta,
+      pregunta: criterio.textoPregunta,
       respuesta: "",
-      valor: 0
+      valor: 0,
     }));
+
     return respuesta_diagnosticos;
   } catch (error) {
     console.error("Error fetching session:", error);
@@ -143,7 +190,10 @@ export const saveDiagnosticoAsociacion = async (
 
     if (!session) throw new Error("No session found");
 
-    const diagnosticoRequest = castDiagnosticoAsociaciontoRequest(diagnostico, documentIdAsociacion);
+    const diagnosticoRequest = castDiagnosticoAsociaciontoRequest(
+      diagnostico,
+      documentIdAsociacion,
+    );
 
     const query = qs.stringify(
       {
@@ -157,7 +207,10 @@ export const saveDiagnosticoAsociacion = async (
       },
     );
 
-    const response = await ApiClient.put(`/diagnostico-asociacions/${documentIdAsociacion}?${query}`, { data: diagnosticoRequest });
+    const response = await ApiClient.put(
+      `/diagnostico-asociacions/${documentIdAsociacion}?${query}`,
+      { data: diagnosticoRequest },
+    );
     //validar las 3 jerarquias de datos
 
     return response.data;
@@ -165,4 +218,4 @@ export const saveDiagnosticoAsociacion = async (
     console.error("Error fetching session:", error);
     throw error;
   }
-}
+};

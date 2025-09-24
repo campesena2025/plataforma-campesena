@@ -120,7 +120,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("diagnostico", asociacion.id);
+                  procedimiento("diagnostico", asociacion.documentId);
                 }}
               >
                 Diagnóstico
@@ -130,7 +130,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("formacion", asociacion.id);
+                  procedimiento("formacion", asociacion.documentId);
                 }}
               >
                 Formación
@@ -140,7 +140,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("formulacion", asociacion.id);
+                  procedimiento("formulacion", asociacion.documentId);
                 }}
               >
                 Formulación
@@ -150,7 +150,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("postulacion", asociacion.id);
+                  procedimiento("postulacion", asociacion.documentId);
                 }}
               >
                 Postulación
@@ -160,7 +160,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("evaluacion", asociacion.id);
+                  procedimiento("evaluacion", asociacion.documentId);
                 }}
               >
                 Evaluación
@@ -170,7 +170,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("kit", asociacion.id);
+                  procedimiento("kit", asociacion.documentId);
                 }}
               >
                 Kit de producto

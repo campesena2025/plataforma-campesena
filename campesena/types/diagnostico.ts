@@ -27,7 +27,7 @@ export interface RespuestaDiagnostico {
 }
 
 export interface DiagnosticoAsociacionRequest {
-  nombrePlantila: string;
+  nombrePlantilla: string;
   fechaAplicacion: string;
   tipoDiagnostico: "Inicial" | "Intermedio" | "Final";
   observaciones: string;
@@ -54,7 +54,7 @@ export function castDiagnosticoAsociaciontoRequest(
   asociacionId: string | number,
 ): DiagnosticoAsociacionRequest {
   return {
-    nombrePlantila: diagnostico.nombrePlantila,
+    nombrePlantilla: diagnostico.nombrePlantila,
     fechaAplicacion: diagnostico.fechaAplicacion,
     tipoDiagnostico: diagnostico.tipoDiagnostico,
     observaciones: diagnostico.observaciones,
