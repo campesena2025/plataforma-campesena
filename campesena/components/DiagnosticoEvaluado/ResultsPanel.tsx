@@ -3,11 +3,11 @@ import { CheckCircle, AlertTriangle, XCircle, TrendingUp } from "lucide-react";
 
 import ProgressBar from "./ProgressBar";
 
-import { DiagnosticAssociation } from "@/types/diagnostico";
+import { DiagnosticoAsociacion } from "@/types/diagnostico";
 import { getScoreColor } from "@/utils/scoreUtils";
 
 interface ResultsPanelProps {
-  diagnostic: DiagnosticAssociation;
+  diagnostic: DiagnosticoAsociacion;
   maxPossibleScore: number;
 }
 

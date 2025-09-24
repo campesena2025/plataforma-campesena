@@ -4,10 +4,10 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import ProgressBar from "./ProgressBar";
 import ScoreSelector from "./ScoreSelector";
 
-import { SectionDiagnostic } from "@/types/diagnostico";
+import { SeccionDiagnostico } from "@/types/diagnostico";
 
 interface SectionCardProps {
-  section: SectionDiagnostic;
+  section: SeccionDiagnostico;
   onResponseChange: (responseId: number, value: number) => void;
   isExpanded?: boolean;
   onToggleExpand?: () => void;
@@ -77,11 +77,8 @@ const SectionCard: React.FC<SectionCardProps> = ({
               <div className="mb-3">
                 <div className="flex items-start justify-between mb-2">
                   <h4 className="text-base font-medium text-gray-800 leading-snug pr-2">
-                    {index + 1}. {response.pregunta.pregunta}
+                    {index + 1}. {response.pregunta}
                   </h4>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full ml-2 flex-shrink-0">
-                    {response.pregunta.tipoPregunta}
-                  </span>
                 </div>
 
                 <ScoreSelector

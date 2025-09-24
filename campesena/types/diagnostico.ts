@@ -1,4 +1,4 @@
-export interface DiagnosticAssociation {
+export interface DiagnosticoAsociacion {
   id: number;
   documentId: string;
   nombrePlantila: string;
@@ -7,41 +7,70 @@ export interface DiagnosticAssociation {
   observaciones: string;
   totalPuntaje: number;
   resultado: string;
-  seccion_diagnosticos: SectionDiagnostic[];
+  seccion_diagnosticos: SeccionDiagnostico[];
 }
 
-export interface SectionDiagnostic {
+export interface SeccionDiagnostico {
   id: number;
   documentId: string;
   nombreSeccion: string;
   puntajeSeccion: number;
-  respuesta_diagnosticos: ResponseDiagnostic[];
+  respuesta_diagnosticos: RespuestaDiagnostico[];
 }
 
-export interface ResponseDiagnostic {
+export interface RespuestaDiagnostico {
   id: number;
   documentId: string;
-  pregunta: Question;
+  pregunta: string;
   respuesta: string;
   valor: number;
 }
 
-export interface Question {
-  id: number;
-  documentId: string;
-  pregunta: string;
-  tipoPregunta: "Abierta" | "Cerrada" | "Multiple";
-  seccion_diagnostico: {
-    id: number;
-    documentId: string;
-    nombreSeccion: string;
-    puntajeSeccion: number;
-  };
+export interface DiagnosticoAsociacionRequest {
+  nombrePlantila: string;
+  fechaAplicacion: string;
+  tipoDiagnostico: "Inicial" | "Intermedio" | "Final";
+  observaciones: string;
+  totalPuntaje: number;
+  resultado: string;
+  asociacion: string | number;
+  seccion_diagnosticos: SeccionDiagnosticoRequest[];
 }
 
-export interface ScoreLevel {
-  value: number;
-  label: string;
-  description: string;
-  color: string;
+export interface SeccionDiagnosticoRequest {
+  nombreSeccion: string;
+  puntajeSeccion: number;
+  respuesta_diagnosticos: RespuestaDiagnosticoRequest[];
+}
+
+export interface RespuestaDiagnosticoRequest {
+  pregunta: string;
+  respuesta: string;
+  valor: number;
+}
+
+export function castDiagnosticoAsociaciontoRequest(
+  diagnostico: DiagnosticoAsociacion,
+  asociacionId: string | number,
+): DiagnosticoAsociacionRequest {
+  return {
+    nombrePlantila: diagnostico.nombrePlantila,
+    fechaAplicacion: diagnostico.fechaAplicacion,
+    tipoDiagnostico: diagnostico.tipoDiagnostico,
+    observaciones: diagnostico.observaciones,
+    totalPuntaje: diagnostico.totalPuntaje,
+    resultado: diagnostico.resultado,
+    asociacion: asociacionId,
+    seccion_diagnosticos: diagnostico.seccion_diagnosticos.map((section) => ({
+      nombreSeccion: section.nombreSeccion,
+      puntajeSeccion: section.puntajeSeccion,
+      respuesta_diagnosticos: section.respuesta_diagnosticos.map(
+        (response) => ({
+          pregunta: response.pregunta,
+          respuesta: response.respuesta,
+          valor: response.valor,
+        }),
+      ),
+    })),
+  };
 }

@@ -1,6 +1,4 @@
-import { ScoreLevel } from "../types/diagnostico";
-
-export const scoreLevels: ScoreLevel[] = [
+export const scoreLevels: any[] = [
   {
     value: 0,
     label: "Deficiente",
