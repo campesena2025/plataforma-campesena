@@ -22,14 +22,14 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿La organización tiene una misión y visión claramente definidas?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
         {
           id: 2,
           documentId: "resp-002",
           pregunta: "¿Existe un consejo directivo activo y comprometido?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
         {
           id: 3,
@@ -37,7 +37,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿Se realizan reuniones periódicas de seguimiento a la gestión?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
       ],
     },
@@ -53,7 +53,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿La organización cuenta con estados financieros auditados?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
         {
           id: 5,
@@ -61,7 +61,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿Existe un presupuesto anual y se hace seguimiento mensual?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
         {
           id: 6,
@@ -69,7 +69,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿Se diversifican las fuentes de ingresos de la organización?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
       ],
     },
@@ -85,7 +85,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿Los procesos operativos están documentados y son conocidos por el equipo?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
         {
           id: 8,
@@ -93,7 +93,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿Se utilizan indicadores para medir la eficiencia de las operaciones?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
       ],
     },
@@ -109,7 +109,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿La organización tiene una estructura organizacional clara?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
         {
           id: 10,
@@ -117,7 +117,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           pregunta:
             "¿Se realizan evaluaciones de desempeño periódicas al personal?",
           respuesta: "",
-          valor: 0,
+          puntaje: 0,
         },
       ],
     },

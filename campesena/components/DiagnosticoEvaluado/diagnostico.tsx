@@ -42,7 +42,8 @@ function Diagnostico({
 
   const totalAnsweredQuestions = diagnostic.seccion_diagnosticos.reduce(
     (total, section) =>
-      total + section.respuesta_diagnosticos.filter((r) => r.valor > 0).length,
+      total +
+      section.respuesta_diagnosticos.filter((r) => r.puntaje !== null).length,
     0,
   );
 
@@ -61,7 +62,7 @@ function Diagnostico({
         (section) => ({
           ...section,
           puntajeSeccion: section.respuesta_diagnosticos.reduce(
-            (sum, response) => sum + response.valor,
+            (sum, response) => sum + (response.puntaje ?? 0),
             0,
           ),
         }),
@@ -83,7 +84,7 @@ function Diagnostico({
     });
   }, [maxPossibleScore]);
 
-  const handleResponseChange = (responseId: number, value: number) => {
+  const handleResponseChange = (responseId: number, value: number | null) => {
     setDiagnostic((prev) => ({
       ...prev,
       seccion_diagnosticos: prev.seccion_diagnosticos.map((section) => ({
@@ -91,8 +92,24 @@ function Diagnostico({
         respuesta_diagnosticos: section.respuesta_diagnosticos.map(
           (response) =>
             response.id === responseId
-              ? { ...response, valor: value }
+              ? { ...response, puntaje: value }
               : response,
+        ),
+      })),
+    }));
+  };
+
+  const handleResponseHallazgosChange = (
+    responseId: number,
+    hallazgos: string,
+  ) => {
+    setDiagnostic((prev) => ({
+      ...prev,
+      seccion_diagnosticos: prev.seccion_diagnosticos.map((section) => ({
+        ...section,
+        respuesta_diagnosticos: section.respuesta_diagnosticos.map(
+          (response) =>
+            response.id === responseId ? { ...response, hallazgos } : response,
         ),
       })),
     }));
@@ -224,6 +241,7 @@ function Diagnostico({
                   isExpanded={expandedSection === section.id}
                   section={section}
                   onResponseChange={handleResponseChange}
+                  onResponseHallazgosChange={handleResponseHallazgosChange}
                   onToggleExpand={() => handleToggleSection(section.id)}
                 />
               ))}

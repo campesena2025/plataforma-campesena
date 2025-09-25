@@ -3,14 +3,18 @@ import React from "react";
 import { scoreLevels } from "@/utils/scoreUtils";
 
 interface ScoreSelectorProps {
-  selectedScore: number;
-  onScoreChange: (score: number) => void;
+  selectedScore: number | null;
+  hallazgos?: string | null;
+  onScoreChange: (score: number | null) => void;
+  onHallazgosChange: (hallazgos: string) => void;
   questionId: number;
 }
 
 const ScoreSelector: React.FC<ScoreSelectorProps> = ({
   selectedScore,
+  hallazgos,
   onScoreChange,
+  onHallazgosChange,
   questionId,
 }) => {
   return (
@@ -38,6 +42,14 @@ const ScoreSelector: React.FC<ScoreSelectorProps> = ({
             </div>
           </button>
         ))}
+      </div>
+      <div className="grid grid-cols-1 gap-2">
+        <textarea
+          className="w-full border border-gray-300 rounded-md p-2"
+          placeholder="Notas sobre la respuesta..."
+          value={hallazgos || ""}
+          onChange={(e) => onHallazgosChange(e.target.value)}
+        />
       </div>
     </div>
   );

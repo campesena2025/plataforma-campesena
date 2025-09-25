@@ -8,7 +8,8 @@ import { SeccionDiagnostico } from "@/types/diagnostico";
 
 interface SectionCardProps {
   section: SeccionDiagnostico;
-  onResponseChange: (responseId: number, value: number) => void;
+  onResponseChange: (responseId: number, value: number | null) => void;
+  onResponseHallazgosChange: (responseId: number, hallazgos: string) => void;
   isExpanded?: boolean;
   onToggleExpand?: () => void;
   readOnly?: boolean;
@@ -17,13 +18,31 @@ interface SectionCardProps {
 const SectionCard: React.FC<SectionCardProps> = ({
   section,
   onResponseChange,
+  onResponseHallazgosChange,
   isExpanded = false,
   onToggleExpand,
 }) => {
   const maxSectionScore = section.respuesta_diagnosticos.length * 2;
   const completedQuestions = section.respuesta_diagnosticos.filter(
-    (r) => r.valor > 0,
+    (r) => r.puntaje !== null,
   ).length;
+
+  const responseChangeListener = (responseId: number, value: number | null) => {
+    onResponseChange(responseId, value);
+    section.respuesta_diagnosticos.find((r) => r.id === responseId)!.puntaje =
+      value;
+    section.puntajeSeccion = section.respuesta_diagnosticos.reduce(
+      (sum, response) => sum + (response.puntaje ?? 0),
+      0,
+    );
+  };
+
+  const onResponseHallazgosChangeListener = (
+    responseId: number,
+    hallazgos: string,
+  ) => {
+    onResponseHallazgosChange(responseId, hallazgos);
+  };
 
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
@@ -82,10 +101,14 @@ const SectionCard: React.FC<SectionCardProps> = ({
                 </div>
 
                 <ScoreSelector
+                  hallazgos={response.hallazgos}
                   questionId={response.id}
-                  selectedScore={response.valor}
+                  selectedScore={response.puntaje}
+                  onHallazgosChange={(value) =>
+                    onResponseHallazgosChangeListener(response.id, value)
+                  }
                   onScoreChange={(value) =>
-                    onResponseChange(response.id, value)
+                    responseChangeListener(response.id, value)
                   }
                 />
               </div>

@@ -21,7 +21,7 @@ function DiagnosticoEvaluado() {
 
   const totalAnsweredQuestions = diagnostic.seccion_diagnosticos.reduce(
     (total, section) =>
-      total + section.respuesta_diagnosticos.filter((r) => r.valor > 0).length,
+      total + section.respuesta_diagnosticos.filter((r) => r.puntaje > 0).length,
     0,
   );
 
@@ -40,7 +40,7 @@ function DiagnosticoEvaluado() {
         (section) => ({
           ...section,
           puntajeSeccion: section.respuesta_diagnosticos.reduce(
-            (sum, response) => sum + response.valor,
+            (sum, response) => sum + response.puntaje,
             0,
           ),
         }),
@@ -70,7 +70,7 @@ function DiagnosticoEvaluado() {
         respuesta_diagnosticos: section.respuesta_diagnosticos.map(
           (response) =>
             response.id === responseId
-              ? { ...response, valor: value }
+              ? { ...response, puntaje: value }
               : response,
         ),
       })),

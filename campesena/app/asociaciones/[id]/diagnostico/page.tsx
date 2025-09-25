@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 
 import { DiagnosticoAsociacion } from "@/types/diagnostico";
-import Diagnostico from "@/components/diagnosticoEvaluado/diagnostico";
 import {
   getDiagnosticoByDocumentIdAsociacion,
   saveDiagnosticoAsociacion,
 } from "@/services/diagnostico.service";
+import Diagnostico from "@/components/DiagnosticoEvaluado/diagnostico";
 
 export default function DiagnosticoPage() {
   const router = useRouter();

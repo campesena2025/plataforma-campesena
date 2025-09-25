@@ -8,12 +8,16 @@ import {
   DiagnosticoAsociacion,
   DiagnosticoAsociacionRequest,
 } from "@/types/diagnostico";
+import { useAsociacionesStore } from "@/store/asociaciones.store";
 
 export const getDiagnosticoByDocumentIdAsociacion = async (
   documentId: string,
 ) => {
   try {
     const session = getSession();
+    const asociacion = useAsociacionesStore
+      .getState()
+      .data?.find((a: any) => a.documentId === documentId);
 
     if (!session) throw new Error("No session found");
 
@@ -35,9 +39,6 @@ export const getDiagnosticoByDocumentIdAsociacion = async (
       },
     );
 
-    // Log the full URL to debug
-    console.log(`Requesting: /asociacions/${documentId}?${query}`);
-
     const response = await ApiClient.get(`/asociacions/${documentId}?${query}`);
 
     // Add validation for response
@@ -45,11 +46,12 @@ export const getDiagnosticoByDocumentIdAsociacion = async (
       throw new Error("No data received from API");
     }
 
-    const diagnosticos = response.data.diagnostico_asociacions;
+    const diagnosticos = response.data.data.diagnostico_asociacions;
 
     if (!diagnosticos || diagnosticos.length === 0) {
-      const diagnosticoGenerado =
-        await generateDiagnosticoAsociacion(documentId);
+      const diagnosticoGenerado = await generateDiagnosticoAsociacion(
+        String(asociacion?.id),
+      );
 
       return diagnosticoGenerado;
     }
@@ -72,7 +74,6 @@ export const generateDiagnosticoAsociacion = async (
   documentIdAsociacion: string,
 ) => {
   try {
-    debugger;
     const session = getSession();
 
     if (!session) throw new Error("No session found");
@@ -104,7 +105,7 @@ export const generateDiagnosticoAsociacion = async (
     );
 
     const response2 = await ApiClient.post(
-      `/diagnostico-asociacions/${querydiagnostico}`,
+      `/diagnostico-asociacions?${querydiagnostico}`,
       { data: diagnosticoAsociacion },
     );
 
@@ -179,7 +180,7 @@ async function poblarRespuestasDiagnostico(
     for (let i = 0; i < criteriosData.length; i++) {
       const respuestaPost = {
         textoPregunta: criteriosData[i].textoPregunta,
-        puntaje: 0,
+        puntaje: null,
         hallazgos: "",
       };
 
@@ -187,7 +188,6 @@ async function poblarRespuestasDiagnostico(
         data: respuestaPost,
       });
 
-      debugger;
       codigos.push(response.data.data.id);
     }
 
@@ -224,15 +224,41 @@ export const saveDiagnosticoAsociacion = async (
       },
     );
 
-    const response = await ApiClient.put(
-      `/diagnostico-asociacions/${documentIdAsociacion}?${query}`,
-      { data: diagnosticoRequest },
-    );
-    //validar las 3 jerarquias de datos
+    calcularTotalesDiagnostico(diagnosticoRequest);
+    // const response = await ApiClient.put(
+    //   `/diagnostico-asociacions/${documentIdAsociacion}?${query}`,
+    //   { data: diagnosticoRequest },
+    // );
+    // //validar las 3 jerarquias de datos
 
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error("Error fetching session:", error);
     throw error;
   }
 };
+
+function calcularTotalesDiagnostico(diagnostico: DiagnosticoAsociacionRequest) {
+  diagnostico.seccion_diagnosticos.forEach((seccion) => {
+    seccion.puntajeSeccion = seccion.respuesta_diagnosticos.reduce(
+      (total, respuesta) => total + (respuesta.puntaje ?? 0),
+      0,
+    );
+  });
+
+  diagnostico.totalPuntaje = diagnostico.seccion_diagnosticos.reduce(
+    (total, seccion) => total + seccion.puntajeSeccion,
+    0,
+  );
+
+  // Actualizar el resultado basado en el puntaje total
+  if (diagnostico.totalPuntaje >= 80) {
+    diagnostico.resultado = "Excelente";
+  } else if (diagnostico.totalPuntaje >= 60) {
+    diagnostico.resultado = "Bueno";
+  } else if (diagnostico.totalPuntaje >= 40) {
+    diagnostico.resultado = "Regular";
+  } else {
+    diagnostico.resultado = "Deficiente";
+  }
+}

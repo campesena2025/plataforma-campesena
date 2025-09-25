@@ -23,7 +23,8 @@ export interface RespuestaDiagnostico {
   documentId: string;
   pregunta: string;
   respuesta: string;
-  valor: number;
+  puntaje: number | null;
+  hallazgos?: string | null;
 }
 
 export interface DiagnosticoAsociacionRequest {
@@ -72,7 +73,7 @@ export function castDiagnosticoAsociaciontoRequest(
           documentId: response.documentId,
           pregunta: response.pregunta,
           respuesta: response.respuesta,
-          valor: response.valor,
+          valor: response.puntaje,
         }),
       ),
     })),
