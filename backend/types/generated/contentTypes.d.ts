@@ -450,6 +450,10 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
         'En entrega de insumos',
       ]
     >;
+    formacions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::formacion.formacion'
+    >;
     formalizada: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     foto: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -537,6 +541,10 @@ export interface ApiCentroFormacionCentroFormacion
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    formacions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::formacion.formacion'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -546,10 +554,6 @@ export interface ApiCentroFormacionCentroFormacion
     nombre: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     regional: Schema.Attribute.Relation<'manyToOne', 'api::regional.regional'>;
-    servicio_participantes: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::servicio-participante.servicio-participante'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -784,6 +788,14 @@ export interface ApiFormacionFormacion extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    asociacion: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::asociacion.asociacion'
+    >;
+    centro_formacion: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::centro-formacion.centro-formacion'
+    >;
     codigoDiseno: Schema.Attribute.String;
     codigoFormacion: Schema.Attribute.String;
     codigoSofia: Schema.Attribute.String;
@@ -798,10 +810,6 @@ export interface ApiFormacionFormacion extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     nombreDiseno: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    servicio_participantes: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::servicio-participante.servicio-participante'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1616,18 +1624,10 @@ export interface ApiServicioParticipanteServicioParticipante
     draftAndPublish: false;
   };
   attributes: {
-    centro_formacion: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::centro-formacion.centro-formacion'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     fechaInicio: Schema.Attribute.Date;
-    formacion: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::formacion.formacion'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

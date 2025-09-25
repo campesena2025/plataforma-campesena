@@ -29,18 +29,6 @@
       "target": "api::vereda.vereda",
       "inversedBy": "servicio_participante"
     },
-    "centro_formacion": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::centro-formacion.centro-formacion",
-      "inversedBy": "servicio_participantes"
-    },
-    "formacion": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::formacion.formacion",
-      "inversedBy": "servicio_participantes"
-    },
     "participante_asociacion": {
       "type": "relation",
       "relation": "manyToOne",

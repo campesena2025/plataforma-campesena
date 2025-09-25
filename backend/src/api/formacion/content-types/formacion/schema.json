@@ -26,11 +26,17 @@
     "codigoSofia": {
       "type": "string"
     },
-    "servicio_participantes": {
+    "centro_formacion": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::servicio-participante.servicio-participante",
-      "mappedBy": "formacion"
+      "relation": "manyToOne",
+      "target": "api::centro-formacion.centro-formacion",
+      "inversedBy": "formacions"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::asociacion.asociacion",
+      "inversedBy": "formacions"
     }
   }
 }

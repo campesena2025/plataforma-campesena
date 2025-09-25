@@ -23,10 +23,10 @@
       "target": "api::regional.regional",
       "inversedBy": "centro_formacions"
     },
-    "servicio_participantes": {
+    "formacions": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::servicio-participante.servicio-participante",
+      "target": "api::formacion.formacion",
       "mappedBy": "centro_formacion"
     }
   }

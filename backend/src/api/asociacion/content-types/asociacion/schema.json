@@ -135,6 +135,12 @@
       "relation": "oneToMany",
       "target": "api::diagnostico-asociacion.diagnostico-asociacion",
       "mappedBy": "asociacion"
+    },
+    "formacions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::formacion.formacion",
+      "mappedBy": "asociacion"
     }
   }
 }
