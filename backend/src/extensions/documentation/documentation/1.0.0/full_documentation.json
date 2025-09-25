@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-25T21:34:18.807Z"
+    "x-generation-date": "2025-09-25T21:41:12.846Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -21396,6 +21396,9 @@
                                                       "participacion": {
                                                         "type": "integer"
                                                       },
+                                                      "cumplimiento": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -25934,6 +25937,9 @@
                                           "participacion": {
                                             "type": "integer"
                                           },
+                                          "cumplimiento": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -30123,6 +30129,9 @@
                                                 "participacion": {
                                                   "type": "integer"
                                                 },
+                                                "cumplimiento": {
+                                                  "type": "integer"
+                                                },
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -32967,6 +32976,9 @@
                                                         }
                                                       },
                                                       "participacion": {
+                                                        "type": "integer"
+                                                      },
+                                                      "cumplimiento": {
                                                         "type": "integer"
                                                       },
                                                       "createdAt": {
@@ -36460,6 +36472,9 @@
                                                             }
                                                           },
                                                           "participacion": {
+                                                            "type": "integer"
+                                                          },
+                                                          "cumplimiento": {
                                                             "type": "integer"
                                                           },
                                                           "createdAt": {
@@ -40814,6 +40829,9 @@
                                             "participacion": {
                                               "type": "integer"
                                             },
+                                            "cumplimiento": {
+                                              "type": "integer"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -45083,6 +45101,9 @@
                         }
                       },
                       "participacion": {
+                        "type": "integer"
+                      },
+                      "cumplimiento": {
                         "type": "integer"
                       },
                       "createdAt": {
@@ -49816,6 +49837,9 @@
                                           "participacion": {
                                             "type": "integer"
                                           },
+                                          "cumplimiento": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -52589,6 +52613,9 @@
                                                         }
                                                       },
                                                       "participacion": {
+                                                        "type": "integer"
+                                                      },
+                                                      "cumplimiento": {
                                                         "type": "integer"
                                                       },
                                                       "createdAt": {
@@ -56186,6 +56213,9 @@
                                                               }
                                                             },
                                                             "participacion": {
+                                                              "type": "integer"
+                                                            },
+                                                            "cumplimiento": {
                                                               "type": "integer"
                                                             },
                                                             "createdAt": {
@@ -59796,6 +59826,9 @@
                                                     }
                                                   },
                                                   "participacion": {
+                                                    "type": "integer"
+                                                  },
+                                                  "cumplimiento": {
                                                     "type": "integer"
                                                   },
                                                   "createdAt": {
@@ -65325,6 +65358,9 @@
                                   "participacion": {
                                     "type": "integer"
                                   },
+                                  "cumplimiento": {
+                                    "type": "integer"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -67395,6 +67431,9 @@
                                                   }
                                                 },
                                                 "participacion": {
+                                                  "type": "integer"
+                                                },
+                                                "cumplimiento": {
                                                   "type": "integer"
                                                 },
                                                 "createdAt": {
@@ -71566,6 +71605,9 @@
                                                             "participacion": {
                                                               "type": "integer"
                                                             },
+                                                            "cumplimiento": {
+                                                              "type": "integer"
+                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
@@ -75228,6 +75270,9 @@
                                                     }
                                                   },
                                                   "participacion": {
+                                                    "type": "integer"
+                                                  },
+                                                  "cumplimiento": {
                                                     "type": "integer"
                                                   },
                                                   "createdAt": {
@@ -79120,6 +79165,9 @@
                                                     }
                                                   },
                                                   "participacion": {
+                                                    "type": "integer"
+                                                  },
+                                                  "cumplimiento": {
                                                     "type": "integer"
                                                   },
                                                   "createdAt": {
@@ -83840,6 +83888,9 @@
                                                       "participacion": {
                                                         "type": "integer"
                                                       },
+                                                      "cumplimiento": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -87124,6 +87175,9 @@
                                                         }
                                                       },
                                                       "participacion": {
+                                                        "type": "integer"
+                                                      },
+                                                      "cumplimiento": {
                                                         "type": "integer"
                                                       },
                                                       "createdAt": {
@@ -92162,6 +92216,9 @@
                                             "participacion": {
                                               "type": "integer"
                                             },
+                                            "cumplimiento": {
+                                              "type": "integer"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -92610,6 +92667,9 @@
                 "example": "string or id"
               },
               "participacion": {
+                "type": "integer"
+              },
+              "cumplimiento": {
                 "type": "integer"
               },
               "locale": {
@@ -96049,6 +96109,9 @@
                     "participacion": {
                       "type": "integer"
                     },
+                    "cumplimiento": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -96160,6 +96223,9 @@
             }
           },
           "participacion": {
+            "type": "integer"
+          },
+          "cumplimiento": {
             "type": "integer"
           },
           "createdAt": {
@@ -97108,6 +97174,9 @@
                             }
                           },
                           "participacion": {
+                            "type": "integer"
+                          },
+                          "cumplimiento": {
                             "type": "integer"
                           },
                           "createdAt": {
@@ -103269,6 +103338,9 @@
                                                           "participacion": {
                                                             "type": "integer"
                                                           },
+                                                          "cumplimiento": {
+                                                            "type": "integer"
+                                                          },
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -108313,6 +108385,9 @@
                                           "participacion": {
                                             "type": "integer"
                                           },
+                                          "cumplimiento": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -112459,6 +112534,9 @@
                                             }
                                           },
                                           "participacion": {
+                                            "type": "integer"
+                                          },
+                                          "cumplimiento": {
                                             "type": "integer"
                                           },
                                           "createdAt": {

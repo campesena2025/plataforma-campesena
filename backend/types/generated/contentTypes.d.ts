@@ -1450,6 +1450,7 @@ export interface ApiRespuestaDiagnosticoRespuestaDiagnostico
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cumplimiento: Schema.Attribute.Integer;
     hallazgos: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
