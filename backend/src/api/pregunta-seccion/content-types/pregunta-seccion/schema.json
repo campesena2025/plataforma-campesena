@@ -19,6 +19,13 @@
       "relation": "manyToOne",
       "target": "api::seccion-planilla.seccion-planilla",
       "inversedBy": "pregunta_seccions"
+    },
+    "participacion": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1,
+      "max": 100
     }
   }
 }

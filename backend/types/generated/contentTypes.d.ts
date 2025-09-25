@@ -1280,6 +1280,16 @@ export interface ApiPreguntaSeccionPreguntaSeccion
       'api::pregunta-seccion.pregunta-seccion'
     > &
       Schema.Attribute.Private;
+    participacion: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     seccion_planilla: Schema.Attribute.Relation<
       'manyToOne',
@@ -1447,6 +1457,16 @@ export interface ApiRespuestaDiagnosticoRespuestaDiagnostico
       'api::respuesta-diagnostico.respuesta-diagnostico'
     > &
       Schema.Attribute.Private;
+    participacion: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     puntaje: Schema.Attribute.Integer;
     seccion_diagnostico: Schema.Attribute.Relation<
@@ -1523,6 +1543,16 @@ export interface ApiSeccionDiagnosticoSeccionDiagnostico
     > &
       Schema.Attribute.Private;
     nombreSeccion: Schema.Attribute.String;
+    participacion: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     puntajeSeccion: Schema.Attribute.Integer;
     respuesta_diagnosticos: Schema.Attribute.Relation<
@@ -1561,6 +1591,15 @@ export interface ApiSeccionPlanillaSeccionPlanilla
     > &
       Schema.Attribute.Private;
     nombreSeccion: Schema.Attribute.String;
+    participacion: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
     pregunta_seccions: Schema.Attribute.Relation<
       'oneToMany',
       'api::pregunta-seccion.pregunta-seccion'

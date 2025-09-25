@@ -28,6 +28,13 @@
       "relation": "oneToMany",
       "target": "api::respuesta-diagnostico.respuesta-diagnostico",
       "mappedBy": "seccion_diagnostico"
+    },
+    "participacion": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1,
+      "max": 100
     }
   }
 }

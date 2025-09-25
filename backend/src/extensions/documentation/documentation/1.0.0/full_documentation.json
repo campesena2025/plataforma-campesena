@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-09-25T19:27:34.698Z"
+    "x-generation-date": "2025-09-25T21:34:18.807Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -21393,6 +21393,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "participacion": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -21446,6 +21449,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "participacion": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -25925,6 +25931,9 @@
                                               }
                                             }
                                           },
+                                          "participacion": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -25978,6 +25987,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "participacion": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -30108,6 +30120,9 @@
                                                     }
                                                   }
                                                 },
+                                                "participacion": {
+                                                  "type": "integer"
+                                                },
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -30161,6 +30176,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "participacion": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -32948,6 +32966,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "participacion": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -33001,6 +33022,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "participacion": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -36435,6 +36459,9 @@
                                                               }
                                                             }
                                                           },
+                                                          "participacion": {
+                                                            "type": "integer"
+                                                          },
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -36488,6 +36515,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "participacion": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -40781,6 +40811,9 @@
                                                 }
                                               }
                                             },
+                                            "participacion": {
+                                              "type": "integer"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -40834,6 +40867,9 @@
                                             }
                                           }
                                         }
+                                      },
+                                      "participacion": {
+                                        "type": "integer"
                                       },
                                       "createdAt": {
                                         "type": "string",
@@ -45046,6 +45082,9 @@
                           }
                         }
                       },
+                      "participacion": {
+                        "type": "integer"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -45099,6 +45138,9 @@
                       }
                     }
                   }
+                },
+                "participacion": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -45702,6 +45744,9 @@
                           }
                         }
                       },
+                      "participacion": {
+                        "type": "integer"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -45755,6 +45800,9 @@
                       }
                     }
                   }
+                },
+                "participacion": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -49765,6 +49813,9 @@
                                               }
                                             }
                                           },
+                                          "participacion": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -49818,6 +49869,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "participacion": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -52534,6 +52588,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "participacion": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -52587,6 +52644,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "participacion": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -56125,6 +56185,9 @@
                                                                 }
                                                               }
                                                             },
+                                                            "participacion": {
+                                                              "type": "integer"
+                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
@@ -56178,6 +56241,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "participacion": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -59729,6 +59795,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "participacion": {
+                                                    "type": "integer"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -59782,6 +59851,9 @@
                                                   }
                                                 }
                                               }
+                                            },
+                                            "participacion": {
+                                              "type": "integer"
                                             },
                                             "createdAt": {
                                               "type": "string",
@@ -65250,6 +65322,9 @@
                                       }
                                     }
                                   },
+                                  "participacion": {
+                                    "type": "integer"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -65303,6 +65378,9 @@
                                   }
                                 }
                               }
+                            },
+                            "participacion": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -67316,6 +67394,9 @@
                                                     }
                                                   }
                                                 },
+                                                "participacion": {
+                                                  "type": "integer"
+                                                },
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -67369,6 +67450,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "participacion": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -71479,6 +71563,9 @@
                                                                 }
                                                               }
                                                             },
+                                                            "participacion": {
+                                                              "type": "integer"
+                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
@@ -71532,6 +71619,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "participacion": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -75137,6 +75227,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "participacion": {
+                                                    "type": "integer"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -75190,6 +75283,9 @@
                                                   }
                                                 }
                                               }
+                                            },
+                                            "participacion": {
+                                              "type": "integer"
                                             },
                                             "createdAt": {
                                               "type": "string",
@@ -79023,6 +79119,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "participacion": {
+                                                    "type": "integer"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -79076,6 +79175,9 @@
                                                   }
                                                 }
                                               }
+                                            },
+                                            "participacion": {
+                                              "type": "integer"
                                             },
                                             "createdAt": {
                                               "type": "string",
@@ -80744,6 +80846,9 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "participacion"
+            ],
             "type": "object",
             "properties": {
               "textoPregunta": {
@@ -80759,6 +80864,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "participacion": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -80818,6 +80926,9 @@
       },
       "PreguntaSeccion": {
         "type": "object",
+        "required": [
+          "participacion"
+        ],
         "properties": {
           "id": {
             "type": "number"
@@ -81199,6 +81310,9 @@
                         }
                       }
                     },
+                    "participacion": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -81253,6 +81367,9 @@
                   }
                 }
               },
+              "participacion": {
+                "type": "integer"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -81305,6 +81422,9 @@
                 }
               }
             }
+          },
+          "participacion": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -83717,6 +83837,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "participacion": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -83770,6 +83893,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "participacion": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -86997,6 +87123,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "participacion": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -87050,6 +87179,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "participacion": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -92027,6 +92159,9 @@
                                                 }
                                               }
                                             },
+                                            "participacion": {
+                                              "type": "integer"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -92080,6 +92215,9 @@
                                             }
                                           }
                                         }
+                                      },
+                                      "participacion": {
+                                        "type": "integer"
                                       },
                                       "createdAt": {
                                         "type": "string",
@@ -92446,6 +92584,9 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "participacion"
+            ],
             "type": "object",
             "properties": {
               "textoPregunta": {
@@ -92467,6 +92608,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "participacion": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -92526,6 +92670,9 @@
       },
       "RespuestaDiagnostico": {
         "type": "object",
+        "required": [
+          "participacion"
+        ],
         "properties": {
           "id": {
             "type": "number"
@@ -95899,6 +96046,9 @@
                         }
                       }
                     },
+                    "participacion": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -95953,6 +96103,9 @@
                   }
                 }
               },
+              "participacion": {
+                "type": "integer"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -96005,6 +96158,9 @@
                 }
               }
             }
+          },
+          "participacion": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -96747,6 +96903,9 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "participacion"
+            ],
             "type": "object",
             "properties": {
               "nombreSeccion": {
@@ -96779,6 +96938,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "participacion": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -96838,6 +97000,9 @@
       },
       "SeccionDiagnostico": {
         "type": "object",
+        "required": [
+          "participacion"
+        ],
         "properties": {
           "id": {
             "type": "number"
@@ -96941,6 +97106,9 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "participacion": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -97247,6 +97415,9 @@
                           }
                         }
                       }
+                    },
+                    "participacion": {
+                      "type": "integer"
                     },
                     "createdAt": {
                       "type": "string",
@@ -100329,6 +100500,9 @@
               }
             }
           },
+          "participacion": {
+            "type": "integer"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -100429,6 +100603,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "participacion": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -100562,6 +100739,9 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "participacion": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -100869,6 +101049,9 @@
                         }
                       }
                     },
+                    "participacion": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -100989,6 +101172,9 @@
                 }
               }
             }
+          },
+          "participacion": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -103080,6 +103266,9 @@
                                                               }
                                                             }
                                                           },
+                                                          "participacion": {
+                                                            "type": "integer"
+                                                          },
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -103133,6 +103322,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "participacion": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -108118,6 +108310,9 @@
                                               }
                                             }
                                           },
+                                          "participacion": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -108171,6 +108366,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "participacion": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -112260,6 +112458,9 @@
                                               }
                                             }
                                           },
+                                          "participacion": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -112313,6 +112514,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "participacion": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",

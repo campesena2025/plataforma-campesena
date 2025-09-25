@@ -25,6 +25,13 @@
       "relation": "manyToOne",
       "target": "api::seccion-diagnostico.seccion-diagnostico",
       "inversedBy": "respuesta_diagnosticos"
+    },
+    "participacion": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1,
+      "max": 100
     }
   }
 }
