@@ -7,15 +7,13 @@ import {
   castDiagnosticoAsociaciontoRequest,
   DiagnosticoAsociacion,
   DiagnosticoAsociacionRequest,
-  RespuestaDiagnosticoRequest,
-  SeccionDiagnosticoRequest,
 } from "@/types/diagnostico";
 
 export const getDiagnosticoByDocumentIdAsociacion = async (
   documentId: string,
 ) => {
   try {
-    const session = await getSession();
+    const session = getSession();
 
     if (!session) throw new Error("No session found");
 
@@ -74,7 +72,8 @@ export const generateDiagnosticoAsociacion = async (
   documentIdAsociacion: string,
 ) => {
   try {
-    const session = await getSession();
+    debugger;
+    const session = getSession();
 
     if (!session) throw new Error("No session found");
 
@@ -90,7 +89,7 @@ export const generateDiagnosticoAsociacion = async (
     const response = await ApiClient.get(`/diagnostico-plantillas?${query}`);
 
     const diagnosticoAsociacion: DiagnosticoAsociacionRequest =
-      poblarDiagnosticoAsociacion(documentIdAsociacion, response.data);
+      await poblarDiagnosticoAsociacion(documentIdAsociacion, response.data);
 
     const querydiagnostico = qs.stringify(
       {
@@ -116,24 +115,23 @@ export const generateDiagnosticoAsociacion = async (
   }
 };
 
-function poblarDiagnosticoAsociacion(
+async function poblarDiagnosticoAsociacion(
   documentIdAsociacion: string,
   data: any,
-): DiagnosticoAsociacionRequest {
-  // Changed data: any to data: DiagnosticoPlantilla
+): Promise<DiagnosticoAsociacionRequest> {
   try {
     const nombrePlantilla = data.data[0].nombrePlantilla;
     const diagnostico_asociacions: DiagnosticoAsociacionRequest = {
-      nombrePlantilla: nombrePlantilla, // Accessing the first template's name
+      nombrePlantila: nombrePlantilla,
       fechaAplicacion: new Date().toISOString(),
       tipoDiagnostico: "Inicial",
       observaciones: "",
-      totalPuntaje: 0, // This will be calculated later
+      totalPuntaje: 0,
       resultado: "No evaluado",
       asociacion: documentIdAsociacion,
-      seccion_diagnosticos: poblarSeccionesDiagnostico(
+      seccion_diagnosticos: await poblarSeccionesDiagnostico(
         data.data[0].seccion_planillas,
-      ), // Accessing sections from the first template
+      ),
     };
 
     return diagnostico_asociacions;
@@ -143,38 +141,57 @@ function poblarDiagnosticoAsociacion(
   }
 }
 
-function poblarSeccionesDiagnostico(
+async function poblarSeccionesDiagnostico(
   seccionesData: any[],
-): SeccionDiagnosticoRequest[] {
-  try {
-    const seccion_diagnosticos: SeccionDiagnosticoRequest[] = seccionesData.map(
-      (seccion: any) => ({
-        nombreSeccion: seccion.nombreSeccion,
-        puntajeSeccion: 0, // This will be calculated later
-        respuesta_diagnosticos: poblarRespuestasDiagnostico(
-          seccion.pregunta_seccions,
-        ),
-      }),
-    );
+): Promise<number[]> {
+  const codigos: number[] = [];
 
-    return seccion_diagnosticos;
+  try {
+    for (let i = 0; i < seccionesData.length; i++) {
+      const datapost = {
+        nombreSeccion: seccionesData[i].nombreSeccion,
+        puntajeSeccion: 0, // This will be calculated later
+        respuesta_diagnosticos: await poblarRespuestasDiagnostico(
+          seccionesData[i].pregunta_seccions,
+        ),
+      };
+
+      const response = await ApiClient.post("/seccion-diagnosticos", {
+        data: datapost,
+      });
+
+      codigos.push(response.data.data.id);
+    }
   } catch (error) {
     console.error("Error fetching session:", error);
     throw error;
   }
+
+  return codigos;
 }
 
-function poblarRespuestasDiagnostico(
+async function poblarRespuestasDiagnostico(
   criteriosData: any[],
-): RespuestaDiagnosticoRequest[] {
-  try {
-    const respuesta_diagnosticos = criteriosData.map((criterio: any) => ({
-      pregunta: criterio.textoPregunta,
-      respuesta: "",
-      valor: 0,
-    }));
+): Promise<number[]> {
+  const codigos: number[] = [];
 
-    return respuesta_diagnosticos;
+  try {
+    for (let i = 0; i < criteriosData.length; i++) {
+      const respuestaPost = {
+        textoPregunta: criteriosData[i].textoPregunta,
+        puntaje: 0,
+        hallazgos: "",
+      };
+
+      const response = await ApiClient.post("/respuesta-diagnosticos", {
+        data: respuestaPost,
+      });
+
+      debugger;
+      codigos.push(response.data.data.id);
+    }
+
+    return codigos;
   } catch (error) {
     console.error("Error fetching session:", error);
     throw error;
@@ -186,7 +203,7 @@ export const saveDiagnosticoAsociacion = async (
   diagnostico: DiagnosticoAsociacion,
 ) => {
   try {
-    const session = await getSession();
+    const session = getSession();
 
     if (!session) throw new Error("No session found");
 

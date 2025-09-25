@@ -27,20 +27,20 @@ export interface RespuestaDiagnostico {
 }
 
 export interface DiagnosticoAsociacionRequest {
-  nombrePlantilla: string;
+  nombrePlantila: string;
   fechaAplicacion: string;
   tipoDiagnostico: "Inicial" | "Intermedio" | "Final";
   observaciones: string;
   totalPuntaje: number;
   resultado: string;
   asociacion: string | number;
-  seccion_diagnosticos: SeccionDiagnosticoRequest[];
+  seccion_diagnosticos: string[] | number[] | SeccionDiagnosticoRequest[];
 }
 
 export interface SeccionDiagnosticoRequest {
   nombreSeccion: string;
   puntajeSeccion: number;
-  respuesta_diagnosticos: RespuestaDiagnosticoRequest[];
+  respuesta_diagnosticos: string[] | number[] | RespuestaDiagnosticoRequest[];
 }
 
 export interface RespuestaDiagnosticoRequest {
@@ -54,7 +54,7 @@ export function castDiagnosticoAsociaciontoRequest(
   asociacionId: string | number,
 ): DiagnosticoAsociacionRequest {
   return {
-    nombrePlantilla: diagnostico.nombrePlantila,
+    nombrePlantila: diagnostico.nombrePlantila,
     fechaAplicacion: diagnostico.fechaAplicacion,
     tipoDiagnostico: diagnostico.tipoDiagnostico,
     observaciones: diagnostico.observaciones,
@@ -62,10 +62,14 @@ export function castDiagnosticoAsociaciontoRequest(
     resultado: diagnostico.resultado,
     asociacion: asociacionId,
     seccion_diagnosticos: diagnostico.seccion_diagnosticos.map((section) => ({
+      id: section.id,
+      documentId: section.documentId,
       nombreSeccion: section.nombreSeccion,
       puntajeSeccion: section.puntajeSeccion,
       respuesta_diagnosticos: section.respuesta_diagnosticos.map(
         (response) => ({
+          id: response.id,
+          documentId: response.documentId,
           pregunta: response.pregunta,
           respuesta: response.respuesta,
           valor: response.valor,
