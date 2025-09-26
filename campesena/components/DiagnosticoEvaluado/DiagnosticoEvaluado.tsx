@@ -1,86 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { ClipboardList, BarChart3, FileCheck, Calendar } from "lucide-react";
-import { getResultByScore } from "@/utils/scoreUtils";
+import { useDiagnosticStore } from "@/store/diagnostico.store";
+import { mockDiagnostic } from "@/data/mockData";
+
 import SectionCard from "./SectionCard";
 import ResultsPanel from "./ResultsPanel";
 import ProgressBar from "./ProgressBar";
-import { DiagnosticoAsociacion, SeccionDiagnostico } from "@/types/diagnostico";
-import { mockDiagnostic } from "@/data/mockData";
 
 function DiagnosticoEvaluado() {
-  const [diagnostic, setDiagnostic] =
-    useState<DiagnosticoAsociacion>(mockDiagnostic);
-  const [expandedSection, setExpandedSection] = useState<number>(1);
-  const [showResults, setShowResults] = useState(false);
+  const {
+    diagnostic,
+    setDiagnostic,
+    toggleSection,
+    expandedSection,
+    setShowResults,
+    showResults,
+    getCompletedQuestions,
+    getTotalQuestions,
+    getMaxPossibleScore,
+    calculateTotals
+  } = useDiagnosticStore();
 
-  // Calculate totals
-  const maxPossibleScore = diagnostic.seccion_diagnosticos.reduce(
-    (total, section) => total + section.respuesta_diagnosticos.length * 2,
-    0,
-  );
-
-  const totalAnsweredQuestions = diagnostic.seccion_diagnosticos.reduce(
-    (total, section) =>
-      total + section.respuesta_diagnosticos.filter((r) => r.puntaje > 0).length,
-    0,
-  );
-
-  const totalQuestions = diagnostic.seccion_diagnosticos.reduce(
-    (total, section) => total + section.respuesta_diagnosticos.length,
-    0,
-  );
-
-  // Update scores when responses change
   useEffect(() => {
-    setDiagnostic((prev) => {
-      const updated = { ...prev };
+    // Initialize with mock data
+    setDiagnostic(mockDiagnostic);
+  }, [setDiagnostic]);
 
-      // Update section scores
-      updated.seccion_diagnosticos = updated.seccion_diagnosticos.map(
-        (section) => ({
-          ...section,
-          puntajeSeccion: section.respuesta_diagnosticos.reduce(
-            (sum, response) => sum + response.puntaje,
-            0,
-          ),
-        }),
-      );
-
-      // Update total score
-      updated.totalPuntaje = updated.seccion_diagnosticos.reduce(
-        (sum, section) => sum + section.puntajeSeccion,
-        0,
-      );
-
-      // Update result
-      updated.resultado = getResultByScore(
-        updated.totalPuntaje,
-        maxPossibleScore,
-      );
-
-      return updated;
-    });
-  }, [maxPossibleScore]);
-
-  const handleResponseChange = (responseId: number, value: number) => {
-    setDiagnostic((prev) => ({
-      ...prev,
-      seccion_diagnosticos: prev.seccion_diagnosticos.map((section) => ({
-        ...section,
-        respuesta_diagnosticos: section.respuesta_diagnosticos.map(
-          (response) =>
-            response.id === responseId
-              ? { ...response, puntaje: value }
-              : response,
-        ),
-      })),
-    }));
-  };
-
-  const handleToggleSection = (sectionId: number) => {
-    setExpandedSection(expandedSection === sectionId ? 0 : sectionId);
-  };
-
+  const totalAnsweredQuestions = getCompletedQuestions();
+  const totalQuestions = getTotalQuestions();
+  const maxPossibleScore = getMaxPossibleScore();
   const isComplete = totalAnsweredQuestions === totalQuestions;
 
   return (
@@ -95,20 +43,20 @@ function DiagnosticoEvaluado() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">
-                  {diagnostic.nombrePlantila}
+                  {diagnostic?.nombrePlantila}
                 </h1>
                 <div className="flex items-center space-x-4 text-sm text-gray-600 mt-1">
                   <div className="flex items-center space-x-1">
                     <Calendar className="h-4 w-4" />
                     <span>
-                      {new Date(
+                      {diagnostic && new Date(
                         diagnostic.fechaAplicacion,
                       ).toLocaleDateString()}
                     </span>
                   </div>
                   <div className="flex items-center space-x-1">
                     <FileCheck className="h-4 w-4" />
-                    <span>Tipo: {diagnostic.tipoDiagnostico}</span>
+                    <span>Tipo: {diagnostic?.tipoDiagnostico}</span>
                   </div>
                 </div>
               </div>
@@ -152,7 +100,7 @@ function DiagnosticoEvaluado() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {showResults && isComplete ? (
+        {showResults && isComplete && diagnostic ? (
           <ResultsPanel
             diagnostic={diagnostic}
             maxPossibleScore={maxPossibleScore}
@@ -185,13 +133,12 @@ function DiagnosticoEvaluado() {
 
             {/* Sections */}
             <div className="space-y-6">
-              {diagnostic.seccion_diagnosticos.map((section) => (
+              {diagnostic?.seccion_diagnosticos.map((section) => (
                 <SectionCard
                   key={section.id}
                   section={section}
-                  onResponseChange={handleResponseChange}
                   isExpanded={expandedSection === section.id}
-                  onToggleExpand={() => handleToggleSection(section.id)}
+                  onToggleExpand={() => toggleSection(section.id)}
                 />
               ))}
             </div>

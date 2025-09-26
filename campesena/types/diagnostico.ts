@@ -15,6 +15,7 @@ export interface SeccionDiagnostico {
   documentId: string;
   nombreSeccion: string;
   puntajeSeccion: number;
+  participacion: number | null;
   respuesta_diagnosticos: RespuestaDiagnostico[];
 }
 
@@ -24,6 +25,8 @@ export interface RespuestaDiagnostico {
   pregunta: string;
   respuesta: string;
   puntaje: number | null;
+  participacion: number | null;
+  cumplimiento: number | null;
   hallazgos?: string | null;
 }
 
@@ -63,19 +66,15 @@ export function castDiagnosticoAsociaciontoRequest(
     resultado: diagnostico.resultado,
     asociacion: asociacionId,
     seccion_diagnosticos: diagnostico.seccion_diagnosticos.map((section) => ({
-      id: section.id,
-      documentId: section.documentId,
       nombreSeccion: section.nombreSeccion,
       puntajeSeccion: section.puntajeSeccion,
       respuesta_diagnosticos: section.respuesta_diagnosticos.map(
         (response) => ({
-          id: response.id,
-          documentId: response.documentId,
           pregunta: response.pregunta,
           respuesta: response.respuesta,
           valor: response.puntaje,
         }),
       ),
-    })),
+    })) as any, // Type assertion to handle the complex mapping
   };
 }
