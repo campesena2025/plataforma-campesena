@@ -38,7 +38,7 @@ export const getDiagnosticoByDocumentIdAsociacion = async (documentId: string) =
 			},
 		);
 
-		const response = await ApiClient.get(`/asociacions/${documentId}?${query}`);
+		const response = await ApiClient.get(`/asociacions/${asociacion?.documentId}?${query}`);
 
 		// Add validation for response
 		if (!response.data) {
@@ -66,6 +66,7 @@ export const getDiagnosticoByDocumentIdAsociacion = async (documentId: string) =
 export const generateDiagnosticoAsociacion = async (documentIdAsociacion: string) => {
 	try {
 		const session = getSession();
+		const asociacion = useAsociacionesStore.getState().data?.find((a: any) => a.id.toString() === documentIdAsociacion);
 
 		if (!session) throw new Error('No session found');
 
@@ -77,6 +78,27 @@ export const generateDiagnosticoAsociacion = async (documentIdAsociacion: string
 				encodeValuesOnly: true,
 			},
 		);
+
+		const queryvalidacionExistente = qs.stringify(
+			{
+				populate: [
+					'diagnostico_asociacions',
+					'diagnostico_asociacions.seccion_diagnosticos',
+					'diagnostico_asociacions.seccion_diagnosticos.respuesta_diagnosticos',
+				],
+			},
+			{
+				encodeValuesOnly: true, // prettify URL
+			},
+		);
+
+		const validacionExistente = await ApiClient.get(
+			`/asociacions/${asociacion?.documentId}?${queryvalidacionExistente}`,
+		);
+
+		if (validacionExistente.data.data.diagnostico_asociacions.length > 0)
+			return validacionExistente.data.data.diagnostico_asociacions[0];
+
 		// Assuming there's only one template or you want the first one
 		const response = await ApiClient.get(`/diagnostico-plantillas?${query}`);
 
@@ -98,7 +120,7 @@ export const generateDiagnosticoAsociacion = async (documentIdAsociacion: string
 			data: diagnosticoAsociacion,
 		});
 
-		return response2.data;
+		return response2.data.data;
 	} catch (error) {
 		console.error('Error fetching session:', error);
 		throw error;
@@ -137,7 +159,7 @@ async function poblarSeccionesDiagnostico(seccionesData: any[]): Promise<number[
 			const datapost = {
 				nombreSeccion: seccionesData[i].nombreSeccion,
 				puntajeSeccion: 0, // This will be calculated later
-				partiacipacion: seccionesData[i].participacion || 1,
+				participacion: seccionesData[i].participacion || 1,
 				respuesta_diagnosticos: await poblarRespuestasDiagnostico(seccionesData[i].pregunta_seccions),
 			};
 

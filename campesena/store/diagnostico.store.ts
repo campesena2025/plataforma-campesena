@@ -222,6 +222,8 @@ export const useDiagnosticStore = create<DiagnosticStore>((set, get) => ({
 		const { diagnostic } = get();
 
 		if (!diagnostic) return 0;
+		if (!diagnostic.seccion_diagnosticos) return 0;
+		if (!Array.isArray(diagnostic.seccion_diagnosticos)) return 0;
 
 		return diagnostic.seccion_diagnosticos.reduce(
 			(total, section) => total + section.respuesta_diagnosticos.filter((r) => r.puntaje !== null).length,
@@ -233,6 +235,8 @@ export const useDiagnosticStore = create<DiagnosticStore>((set, get) => ({
 		const { diagnostic } = get();
 
 		if (!diagnostic) return 0;
+		if (!diagnostic.seccion_diagnosticos) return 0;
+		if (!Array.isArray(diagnostic.seccion_diagnosticos)) return 0;
 
 		return diagnostic.seccion_diagnosticos.reduce((total, section) => total + section.respuesta_diagnosticos.length, 0);
 	},
@@ -241,6 +245,8 @@ export const useDiagnosticStore = create<DiagnosticStore>((set, get) => ({
 		const { diagnostic } = get();
 
 		if (!diagnostic) return 0;
+		if (!diagnostic.seccion_diagnosticos) return 0;
+		if (!Array.isArray(diagnostic.seccion_diagnosticos)) return 0;
 
 		return diagnostic.seccion_diagnosticos.reduce(
 			(total, section) => total + section.respuesta_diagnosticos.length * 2,

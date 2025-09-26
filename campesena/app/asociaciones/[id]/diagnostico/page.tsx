@@ -4,28 +4,30 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 
 import { DiagnosticoAsociacion } from '@/types/diagnostico';
-import { getDiagnosticoByDocumentIdAsociacion, saveDiagnosticoAsociacion } from '@/services/diagnostico.service';
+import { saveDiagnosticoAsociacion } from '@/services/diagnostico.service';
 import Diagnostico from '@/components/DiagnosticoEvaluado/diagnostico';
+import { useDiagnosticStore } from '@/store/diagnostico.store';
 
 export default function DiagnosticoPage() {
 	const router = useRouter();
 	const params = useParams();
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
-	const [diagnostico, setDiagnostico] = useState<DiagnosticoAsociacion | null>(null);
+	const [diagnostico, setDiagnostico] = useState<DiagnosticoAsociacion | null>(
+		useDiagnosticStore.getState().diagnostic,
+	);
 	const [documentIdAsociacion] = useState<string>(params?.id as string);
 
 	// Cargar el diagnóstico
 	useEffect(() => {
-		getDiagnosticoByDocumentIdAsociacion(params?.id as string)
-			.then((data) => {
-				setDiagnostico(data);
-				setLoading(false);
-			})
-			.catch((err) => {
-				setError(err instanceof Error ? err.message : 'Error al cargar');
-				setLoading(false);
-			});
+		const fetchData = async () => {
+			await useDiagnosticStore.getInitialState().fetchDiagnostic(params?.id as string);
+			setDiagnostico(useDiagnosticStore.getState().diagnostic);
+		};
+
+		setLoading(false);
+		setError(null);
+		fetchData();
 	}, [params?.id]);
 
 	// Manejar el guardado del diagnóstico
