@@ -58,7 +58,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ section, isExpanded = false, 
 							<div className="mb-3">
 								<div className="flex items-start justify-between mb-2">
 									<h4 className="text-base font-medium text-gray-800 leading-snug pr-2">
-										{index + 1}. {response.pregunta}
+										{index + 1}. {response.textoPregunta}
 									</h4>
 								</div>
 

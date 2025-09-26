@@ -22,7 +22,7 @@ export interface SeccionDiagnostico {
 export interface RespuestaDiagnostico {
 	id: number;
 	documentId: string;
-	pregunta: string;
+	textoPregunta: string;
 	respuesta: string;
 	puntaje: number | null;
 	participacion: number | null;
@@ -79,7 +79,7 @@ export function castDiagnosticoAsociaciontoRequest(
 			participacion: section.participacion,
 			respuesta_diagnosticos: section.respuesta_diagnosticos.map((response) => ({
 				documentId: response.documentId,
-				textoPregunta: response.pregunta,
+				textoPregunta: response.textoPregunta,
 				puntaje: response.puntaje,
 				participacion: response.participacion,
 				cumplimiento: response.cumplimiento,

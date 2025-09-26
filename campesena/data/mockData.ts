@@ -19,7 +19,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 1,
           documentId: "resp-001",
-          pregunta:
+          textoPregunta:
             "¿La organización tiene una misión y visión claramente definidas?",
           respuesta: "",
           puntaje: 0,
@@ -27,14 +27,14 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 2,
           documentId: "resp-002",
-          pregunta: "¿Existe un consejo directivo activo y comprometido?",
+          textoPregunta: "¿Existe un consejo directivo activo y comprometido?",
           respuesta: "",
           puntaje: 0,
         },
         {
           id: 3,
           documentId: "resp-003",
-          pregunta:
+          textoPregunta:
             "¿Se realizan reuniones periódicas de seguimiento a la gestión?",
           respuesta: "",
           puntaje: 0,
@@ -50,7 +50,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 4,
           documentId: "resp-004",
-          pregunta:
+          textoPregunta:
             "¿La organización cuenta con estados financieros auditados?",
           respuesta: "",
           puntaje: 0,
@@ -58,7 +58,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 5,
           documentId: "resp-005",
-          pregunta:
+          textoPregunta:
             "¿Existe un presupuesto anual y se hace seguimiento mensual?",
           respuesta: "",
           puntaje: 0,
@@ -66,7 +66,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 6,
           documentId: "resp-006",
-          pregunta:
+          textoPregunta:
             "¿Se diversifican las fuentes de ingresos de la organización?",
           respuesta: "",
           puntaje: 0,
@@ -82,7 +82,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 7,
           documentId: "resp-007",
-          pregunta:
+          textoPregunta:
             "¿Los procesos operativos están documentados y son conocidos por el equipo?",
           respuesta: "",
           puntaje: 0,
@@ -90,7 +90,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 8,
           documentId: "resp-008",
-          pregunta:
+          textoPregunta:
             "¿Se utilizan indicadores para medir la eficiencia de las operaciones?",
           respuesta: "",
           puntaje: 0,
@@ -106,7 +106,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 9,
           documentId: "resp-009",
-          pregunta:
+          textoPregunta:
             "¿La organización tiene una estructura organizacional clara?",
           respuesta: "",
           puntaje: 0,
@@ -114,7 +114,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
         {
           id: 10,
           documentId: "resp-010",
-          pregunta:
+          textoPregunta:
             "¿Se realizan evaluaciones de desempeño periódicas al personal?",
           respuesta: "",
           puntaje: 0,

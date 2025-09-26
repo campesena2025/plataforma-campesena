@@ -31,11 +31,10 @@ const ScoreSelector: React.FC<ScoreSelectorProps> = ({ questionId }) => {
 				{scoreLevels.map((level) => (
 					<button
 						key={`${questionId}-${level.value}`}
-						className={`p-2 rounded-md border-2 transition-all duration-200 hover:shadow-sm ${
-							response.puntaje === level.value
+						className={`p-2 rounded-md border-2 transition-all duration-200 hover:shadow-sm ${response.puntaje === level.value
 								? level.color
 								: 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
-						}`}
+							}`}
 						onClick={() => scoreListener(level.value)}
 					>
 						<div className="text-center">
