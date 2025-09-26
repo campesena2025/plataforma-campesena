@@ -30,7 +30,7 @@
       "mappedBy": "seccion_diagnostico"
     },
     "participacion": {
-      "type": "integer",
+      "type": "decimal",
       "required": true,
       "default": 1,
       "min": 1,

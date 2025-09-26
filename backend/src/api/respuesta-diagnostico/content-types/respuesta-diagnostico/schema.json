@@ -34,7 +34,7 @@
       "max": 100
     },
     "cumplimiento": {
-      "type": "integer"
+      "type": "decimal"
     }
   }
 }

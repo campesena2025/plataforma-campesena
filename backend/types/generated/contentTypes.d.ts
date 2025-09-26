@@ -1450,7 +1450,7 @@ export interface ApiRespuestaDiagnosticoRespuestaDiagnostico
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    cumplimiento: Schema.Attribute.Integer;
+    cumplimiento: Schema.Attribute.Decimal;
     hallazgos: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1544,7 +1544,7 @@ export interface ApiSeccionDiagnosticoSeccionDiagnostico
     > &
       Schema.Attribute.Private;
     nombreSeccion: Schema.Attribute.String;
-    participacion: Schema.Attribute.Integer &
+    participacion: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
