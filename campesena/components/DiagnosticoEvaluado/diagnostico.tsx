@@ -35,7 +35,7 @@ function Diagnostico({ diagnostico: initialDiagnostico, loading, onSave }: Diagn
 	const handleSave = async () => {
 		if (diagnostic) {
 			await saveDiagnostic(diagnostic.documentId);
-			onSave(diagnostic); // Call the original onSave prop after saving to store
+			//onSave(diagnostic); // Call the original onSave prop after saving to store
 		}
 	};
 

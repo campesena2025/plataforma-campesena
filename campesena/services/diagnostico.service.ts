@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import qs from 'qs';
 
 import { getSession } from './auth';
@@ -201,8 +202,56 @@ export const saveDiagnosticoAsociacion = async (documentIdAsociacion: string, di
 		// Calculate totals before saving
 		const calculatedDiagnostico = calcularTotalesDiagnostico(diagnosticoRequest);
 
+		//metodo para guardar respuestasDiagnostico
+		if (Array.isArray(calculatedDiagnostico.seccion_diagnosticos)) {
+			for (const seccion of calculatedDiagnostico.seccion_diagnosticos) {
+				// Check if seccion is a SeccionDiagnosticoRequest (not a string or number)
+				if (typeof seccion === 'object' && seccion !== null && !Array.isArray(seccion)) {
+					// Type guard to ensure respuesta_diagnosticos is an array of objects
+					if (Array.isArray(seccion.respuesta_diagnosticos)) {
+						// Filter out string/number IDs and keep only object responses
+						const respuestaObjects = seccion.respuesta_diagnosticos.filter(
+							(respuesta) => typeof respuesta === 'object' && respuesta !== null && !Array.isArray(respuesta),
+						) as RespuestaDiagnosticoRequest[];
+
+						for (const respuesta of respuestaObjects) {
+							if (!respuesta.documentId) continue; // Skip if documentId is not available
+
+							// Save the response
+							// eslint-disable-next-line @typescript-eslint/no-unused-vars
+							const { documentId, ...respuestaData } = respuesta; // Destructure to exclude documentId
+
+							await ApiClient.put(`/respuesta-diagnosticos/${respuesta.documentId}`, {
+								data: respuestaData,
+							});
+						}
+					}
+				}
+			}
+		}
+
+		//metodo para guardar seccionDiagnostico
+		if (Array.isArray(calculatedDiagnostico.seccion_diagnosticos)) {
+			for (const seccion of calculatedDiagnostico.seccion_diagnosticos) {
+				// Check if seccion is a SeccionDiagnosticoRequest (not a string or number)
+				if (typeof seccion === 'object' && seccion !== null && !Array.isArray(seccion)) {
+					if (!seccion.documentId) continue; // Skip if documentId is not available
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
+					const { documentId, ...seccionData } = seccion; // Destructure to exclude documentId
+
+					// Save the section
+					await ApiClient.put(`/seccion-diagnosticos/${seccion.documentId}`, {
+						data: seccionData,
+					});
+				}
+			}
+		}
+
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		const { seccion_diagnosticos, documentId, ...diagnosticoData } = calculatedDiagnostico;
+		//metodo para guardar diagnosticoAsociacion
 		const response = await ApiClient.put(`/diagnostico-asociacions/${documentIdAsociacion}?${query}`, {
-			data: calculatedDiagnostico,
+			data: diagnosticoData,
 		});
 		//validate the 3 hierarchies of data
 
@@ -233,7 +282,7 @@ function calcularTotalesDiagnostico(diagnostico: DiagnosticoAsociacionRequest): 
 
 			const puntajeSeccion = (seccion.respuesta_diagnosticos as RespuestaDiagnosticoRequest[]).reduce(
 				(sum: number, respuesta: RespuestaDiagnosticoRequest) => {
-					return sum + (respuesta.valor || 0);
+					return sum + (respuesta.puntaje || 0);
 				},
 				0,
 			);
