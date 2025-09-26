@@ -64,6 +64,7 @@ export function castDiagnosticoAsociaciontoRequest(
 	asociacionId: string | number,
 ): DiagnosticoAsociacionRequest {
 	return {
+		documentId: diagnostico.documentId,
 		nombrePlantila: diagnostico.nombrePlantila,
 		fechaAplicacion: diagnostico.fechaAplicacion,
 		tipoDiagnostico: diagnostico.tipoDiagnostico,

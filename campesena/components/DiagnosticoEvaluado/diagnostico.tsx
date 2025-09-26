@@ -9,12 +9,13 @@ import { useDiagnosticStore } from '@/store/diagnostico.store';
 import { DiagnosticoAsociacion } from '@/types/diagnostico';
 
 interface DiagnosticoProps {
+	documentIdAsociacion: string;
 	diagnostico: DiagnosticoAsociacion;
 	loading: boolean;
 	onSave: (updatedDiagnostico: DiagnosticoAsociacion) => Promise<void>;
 }
 
-function Diagnostico({ diagnostico: initialDiagnostico, loading, onSave }: DiagnosticoProps) {
+function Diagnostico({ diagnostico: initialDiagnostico, loading, onSave, documentIdAsociacion }: DiagnosticoProps) {
 	const {
 		diagnostic,
 		setDiagnostic,
@@ -34,7 +35,7 @@ function Diagnostico({ diagnostico: initialDiagnostico, loading, onSave }: Diagn
 
 	const handleSave = async () => {
 		if (diagnostic) {
-			await saveDiagnostic(diagnostic.documentId);
+			await saveDiagnostic(documentIdAsociacion);
 			//onSave(diagnostic); // Call the original onSave prop after saving to store
 		}
 	};

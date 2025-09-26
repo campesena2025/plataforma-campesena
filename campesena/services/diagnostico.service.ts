@@ -237,7 +237,7 @@ export const saveDiagnosticoAsociacion = async (documentIdAsociacion: string, di
 				if (typeof seccion === 'object' && seccion !== null && !Array.isArray(seccion)) {
 					if (!seccion.documentId) continue; // Skip if documentId is not available
 					// eslint-disable-next-line @typescript-eslint/no-unused-vars
-					const { documentId, ...seccionData } = seccion; // Destructure to exclude documentId
+					const { documentId, respuesta_diagnosticos, ...seccionData } = seccion; // Destructure to exclude documentId
 
 					// Save the section
 					await ApiClient.put(`/seccion-diagnosticos/${seccion.documentId}`, {
@@ -250,7 +250,7 @@ export const saveDiagnosticoAsociacion = async (documentIdAsociacion: string, di
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { seccion_diagnosticos, documentId, ...diagnosticoData } = calculatedDiagnostico;
 		//metodo para guardar diagnosticoAsociacion
-		const response = await ApiClient.put(`/diagnostico-asociacions/${documentIdAsociacion}?${query}`, {
+		const response = await ApiClient.put(`/diagnostico-asociacions/${documentId}?${query}`, {
 			data: diagnosticoData,
 		});
 		//validate the 3 hierarchies of data

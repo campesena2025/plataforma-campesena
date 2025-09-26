@@ -13,6 +13,7 @@ export default function DiagnosticoPage() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 	const [diagnostico, setDiagnostico] = useState<DiagnosticoAsociacion | null>(null);
+	const [documentIdAsociacion] = useState<string>(params?.id as string);
 
 	// Cargar el diagnóstico
 	useEffect(() => {
@@ -110,7 +111,12 @@ export default function DiagnosticoPage() {
 
 	return (
 		<div className="min-h-screen bg-gray-50">
-			<Diagnostico diagnostico={diagnostico} loading={loading} onSave={handleSaveDiagnostico} />
+			<Diagnostico
+				diagnostico={diagnostico}
+				documentIdAsociacion={documentIdAsociacion}
+				loading={loading}
+				onSave={handleSaveDiagnostico}
+			/>
 		</div>
 	);
 }
