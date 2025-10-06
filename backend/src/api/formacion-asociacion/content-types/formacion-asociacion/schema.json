@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formacion_asociacions",
+  "info": {
+    "singularName": "formacion-asociacion",
+    "pluralName": "formacion-asociacions",
+    "displayName": "FormacionAsociacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombreFormacion": {
+      "type": "string"
+    },
+    "codigo": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "codigoSofia": {
+      "type": "string"
+    },
+    "NumeroFicha": {
+      "type": "string"
+    },
+    "asociacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::asociacion.asociacion",
+      "inversedBy": "formacion_asociacions"
+    }
+  }
+}

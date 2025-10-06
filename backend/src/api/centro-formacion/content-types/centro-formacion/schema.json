@@ -23,10 +23,10 @@
       "target": "api::regional.regional",
       "inversedBy": "centro_formacions"
     },
-    "formacions": {
+    "datos_usuarios": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::formacion.formacion",
+      "target": "api::datos-usuario.datos-usuario",
       "mappedBy": "centro_formacion"
     }
   }

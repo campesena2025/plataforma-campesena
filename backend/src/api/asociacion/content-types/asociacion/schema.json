@@ -136,10 +136,10 @@
       "target": "api::diagnostico-asociacion.diagnostico-asociacion",
       "mappedBy": "asociacion"
     },
-    "formacions": {
+    "formacion_asociacions": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::formacion.formacion",
+      "target": "api::formacion-asociacion.formacion-asociacion",
       "mappedBy": "asociacion"
     }
   }

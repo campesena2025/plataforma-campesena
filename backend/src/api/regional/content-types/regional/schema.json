@@ -22,6 +22,12 @@
       "relation": "oneToMany",
       "target": "api::centro-formacion.centro-formacion",
       "mappedBy": "regional"
+    },
+    "datos_usuarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::datos-usuario.datos-usuario",
+      "mappedBy": "regional"
     }
   }
 }

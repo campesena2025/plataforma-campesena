@@ -450,9 +450,9 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
         'En entrega de insumos',
       ]
     >;
-    formacions: Schema.Attribute.Relation<
+    formacion_asociacions: Schema.Attribute.Relation<
       'oneToMany',
-      'api::formacion.formacion'
+      'api::formacion-asociacion.formacion-asociacion'
     >;
     formalizada: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     foto: Schema.Attribute.Media<'images'>;
@@ -541,9 +541,9 @@ export interface ApiCentroFormacionCentroFormacion
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    formacions: Schema.Attribute.Relation<
+    datos_usuarios: Schema.Attribute.Relation<
       'oneToMany',
-      'api::formacion.formacion'
+      'api::datos-usuario.datos-usuario'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -622,6 +622,47 @@ export interface ApiDatoMensualProyeccionDatoMensualProyeccion
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDatosUsuarioDatosUsuario
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'datos_usuarios';
+  info: {
+    displayName: 'DatosUsuario';
+    pluralName: 'datos-usuarios';
+    singularName: 'datos-usuario';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    centro_formacion: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::centro-formacion.centro-formacion'
+    >;
+    correo: Schema.Attribute.Email;
+    correoPersonal: Schema.Attribute.Email;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::datos-usuario.datos-usuario'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    regional: Schema.Attribute.Relation<'manyToOne', 'api::regional.regional'>;
+    telefono: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -777,6 +818,43 @@ export interface ApiFlujoCajaAnualFlujoCajaAnual
   };
 }
 
+export interface ApiFormacionAsociacionFormacionAsociacion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'formacion_asociacions';
+  info: {
+    displayName: 'FormacionAsociacion';
+    pluralName: 'formacion-asociacions';
+    singularName: 'formacion-asociacion';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    asociacion: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::asociacion.asociacion'
+    >;
+    codigo: Schema.Attribute.String;
+    codigoSofia: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::formacion-asociacion.formacion-asociacion'
+    > &
+      Schema.Attribute.Private;
+    nombreFormacion: Schema.Attribute.String;
+    NumeroFicha: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    version: Schema.Attribute.String;
+  };
+}
+
 export interface ApiFormacionFormacion extends Struct.CollectionTypeSchema {
   collectionName: 'formacions';
   info: {
@@ -788,32 +866,24 @@ export interface ApiFormacionFormacion extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    asociacion: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::asociacion.asociacion'
-    >;
-    centro_formacion: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::centro-formacion.centro-formacion'
-    >;
-    codigoDiseno: Schema.Attribute.String;
-    codigoFormacion: Schema.Attribute.String;
+    codigo: Schema.Attribute.String;
     codigoSofia: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    estado: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::formacion.formacion'
     > &
       Schema.Attribute.Private;
-    nombreDiseno: Schema.Attribute.String;
+    nombre: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    versionDiseno: Schema.Attribute.String;
+    version: Schema.Attribute.String;
   };
 }
 
@@ -1421,6 +1491,10 @@ export interface ApiRegionalRegional extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    datos_usuarios: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::datos-usuario.datos-usuario'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -2350,6 +2424,10 @@ export interface PluginUsersPermissionsUser
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    datos_usuario: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::datos-usuario.datos-usuario'
+    >;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -2400,10 +2478,12 @@ declare module '@strapi/strapi' {
       'api::centro-formacion.centro-formacion': ApiCentroFormacionCentroFormacion;
       'api::costo.costo': ApiCostoCosto;
       'api::dato-mensual-proyeccion.dato-mensual-proyeccion': ApiDatoMensualProyeccionDatoMensualProyeccion;
+      'api::datos-usuario.datos-usuario': ApiDatosUsuarioDatosUsuario;
       'api::departamento.departamento': ApiDepartamentoDepartamento;
       'api::diagnostico-asociacion.diagnostico-asociacion': ApiDiagnosticoAsociacionDiagnosticoAsociacion;
       'api::diagnostico-plantilla.diagnostico-plantilla': ApiDiagnosticoPlantillaDiagnosticoPlantilla;
       'api::flujo-caja-anual.flujo-caja-anual': ApiFlujoCajaAnualFlujoCajaAnual;
+      'api::formacion-asociacion.formacion-asociacion': ApiFormacionAsociacionFormacionAsociacion;
       'api::formacion.formacion': ApiFormacionFormacion;
       'api::inversion.inversion': ApiInversionInversion;
       'api::modelo-negocio.modelo-negocio': ApiModeloNegocioModeloNegocio;

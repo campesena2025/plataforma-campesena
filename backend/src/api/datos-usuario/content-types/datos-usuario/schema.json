@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "datos_usuarios",
+  "info": {
+    "singularName": "datos-usuario",
+    "pluralName": "datos-usuarios",
+    "displayName": "DatosUsuario"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "email"
+    },
+    "correoPersonal": {
+      "type": "email"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "datos_usuario"
+    },
+    "regional": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::regional.regional",
+      "inversedBy": "datos_usuarios"
+    },
+    "centro_formacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::centro-formacion.centro-formacion",
+      "inversedBy": "datos_usuarios"
+    }
+  }
+}

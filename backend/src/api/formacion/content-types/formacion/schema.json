@@ -11,32 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "codigoFormacion": {
-      "type": "string"
-    },
-    "nombreDiseno": {
-      "type": "string"
-    },
-    "codigoDiseno": {
-      "type": "string"
-    },
-    "versionDiseno": {
-      "type": "string"
-    },
     "codigoSofia": {
       "type": "string"
     },
-    "centro_formacion": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::centro-formacion.centro-formacion",
-      "inversedBy": "formacions"
+    "nombre": {
+      "type": "string"
     },
-    "asociacion": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::asociacion.asociacion",
-      "inversedBy": "formacions"
+    "codigo": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "boolean"
     }
   }
 }

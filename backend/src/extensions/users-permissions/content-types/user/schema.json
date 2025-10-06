@@ -71,6 +71,12 @@
       "relation": "oneToMany",
       "target": "api::asociacion.asociacion",
       "mappedBy": "users_permissions_user"
+    },
+    "datos_usuario": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::datos-usuario.datos-usuario",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
