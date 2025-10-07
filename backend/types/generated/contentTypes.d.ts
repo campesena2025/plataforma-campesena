@@ -846,7 +846,7 @@ export interface ApiFormacionAsociacionFormacionAsociacion
     > &
       Schema.Attribute.Private;
     nombreFormacion: Schema.Attribute.String;
-    NumeroFicha: Schema.Attribute.String;
+    numeroFicha: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

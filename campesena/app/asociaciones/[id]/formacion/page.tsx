@@ -3,29 +3,42 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
+import { AlertaModal } from '@/components/formacion/AlertaModal';
 import { AsignarCursoModal } from '@/components/formacion/AsignarCursoModal';
 import { BusquedaCursos } from '@/components/formacion/BusquedaCursos';
 import { CursosAsignadosList } from '@/components/formacion/CursosAsignadosList';
 import { CursosDisponiblesList } from '@/components/formacion/CursosDisponiblesList';
 import { Header } from '@/components/formacion/Header';
 import { Formacion } from '@/types/formacion';
-import { getFormacionesDisponibles, getFormacionesInscritas, inscribirFormacion } from '@/services/formacion.service';
+import {
+  desasignarFormacionAsociacion,
+  getFormacionesDisponibles,
+  getFormacionesInscritas,
+  inscribirFormacion,
+} from '@/services/formacion.service';
+import { FormacionAsociacion } from '@/types/formacionAsociacion';
+import { useAsociacionesStore } from '@/store/asociaciones.store';
+import { ConfirmacionModal } from '@/components/formacion/ConfirmacionModal';
 
 export default function FormacionPage() {
   const params = useParams();
   const asociacionId = params.id as string;
-
+  const asociacionStore = useAsociacionesStore.getState().data.find((x) => x.documentId === asociacionId);
   const [mostrarBusqueda, setMostrarBusqueda] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [formacionesDisponibles, setFormacionesDisponibles] = useState<Formacion[]>([]);
-  const [formacionesInscritas, setFormacionesInscritas] = useState<Formacion[]>([]);
+  const [formacionesInscritas, setFormacionesInscritas] = useState<FormacionAsociacion[]>([]);
   const [formacionSeleccionada, setFormacionSeleccionada] = useState<Formacion | null>(null);
   const [modalAbierto, setModalAbierto] = useState(false);
-  const [codigoFicha, setCodigoFicha] = useState('');
+  const [numeroFicha, setCodigoFicha] = useState('');
   const [fecha, setFecha] = useState('');
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [totalPages, setTotalPages] = useState(1);
+  const [modalConfirmacionAbierto, setModalConfirmacionAbierto] = useState(false);
+  const [formacionParaBorrar, setFormacionParaBorrar] = useState<number | null>(null);
+  const [alertaModalAbierto, setAlertaModalAbierto] = useState(false);
+  const [alertaMensaje, setAlertaMensaje] = useState('');
 
   useEffect(() => {
     const cargarFormaciones = async () => {
@@ -44,7 +57,7 @@ export default function FormacionPage() {
 
   useEffect(() => {
     const cargarInscritas = async () => {
-      const inscritas = await getFormacionesInscritas(asociacionId);
+      const inscritas = await getFormacionesInscritas(asociacionStore?.id || 0);
 
       setFormacionesInscritas(inscritas.data);
     };
@@ -65,18 +78,24 @@ export default function FormacionPage() {
   };
 
   const handleConfirmarAsignacion = async () => {
-    if (codigoFicha && fecha && formacionSeleccionada) {
+    if (numeroFicha && formacionSeleccionada) {
       try {
+        if (formacionesInscritas.some((f) => f.codigoSofia === formacionSeleccionada.codigoSofia)) {
+          setAlertaMensaje('La formación ya está asignada a esta asociación.');
+          setAlertaModalAbierto(true);
+
+          return;
+        }
         const nuevaFormacion = await inscribirFormacion(asociacionId, {
-          ...formacionSeleccionada,
-          fechaInicio: fecha,
-          estado: true,
+          nombreFormacion: formacionSeleccionada.nombre,
+          version: formacionSeleccionada.version,
+          codigoSofia: formacionSeleccionada.codigoSofia,
+          numeroFicha: numeroFicha,
         });
 
         setFormacionesInscritas([...formacionesInscritas, nuevaFormacion]);
         setModalAbierto(false);
         setCodigoFicha('');
-        setFecha('');
         setMostrarBusqueda(false);
         setFormacionSeleccionada(null);
         setSearchTerm('');
@@ -86,10 +105,42 @@ export default function FormacionPage() {
     }
   };
 
+  const handleDesasignar = (formacionId: number) => {
+    setFormacionParaBorrar(formacionId);
+    setModalConfirmacionAbierto(true);
+  };
+
+  const confirmarDesasignacion = async () => {
+    if (formacionParaBorrar) {
+      try {
+        const formacionAsociacionDocumentId =
+          formacionesInscritas.find((f) => f.id === formacionParaBorrar)?.documentId ?? '';
+
+        await desasignarFormacionAsociacion(formacionAsociacionDocumentId);
+        setFormacionesInscritas(formacionesInscritas.filter((f) => f.id !== formacionParaBorrar));
+      } catch (error) {
+        console.error('Error al desasignar formación:', error);
+      } finally {
+        setModalConfirmacionAbierto(false);
+        setFormacionParaBorrar(null);
+      }
+    }
+  };
+
+  const cancelarDesasignacion = () => {
+    setModalConfirmacionAbierto(false);
+    setFormacionParaBorrar(null);
+  };
+
   const cerrarModal = () => {
     setModalAbierto(false);
     setCodigoFicha('');
     setFecha('');
+  };
+
+  const cerrarAlertaModal = () => {
+    setAlertaModalAbierto(false);
+    setAlertaMensaje('');
   };
 
   return (
@@ -98,7 +149,11 @@ export default function FormacionPage() {
         <Header mostrarBusqueda={mostrarBusqueda} setMostrarBusqueda={setMostrarBusqueda} />
 
         {!mostrarBusqueda && (
-          <CursosAsignadosList formaciones={formacionesInscritas} setMostrarBusqueda={setMostrarBusqueda} />
+          <CursosAsignadosList
+            formaciones={formacionesInscritas}
+            handleDesasignar={handleDesasignar}
+            setMostrarBusqueda={setMostrarBusqueda}
+          />
         )}
 
         {mostrarBusqueda && (
@@ -160,14 +215,22 @@ export default function FormacionPage() {
       {modalAbierto && (
         <AsignarCursoModal
           cerrarModal={cerrarModal}
-          codigoFicha={''}
-          fecha={fecha}
           formacion={formacionSeleccionada}
           handleConfirmarAsignacion={handleConfirmarAsignacion}
+          numeroFicha={numeroFicha}
           setCodigoFicha={setCodigoFicha}
-          setFecha={setFecha}
         />
       )}
+
+      {modalConfirmacionAbierto && (
+        <ConfirmacionModal
+          mensaje="¿Estás seguro de que deseas desasignar esta formación?"
+          onCancelar={cancelarDesasignacion}
+          onConfirmar={confirmarDesasignacion}
+        />
+      )}
+
+      {alertaModalAbierto && <AlertaModal mensaje={alertaMensaje} onAceptar={cerrarAlertaModal} />}
     </div>
   );
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-06T22:09:12.528Z"
+    "x-generation-date": "2025-10-07T20:27:42.487Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -22888,7 +22888,7 @@
                                           "codigoSofia": {
                                             "type": "string"
                                           },
-                                          "NumeroFicha": {
+                                          "numeroFicha": {
                                             "type": "string"
                                           },
                                           "asociacion": {
@@ -27543,7 +27543,7 @@
                               "codigoSofia": {
                                 "type": "string"
                               },
-                              "NumeroFicha": {
+                              "numeroFicha": {
                                 "type": "string"
                               },
                               "asociacion": {
@@ -31507,7 +31507,7 @@
                                           "codigoSofia": {
                                             "type": "string"
                                           },
-                                          "NumeroFicha": {
+                                          "numeroFicha": {
                                             "type": "string"
                                           },
                                           "asociacion": {
@@ -34812,7 +34812,7 @@
                                           "codigoSofia": {
                                             "type": "string"
                                           },
-                                          "NumeroFicha": {
+                                          "numeroFicha": {
                                             "type": "string"
                                           },
                                           "asociacion": {
@@ -38422,7 +38422,7 @@
                                               "codigoSofia": {
                                                 "type": "string"
                                               },
-                                              "NumeroFicha": {
+                                              "numeroFicha": {
                                                 "type": "string"
                                               },
                                               "asociacion": {
@@ -42751,7 +42751,7 @@
                           "codigoSofia": {
                             "type": "string"
                           },
-                          "NumeroFicha": {
+                          "numeroFicha": {
                             "type": "string"
                           },
                           "asociacion": {
@@ -46699,7 +46699,7 @@
                                 "codigoSofia": {
                                   "type": "string"
                                 },
-                                "NumeroFicha": {
+                                "numeroFicha": {
                                   "type": "string"
                                 },
                                 "asociacion": {
@@ -50511,7 +50511,7 @@
                               "codigoSofia": {
                                 "type": "string"
                               },
-                              "NumeroFicha": {
+                              "numeroFicha": {
                                 "type": "string"
                               },
                               "asociacion": {
@@ -52716,7 +52716,7 @@
               "codigoSofia": {
                 "type": "string"
               },
-              "NumeroFicha": {
+              "numeroFicha": {
                 "type": "string"
               },
               "asociacion": {
@@ -52807,7 +52807,7 @@
           "codigoSofia": {
             "type": "string"
           },
-          "NumeroFicha": {
+          "numeroFicha": {
             "type": "string"
           },
           "asociacion": {
@@ -56276,7 +56276,7 @@
                     "codigoSofia": {
                       "type": "string"
                     },
-                    "NumeroFicha": {
+                    "numeroFicha": {
                       "type": "string"
                     },
                     "asociacion": {
@@ -59291,7 +59291,7 @@
                                           "codigoSofia": {
                                             "type": "string"
                                           },
-                                          "NumeroFicha": {
+                                          "numeroFicha": {
                                             "type": "string"
                                           },
                                           "asociacion": {
@@ -63005,7 +63005,7 @@
                                                 "codigoSofia": {
                                                   "type": "string"
                                                 },
-                                                "NumeroFicha": {
+                                                "numeroFicha": {
                                                   "type": "string"
                                                 },
                                                 "asociacion": {
@@ -66732,7 +66732,7 @@
                                       "codigoSofia": {
                                         "type": "string"
                                       },
-                                      "NumeroFicha": {
+                                      "numeroFicha": {
                                         "type": "string"
                                       },
                                       "asociacion": {
@@ -72376,7 +72376,7 @@
                       "codigoSofia": {
                         "type": "string"
                       },
-                      "NumeroFicha": {
+                      "numeroFicha": {
                         "type": "string"
                       },
                       "asociacion": {
@@ -74565,7 +74565,7 @@
                                     "codigoSofia": {
                                       "type": "string"
                                     },
-                                    "NumeroFicha": {
+                                    "numeroFicha": {
                                       "type": "string"
                                     },
                                     "asociacion": {
@@ -78851,7 +78851,7 @@
                                                 "codigoSofia": {
                                                   "type": "string"
                                                 },
-                                                "NumeroFicha": {
+                                                "numeroFicha": {
                                                   "type": "string"
                                                 },
                                                 "asociacion": {
@@ -82632,7 +82632,7 @@
                                       "codigoSofia": {
                                         "type": "string"
                                       },
-                                      "NumeroFicha": {
+                                      "numeroFicha": {
                                         "type": "string"
                                       },
                                       "asociacion": {
@@ -86641,7 +86641,7 @@
                                       "codigoSofia": {
                                         "type": "string"
                                       },
-                                      "NumeroFicha": {
+                                      "numeroFicha": {
                                         "type": "string"
                                       },
                                       "asociacion": {
@@ -91476,7 +91476,7 @@
                                           "codigoSofia": {
                                             "type": "string"
                                           },
-                                          "NumeroFicha": {
+                                          "numeroFicha": {
                                             "type": "string"
                                           },
                                           "asociacion": {
@@ -94879,7 +94879,7 @@
                                           "codigoSofia": {
                                             "type": "string"
                                           },
-                                          "NumeroFicha": {
+                                          "numeroFicha": {
                                             "type": "string"
                                           },
                                           "asociacion": {
@@ -99651,7 +99651,7 @@
                                           "codigoSofia": {
                                             "type": "string"
                                           },
-                                          "NumeroFicha": {
+                                          "numeroFicha": {
                                             "type": "string"
                                           },
                                           "asociacion": {
@@ -103492,7 +103492,7 @@
                             "codigoSofia": {
                               "type": "string"
                             },
-                            "NumeroFicha": {
+                            "numeroFicha": {
                               "type": "string"
                             },
                             "asociacion": {
@@ -108090,7 +108090,7 @@
                         "codigoSofia": {
                           "type": "string"
                         },
-                        "NumeroFicha": {
+                        "numeroFicha": {
                           "type": "string"
                         },
                         "asociacion": {
@@ -111528,7 +111528,7 @@
                                               "codigoSofia": {
                                                 "type": "string"
                                               },
-                                              "NumeroFicha": {
+                                              "numeroFicha": {
                                                 "type": "string"
                                               },
                                               "asociacion": {
@@ -116689,7 +116689,7 @@
                               "codigoSofia": {
                                 "type": "string"
                               },
-                              "NumeroFicha": {
+                              "numeroFicha": {
                                 "type": "string"
                               },
                               "asociacion": {
@@ -120954,7 +120954,7 @@
                               "codigoSofia": {
                                 "type": "string"
                               },
-                              "NumeroFicha": {
+                              "numeroFicha": {
                                 "type": "string"
                               },
                               "asociacion": {

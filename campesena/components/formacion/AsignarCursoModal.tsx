@@ -1,31 +1,27 @@
-import { X, Calendar } from 'lucide-react';
+import { X } from 'lucide-react';
 
 import { Formacion } from '@/types/formacion';
 
 interface AsignarCursoModalProps {
   formacion: Formacion | null;
-  codigoFicha: string;
+  numeroFicha: string;
   setCodigoFicha: (value: string) => void;
-  fecha: string;
-  setFecha: (value: string) => void;
   handleConfirmarAsignacion: () => Promise<void>;
   cerrarModal: () => void;
 }
 
 export function AsignarCursoModal({
   formacion,
-  codigoFicha,
+  numeroFicha: numeroFicha,
   setCodigoFicha,
-  fecha,
-  setFecha,
   handleConfirmarAsignacion,
   cerrarModal,
 }: AsignarCursoModalProps) {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-3 z-50">
+    <div className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm bg-opacity-50 flex items-center justify-center p-3 z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-sm w-full">
         <div className="flex items-center justify-between p-3 border-b">
-          <h3 className="text-base font-semibold text-gray-900">Asignar Curso</h3>
+          <h3 className="text-base font-semibold text-gray-900">Asignar Formacion</h3>
           <button className="text-gray-400 hover:text-gray-600 transition-colors" onClick={cerrarModal}>
             <X className="h-5 w-5" />
           </button>
@@ -33,7 +29,9 @@ export function AsignarCursoModal({
 
         <div className="p-3">
           <div className="mb-3 p-2 bg-gray-50 rounded-md">
-            <h4 className="text-sm font-medium text-gray-900 mb-1 truncate">{formacion?.nombre}</h4>
+            <h4 className="text-sm font-medium text-gray-900 mb-1 break-words whitespace-normal leading-snug max-h-12 overflow-hidden">
+              {formacion?.nombre}
+            </h4>
             <p className="text-xs text-gray-600">
               {formacion?.codigoSofia} - Versión {formacion?.version}
             </p>
@@ -41,26 +39,13 @@ export function AsignarCursoModal({
 
           <div className="space-y-3">
             <div>
-              <label className="block text-xs font-medium text-gray-700 mb-1">Código de Ficha de Formación</label>
+              <label className="block text-xs font-medium text-gray-700 mb-1">Número de Ficha de Formación</label>
               <input
                 className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-green-500 focus:border-transparent"
                 placeholder="Ej: 2691851"
                 type="text"
-                value={codigoFicha}
+                value={numeroFicha}
                 onChange={(e) => setCodigoFicha(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-medium text-gray-700 mb-1 flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
-                Fecha de Inicio
-              </label>
-              <input
-                className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-green-500 focus:border-transparent"
-                type="date"
-                value={fecha}
-                onChange={(e) => setFecha(e.target.value)}
               />
             </div>
           </div>
@@ -75,7 +60,7 @@ export function AsignarCursoModal({
           </button>
           <button
             className="flex-1 px-3 py-1.5 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors text-sm font-medium disabled:bg-gray-300 disabled:cursor-not-allowed"
-            disabled={!codigoFicha || !fecha || !formacion}
+            disabled={!numeroFicha || !formacion}
             onClick={handleConfirmarAsignacion}
           >
             Confirmar

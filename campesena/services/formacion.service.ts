@@ -2,6 +2,7 @@ import qs from 'qs';
 
 import ApiClient from '@/app/api/axios/apiClient';
 import { Formacion, Formacions } from '@/types/formacion';
+import { FormacionAsociacion, FormacionAsociacions } from '@/types/formacionAsociacion';
 
 export const getFormacionesDisponibles = async (
   searchTerm: string = '',
@@ -35,14 +36,12 @@ export const getFormacionesDisponibles = async (
   return response.data;
 };
 
-export const getFormacionesInscritas = async (asociacionId: string): Promise<Formacions> => {
+export const getFormacionesInscritas = async (asociacionId: number): Promise<FormacionAsociacions> => {
   const query = qs.stringify(
     {
       filters: {
         asociacion: {
-          id: {
-            $eq: asociacionId,
-          },
+          $eq: asociacionId,
         },
       },
     },
@@ -50,24 +49,31 @@ export const getFormacionesInscritas = async (asociacionId: string): Promise<For
       encodeValuesOnly: true,
     },
   );
-  const response = await ApiClient.get<Formacions>(`/formacions?${query}`);
+  const response = await ApiClient.get<FormacionAsociacions>(`/formacion-asociacions?${query}`);
 
   return response.data;
 };
 
-export const inscribirFormacion = async (asociacionId: string, formacion: Partial<Formacion>): Promise<Formacion> => {
-  const { data: response } = await ApiClient.post('/formacions', {
+export const inscribirFormacion = async (
+  asociacionId: string,
+  datos: {
+    nombreFormacion: string;
+    version: string;
+    codigoSofia: string;
+    numeroFicha: string;
+  },
+): Promise<FormacionAsociacion> => {
+  const { data: response } = await ApiClient.post('/formacion-asociacions', {
     data: {
+      ...datos,
       asociacion: asociacionId,
-      ...formacion,
-      estado: true,
     },
   });
 
   return response.data;
 };
 
-export const desasignarFormacionAsociacion = async (formacionAsociacionId: number) => {
+export const desasignarFormacionAsociacion = async (formacionAsociacionId: string) => {
   const { data: response } = await ApiClient.delete(`/formacion-asociacions/${formacionAsociacionId}`);
 
   return response;

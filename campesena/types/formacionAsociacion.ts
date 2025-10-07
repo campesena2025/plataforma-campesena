@@ -28,7 +28,7 @@ export interface FormacionAsociacion {
     localizations: { data: FormacionAsociacion[] };
 }
 
-export interface Formacions {
+export interface FormacionAsociacions {
     data: FormacionAsociacion[];
     meta: {
         pagination: Pagination;

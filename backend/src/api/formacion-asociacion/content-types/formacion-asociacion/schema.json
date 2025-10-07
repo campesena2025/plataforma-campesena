@@ -23,7 +23,7 @@
     "codigoSofia": {
       "type": "string"
     },
-    "NumeroFicha": {
+    "numeroFicha": {
       "type": "string"
     },
     "asociacion": {
