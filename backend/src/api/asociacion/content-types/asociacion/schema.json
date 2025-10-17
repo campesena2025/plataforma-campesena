@@ -141,6 +141,12 @@
       "relation": "oneToMany",
       "target": "api::formacion-asociacion.formacion-asociacion",
       "mappedBy": "asociacion"
+    },
+    "proyecto_productivos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto-productivo.proyecto-productivo",
+      "mappedBy": "asociacion"
     }
   }
 }

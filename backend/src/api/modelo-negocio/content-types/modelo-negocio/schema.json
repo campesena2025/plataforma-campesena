@@ -61,12 +61,6 @@
       "relation": "oneToMany",
       "target": "api::inversion.inversion",
       "mappedBy": "modelo_negocio"
-    },
-    "proyecto_productivo": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::proyecto-productivo.proyecto-productivo",
-      "inversedBy": "modelo_negocio"
     }
   }
 }

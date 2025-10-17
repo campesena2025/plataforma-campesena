@@ -17,7 +17,7 @@
     "tiempoEstimado": {
       "type": "integer"
     },
-    "Planteamiento": {
+    "planteamiento": {
       "type": "text"
     },
     "justificacion": {
@@ -56,35 +56,22 @@
     "incertidumbres": {
       "type": "text"
     },
-    "portafolio": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::portafolio.portafolio",
-      "mappedBy": "proyecto_productivo"
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "Borrador",
+        "Completado",
+        "En Revisión"
+      ]
     },
-    "plan_mercadeo": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::plan-mercadeo.plan-mercadeo",
-      "mappedBy": "proyecto_productivo"
+    "fechaCreacion": {
+      "type": "datetime"
     },
-    "servicio_participante": {
+    "asociacion": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::servicio-participante.servicio-participante",
-      "inversedBy": "proyecto_productivo"
-    },
-    "modelo_negocio": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::modelo-negocio.modelo-negocio",
-      "mappedBy": "proyecto_productivo"
-    },
-    "plan_de_accion": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::plan-de-accion.plan-de-accion",
-      "mappedBy": "proyecto_productivo"
+      "relation": "manyToOne",
+      "target": "api::asociacion.asociacion",
+      "inversedBy": "proyecto_productivos"
     }
   }
 }

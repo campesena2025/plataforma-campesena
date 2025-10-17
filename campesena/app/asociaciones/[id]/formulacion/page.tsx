@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
-const page = () => {
-  return <div>page</div>;
-};
+import { Dashboard } from '@/components/formulacion/Dashboard';
 
-export default page;
+function Proyecto() {
+  return <Dashboard />;
+}
+
+export default Proyecto;

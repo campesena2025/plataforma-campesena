@@ -477,6 +477,10 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
       'api::participante.participante'
     >;
     productoServicio: Schema.Attribute.String;
+    proyecto_productivos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::proyecto-productivo.proyecto-productivo'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     razonCreacion: Schema.Attribute.Text;
     representanteLegal: Schema.Attribute.Relation<
@@ -959,10 +963,6 @@ export interface ApiModeloNegocioModeloNegocio
       'oneToMany',
       'api::proyeccion-financiera.proyeccion-financiera'
     >;
-    proyecto_productivo: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::proyecto-productivo.proyecto-productivo'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     recursosClave: Schema.Attribute.Text;
     relacionesClientes: Schema.Attribute.Text;
@@ -1212,10 +1212,6 @@ export interface ApiPlanDeAccionPlanDeAccion
       'api::plan-de-accion.plan-de-accion'
     > &
       Schema.Attribute.Private;
-    proyecto_productivo: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::proyecto-productivo.proyecto-productivo'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1256,10 +1252,6 @@ export interface ApiPlanMercadeoPlanMercadeo
     posicionamiento: Schema.Attribute.Text;
     propuestaMercadeo: Schema.Attribute.Text;
     propuestaValor: Schema.Attribute.Text;
-    proyecto_productivo: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::proyecto-productivo.proyecto-productivo'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     segmentoClientes: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
@@ -1311,10 +1303,6 @@ export interface ApiPortafolioPortafolio extends Struct.CollectionTypeSchema {
     normaTecnica: Schema.Attribute.String;
     precauciones: Schema.Attribute.Text;
     presentacionComercial: Schema.Attribute.Text;
-    proyecto_productivo: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::proyecto-productivo.proyecto-productivo'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     recomendacionesServicio: Schema.Attribute.Text;
     resolucion: Schema.Attribute.String;
@@ -1422,14 +1410,22 @@ export interface ApiProyectoProductivoProyectoProductivo
   };
   attributes: {
     analisisTendencias: Schema.Attribute.Text;
+    asociacion: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::asociacion.asociacion'
+    >;
     beneficiarios: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    estado: Schema.Attribute.Enumeration<
+      ['Borrador', 'Completado', 'En Revisi\u00F3n']
+    >;
     factoresEconomicos: Schema.Attribute.Text;
     factoresPoliticos: Schema.Attribute.String;
     factoresSociales: Schema.Attribute.Text;
     factoresTecnologicos: Schema.Attribute.Text;
+    fechaCreacion: Schema.Attribute.DateTime;
     impactoAmbiental: Schema.Attribute.Text;
     impactoEconomico: Schema.Attribute.Text;
     impactoSocial: Schema.Attribute.Text;
@@ -1442,29 +1438,9 @@ export interface ApiProyectoProductivoProyectoProductivo
       'api::proyecto-productivo.proyecto-productivo'
     > &
       Schema.Attribute.Private;
-    modelo_negocio: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::modelo-negocio.modelo-negocio'
-    >;
     nombreProyecto: Schema.Attribute.Text;
-    plan_de_accion: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::plan-de-accion.plan-de-accion'
-    >;
-    plan_mercadeo: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::plan-mercadeo.plan-mercadeo'
-    >;
-    Planteamiento: Schema.Attribute.Text;
-    portafolio: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::portafolio.portafolio'
-    >;
+    planteamiento: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
-    servicio_participante: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::servicio-participante.servicio-participante'
-    >;
     tiempoEstimado: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1756,10 +1732,6 @@ export interface ApiServicioParticipanteServicioParticipante
     participante_asociacion: Schema.Attribute.Relation<
       'manyToOne',
       'api::participante-asociacion.participante-asociacion'
-    >;
-    proyecto_productivo: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::proyecto-productivo.proyecto-productivo'
     >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

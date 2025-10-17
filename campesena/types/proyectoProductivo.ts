@@ -1,15 +1,10 @@
-import { Portafolio } from "./portafolio";
-import { PlanMercadeo } from "./planMercadeo";
-import { ServicioParticipante } from "./servicioParticipante";
-import { ModeloNegocio } from "./modeloNegocio";
-import { PlanDeAccion } from "./planDeAccion";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface ProyectoProductivoRequest {
   nombreProyecto: string;
   tiempoEstimado: number;
-  Planteamiento: string;
+  planteamiento: string;
   justificacion: string;
   beneficiarios: string;
   impactoSocial: string;
@@ -22,11 +17,9 @@ export interface ProyectoProductivoRequest {
   factoresSociales: string;
   factoresTecnologicos: string;
   incertidumbres: string;
-  portafolio?: number | string;
-  plan_mercadeo?: number | string;
-  servicio_participante?: number | string;
-  modelo_negocio?: number | string;
-  plan_de_accion?: number | string;
+  estado: 'Borrador' | 'Completado' | 'En Revisión';
+  fechaCreacion: string;
+  asociacion: string | number;
   locale?: string;
 }
 
@@ -48,11 +41,8 @@ export interface ProyectoProductivo {
   factoresSociales: string;
   factoresTecnologicos: string;
   incertidumbres: string;
-  portafolio: { data: Portafolio };
-  plan_mercadeo: { data: PlanMercadeo };
-  servicio_participante: { data: ServicioParticipante };
-  modelo_negocio: { data: ModeloNegocio };
-  plan_de_accion: { data: PlanDeAccion };
+  estado: 'Borrador' | 'Completado' | 'En Revisión';
+  fechaCreacion: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

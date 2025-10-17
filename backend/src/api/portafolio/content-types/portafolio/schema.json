@@ -61,12 +61,6 @@
         "audios"
       ]
     },
-    "proyecto_productivo": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::proyecto-productivo.proyecto-productivo",
-      "inversedBy": "portafolio"
-    },
     "composicionProducto": {
       "type": "text"
     },

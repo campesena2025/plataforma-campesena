@@ -19,12 +19,6 @@
       "relation": "oneToMany",
       "target": "api::actividad-plan.actividad-plan",
       "mappedBy": "plan_de_accion"
-    },
-    "proyecto_productivo": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::proyecto-productivo.proyecto-productivo",
-      "inversedBy": "plan_de_accion"
     }
   }
 }

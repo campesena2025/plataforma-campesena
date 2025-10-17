@@ -34,12 +34,6 @@
       "relation": "manyToOne",
       "target": "api::participante-asociacion.participante-asociacion",
       "inversedBy": "servicio_participantes"
-    },
-    "proyecto_productivo": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::proyecto-productivo.proyecto-productivo",
-      "mappedBy": "servicio_participante"
     }
   }
 }
