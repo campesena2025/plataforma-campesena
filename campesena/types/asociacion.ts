@@ -1,12 +1,12 @@
-import { Departamento } from "./departamento";
-import { Media } from "./media";
-import { Municipio } from "./municipio";
-import { Pagination } from "./pagination";
-import { Participante } from "./participante";
-import { User } from "./user";
-import { Vereda } from "./vereda";
+import { Departamento } from './departamento';
+import { Media } from './media';
+import { Municipio } from './municipio';
+import { Pagination } from './pagination';
+import { Participante } from './participante';
+import { User } from './user';
+import { Vereda } from './vereda';
 
-import { getSession } from "@/services/auth";
+import { getSession } from '@/services/auth';
 
 export interface AsociacionRequest {
   nit: string;
@@ -24,6 +24,7 @@ export interface AsociacionRequest {
   evaluacion_diagnosticos?: (number | string)[];
   locale?: string;
   foto?: number | string;
+  documento?: number | string;
   localizations?: (number | string)[];
   observaciones?: string;
   representanteLegal?: number | string;
@@ -31,6 +32,8 @@ export interface AsociacionRequest {
   estado: string;
   warning?: boolean;
   users_permissions_user: number | string;
+  soloMujeres?: boolean;
+  serviciosSENA?: string;
 }
 
 export interface Asociaciones {
@@ -59,17 +62,18 @@ export interface Asociacion {
   representanteLegal: Participante | null;
   participantes: Participante[];
   foto: Media;
+  documento: Media;
   departamento: Departamento;
   municipio: Municipio;
   vereda: Vereda;
   estado: string;
   warning?: boolean;
   users_permissions_user: User;
+  soloMujeres?: boolean;
+  serviciosSENA?: string;
 }
 
-export const toAsociacionRequest = (
-  asociacion: Asociacion,
-): AsociacionRequest => ({
+export const toAsociacionRequest = (asociacion: Asociacion): AsociacionRequest => ({
   nit: asociacion.nit,
   nombreAsociacion: asociacion.nombreAsociacion,
   formalizada: asociacion.formalizada,
@@ -88,5 +92,8 @@ export const toAsociacionRequest = (
   representanteLegal: asociacion.representanteLegal?.id,
   participantes: asociacion.participantes?.map((p) => p.id) ?? [],
   foto: asociacion.foto?.id,
+  documento: asociacion.documento?.id,
   users_permissions_user: getSession()?.user.id ?? 0,
+  soloMujeres: asociacion.soloMujeres,
+  serviciosSENA: asociacion.serviciosSENA,
 });

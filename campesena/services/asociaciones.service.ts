@@ -1,31 +1,20 @@
-import qs from "qs";
+import qs from 'qs';
 
-import { getSession } from "./auth";
+import { getSession } from './auth';
 
-import {
-  Asociacion,
-  AsociacionRequest,
-  toAsociacionRequest,
-} from "@/types/asociacion";
-import { useAsociacionesStore } from "@/store/asociaciones.store";
-import ApiClient from "@/app/api/axios/apiClient";
+import { Asociacion, AsociacionRequest, toAsociacionRequest } from '@/types/asociacion';
+import { useAsociacionesStore } from '@/store/asociaciones.store';
+import ApiClient from '@/app/api/axios/apiClient';
 
 export const getAllAsociaciones = async () => {
   const query = qs.stringify(
     {
-      populate: [
-        "departamento",
-        "municipio",
-        "vereda",
-        "participantes",
-        "representanteLegal",
-        "foto",
-      ],
+      populate: ['departamento', 'municipio', 'vereda', 'participantes', 'representanteLegal', 'foto', 'documento'],
       pagination: {
         page: 1,
         pageSize: 50,
       },
-      sort: ["nombreAsociacion:asc"],
+      sort: ['nombreAsociacion:asc'],
     },
     {
       encodeValuesOnly: true,
@@ -40,14 +29,7 @@ export const getAllAsociaciones = async () => {
 export const getAsociacionById = async (id: string) => {
   const query = qs.stringify(
     {
-      populate: [
-        "departamento",
-        "municipio",
-        "vereda",
-        "participantes",
-        "representanteLegal",
-        "foto",
-      ],
+      populate: ['departamento', 'municipio', 'vereda', 'participantes', 'representanteLegal', 'foto', 'documento'],
     },
     {
       encodeValuesOnly: true,
@@ -58,26 +40,17 @@ export const getAsociacionById = async (id: string) => {
   return response.data.data;
 };
 
-export const createAsociacion = async (
-  asociacion: Omit<AsociacionRequest, "id">,
-) => {
+export const createAsociacion = async (asociacion: Omit<AsociacionRequest, 'id'>) => {
   const query = qs.stringify(
     {
-      populate: [
-        "departamento",
-        "municipio",
-        "vereda",
-        "participantes",
-        "representanteLegal",
-        "foto",
-      ],
+      populate: ['departamento', 'municipio', 'vereda', 'participantes', 'representanteLegal', 'foto', 'documento'],
     },
     {
       encodeValuesOnly: true,
     },
   );
 
-  asociacion.estado = "Registrada";
+  asociacion.estado = 'Registrada';
   asociacion.users_permissions_user = getSession()?.user.id ?? 0;
 
   const { data: response } = await ApiClient.post(`/asociacions?${query}`, {
@@ -92,34 +65,21 @@ export const createAsociacion = async (
   return response;
 };
 
-export const updateAsociacion = async (
-  id: string,
-  asociacion: AsociacionRequest,
-) => {
+export const updateAsociacion = async (id: string, asociacion: AsociacionRequest) => {
   const { ...asociacionData } = asociacion;
 
   const query = qs.stringify(
     {
-      populate: [
-        "departamento",
-        "municipio",
-        "vereda",
-        "participantes",
-        "representanteLegal",
-        "foto",
-      ],
+      populate: ['departamento', 'municipio', 'vereda', 'participantes', 'representanteLegal', 'foto', 'documento'],
     },
     {
       encodeValuesOnly: true,
     },
   );
 
-  const { data: response } = await ApiClient.put(
-    `/asociacions/${id}?${query}`,
-    {
-      data: asociacionData,
-    },
-  );
+  const { data: response } = await ApiClient.put(`/asociacions/${id}?${query}`, {
+    data: asociacionData,
+  });
 
   // Actualizar el estado global con los cambios
   const updatedAsociacion = response.data as Asociacion;
@@ -129,17 +89,12 @@ export const updateAsociacion = async (
   return response;
 };
 
-export const setRepresentanteLegalId = async (
-  asociacionId: string,
-  participanteId: number,
-) => {
+export const setRepresentanteLegalId = async (asociacionId: string, participanteId: number) => {
   // Obtener la asociación actual
-  const asociacion = useAsociacionesStore
-    .getState()
-    .data.find((a) => a.documentId === asociacionId);
+  const asociacion = useAsociacionesStore.getState().data.find((a) => a.documentId === asociacionId);
 
   if (!asociacion) {
-    throw new Error("Asociación no encontrada");
+    throw new Error('Asociación no encontrada');
   }
   const asociacionRequest = toAsociacionRequest(asociacion);
 

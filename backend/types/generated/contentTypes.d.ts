@@ -438,6 +438,7 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::diagnostico-asociacion.diagnostico-asociacion'
     >;
+    documento: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     estado: Schema.Attribute.Enumeration<
       [
         'Registrada',
@@ -502,6 +503,14 @@ export interface ApiAsociacionAsociacion extends Struct.CollectionTypeSchema {
         'Servicios',
       ]
     >;
+    serviciosSENA: Schema.Attribute.Enumeration<
+      [
+        'Fondo Emprender',
+        'Tecnoparque',
+        'Formaci\u00F3n Continua Especializada',
+      ]
+    >;
+    soloMujeres: Schema.Attribute.Boolean;
     tipoOrganizacion: Schema.Attribute.Enumeration<
       [
         'Cabildos Indigenas',
@@ -1141,6 +1150,13 @@ export interface ApiParticipanteParticipante
     numeroContacto: Schema.Attribute.String;
     numeroDocumento: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    tipoDocumento: Schema.Attribute.Enumeration<
+      [
+        'C\u00E9dula de Ciudadan\u00EDa',
+        'C\u00E9dula de Extranjer\u00EDa',
+        'Tarjeta de Identidad',
+      ]
+    >;
     tipoPoblacion: Schema.Attribute.Enumeration<
       [
         'VULNERABLE',

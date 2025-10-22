@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   Modal,
   ModalContent,
@@ -11,62 +11,54 @@ import {
   SelectItem,
   RadioGroup,
   Radio,
-} from "@heroui/react";
-import { addToast } from "@heroui/toast";
+} from '@heroui/react';
+import { addToast } from '@heroui/toast';
 
-import { updateAsociado } from "@/services/asociado.service";
-import { useAsociacionesStore } from "@/store/asociaciones.store"; // Asegúrate que la ruta sea correcta
-import {
-  Participante,
-  ParticipanteRequest,
-  toParticipanteRequest,
-} from "@/types/participante";
+import { updateAsociado } from '@/services/asociado.service';
+import { useAsociacionesStore } from '@/store/asociaciones.store'; // Asegúrate que la ruta sea correcta
+import { Participante, ParticipanteRequest, toParticipanteRequest } from '@/types/participante';
 
 const populationTypes = [
-  "VULNERABLE",
-  "PALENQUERO",
-  "RAIZAL",
-  "AFROCOLOMBIANO",
-  "AFROCOLOMBIANOS_DESPLAZADOS_POR_LA_VIOLENCIA",
-  "CABEZA DE FAMILIA",
-  "ARTESANOS",
-  "DESPLAZADOS_DISCAPACITADOS",
-  "MUJERCABEZA DE_AMILIA",
-  "DESPLAZADOS_POR_FENOMENOS_NATURALES",
-  "DISCAPACITADO COGNITIVO",
-  "DESPLAZADOS POR LA VIOLENCIA",
-  "DESPLAZADOS_POR LA VIOLENCIA CABEZA DE FAMILIA",
-  "JOVEN RURAL",
-  "DISCAPACITADO_LIMITACION_FISICA",
-  "SOBREVIVIENTES MINAS ANTIPERSONALES",
-  "DISCAPACIDAD LIMITACION AUDITIVA",
-  "DISCAPACIDAD LIMITACION VISUAL",
-  "DISCAPACIDAD_MENTAL",
-  "EN CONDICION DE DISCAPACIDAD",
-  "ROM",
-  "NEGRITUDES",
-  "EMPRENDEDOR",
-  "INDIGENAS",
-  "PROC_REINTEGRACION / REINCORPORACION",
-  "INDIGENAS_DESPLAZADOS_POR_LA VIOLENCIA",
-  "INDIGENAS DESPLAZADOS POR LA VIOLENCIA CABEZA DE FAMILIA",
-  "INPEC",
-  "JOVENES_VULNERABLES",
-  "SOLDADOS_CAMPESINOS",
-  "TERCERA_EDAD",
-  "CAMPESINO",
-  "NINGUNA",
-  "PEQUEÑO PRODUCTOR",
-  "OTRO",
+  'VULNERABLE',
+  'PALENQUERO',
+  'RAIZAL',
+  'AFROCOLOMBIANO',
+  'AFROCOLOMBIANOS_DESPLAZADOS_POR_LA_VIOLENCIA',
+  'CABEZA DE FAMILIA',
+  'ARTESANOS',
+  'DESPLAZADOS_DISCAPACITADOS',
+  'MUJERCABEZA DE_AMILIA',
+  'DESPLAZADOS_POR_FENOMENOS_NATURALES',
+  'DISCAPACITADO COGNITIVO',
+  'DESPLAZADOS POR LA VIOLENCIA',
+  'DESPLAZADOS_POR LA VIOLENCIA CABEZA DE FAMILIA',
+  'JOVEN RURAL',
+  'DISCAPACITADO_LIMITACION_FISICA',
+  'SOBREVIVIENTES MINAS ANTIPERSONALES',
+  'DISCAPACIDAD LIMITACION AUDITIVA',
+  'DISCAPACIDAD LIMITACION VISUAL',
+  'DISCAPACIDAD_MENTAL',
+  'EN CONDICION DE DISCAPACIDAD',
+  'ROM',
+  'NEGRITUDES',
+  'EMPRENDEDOR',
+  'INDIGENAS',
+  'PROC_REINTEGRACION / REINCORPORACION',
+  'INDIGENAS_DESPLAZADOS_POR_LA VIOLENCIA',
+  'INDIGENAS DESPLAZADOS POR LA VIOLENCIA CABEZA DE FAMILIA',
+  'INPEC',
+  'JOVENES_VULNERABLES',
+  'SOLDADOS_CAMPESINOS',
+  'TERCERA_EDAD',
+  'CAMPESINO',
+  'NINGUNA',
+  'PEQUEÑO PRODUCTOR',
+  'OTRO',
 ];
 
-const educationLevels = [
-  "Ninguno",
-  "Primaria",
-  "Básica",
-  "Profesional",
-  "Postgrado",
-];
+const educationLevels = ['Ninguno', 'Primaria', 'Básica', 'Profesional', 'Postgrado'];
+
+const tipoDocumentoOptions = ['Cédula de Ciudadanía', 'Cédula de Extranjería', 'Tarjeta de Identidad'];
 
 interface EditAssociateModalProps {
   asociacionId: number;
@@ -75,19 +67,10 @@ interface EditAssociateModalProps {
   associate: Participante | null;
 }
 
-export const EditAssociateModal = ({
-  asociacionId,
-  isOpen,
-  onOpenChange,
-  associate,
-}: EditAssociateModalProps) => {
-  const [formData, setFormData] = useState<ParticipanteRequest>(
-    toParticipanteRequest(associate as Participante),
-  );
+export const EditAssociateModal = ({ asociacionId, isOpen, onOpenChange, associate }: EditAssociateModalProps) => {
+  const [formData, setFormData] = useState<ParticipanteRequest>(toParticipanteRequest(associate as Participante));
   // Obtenemos la acción para actualizar del store
-  const updateAsociadoInStore = useAsociacionesStore(
-    (state) => state.updateAsociado,
-  );
+  const updateAsociadoInStore = useAsociacionesStore((state) => state.updateAsociado);
 
   useEffect(() => {
     setFormData(toParticipanteRequest(associate as Participante));
@@ -95,9 +78,7 @@ export const EditAssociateModal = ({
 
   if (!associate) return null;
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -106,16 +87,16 @@ export const EditAssociateModal = ({
   const handleRadioChange = (value: string) => {
     setFormData((prev) => ({
       ...prev,
-      genero: value as "Masculino" | "Femenino",
+      genero: value as 'Masculino' | 'Femenino',
     }));
   };
 
   const handleSubmit = async (onClose: () => void) => {
     if (!formData.nombreCompleto || !formData.numeroDocumento) {
       addToast({
-        title: "Error de validación",
-        description: "Nombre completo y número de documento son requeridos.",
-        color: "danger",
+        title: 'Error de validación',
+        description: 'Nombre completo y número de documento son requeridos.',
+        color: 'danger',
       });
 
       return;
@@ -126,17 +107,17 @@ export const EditAssociateModal = ({
     try {
       await updateAsociado(asociacionId, formData);
       addToast({
-        title: "Asociado actualizado",
-        description: "El asociado ha sido actualizado correctamente.",
-        color: "success",
+        title: 'Asociado actualizado',
+        description: 'El asociado ha sido actualizado correctamente.',
+        color: 'success',
       });
 
       onClose();
     } catch {
       addToast({
-        title: "Error",
-        description: "Hubo un error al actualizar el asociado.",
-        color: "danger",
+        title: 'Error',
+        description: 'Hubo un error al actualizar el asociado.',
+        color: 'danger',
       });
 
       updateAsociadoInStore(associate.asociacions[0].id, originalAssociate);
@@ -148,11 +129,20 @@ export const EditAssociateModal = ({
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1">
-              Editar Asociado
-            </ModalHeader>
+            <ModalHeader className="flex flex-col gap-1">Editar Asociado</ModalHeader>
             <ModalBody>
               <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Select
+                  label="Tipo de Documento"
+                  labelPlacement="outside"
+                  name="tipoDocumento"
+                  selectedKeys={formData.tipoDocumento ? [formData.tipoDocumento] : []}
+                  onChange={handleChange}
+                >
+                  {tipoDocumentoOptions.map((type: string) => (
+                    <SelectItem key={type}>{type}</SelectItem>
+                  ))}
+                </Select>
                 <Input
                   isRequired
                   id="numeroDocumento"
@@ -160,7 +150,7 @@ export const EditAssociateModal = ({
                   labelPlacement="outside"
                   name="numeroDocumento"
                   type="text"
-                  value={formData.numeroDocumento || ""}
+                  value={formData.numeroDocumento || ''}
                   onChange={handleChange}
                 />
                 <Input
@@ -170,13 +160,13 @@ export const EditAssociateModal = ({
                   labelPlacement="outside"
                   name="nombreCompleto"
                   type="text"
-                  value={formData.nombreCompleto || ""}
+                  value={formData.nombreCompleto || ''}
                   onChange={handleChange}
                 />
                 <RadioGroup
                   label="Género"
                   orientation="horizontal"
-                  value={formData.genero || ""}
+                  value={formData.genero || ''}
                   onValueChange={handleRadioChange}
                 >
                   <Radio value="Masculino">Masculino</Radio>
@@ -189,7 +179,7 @@ export const EditAssociateModal = ({
                   labelPlacement="outside"
                   name="correoElectronico"
                   type="email"
-                  value={formData.correoElectronico || ""}
+                  value={formData.correoElectronico || ''}
                   onChange={handleChange}
                 />
                 <Input
@@ -198,16 +188,14 @@ export const EditAssociateModal = ({
                   labelPlacement="outside"
                   name="numeroContacto"
                   type="text"
-                  value={formData.numeroContacto?.toString() || ""}
+                  value={formData.numeroContacto?.toString() || ''}
                   onChange={handleChange}
                 />
                 <Select
                   label="Tipo de Población"
                   labelPlacement="outside"
                   name="tipoPoblacion"
-                  selectedKeys={
-                    formData.tipoPoblacion ? [formData.tipoPoblacion] : []
-                  }
+                  selectedKeys={formData.tipoPoblacion ? [formData.tipoPoblacion] : []}
                   onChange={handleChange}
                 >
                   {populationTypes.map((type: string) => (
@@ -220,16 +208,14 @@ export const EditAssociateModal = ({
                   labelPlacement="outside"
                   name="edad"
                   type="number"
-                  value={formData.edad?.toString() || ""}
+                  value={formData.edad?.toString() || ''}
                   onChange={handleChange}
                 />
                 <Select
                   label="Nivel de Estudio"
                   labelPlacement="outside"
                   name="nivelEstudio"
-                  selectedKeys={
-                    formData.nivelEstudio ? [formData.nivelEstudio] : []
-                  }
+                  selectedKeys={formData.nivelEstudio ? [formData.nivelEstudio] : []}
                   onChange={handleChange}
                 >
                   {educationLevels.map((level: string) => (

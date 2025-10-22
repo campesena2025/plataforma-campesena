@@ -147,6 +147,27 @@
       "relation": "oneToMany",
       "target": "api::proyecto-productivo.proyecto-productivo",
       "mappedBy": "asociacion"
+    },
+    "documento": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "soloMujeres": {
+      "type": "boolean"
+    },
+    "serviciosSENA": {
+      "type": "enumeration",
+      "enum": [
+        "Fondo Emprender",
+        "Tecnoparque",
+        "Formación Continua Especializada"
+      ]
     }
   }
 }

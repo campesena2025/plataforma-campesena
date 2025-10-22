@@ -89,6 +89,14 @@
     },
     "numeroContacto": {
       "type": "string"
+    },
+    "tipoDocumento": {
+      "type": "enumeration",
+      "enum": [
+        "Cédula de Ciudadanía",
+        "Cédula de Extranjería",
+        "Tarjeta de Identidad"
+      ]
     }
   }
 }

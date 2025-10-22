@@ -1,12 +1,12 @@
-"use client";
-import { Button } from "@heroui/button";
-import { Card, CardBody } from "@heroui/card";
-import React from "react";
-import Image from "next/image";
-import { Badge } from "@heroui/badge";
-import { Skeleton } from "@heroui/react";
+'use client';
+import { Button } from '@heroui/button';
+import { Card, CardBody } from '@heroui/card';
+import React from 'react';
+import Image from 'next/image';
+import { Badge } from '@heroui/badge';
+import { Skeleton } from '@heroui/react';
 
-import { Asociacion } from "@/types/asociacion";
+import { Asociacion } from '@/types/asociacion';
 
 interface Props {
   asociacion: Asociacion;
@@ -15,11 +15,7 @@ interface Props {
 
 export default function CardAssociation({ asociacion, procedimiento }: Props) {
   return (
-    <Card
-      isBlurred
-      className="border-none bg-background/60 dark:bg-default-100/50 w-full pt-2 mt-2"
-      shadow="sm"
-    >
+    <Card isBlurred className="border-none bg-background/60 dark:bg-default-100/50 w-full pt-2 mt-2" shadow="sm">
       <CardBody>
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
           {/* Imagen de la asociación */}
@@ -41,9 +37,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
           <div className="flex flex-col col-span-6 md:col-span-10 gap-2">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
               <div className="flex flex-col gap-1">
-                <h1 className="text-xl font-bold text-foreground">
-                  {asociacion.nombreAsociacion}
-                </h1>
+                <h1 className="text-xl font-bold text-foreground">{asociacion.nombreAsociacion}</h1>
                 <p className="text-sm text-foreground/80">
                   {asociacion.formalizada ? (
                     <>
@@ -51,33 +45,24 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                     </>
                   ) : (
                     <>
-                      <strong>Código Interno:</strong>{" "}
-                      {asociacion.codigoInterno}
+                      <strong>Código Interno:</strong> {asociacion.codigoInterno}
                     </>
                   )}
                 </p>
                 <p className="text-sm text-foreground/80">
-                  <strong>Celular:</strong>{" "}
-                  {asociacion.representanteLegal?.numeroContacto}
+                  <strong>Celular:</strong> {asociacion.representanteLegal?.numeroContacto}
                 </p>
                 <p className="text-sm text-foreground/80">
-                  <strong>Correo:</strong>{" "}
-                  {asociacion.representanteLegal?.correoElectronico}
+                  <strong>Correo:</strong> {asociacion.representanteLegal?.correoElectronico}
                 </p>
                 <p className="text-sm text-foreground/80">
-                  <strong>Representante:</strong>{" "}
-                  {asociacion.representanteLegal?.nombreCompleto}
+                  <strong>Representante:</strong> {asociacion.representanteLegal?.nombreCompleto}
                 </p>
               </div>
               {/* Estado y botones */}
               <div className="flex flex-col items-end gap-2 min-w-[160px]">
                 {asociacion.warning && (
-                  <Badge
-                    className=""
-                    color="danger"
-                    content=""
-                    placement="top-right"
-                  >
+                  <Badge className="" color="danger" content="" placement="top-right">
                     <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold mb-2">
                       {asociacion.estado}
                     </span>
@@ -94,7 +79,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                     size="sm"
                     variant="flat"
                     onPress={() => {
-                      procedimiento("editarAsociacion", asociacion.documentId);
+                      procedimiento('editarAsociacion', asociacion.documentId);
                     }}
                   >
                     Editar Asociación
@@ -104,7 +89,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                     size="sm"
                     variant="flat"
                     onPress={() => {
-                      procedimiento("editarAsociados", asociacion.documentId);
+                      procedimiento('editarAsociados', asociacion.documentId);
                     }}
                   >
                     Administrar Asociados
@@ -120,7 +105,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("diagnostico", asociacion.documentId);
+                  procedimiento('diagnostico', asociacion.documentId);
                 }}
               >
                 Diagnóstico
@@ -130,7 +115,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("formacion", asociacion.documentId);
+                  procedimiento('formacion', asociacion.documentId);
                 }}
               >
                 Formación
@@ -140,7 +125,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("formulacion", asociacion.documentId);
+                  procedimiento('formulacion', asociacion.documentId);
                 }}
               >
                 Formulación
@@ -150,7 +135,7 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("postulacion", asociacion.documentId);
+                  procedimiento('postulacion', asociacion.documentId);
                 }}
               >
                 Postulación
@@ -160,20 +145,10 @@ export default function CardAssociation({ asociacion, procedimiento }: Props) {
                 size="sm"
                 variant="ghost"
                 onPress={() => {
-                  procedimiento("evaluacion", asociacion.documentId);
+                  procedimiento('evaluacion', asociacion.documentId);
                 }}
               >
                 Evaluación
-              </Button>
-              <Button
-                color="warning"
-                size="sm"
-                variant="ghost"
-                onPress={() => {
-                  procedimiento("kit", asociacion.documentId);
-                }}
-              >
-                Kit de producto
               </Button>
             </div>
           </div>

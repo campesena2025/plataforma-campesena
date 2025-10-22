@@ -1,57 +1,53 @@
-"use client";
-import { addToast } from "@heroui/toast";
-import { Button } from "@heroui/button";
-import { Card, CardBody, CardHeader } from "@heroui/card";
-import { Input, Textarea } from "@heroui/input";
-import { Radio, RadioGroup } from "@heroui/radio";
-import { Select, SelectItem } from "@heroui/select";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+'use client';
+import { addToast } from '@heroui/toast';
+import { Button } from '@heroui/button';
+import { Card, CardBody, CardHeader } from '@heroui/card';
+import { Input, Textarea } from '@heroui/input';
+import { Radio, RadioGroup } from '@heroui/radio';
+import { Select, SelectItem } from '@heroui/select';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-import { createAsociacion } from "@/services/asociaciones.service";
-import { organizationTypes, sector } from "@/types/enumerators";
-import { LocationSelector } from "@/components/LocationSelector";
-import { AsociacionRequest } from "@/types/asociacion";
-import { useAsociacionesStore } from "@/store/asociaciones.store";
+import { createAsociacion } from '@/services/asociaciones.service';
+import { organizationTypes, sector } from '@/types/enumerators';
+import { LocationSelector } from '@/components/LocationSelector';
+import { AsociacionRequest } from '@/types/asociacion';
+import { useAsociacionesStore } from '@/store/asociaciones.store';
+import { PdfUpload } from '@/components/PdfUpload';
+import { uploadFile } from '@/services/media.service';
+import { serviciosSENA } from '@/types/enumerators';
 
 const Page = () => {
   const router = useRouter();
   const [switchCodigo, setSwitchCodigo] = useState(false);
-  const invalidateAsociaciones = useAsociacionesStore(
-    (state) => state.invalidate,
-  );
+  const [file, setFile] = useState<File | null>(null);
+  const invalidateAsociaciones = useAsociacionesStore((state) => state.invalidate);
   const [formData, setFormData] = useState<Partial<AsociacionRequest>>({
     formalizada: false,
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
     setFormData((prevData) => ({
       ...prevData,
-      [name]: name === "formalizada" ? value === "true" : value,
+      [name]: name === 'formalizada' ? value === 'true' : value,
     }));
   };
 
   const handleChangeEstadoAsociacion = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
 
     setFormData((prevData) => ({
       ...(prevData as AsociacionRequest),
-      [name]: name === "formalizada" ? value === "true" : value,
-      nit: "",
-      codigoInterno: "",
+      [name]: name === 'formalizada' ? value === 'true' : value,
+      nit: '',
+      codigoInterno: '',
     }));
 
-    if (name === "formalizada" && value === "true") {
+    if (name === 'formalizada' && value === 'true') {
       setSwitchCodigo(true);
     } else {
       setSwitchCodigo(false);
@@ -65,8 +61,8 @@ const Page = () => {
   }) => {
     setFormData((prevData) => ({
       ...prevData,
-      departamento: selection.departamento?.id.toString() || "",
-      municipio: selection.municipio?.id.toString() || "",
+      departamento: selection.departamento?.id.toString() || '',
+      municipio: selection.municipio?.id.toString() || '',
       vereda: selection.vereda?.id.toString() || null,
     }));
   };
@@ -75,19 +71,30 @@ const Page = () => {
     e.preventDefault();
 
     try {
-      await createAsociacion(formData as Omit<AsociacionRequest, "id">);
+      let fileId: string | undefined = undefined;
+
+      if (file) {
+        const response = await uploadFile(file);
+
+        fileId = response[0].id.toString();
+      }
+
+      await createAsociacion({
+        ...formData,
+        documento: fileId,
+      } as Omit<AsociacionRequest, 'id'>);
       invalidateAsociaciones();
-      router.push("/asociaciones");
+      router.push('/asociaciones');
       addToast({
-        title: "Asociación creada",
-        description: "La asociación se ha creado correctamente.",
-        color: "success",
+        title: 'Asociación creada',
+        description: 'La asociación se ha creado correctamente.',
+        color: 'success',
       });
     } catch {
       addToast({
-        title: "Error",
-        description: "Ha ocurrido un error al crear la asociación.",
-        color: "danger",
+        title: 'Error',
+        description: 'Ha ocurrido un error al crear la asociación.',
+        color: 'danger',
       });
     }
   };
@@ -98,15 +105,12 @@ const Page = () => {
         <h1 className="text-2xl font-bold">Crear Asociación</h1>
       </CardHeader>
       <CardBody>
-        <form
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          onSubmit={handleSubmit}
-        >
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
           <RadioGroup
             label="Formalizada"
             name="formalizada"
             orientation="horizontal"
-            value={formData?.formalizada?.toString() || "false"}
+            value={formData?.formalizada?.toString() || 'false'}
             onChange={handleChangeEstadoAsociacion}
           >
             <Radio value="false">No</Radio>
@@ -120,7 +124,7 @@ const Page = () => {
               labelPlacement="outside"
               name="nit"
               type="text"
-              value={formData?.nit || ""}
+              value={formData?.nit || ''}
               onChange={handleChange}
             />
           ) : (
@@ -130,7 +134,7 @@ const Page = () => {
               labelPlacement="outside"
               name="codigoInterno"
               type="text"
-              value={formData?.codigoInterno || ""}
+              value={formData?.codigoInterno || ''}
               onChange={handleChange}
             />
           )}
@@ -140,22 +144,19 @@ const Page = () => {
             label="Nombre de la Asociación"
             labelPlacement="outside"
             name="nombreAsociacion"
-            value={formData?.nombreAsociacion || ""}
+            value={formData?.nombreAsociacion || ''}
             onChange={handleChange}
           />
 
           <div className="md:col-span-2">
-            <LocationSelector
-              initialVeredaId={formData?.vereda}
-              onChange={handleLocationChange}
-            />
+            <LocationSelector initialVeredaId={formData?.vereda} onChange={handleLocationChange} />
           </div>
           <Select
             isRequired
             label="Tipo de Organización"
             labelPlacement="outside"
             name="tipoOrganizacion"
-            selectedKeys={[formData?.tipoOrganizacion || ""]}
+            selectedKeys={[formData?.tipoOrganizacion || '']}
             onChange={handleChange}
           >
             {organizationTypes.map((type) => (
@@ -168,7 +169,7 @@ const Page = () => {
             label="Sector"
             labelPlacement="outside"
             name="sector"
-            selectedKeys={[formData?.sector || ""]}
+            selectedKeys={[formData?.sector || '']}
             onChange={handleChange}
           >
             {sector.map((type) => (
@@ -180,7 +181,7 @@ const Page = () => {
             label="Razón de Creación"
             labelPlacement="outside"
             name="razonCreacion"
-            value={formData?.razonCreacion || ""}
+            value={formData?.razonCreacion || ''}
             onChange={handleChange}
           />
           <Input
@@ -190,7 +191,7 @@ const Page = () => {
             labelPlacement="outside"
             name="productoServicio"
             type="text"
-            value={formData?.productoServicio || ""}
+            value={formData?.productoServicio || ''}
             onChange={handleChange}
           />
           <Input
@@ -199,9 +200,36 @@ const Page = () => {
             labelPlacement="outside"
             name="codigoCIUU"
             type="text"
-            value={formData?.codigoCIUU || ""}
+            value={formData?.codigoCIUU || ''}
             onChange={handleChange}
           />
+          <RadioGroup
+            label="Asociacion de Mujeres"
+            name="soloMujeres"
+            orientation="horizontal"
+            value={formData?.soloMujeres?.toString() || 'false'}
+            onChange={handleChangeEstadoAsociacion}
+          >
+            <Radio value="false">No</Radio>
+            <Radio value="true">Sí</Radio>
+          </RadioGroup>
+
+          <Select
+            isRequired
+            label="Servicios SENA"
+            labelPlacement="outside"
+            name="serviciosSENA"
+            selectedKeys={[formData?.serviciosSENA || '']}
+            onChange={handleChange}
+          >
+            {serviciosSENA.map((type) => (
+              <SelectItem key={type}>{type}</SelectItem>
+            ))}
+          </Select>
+
+          <div className="md:col-span-2">
+            <PdfUpload message="Agrega el certificado de cámara de comercio" onFileChange={setFile} />
+          </div>
           <Textarea
             className="md:col-span-2"
             id="observaciones"
@@ -210,7 +238,7 @@ const Page = () => {
             maxLength={255}
             name="observaciones"
             placeholder="Si su vereda u otro dato no aparece en las listas, anótelo aquí."
-            value={formData?.observaciones || ""}
+            value={formData?.observaciones || ''}
             onChange={handleChange}
           />
           <div className="md:col-span-2 flex justify-end mt-8">

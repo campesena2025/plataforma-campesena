@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Modal,
   ModalContent,
@@ -11,57 +11,53 @@ import {
   SelectItem,
   RadioGroup,
   Radio,
-} from "@heroui/react";
-import { addToast } from "@heroui/toast";
+} from '@heroui/react';
+import { addToast } from '@heroui/toast';
 
-import { ParticipanteRequest } from "@/types/participante";
-import { createAsociado } from "@/services/asociado.service";
+import { ParticipanteRequest } from '@/types/participante';
+import { createAsociado } from '@/services/asociado.service';
 
 const populationTypes = [
-  "VULNERABLE",
-  "PALENQUERO",
-  "RAIZAL",
-  "AFROCOLOMBIANO",
-  "AFROCOLOMBIANOS_DESPLAZADOS_POR_LA_VIOLENCIA",
-  "CABEZA DE FAMILIA",
-  "ARTESANOS",
-  "DESPLAZADOS_DISCAPACITADOS",
-  "MUJERCABEZA DE_AMILIA",
-  "DESPLAZADOS_POR_FENOMENOS_NATURALES",
-  "DISCAPACITADO COGNITIVO",
-  "DESPLAZADOS POR LA VIOLENCIA",
-  "DESPLAZADOS_POR LA VIOLENCIA CABEZA DE FAMILIA",
-  "JOVEN RURAL",
-  "DISCAPACITADO_LIMITACION_FISICA",
-  "SOBREVIVIENTES MINAS ANTIPERSONALES",
-  "DISCAPACIDAD LIMITACION AUDITIVA",
-  "DISCAPACIDAD LIMITACION VISUAL",
-  "DISCAPACIDAD_MENTAL",
-  "EN CONDICION DE DISCAPACIDAD",
-  "ROM",
-  "NEGRITUDES",
-  "EMPRENDEDOR",
-  "INDIGENAS",
-  "PROC_REINTEGRACION / REINCORPORACION",
-  "INDIGENAS_DESPLAZADOS_POR_LA VIOLENCIA",
-  "INDIGENAS DESPLAZADOS POR LA VIOLENCIA CABEZA DE FAMILIA",
-  "INPEC",
-  "JOVENES_VULNERABLES",
-  "SOLDADOS_CAMPESINOS",
-  "TERCERA_EDAD",
-  "CAMPESINO",
-  "NINGUNA",
-  "PEQUEÑO PRODUCTOR",
-  "OTRO",
+  'VULNERABLE',
+  'PALENQUERO',
+  'RAIZAL',
+  'AFROCOLOMBIANO',
+  'AFROCOLOMBIANOS_DESPLAZADOS_POR_LA_VIOLENCIA',
+  'CABEZA DE FAMILIA',
+  'ARTESANOS',
+  'DESPLAZADOS_DISCAPACITADOS',
+  'MUJERCABEZA DE_AMILIA',
+  'DESPLAZADOS_POR_FENOMENOS_NATURALES',
+  'DISCAPACITADO COGNITIVO',
+  'DESPLAZADOS POR LA VIOLENCIA',
+  'DESPLAZADOS_POR LA VIOLENCIA CABEZA DE FAMILIA',
+  'JOVEN RURAL',
+  'DISCAPACITADO_LIMITACION_FISICA',
+  'SOBREVIVIENTES MINAS ANTIPERSONALES',
+  'DISCAPACIDAD LIMITACION AUDITIVA',
+  'DISCAPACIDAD LIMITACION VISUAL',
+  'DISCAPACIDAD_MENTAL',
+  'EN CONDICION DE DISCAPACIDAD',
+  'ROM',
+  'NEGRITUDES',
+  'EMPRENDEDOR',
+  'INDIGENAS',
+  'PROC_REINTEGRACION / REINCORPORACION',
+  'INDIGENAS_DESPLAZADOS_POR_LA VIOLENCIA',
+  'INDIGENAS DESPLAZADOS POR LA VIOLENCIA CABEZA DE FAMILIA',
+  'INPEC',
+  'JOVENES_VULNERABLES',
+  'SOLDADOS_CAMPESINOS',
+  'TERCERA_EDAD',
+  'CAMPESINO',
+  'NINGUNA',
+  'PEQUEÑO PRODUCTOR',
+  'OTRO',
 ];
 
-const educationLevels = [
-  "Ninguno",
-  "Primaria",
-  "Básica",
-  "Profesional",
-  "Postgrado",
-];
+const educationLevels = ['Ninguno', 'Primaria', 'Básica', 'Profesional', 'Postgrado'];
+
+const tipoDocumentoOptions = ['Cédula de Ciudadanía', 'Cédula de Extranjería', 'Tarjeta de Identidad'];
 
 interface AddAssociateModalProps {
   isOpen: boolean;
@@ -69,29 +65,23 @@ interface AddAssociateModalProps {
   asociacionId: number;
 }
 
-export const AddAssociateModal = ({
-  isOpen,
-  onOpenChange,
-  asociacionId,
-}: AddAssociateModalProps) => {
+export const AddAssociateModal = ({ isOpen, onOpenChange, asociacionId }: AddAssociateModalProps) => {
   // Estado inicial del formulario para agregar un asociado
   const [formData, setFormData] = useState<ParticipanteRequest>({
-    numeroDocumento: "",
-    nombreCompleto: "",
-    genero: "Masculino",
-    correoElectronico: "",
+    numeroDocumento: '',
+    nombreCompleto: '',
+    genero: 'Masculino',
+    correoElectronico: '',
     numeroContacto: 0,
     asociacions: [],
-    tipoPoblacion: "GENERAL",
+    tipoPoblacion: 'GENERAL',
     edad: 0,
-    nivelEstudio: "Ninguno",
-    documentId: "", // Añadir documentId con un valor inicial vacío
-    locale: "es",
+    nivelEstudio: 'Ninguno',
+    documentId: '', // Añadir documentId con un valor inicial vacío
+    locale: 'es',
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
     setFormData((prev) => ({
@@ -111,16 +101,16 @@ export const AddAssociateModal = ({
       await createAsociado(participanteData, asociacionId);
 
       addToast({
-        title: "Éxito",
-        description: "El asociado se ha agregado correctamente.",
-        color: "success",
+        title: 'Éxito',
+        description: 'El asociado se ha agregado correctamente.',
+        color: 'success',
       });
       onOpenChange(false);
     } catch {
       addToast({
-        title: "Error",
-        description: "Ha ocurrido un error al agregar el asociado.",
-        color: "danger",
+        title: 'Error',
+        description: 'Ha ocurrido un error al agregar el asociado.',
+        color: 'danger',
       });
     }
   };
@@ -130,15 +120,20 @@ export const AddAssociateModal = ({
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1">
-              Agregar Nuevo Asociado
-            </ModalHeader>
+            <ModalHeader className="flex flex-col gap-1">Agregar Nuevo Asociado</ModalHeader>
             <ModalBody>
-              <form
-                className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                id="addAssociateForm"
-                onSubmit={handleSubmit}
-              >
+              <form className="grid grid-cols-1 md:grid-cols-2 gap-6" id="addAssociateForm" onSubmit={handleSubmit}>
+                <Select
+                  label="Tipo de Documento"
+                  labelPlacement="outside"
+                  name="tipoDocumento"
+                  selectedKeys={formData.tipoDocumento ? [formData.tipoDocumento] : []}
+                  onChange={handleChange}
+                >
+                  {tipoDocumentoOptions.map((type) => (
+                    <SelectItem key={type}>{type}</SelectItem>
+                  ))}
+                </Select>
                 <Input
                   id="numeroDocumento"
                   label="Número de Documento"
@@ -190,9 +185,7 @@ export const AddAssociateModal = ({
                   label="Tipo de Población"
                   labelPlacement="outside"
                   name="tipoPoblacion"
-                  selectedKeys={
-                    formData.tipoPoblacion ? [formData.tipoPoblacion] : []
-                  }
+                  selectedKeys={formData.tipoPoblacion ? [formData.tipoPoblacion] : []}
                   onChange={handleChange}
                 >
                   {populationTypes.map((type) => (
@@ -212,9 +205,7 @@ export const AddAssociateModal = ({
                   label="Nivel de Estudio"
                   labelPlacement="outside"
                   name="nivelEstudio"
-                  selectedKeys={
-                    formData.nivelEstudio ? [formData.nivelEstudio] : []
-                  }
+                  selectedKeys={formData.nivelEstudio ? [formData.nivelEstudio] : []}
                   onChange={handleChange}
                 >
                   {educationLevels.map((level) => (

@@ -1,46 +1,42 @@
-"use client";
-import { addToast } from "@heroui/toast";
-import { Button } from "@heroui/button";
-import { Card, CardBody, CardHeader } from "@heroui/card";
-import { Input, Textarea } from "@heroui/input";
-import { Radio, RadioGroup } from "@heroui/radio";
-import { Select, SelectItem } from "@heroui/select";
-import React, { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+'use client';
+import { addToast } from '@heroui/react';
+import { Button } from '@heroui/button';
+import { Card, CardBody, CardHeader } from '@heroui/card';
+import { Input, Textarea } from '@heroui/input';
+import { Radio, RadioGroup } from '@heroui/radio';
+import { Select, SelectItem } from '@heroui/select';
+import React, { useEffect, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
 
-import {
-  getAsociacionById,
-  updateAsociacion,
-} from "@/services/asociaciones.service";
-import { organizationTypes, sector } from "@/types/enumerators";
-import { LocationSelector } from "@/components/LocationSelector";
-import {
-  Asociacion,
-  AsociacionRequest,
-  toAsociacionRequest,
-} from "@/types/asociacion";
-import { FotoUpload } from "@/components/FotoUpload";
-import { uploadFile } from "@/services/media.service";
-import { useAsociacionesStore } from "@/store/asociaciones.store";
+import { getAsociacionById, updateAsociacion } from '@/services/asociaciones.service';
+import { organizationTypes, sector, serviciosSENA } from '@/types/enumerators';
+import { LocationSelector } from '@/components/LocationSelector';
+import { Asociacion, AsociacionRequest, toAsociacionRequest } from '@/types/asociacion';
+import { FotoUpload } from '@/components/FotoUpload';
+import { PdfUpload } from '@/components/PdfUpload';
+import { uploadFile } from '@/services/media.service';
+import { useAsociacionesStore } from '@/store/asociaciones.store';
 
 const Page = () => {
   const { id } = useParams();
   const router = useRouter();
-  const invalidateAsociaciones = useAsociacionesStore(
-    (state) => state.invalidate,
-  );
+  const invalidateAsociaciones = useAsociacionesStore((state) => state.invalidate);
   const asociaciones = useAsociacionesStore((state) => state.data);
   const [formData, setFormData] = useState<AsociacionRequest>();
   const [asociacion, setAsociacion] = useState<Asociacion>();
   const [fotoFile, setFotoFile] = useState<File | null>(null);
+  const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [switchCodigo, setSwitchCodigo] = useState(false);
+  const [senaServices, setSenaServices] = useState<any[]>([
+    'Fondo Emprender',
+    'Tecnoparque',
+    'Formación Continua Especializada',
+  ]);
 
   useEffect(() => {
     if (id) {
       // Prioriza la búsqueda de la asociación en el store para evitar una llamada extra a la API
-      const asociacionEncontrada = asociaciones?.find(
-        (a) => a.documentId === (id as string),
-      );
+      const asociacionEncontrada = asociaciones?.find((a) => a.documentId === (id as string));
 
       if (asociacionEncontrada) {
         setAsociacion(asociacionEncontrada);
@@ -57,32 +53,35 @@ const Page = () => {
     }
   }, [id, asociaciones]);
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
     setFormData((prevData) => ({
       ...(prevData as AsociacionRequest),
-      [name]: name === "formalizada" ? value === "true" : value,
+      [name]: name === 'formalizada' ? value === 'true' : value,
+    }));
+  };
+
+  const handleSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+
+    setFormData((prevData) => ({
+      ...(prevData as AsociacionRequest),
+      [name]: checked,
     }));
   };
 
   const handleChangeEstadoAsociacion = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
 
     setFormData((prevData) => ({
       ...(prevData as AsociacionRequest),
-      [name]: name === "formalizada" ? value === "true" : value,
+      [name]: name === 'formalizada' ? value === 'true' : value,
     }));
 
-    if (name === "formalizada" && value === "true") {
+    if (name === 'formalizada' && value === 'true') {
       setSwitchCodigo(true);
     } else {
       setSwitchCodigo(false);
@@ -96,8 +95,8 @@ const Page = () => {
   }) => {
     setFormData((prevData) => ({
       ...(prevData as AsociacionRequest),
-      departamento: selection.departamento?.id || "",
-      municipio: selection.municipio?.id || "",
+      departamento: selection.departamento?.id || '',
+      municipio: selection.municipio?.id || '',
       vereda: selection.vereda?.id || null,
     }));
   };
@@ -106,15 +105,19 @@ const Page = () => {
     setFotoFile(file);
   };
 
+  const handlePdfChange = (file: File) => {
+    setPdfFile(file);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       if (!formData) {
         addToast({
-          title: "Error",
-          description: "Ha ocurrido un error al actualizar la asociación.",
-          color: "danger",
+          title: 'Error',
+          description: 'Ha ocurrido un error al actualizar la asociación.',
+          color: 'danger',
         });
 
         return;
@@ -122,9 +125,9 @@ const Page = () => {
 
       if (!asociacion) {
         addToast({
-          title: "Error",
-          description: "Ha ocurrido un error al actualizar la asociación.",
-          color: "danger",
+          title: 'Error',
+          description: 'Ha ocurrido un error al actualizar la asociación.',
+          color: 'danger',
         });
 
         return;
@@ -139,19 +142,27 @@ const Page = () => {
         }
       }
 
+      if (pdfFile) {
+        const uploadedFiles = await uploadFile(pdfFile);
+
+        if (uploadedFiles && uploadedFiles.length > 0) {
+          updatedFormData.documento = uploadedFiles[0].id;
+        }
+      }
+
       await updateAsociacion(asociacion.documentId, updatedFormData);
       invalidateAsociaciones();
       addToast({
-        title: "Asociación actualizada",
-        description: "La asociación se ha actualizado correctamente.",
-        color: "success",
+        title: 'Asociación actualizada',
+        description: 'La asociación se ha actualizado correctamente.',
+        color: 'success',
       });
-      router.push("/asociaciones");
+      router.push('/asociaciones');
     } catch {
       addToast({
-        title: "Error",
-        description: "Ha ocurrido un error al actualizar la asociación.",
-        color: "danger",
+        title: 'Error',
+        description: 'Ha ocurrido un error al actualizar la asociación.',
+        color: 'danger',
       });
     }
   };
@@ -162,15 +173,12 @@ const Page = () => {
         <h1 className="text-2xl font-bold">Editar Asociación</h1>
       </CardHeader>
       <CardBody>
-        <form
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          onSubmit={handleSubmit}
-        >
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
           <RadioGroup
             label="Formalizada"
             name="formalizada"
             orientation="horizontal"
-            value={formData?.formalizada?.toString() || "false"}
+            value={formData?.formalizada?.toString() || 'false'}
             onChange={handleChangeEstadoAsociacion}
           >
             <Radio value="false">No</Radio>
@@ -184,7 +192,7 @@ const Page = () => {
               labelPlacement="outside"
               name="nit"
               type="text"
-              value={formData?.nit || ""}
+              value={formData?.nit || ''}
               onChange={handleChange}
             />
           ) : (
@@ -194,7 +202,7 @@ const Page = () => {
               labelPlacement="outside"
               name="codigoInterno"
               type="text"
-              value={formData?.codigoInterno || ""}
+              value={formData?.codigoInterno || ''}
               onChange={handleChange}
             />
           )}
@@ -204,16 +212,14 @@ const Page = () => {
             label="Nombre de la Asociación"
             labelPlacement="outside"
             name="nombreAsociacion"
-            value={formData?.nombreAsociacion || ""}
+            value={formData?.nombreAsociacion || ''}
             onChange={handleChange}
           />
 
           <div className="md:col-span-2">
-            <FotoUpload
-              initialImageUrl={asociacion?.foto}
-              onFileChange={handleFotoChange}
-            />
+            <FotoUpload initialImageUrl={asociacion?.foto} onFileChange={handleFotoChange} />
           </div>
+
           <div className="md:col-span-2">
             <LocationSelector
               initialDepartamentoId={formData?.departamento}
@@ -227,7 +233,7 @@ const Page = () => {
             label="Tipo de Organización"
             labelPlacement="outside"
             name="tipoOrganizacion"
-            selectedKeys={[formData?.tipoOrganizacion || ""]}
+            selectedKeys={[formData?.tipoOrganizacion || '']}
             onChange={handleChange}
           >
             {organizationTypes.map((type) => (
@@ -239,7 +245,7 @@ const Page = () => {
             label="Sector"
             labelPlacement="outside"
             name="sector"
-            selectedKeys={[formData?.sector || ""]}
+            selectedKeys={[formData?.sector || '']}
             onChange={handleChange}
           >
             {sector.map((type) => (
@@ -251,7 +257,7 @@ const Page = () => {
             label="Razón de Creación"
             labelPlacement="outside"
             name="razonCreacion"
-            value={formData?.razonCreacion || ""}
+            value={formData?.razonCreacion || ''}
             onChange={handleChange}
           />
           <Input
@@ -260,7 +266,7 @@ const Page = () => {
             labelPlacement="outside"
             name="productoServicio"
             type="text"
-            value={formData?.productoServicio || ""}
+            value={formData?.productoServicio || ''}
             onChange={handleChange}
           />
           <Input
@@ -269,7 +275,7 @@ const Page = () => {
             labelPlacement="outside"
             name="codigoCIUU"
             type="text"
-            value={formData?.codigoCIUU || ""}
+            value={formData?.codigoCIUU || ''}
             onChange={handleChange}
           />
           <Textarea
@@ -280,16 +286,40 @@ const Page = () => {
             maxLength={255}
             name="observaciones"
             placeholder="Si su vereda u otro dato no aparece en las listas, anótelo aquí."
-            value={formData?.observaciones || ""}
+            value={formData?.observaciones || ''}
             onChange={handleChange}
           />
+          <div className="md:col-span-2">
+            <PdfUpload
+              initialFile={asociacion?.documento}
+              message="Documento de cámara de comercio(opcional)"
+              onFileChange={handlePdfChange}
+            />
+          </div>
+          <RadioGroup
+            label="Asociacion de Mujeres"
+            name="soloMujeres"
+            orientation="horizontal"
+            value={formData?.soloMujeres?.toString() || 'false'}
+            onChange={handleChangeEstadoAsociacion}
+          >
+            <Radio value="false">No</Radio>
+            <Radio value="true">Sí</Radio>
+          </RadioGroup>
+
+          <Select
+            label="Servicios SENA"
+            labelPlacement="outside"
+            name="serviciosSENA"
+            selectedKeys={[formData?.serviciosSENA || '']}
+            onChange={handleChange}
+          >
+            {serviciosSENA.map((type) => (
+              <SelectItem key={type}>{type}</SelectItem>
+            ))}
+          </Select>
           <div className="md:col-span-2 flex justify-end mt-8">
-            <Button
-              color="warning"
-              size="lg"
-              type="button"
-              onClick={() => router.back()}
-            >
+            <Button color="warning" size="lg" type="button" onClick={() => router.back()}>
               Volver
             </Button>
             <Button color="primary" size="lg" type="submit">
