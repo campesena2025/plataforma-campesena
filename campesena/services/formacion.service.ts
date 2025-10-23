@@ -19,12 +19,12 @@ export const getFormacionesDisponibles = async (
       sort,
       filters: searchTerm
         ? {
-          $or: [
-            { nombre: { $containsi: searchTerm } },
-            { codigoSofia: { $containsi: searchTerm } },
-            { version: { $containsi: searchTerm } },
-          ],
-        }
+            $or: [
+              { nombre: { $containsi: searchTerm } },
+              { codigoSofia: { $containsi: searchTerm } },
+              { version: { $containsi: searchTerm } },
+            ],
+          }
         : undefined,
     },
     {

@@ -1,11 +1,11 @@
-import { Municipio } from "./municipio";
-import { Vereda } from "./vereda";
-import { CentroFormacion } from "./centroFormacion";
-import { Formacion } from "./formacion";
-import { ParticipanteAsociacion } from "./participanteAsociacion";
-import { ProyectoProductivo } from "./proyectoProductivo";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { Municipio } from './municipio';
+import { Vereda } from './vereda';
+import { CentroFormacion } from './centroFormacion';
+import { Formacion } from './formacion';
+import { ParticipanteAsociacion } from './participanteAsociacion';
+import { ProyectoProductivo } from './proyectoProductivo';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface ServicioParticipanteRequest {
   fechaInicio: string;

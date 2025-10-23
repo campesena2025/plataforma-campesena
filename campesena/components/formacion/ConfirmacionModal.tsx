@@ -6,11 +6,7 @@ interface ConfirmacionModalProps {
   onCancelar: () => void;
 }
 
-export function ConfirmacionModal({
-  mensaje,
-  onConfirmar,
-  onCancelar,
-}: ConfirmacionModalProps) {
+export function ConfirmacionModal({ mensaje, onConfirmar, onCancelar }: ConfirmacionModalProps) {
   return (
     <div className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center p-3 z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-sm w-full">

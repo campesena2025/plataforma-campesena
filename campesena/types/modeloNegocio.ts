@@ -1,9 +1,9 @@
-import { ProyeccionFinanciera } from "./proyeccionFinanciera";
-import { Costo } from "./costo";
-import { Inversion } from "./inversion";
-import { ProyectoProductivo } from "./proyectoProductivo";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { ProyeccionFinanciera } from './proyeccionFinanciera';
+import { Costo } from './costo';
+import { Inversion } from './inversion';
+import { ProyectoProductivo } from './proyectoProductivo';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface ModeloNegocioRequest {
   mision: string;

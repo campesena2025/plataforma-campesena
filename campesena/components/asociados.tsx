@@ -1,6 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { EllipsisVerticalIcon, PencilIcon, TrashIcon, UserPlusIcon } from '@heroicons/react/24/solid';
+import {
+  EllipsisVerticalIcon,
+  PencilIcon,
+  TrashIcon,
+  UserPlusIcon,
+  ArrowDownTrayIcon,
+} from '@heroicons/react/24/solid';
 import {
   Button,
   Dropdown,
@@ -15,9 +21,11 @@ import {
   TableRow,
   useDisclosure,
 } from '@heroui/react';
+import * as XLSX from 'xlsx';
 
 import { AddAssociateModal } from './AddAssociateModal';
 import { EditAssociateModal } from './EditAssociateModal';
+import { UploadAssociatesModal } from './UploadAssociatesModal';
 
 import { Participante } from '@/types/participante';
 import { useAsociacionesStore } from '@/store/asociaciones.store';
@@ -31,6 +39,7 @@ interface AsociadosTableProps {
 
 export default function AsociadosTable({ initialAssociates, asociacion }: AsociadosTableProps) {
   const { isOpen: isAddOpen, onOpen: onAddOpen, onOpenChange: onAddOpenChange } = useDisclosure();
+  const { isOpen: isUploadOpen, onOpen: onUploadOpen, onOpenChange: onUploadOpenChange } = useDisclosure();
   const { isOpen: isEditOpen, onOpen: onEditOpen, onOpenChange: onEditOpenChange } = useDisclosure();
 
   // Leemos los asociados directamente del store para que la tabla sea reactiva a los cambios.
@@ -60,6 +69,25 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
   const handleEdit = (associate: Participante) => {
     setSelectedAssociate(associate);
     onEditOpen();
+  };
+
+  const handleDownloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(associates);
+    const workbook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Asociados');
+    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const data = new Blob([excelBuffer], {
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8',
+    });
+    const url = URL.createObjectURL(data);
+    const link = document.createElement('a');
+
+    link.href = url;
+    link.setAttribute('download', 'asociados.xlsx');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   useEffect(() => { }, [legalRepresentativeId]);
@@ -112,9 +140,15 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
 
   return (
     <div className="w-full">
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-end mb-4 space-x-2">
         <Button color="primary" startContent={<UserPlusIcon className="w-5 h-5" />} onPress={onAddOpen}>
-          Agregar Asociado
+          Crear Asociado
+        </Button>
+        <Button color="primary" startContent={<UserPlusIcon className="w-5 h-5" />} onPress={onUploadOpen}>
+          Cargue Asociados
+        </Button>
+        <Button color="primary" startContent={<ArrowDownTrayIcon className="w-5 h-5" />} onPress={handleDownloadExcel}>
+          Descargar Excel
         </Button>
       </div>
       <>
@@ -153,6 +187,7 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
         </Table>
       </div>
       <AddAssociateModal asociacionId={asociacion} isOpen={isAddOpen} onOpenChange={onAddOpenChange} />
+      <UploadAssociatesModal asociacionId={asociacion} isOpen={isUploadOpen} onOpenChange={onUploadOpenChange} />
       <EditAssociateModal
         asociacionId={asociacion}
         associate={selectedAssociate}

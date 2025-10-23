@@ -1,7 +1,7 @@
-import { Regional } from "./regional";
-import { ServicioParticipante } from "./servicioParticipante";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { Regional } from './regional';
+import { ServicioParticipante } from './servicioParticipante';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface CentroFormacionRequest {
   codigo: string;

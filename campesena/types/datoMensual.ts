@@ -1,6 +1,6 @@
-import { ProyeccionFinanciera } from "./proyeccionFinanciera";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { ProyeccionFinanciera } from './proyeccionFinanciera';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface DatoMensualRequest {
   mes: number;

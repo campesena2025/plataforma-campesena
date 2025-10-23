@@ -1,8 +1,8 @@
-import { Municipio } from "./municipio";
-import { Asociacion } from "./asociacion";
-import { ServicioParticipante } from "./servicioParticipante";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { Municipio } from './municipio';
+import { Asociacion } from './asociacion';
+import { ServicioParticipante } from './servicioParticipante';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface VeredaRequest {
   divipola: string;

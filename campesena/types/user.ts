@@ -1,5 +1,5 @@
-import { Asociacion } from "./asociacion";
-import { Role } from "./role";
+import { Asociacion } from './asociacion';
+import { Role } from './role';
 
 export interface User {
   id: number;

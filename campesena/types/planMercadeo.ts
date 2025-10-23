@@ -1,6 +1,6 @@
-import { ProyectoProductivo } from "./proyectoProductivo";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { ProyectoProductivo } from './proyectoProductivo';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface PlanMercadeoRequest {
   analisisSector: string;

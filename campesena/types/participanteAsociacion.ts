@@ -1,8 +1,8 @@
-import { Participante } from "./participante";
-import { Asociacion } from "./asociacion";
-import { ServicioParticipante } from "./servicioParticipante";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { Participante } from './participante';
+import { Asociacion } from './asociacion';
+import { ServicioParticipante } from './servicioParticipante';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface ParticipanteAsociacionRequest {
   participante?: number | string;

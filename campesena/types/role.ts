@@ -1,6 +1,6 @@
-import { Permission } from "./permission";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { Permission } from './permission';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface RoleRequest {
   name: string;

@@ -1,7 +1,7 @@
-import { ModeloNegocio } from "./modeloNegocio";
-import { DatoMensual } from "./datoMensual";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { ModeloNegocio } from './modeloNegocio';
+import { DatoMensual } from './datoMensual';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface ProyeccionFinancieraRequest {
   anoProyeccion: number;

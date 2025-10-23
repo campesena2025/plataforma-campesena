@@ -84,8 +84,9 @@ export const ImpactoSection: React.FC<Props> = ({ data, onChange }) => {
           {impactos.map((impacto) => (
             <div key={impacto.key} className="flex items-center">
               <div
-                className={`h-3 w-3 rounded-full mr-2 ${data[impacto.key as keyof ProyectoProductivoRequest] ? 'bg-green-500' : 'bg-gray-300'
-                  }`}
+                className={`h-3 w-3 rounded-full mr-2 ${
+                  data[impacto.key as keyof ProyectoProductivoRequest] ? 'bg-green-500' : 'bg-gray-300'
+                }`}
               />
               <span className="text-orange-800">{impacto.titulo}</span>
             </div>

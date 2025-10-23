@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { createContext, useContext, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-import { getSession, clearSession } from "@/services/auth";
-import { User } from "@/types/user";
+import { getSession, clearSession } from '@/services/auth';
+import { User } from '@/types/user';
 
 interface AuthContextType {
   user: User | null;
@@ -37,31 +37,27 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       }
     };
 
-    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener('storage', handleStorageChange);
 
     return () => {
-      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener('storage', handleStorageChange);
     };
   }, []);
 
   const logout = () => {
     clearSession();
     setUser(null);
-    router.push("/login");
+    router.push('/login');
   };
 
-  return (
-    <AuthContext.Provider value={{ user, loading, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ user, loading, logout }}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
 
   if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    throw new Error('useAuth must be used within an AuthProvider');
   }
 
   return context;

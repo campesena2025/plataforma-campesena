@@ -39,9 +39,12 @@ export function AsignarCursoModal({
 
           <div className="space-y-3">
             <div>
-              <label className="block text-xs font-medium text-gray-700 mb-1">Número de Ficha de Formación</label>
+              <label className="block text-xs font-medium text-gray-700 mb-1" htmlFor="ficha-formacion">
+                Número de Ficha de Formación
+              </label>
               <input
                 className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-green-500 focus:border-transparent"
+                id="ficha-formacion"
                 placeholder="Ej: 2691851"
                 type="text"
                 value={numeroFicha}

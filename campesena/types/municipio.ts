@@ -1,9 +1,9 @@
-import { Departamento } from "./departamento";
-import { Vereda } from "./vereda";
-import { Asociacion } from "./asociacion";
-import { ServicioParticipante } from "./servicioParticipante";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { Departamento } from './departamento';
+import { Vereda } from './vereda';
+import { Asociacion } from './asociacion';
+import { ServicioParticipante } from './servicioParticipante';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface MunicipioRequest {
   divipola: string;
@@ -12,9 +12,9 @@ export interface MunicipioRequest {
   veredas?: (number | string)[];
   asociacion?: number | string;
   zomac: boolean;
-  ruralidad: "Rural" | "Urbano";
+  ruralidad: 'Rural' | 'Urbano';
   restitucionTierras: boolean;
-  zonaReformaRural: "No ZNRA" | "ZNRA";
+  zonaReformaRural: 'No ZNRA' | 'ZNRA';
   servicio_participante?: number | string;
   zonaReservaCampesina: string;
   subregionPDET: string;
@@ -33,9 +33,9 @@ export interface Municipio {
   veredas: Vereda[];
   asociacion: Asociacion;
   zomac: boolean;
-  ruralidad: "Rural" | "Urbano";
+  ruralidad: 'Rural' | 'Urbano';
   restitucionTierras: boolean;
-  zonaReformaRural: "No ZNRA" | "ZNRA";
+  zonaReformaRural: 'No ZNRA' | 'ZNRA';
   servicio_participante: ServicioParticipante;
   zonaReservaCampesina: string;
   subregionPDET: string;

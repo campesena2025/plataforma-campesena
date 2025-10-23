@@ -1,12 +1,12 @@
-import axios, { type AxiosResponse, type AxiosError } from "axios";
+import axios, { type AxiosResponse, type AxiosError } from 'axios';
 
-import { getJwt } from "../auth";
+import { getJwt } from '../auth';
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL + "/api",
+  baseURL: process.env.NEXT_PUBLIC_API_URL + '/api',
   timeout: 10000, // 10 segundos de timeout
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
 });
 

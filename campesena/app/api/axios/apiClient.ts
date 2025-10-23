@@ -1,5 +1,5 @@
-import axios, { type AxiosError } from "axios";
-import Cookies from "js-cookie";
+import axios, { type AxiosError } from 'axios';
+import Cookies from 'js-cookie';
 
 const apiUrl = ` ${process.env.NEXT_PUBLIC_API_URL}/api`;
 const ApiClient = axios.create({
@@ -8,10 +8,10 @@ const ApiClient = axios.create({
 
 ApiClient.interceptors.request.use(
   async (config) => {
-    const cookieSession = Cookies.get("session-token");
+    const cookieSession = Cookies.get('session-token');
 
     config.headers.Authorization = `Bearer ${cookieSession}`;
-    config.headers["Content-Type"] = `Application/json`;
+    config.headers['Content-Type'] = `Application/json`;
 
     return config;
   },
@@ -51,42 +51,38 @@ interface ValidationErrorResponse {
 }
 
 function handleStrapiError(error: AxiosError): string {
-  let errorMessage = "Error desconocido";
+  let errorMessage = 'Error desconocido';
 
   if (error.response) {
     const { status, data } = error.response;
 
     switch (status) {
       case 400:
-        errorMessage = "Error de validación";
+        errorMessage = 'Error de validación';
 
         const validationError = data as ValidationErrorResponse;
 
         if (validationError.error.details?.errors) {
           const errors = validationError.error.details.errors.map((error) => {
-            if (error.message === "This attribute must be unique") {
-              return (
-                "ya existe un registro con el dato(s) de " +
-                error.path.join(" ") +
-                " en el sistema"
-              );
+            if (error.message === 'This attribute must be unique') {
+              return 'ya existe un registro con el dato(s) de ' + error.path.join(' ') + ' en el sistema';
             }
 
             return error.message;
           });
 
-          errorMessage += ": " + errors.join(", ");
-        } else errorMessage += ": " + validationError.error.message;
+          errorMessage += ': ' + errors.join(', ');
+        } else errorMessage += ': ' + validationError.error.message;
 
         break;
       case 403:
-        errorMessage = "Permiso denegado";
+        errorMessage = 'Permiso denegado';
         break;
       case 404:
-        errorMessage = "Recurso no encontrado";
+        errorMessage = 'Recurso no encontrado';
         break;
       case 500:
-        errorMessage = "Error interno del servidor";
+        errorMessage = 'Error interno del servidor';
         break;
       default:
         break;

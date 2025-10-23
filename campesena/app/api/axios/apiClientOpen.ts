@@ -1,4 +1,4 @@
-import axios, { type AxiosError } from "axios";
+import axios, { type AxiosError } from 'axios';
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const ApiClientOpen = axios.create({
@@ -7,7 +7,7 @@ const ApiClientOpen = axios.create({
 
 ApiClientOpen.interceptors.request.use(
   async (config) => {
-    config.headers["Content-Type"] = `Application/json`;
+    config.headers['Content-Type'] = `Application/json`;
 
     return config;
   },
@@ -47,7 +47,7 @@ interface ValidationErrorResponse {
 }
 
 function handleStrapiError(error: AxiosError): string {
-  let errorMessage = "Error desconocido";
+  let errorMessage = 'Error desconocido';
 
   if (error.response) {
     const { status, data } = error.response;
@@ -55,31 +55,27 @@ function handleStrapiError(error: AxiosError): string {
 
     switch (status) {
       case 400:
-        errorMessage = "Error de validación";
+        errorMessage = 'Error de validación';
         if (validationError.error.details && validationError.error.details) {
           const errors = validationError.error.details.errors.map((error) => {
-            if (error.message === "This attribute must be unique") {
-              return (
-                "ya existe un registro con el dato(s) de " +
-                error.path.join(" ") +
-                " en el sistema"
-              );
+            if (error.message === 'This attribute must be unique') {
+              return 'ya existe un registro con el dato(s) de ' + error.path.join(' ') + ' en el sistema';
             }
 
             return error.message;
           });
 
-          errorMessage += ": " + errors.join(", ");
+          errorMessage += ': ' + errors.join(', ');
         }
         break;
       case 403:
-        errorMessage = "Permiso denegado";
+        errorMessage = 'Permiso denegado';
         break;
       case 404:
-        errorMessage = "Recurso no encontrado";
+        errorMessage = 'Recurso no encontrado';
         break;
       case 500:
-        errorMessage = "Error interno del servidor";
+        errorMessage = 'Error interno del servidor';
         break;
       default:
         break;

@@ -1,7 +1,3 @@
-export default function PlanAccionLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PlanAccionLayout({ children }: { children: React.ReactNode }) {
   return <section>{children}</section>;
 }

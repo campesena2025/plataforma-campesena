@@ -1,15 +1,12 @@
-import { Participante, ParticipanteRequest } from "@/types/participante";
-import { useAsociacionesStore } from "@/store/asociaciones.store";
-import ApiClient from "@/app/api/axios/apiClient";
+import { Participante, ParticipanteRequest } from '@/types/participante';
+import { useAsociacionesStore } from '@/store/asociaciones.store';
+import ApiClient from '@/app/api/axios/apiClient';
 
-export const createAsociado = async (
-  asociado: ParticipanteRequest,
-  asociacionId: number,
-) => {
+export const createAsociado = async (asociado: ParticipanteRequest, asociacionId: number) => {
   // Excluimos documentId del objeto que se envía, ya que es generado por el backend.
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { documentId, ...restOfAsociado } = asociado;
-  const { data: response } = await ApiClient.post("/participantes", {
+  const { data: response } = await ApiClient.post('/participantes', {
     data: { ...restOfAsociado, asociacions: [asociacionId] },
   });
 
@@ -21,17 +18,11 @@ export const createAsociado = async (
   return response;
 };
 
-export const updateAsociado = async (
-  asociacionId: number,
-  asociado: ParticipanteRequest,
-) => {
+export const updateAsociado = async (asociacionId: number, asociado: ParticipanteRequest) => {
   const { documentId, ...rest } = asociado;
-  const { data: response } = await ApiClient.put(
-    `/participantes/${documentId}`,
-    {
-      data: rest,
-    },
-  );
+  const { data: response } = await ApiClient.put(`/participantes/${documentId}`, {
+    data: rest,
+  });
 
   // Una vez actualizado en el backend, actualizamos el estado
   const updatedAsociado = response.data as Participante;

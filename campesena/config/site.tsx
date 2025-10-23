@@ -1,5 +1,5 @@
-import React from "react";
-import { UserGroupIcon, ChartBarIcon } from "@heroicons/react/24/solid";
+import React from 'react';
+import { UserGroupIcon, ChartBarIcon } from '@heroicons/react/24/solid';
 
 export type SiteConfig = typeof siteConfig;
 
@@ -10,18 +10,18 @@ type NavItem = {
 };
 
 export const siteConfig = {
-  name: "Plataforma instructores campesena",
-  description: "Plataforma de registro de instructores campesena.",
+  name: 'Plataforma instructores campesena',
+  description: 'Plataforma de registro de instructores campesena.',
   navItems: [
     {
-      label: "Asociaciones",
-      href: "/asociaciones",
+      label: 'Asociaciones',
+      href: '/asociaciones',
       icon: <UserGroupIcon className="h-5 w-5 mr-1 text-green-700" />,
     },
 
     {
-      label: "Reportes",
-      href: "/reportes",
+      label: 'Reportes',
+      href: '/reportes',
       icon: <ChartBarIcon className="h-5 w-5 mr-1 text-green-700" />,
     },
     // {
@@ -32,10 +32,10 @@ export const siteConfig = {
   ] as NavItem[],
 
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: 'https://github.com/heroui-inc/heroui',
+    twitter: 'https://twitter.com/hero_ui',
+    docs: 'https://heroui.com',
+    discord: 'https://discord.gg/9b6yyZKmH4',
+    sponsor: 'https://patreon.com/jrgarciadev',
   },
 };

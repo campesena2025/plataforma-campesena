@@ -1,7 +1,7 @@
-import { ActividadPlan } from "./actividadPlan";
-import { ProyectoProductivo } from "./proyectoProductivo";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { ActividadPlan } from './actividadPlan';
+import { ProyectoProductivo } from './proyectoProductivo';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface PlanDeAccionRequest {
   fechaElaboracion: string;

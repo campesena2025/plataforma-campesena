@@ -1,7 +1,3 @@
-export default function ReportesLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ReportesLayout({ children }: { children: React.ReactNode }) {
   return <section>{children}</section>;
 }

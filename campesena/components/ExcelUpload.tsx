@@ -1,9 +1,7 @@
 'use client';
-import { DocumentIcon } from '@heroicons/react/24/solid';
+import { DocumentArrowUpIcon } from '@heroicons/react/24/solid';
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-
-import { Media } from '@/types/media';
 
 interface FileDetails {
   name: string;
@@ -11,13 +9,12 @@ interface FileDetails {
   type: string;
 }
 
-interface PdfUploadProps {
+interface ExcelUploadProps {
   onFileChange: (file: File) => void;
-  initialFile?: Media;
   message?: string;
 }
 
-export const PdfUpload: React.FC<PdfUploadProps> = ({ onFileChange, initialFile, message }) => {
+export const ExcelUpload: React.FC<ExcelUploadProps> = ({ onFileChange, message }) => {
   const [fileDetails, setFileDetails] = useState<FileDetails | null>(null);
   const [file, setFile] = useState<File | null>(null);
 
@@ -41,7 +38,8 @@ export const PdfUpload: React.FC<PdfUploadProps> = ({ onFileChange, initialFile,
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'application/pdf': ['.pdf'],
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
+      'application/vnd.ms-excel': ['.xls'],
     },
     multiple: false,
   });
@@ -54,10 +52,10 @@ export const PdfUpload: React.FC<PdfUploadProps> = ({ onFileChange, initialFile,
       }`}
     >
       <input {...getInputProps()} />
-      {file || initialFile ? (
+      {file ? (
         <div className="grid grid-cols-1 gap-x-2 md:grid-cols-2">
           <div>
-            <DocumentIcon className="w-16 h-16 text-gray-400 mx-auto" />
+            <DocumentArrowUpIcon className="w-16 h-16 text-gray-400 mx-auto" />
           </div>
           {fileDetails && (
             <div className="grid grid-cols-1 gap-x-1 md:grid-cols-1">
@@ -72,32 +70,16 @@ export const PdfUpload: React.FC<PdfUploadProps> = ({ onFileChange, initialFile,
               </p>
             </div>
           )}
-          {initialFile && !fileDetails && (
-            <div className="grid grid-cols-1 gap-x-1 md:grid-cols-1">
-              <p>
-                <b>Nombre:</b> {initialFile.name}
-              </p>
-              <a
-                className="text-primary hover:underline"
-                href={`${process.env.NEXT_PUBLIC_API_URL}${initialFile.url}`}
-                rel="noopener noreferrer"
-                target="_blank"
-                onClick={(e) => e.stopPropagation()} // Prevent opening file dialog
-              >
-                Descargar
-              </a>
-            </div>
-          )}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center h-48">
-          <DocumentIcon className="w-16 h-16 text-gray-400" />
+          <DocumentArrowUpIcon className="w-16 h-16 text-gray-400" />
           <p className="mt-2 text-sm text-gray-500">
             {isDragActive
-              ? 'Suelta el PDF aquí...'
+              ? 'Suelta el archivo aquí...'
               : message
                 ? message
-                : 'Arrastra y suelta un archivo PDF aquí, o haz clic para seleccionar uno.'}
+                : 'Arrastra y suelta un archivo de Excel aquí, o haz clic para seleccionar uno.'}
           </p>
         </div>
       )}

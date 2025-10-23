@@ -1,7 +1,7 @@
-import { SeccionDiagnostico } from "./seccionDiagnostico";
-import { EvaluacionDiagnostico } from "./evaluacionDiagnostico";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { SeccionDiagnostico } from './seccionDiagnostico';
+import { EvaluacionDiagnostico } from './evaluacionDiagnostico';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface DiagnosticoPlantillaRequest {
   nombrePlantilla: string;

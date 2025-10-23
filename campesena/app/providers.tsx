@@ -1,24 +1,22 @@
-"use client";
+'use client';
 
-import type { ThemeProviderProps } from "next-themes";
+import type { ThemeProviderProps } from 'next-themes';
 
-import * as React from "react";
-import { HeroUIProvider } from "@heroui/system";
-import { useRouter } from "next/navigation";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import * as React from 'react';
+import { HeroUIProvider } from '@heroui/system';
+import { useRouter } from 'next/navigation';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
-import { AuthProvider } from "./auth-provider";
+import { AuthProvider } from './auth-provider';
 
 export interface ProvidersProps {
   children: React.ReactNode;
   themeProps?: ThemeProviderProps;
 }
 
-declare module "@react-types/shared" {
+declare module '@react-types/shared' {
   interface RouterConfig {
-    routerOptions: NonNullable<
-      Parameters<ReturnType<typeof useRouter>["push"]>[1]
-    >;
+    routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>['push']>[1]>;
   }
 }
 

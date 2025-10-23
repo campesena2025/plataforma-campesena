@@ -1,10 +1,10 @@
-import { Media } from "./media";
-import { ProyectoProductivo } from "./proyectoProductivo";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { Media } from './media';
+import { ProyectoProductivo } from './proyectoProductivo';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface PortafolioRequest {
-  tipoPortafolio: "Producto" | "Servicio";
+  tipoPortafolio: 'Producto' | 'Servicio';
   codigoUNSPSC: string;
   latitud: number;
   longitud: number;
@@ -40,7 +40,7 @@ export interface PortafolioRequest {
 export interface Portafolio {
   id: number;
   documentId: string;
-  tipoPortafolio: "Producto" | "Servicio";
+  tipoPortafolio: 'Producto' | 'Servicio';
   codigoUNSPSC: string;
   latitud: number;
   longitud: number;

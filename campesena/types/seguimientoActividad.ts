@@ -1,6 +1,6 @@
-import { ActividadPlan } from "./actividadPlan";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { ActividadPlan } from './actividadPlan';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface SeguimientoActividadRequest {
   actividad_plan?: number | string;

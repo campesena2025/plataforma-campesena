@@ -1,122 +1,113 @@
-import { DiagnosticoAsociacion } from "@/types/diagnostico";
+import { DiagnosticoAsociacion } from '@/types/diagnostico';
 
 export const mockDiagnostic: DiagnosticoAsociacion = {
   id: 1,
-  documentId: "diag-001",
-  nombrePlantila: "Diagnóstico Organizacional Integral",
+  documentId: 'diag-001',
+  nombrePlantila: 'Diagnóstico Organizacional Integral',
   fechaAplicacion: new Date().toISOString(),
-  tipoDiagnostico: "Inicial",
-  observaciones: "",
+  tipoDiagnostico: 'Inicial',
+  observaciones: '',
   totalPuntaje: 0,
-  resultado: "",
+  resultado: '',
   seccion_diagnosticos: [
     {
       id: 1,
-      documentId: "sec-001",
-      nombreSeccion: "Liderazgo y Gobernanza",
+      documentId: 'sec-001',
+      nombreSeccion: 'Liderazgo y Gobernanza',
       puntajeSeccion: 0,
       respuesta_diagnosticos: [
         {
           id: 1,
-          documentId: "resp-001",
-          textoPregunta:
-            "¿La organización tiene una misión y visión claramente definidas?",
-          respuesta: "",
+          documentId: 'resp-001',
+          textoPregunta: '¿La organización tiene una misión y visión claramente definidas?',
+          respuesta: '',
           puntaje: 0,
         },
         {
           id: 2,
-          documentId: "resp-002",
-          textoPregunta: "¿Existe un consejo directivo activo y comprometido?",
-          respuesta: "",
+          documentId: 'resp-002',
+          textoPregunta: '¿Existe un consejo directivo activo y comprometido?',
+          respuesta: '',
           puntaje: 0,
         },
         {
           id: 3,
-          documentId: "resp-003",
-          textoPregunta:
-            "¿Se realizan reuniones periódicas de seguimiento a la gestión?",
-          respuesta: "",
+          documentId: 'resp-003',
+          textoPregunta: '¿Se realizan reuniones periódicas de seguimiento a la gestión?',
+          respuesta: '',
           puntaje: 0,
         },
       ],
     },
     {
       id: 2,
-      documentId: "sec-002",
-      nombreSeccion: "Gestión Financiera",
+      documentId: 'sec-002',
+      nombreSeccion: 'Gestión Financiera',
       puntajeSeccion: 0,
       respuesta_diagnosticos: [
         {
           id: 4,
-          documentId: "resp-004",
-          textoPregunta:
-            "¿La organización cuenta con estados financieros auditados?",
-          respuesta: "",
+          documentId: 'resp-004',
+          textoPregunta: '¿La organización cuenta con estados financieros auditados?',
+          respuesta: '',
           puntaje: 0,
         },
         {
           id: 5,
-          documentId: "resp-005",
-          textoPregunta:
-            "¿Existe un presupuesto anual y se hace seguimiento mensual?",
-          respuesta: "",
+          documentId: 'resp-005',
+          textoPregunta: '¿Existe un presupuesto anual y se hace seguimiento mensual?',
+          respuesta: '',
           puntaje: 0,
         },
         {
           id: 6,
-          documentId: "resp-006",
-          textoPregunta:
-            "¿Se diversifican las fuentes de ingresos de la organización?",
-          respuesta: "",
+          documentId: 'resp-006',
+          textoPregunta: '¿Se diversifican las fuentes de ingresos de la organización?',
+          respuesta: '',
           puntaje: 0,
         },
       ],
     },
     {
       id: 3,
-      documentId: "sec-003",
-      nombreSeccion: "Operaciones y Procesos",
+      documentId: 'sec-003',
+      nombreSeccion: 'Operaciones y Procesos',
       puntajeSeccion: 0,
       respuesta_diagnosticos: [
         {
           id: 7,
-          documentId: "resp-007",
-          textoPregunta:
-            "¿Los procesos operativos están documentados y son conocidos por el equipo?",
-          respuesta: "",
+          documentId: 'resp-007',
+          textoPregunta: '¿Los procesos operativos están documentados y son conocidos por el equipo?',
+          respuesta: '',
           puntaje: 0,
         },
         {
           id: 8,
-          documentId: "resp-008",
-          textoPregunta:
-            "¿Se utilizan indicadores para medir la eficiencia de las operaciones?",
-          respuesta: "",
+          documentId: 'resp-008',
+          textoPregunta: '¿Se utilizan indicadores para medir la eficiencia de las operaciones?',
+          respuesta: '',
           puntaje: 0,
         },
       ],
     },
     {
       id: 4,
-      documentId: "sec-004",
-      nombreSeccion: "Talento Humano",
+      documentId: 'sec-004',
+      nombreSeccion: 'Talento Humano',
       puntajeSeccion: 0,
       respuesta_diagnosticos: [
         {
           id: 9,
-          documentId: "resp-009",
-          textoPregunta:
-            "¿La organización tiene una estructura organizacional clara?",
-          respuesta: "",
+          documentId: 'resp-009',
+          textoPregunta: '¿La organización tiene una estructura organizacional clara?',
+          respuesta: '',
           puntaje: 0,
         },
         {
           id: 10,
-          documentId: "resp-010",
-          textoPregunta:
-            "¿Se realizan evaluaciones de desempeño periódicas al personal?",
-          respuesta: "",
+          documentId: 'resp-010',
+          textoPregunta: '¿Se realizan evaluaciones de desempeño periódicas al personal?',
+          respuesta: '',
           puntaje: 0,
         },
       ],

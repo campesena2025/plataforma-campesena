@@ -1,6 +1,6 @@
-import { CentroFormacion } from "./centroFormacion";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { CentroFormacion } from './centroFormacion';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface RegionalRequest {
   codigo: string;

@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-import { login } from "@/services/api/auth.service";
-import { saveSession } from "@/services/auth";
+import { login } from '@/services/api/auth.service';
+import { saveSession } from '@/services/auth';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setError('');
 
     try {
       const response = await login(email, password);
@@ -25,12 +25,12 @@ export default function LoginPage() {
       //obtener la lista de emrpesas
 
       saveSession(response);
-      console.log("Login exitoso:", response);
-      router.push("/"); // Redirige al dashboard o página principal
+      console.log('Login exitoso:', response);
+      router.push('/'); // Redirige al dashboard o página principal
       router.refresh();
-      console.log("Redirigiendo a la página principal...");
+      console.log('Redirigiendo a la página principal...');
     } catch {
-      setError("Ocurrió un error inesperado. Intenta de nuevo.");
+      setError('Ocurrió un error inesperado. Intenta de nuevo.');
     } finally {
       setLoading(false);
     }
@@ -40,9 +40,7 @@ export default function LoginPage() {
     <div className="flex items-center justify-center bg-gray-50">
       <div className="mt-6 max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-md">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Iniciar Sesión
-          </h2>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Iniciar Sesión</h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
@@ -78,9 +76,7 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {error && (
-            <div className="text-red-500 text-sm text-center">{error}</div>
-          )}
+          {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
           <div>
             <button
@@ -88,7 +84,7 @@ export default function LoginPage() {
               disabled={loading}
               type="submit"
             >
-              {loading ? "Iniciando sesión..." : "Iniciar Sesión"}
+              {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </button>
           </div>
         </form>

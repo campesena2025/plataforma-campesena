@@ -1,21 +1,17 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Select, SelectItem } from "@heroui/react";
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Select, SelectItem } from '@heroui/react';
 
-import { useGeografiaStore } from "@/store/geografia.store";
-import { Municipio } from "@/types/municipio";
-import { Departamento } from "@/types/departamento";
-import { Vereda } from "@/types/vereda";
+import { useGeografiaStore } from '@/store/geografia.store';
+import { Municipio } from '@/types/municipio';
+import { Departamento } from '@/types/departamento';
+import { Vereda } from '@/types/vereda';
 
 interface LocationSelectorProps {
   initialVeredaId?: number | string | null;
   initialMunicipioId?: number | string;
   initialDepartamentoId?: number | string;
-  onChange: (selection: {
-    departamento?: Departamento;
-    municipio?: Municipio;
-    vereda?: Vereda;
-  }) => void;
+  onChange: (selection: { departamento?: Departamento; municipio?: Municipio; vereda?: Vereda }) => void;
 }
 
 export const LocationSelector: React.FC<LocationSelectorProps> = ({
@@ -26,12 +22,8 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
 }) => {
   const departamentos = useGeografiaStore((state) => state.data) || [];
 
-  const [selectedDepartamento, setSelectedDepartamento] = useState<
-    Departamento | undefined
-  >();
-  const [selectedMunicipio, setSelectedMunicipio] = useState<
-    Municipio | undefined
-  >();
+  const [selectedDepartamento, setSelectedDepartamento] = useState<Departamento | undefined>();
+  const [selectedMunicipio, setSelectedMunicipio] = useState<Municipio | undefined>();
   const [selectedVereda, setSelectedVereda] = useState<any>();
 
   const [municipios, setMunicipios] = useState<Municipio[]>([]);
@@ -41,41 +33,30 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
     if (!departamentos.length) return;
 
     if (initialDepartamentoId) {
-      const depto = departamentos.find(
-        (d) => d.id.toString() === initialDepartamentoId.toString(),
-      );
+      const depto = departamentos.find((d) => d.id.toString() === initialDepartamentoId.toString());
 
       if (depto) {
         setSelectedDepartamento(depto as Departamento);
         if (initialMunicipioId) {
-          const mun = depto.municipios.find(
-            (m) => m.id.toString() === initialMunicipioId.toString(),
-          );
+          const mun = depto.municipios.find((m) => m.id.toString() === initialMunicipioId.toString());
 
           if (mun) {
             setSelectedMunicipio(mun as Municipio);
             if (initialVeredaId) {
-              const ver = mun.veredas.find(
-                (v) => v.id.toString() === initialVeredaId.toString(),
-              );
+              const ver = mun.veredas.find((v) => v.id.toString() === initialVeredaId.toString());
 
               if (ver) {
                 setSelectedVereda(ver as Vereda);
               }
             } else {
               // Vereda is null (Cabecera Municipal)
-              setSelectedVereda({ id: "null", nombre: "Cabecera Municipio" });
+              setSelectedVereda({ id: 'null', nombre: 'Cabecera Municipio' });
             }
           }
         }
       }
     }
-  }, [
-    initialDepartamentoId,
-    initialMunicipioId,
-    initialVeredaId,
-    departamentos,
-  ]);
+  }, [initialDepartamentoId, initialMunicipioId, initialVeredaId, departamentos]);
 
   useEffect(() => {
     if (selectedDepartamento) {
@@ -91,18 +72,13 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
     if (selectedMunicipio) {
       const veredasData = selectedMunicipio.veredas || [];
 
-      setVeredas([
-        { id: "null", nombre: "Cabecera Municipio" },
-        ...veredasData,
-      ]);
+      setVeredas([{ id: 'null', nombre: 'Cabecera Municipio' }, ...veredasData]);
     } else {
       setVeredas([]);
     }
   }, [selectedMunicipio]);
 
-  const handleDepartamentoChange = (
-    event: React.ChangeEvent<HTMLSelectElement>,
-  ) => {
+  const handleDepartamentoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedId = event.target.value;
     const depto = departamentos.find((d) => d.id == parseInt(selectedId));
 
@@ -119,9 +95,7 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
     }
   };
 
-  const handleMunicipioChange = (
-    event: React.ChangeEvent<HTMLSelectElement>,
-  ) => {
+  const handleMunicipioChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedId = event.target.value;
     const mun = municipios.find((m) => m.id == parseInt(selectedId));
 
@@ -135,8 +109,8 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
   const handleVeredaChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedId = event.target.value;
 
-    if (selectedId === "null") {
-      setSelectedVereda({ id: "null", nombre: "Cabecera Municipio" });
+    if (selectedId === 'null') {
+      setSelectedVereda({ id: 'null', nombre: 'Cabecera Municipio' });
       onChange({
         departamento: selectedDepartamento,
         municipio: selectedMunicipio,
@@ -165,9 +139,7 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({
           label="Departamento"
           labelPlacement="outside"
           placeholder="Seleccione un departamento"
-          selectedKeys={
-            selectedDepartamento ? [String(selectedDepartamento.id)] : []
-          }
+          selectedKeys={selectedDepartamento ? [String(selectedDepartamento.id)] : []}
           onChange={handleDepartamentoChange}
         >
           {(depto) => <SelectItem key={depto.id}>{depto.nombre}</SelectItem>}

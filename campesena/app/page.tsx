@@ -1,10 +1,10 @@
-"use client";
-import { Link } from "@heroui/react";
-import { Card } from "@heroui/react";
-import { Button } from "@heroui/react";
-import { useState, useMemo } from "react";
+'use client';
+import { Link } from '@heroui/react';
+import { Card } from '@heroui/react';
+import { Button } from '@heroui/react';
+import { useState, useMemo } from 'react';
 
-import { useAsociacionesStore } from "@/store/asociaciones.store";
+import { useAsociacionesStore } from '@/store/asociaciones.store';
 
 // Íconos de ejemplo, puedes reemplazarlos por los tuyos
 const AssociationIcon = () => (
@@ -19,25 +19,21 @@ const ReportsIcon = () => (
   </span>
 );
 
-const PieChart = ({
-  data,
-}: {
-  data: { label: string; value: number; color: string }[];
-}) => {
+const PieChart = ({ data }: { data: { label: string; value: number; color: string }[] }) => {
   const [hoveredSegment, setHoveredSegment] = useState<{
     label: string;
     percentage: string;
   } | null>(null);
 
   const colorMap: { [key: string]: string } = {
-    "bg-violet-500": "#8b5cf6",
-    "bg-blue-500": "#3b82f6",
-    "bg-green-500": "#22c55e",
-    "bg-yellow-500": "#eab308",
-    "bg-pink-500": "#ec4899",
-    "bg-indigo-500": "#6366f1",
-    "bg-red-500": "#ef4444",
-    "bg-teal-500": "#14b8a6",
+    'bg-violet-500': '#8b5cf6',
+    'bg-blue-500': '#3b82f6',
+    'bg-green-500': '#22c55e',
+    'bg-yellow-500': '#eab308',
+    'bg-pink-500': '#ec4899',
+    'bg-indigo-500': '#6366f1',
+    'bg-red-500': '#ef4444',
+    'bg-teal-500': '#14b8a6',
   };
 
   const totalValue = data.reduce((sum, item) => sum + item.value, 0);
@@ -60,10 +56,7 @@ const PieChart = ({
 
   return (
     <div className="relative flex flex-col items-center w-full">
-      <svg
-        className="w-full max-w-xs h-auto transform -rotate-90"
-        viewBox="0 0 100 100"
-      >
+      <svg className="w-full max-w-xs h-auto transform -rotate-90" viewBox="0 0 100 100">
         {segments.map((segment) => {
           // Ignorar segmentos con valor 0
           if (segment.value === 0) return null;
@@ -94,19 +87,13 @@ const PieChart = ({
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         {hoveredSegment ? (
           <div className="text-center bg-white bg-opacity-75 rounded-lg p-2">
-            <span className="text-sm font-bold text-gray-800">
-              {hoveredSegment.label}
-            </span>
-            <span className="block text-xl font-bold text-gray-900">
-              {hoveredSegment.percentage}%
-            </span>
+            <span className="text-sm font-bold text-gray-800">{hoveredSegment.label}</span>
+            <span className="block text-xl font-bold text-gray-900">{hoveredSegment.percentage}%</span>
           </div>
         ) : (
           <div className="text-center">
             <span className="text-lg font-bold text-gray-700">Total</span>
-            <span className="block text-2xl font-bold text-gray-900">
-              {totalValue}
-            </span>
+            <span className="block text-2xl font-bold text-gray-900">{totalValue}</span>
           </div>
         )}
       </div>
@@ -115,20 +102,20 @@ const PieChart = ({
 };
 
 export default function Home() {
-  console.log("Renderizando Home");
+  console.log('Renderizando Home');
   const asociaciones = useAsociacionesStore((state) => state.data);
   const loading = useAsociacionesStore((state) => state.loading);
 
   const estados = useMemo(() => {
     const estadosMap: { [key: string]: { value: number; color: string } } = {
-      Registradas: { value: 0, color: "bg-violet-500" },
-      Diagnosticadas: { value: 0, color: "bg-blue-500" },
-      "Asignadas a servicio": { value: 0, color: "bg-green-500" },
-      "En formación": { value: 0, color: "bg-yellow-500" },
-      "En formulación de proyecto": { value: 0, color: "bg-pink-500" },
-      "En evaluación de proyecto": { value: 0, color: "bg-indigo-500" },
-      "Evaluada en impactos": { value: 0, color: "bg-red-500" },
-      "En entrega de insumos": { value: 0, color: "bg-teal-500" },
+      Registradas: { value: 0, color: 'bg-violet-500' },
+      Diagnosticadas: { value: 0, color: 'bg-blue-500' },
+      'Asignadas a servicio': { value: 0, color: 'bg-green-500' },
+      'En formación': { value: 0, color: 'bg-yellow-500' },
+      'En formulación de proyecto': { value: 0, color: 'bg-pink-500' },
+      'En evaluación de proyecto': { value: 0, color: 'bg-indigo-500' },
+      'Evaluada en impactos': { value: 0, color: 'bg-red-500' },
+      'En entrega de insumos': { value: 0, color: 'bg-teal-500' },
     };
 
     asociaciones.forEach((asociacion) => {
@@ -150,15 +137,9 @@ export default function Home() {
       {/* Fila 1: Indicadores Principales */}
       <div className="grid grid-cols-1 md:grid-cols-1 gap-4 w-full">
         <Card className="bg-gradient-to-br from-violet-100 to-white shadow-lg p-4 flex flex-col items-center justify-center">
-          <span className="text-4xl font-bold text-violet-700">
-            {loading ? "..." : asociaciones.length}
-          </span>
-          <span className="font-semibold mt-2 text-center">
-            Asociaciones atendidas
-          </span>
-          <small className="text-gray-500 text-center">
-            Total de asociaciones en el programa
-          </small>
+          <span className="text-4xl font-bold text-violet-700">{loading ? '...' : asociaciones.length}</span>
+          <span className="font-semibold mt-2 text-center">Asociaciones atendidas</span>
+          <small className="text-gray-500 text-center">Total de asociaciones en el programa</small>
         </Card>
       </div>
 
@@ -170,9 +151,7 @@ export default function Home() {
               <AssociationIcon /> Asociaciones
             </Button>
           </Link>
-          <small className="text-gray-500 mt-2 text-center">
-            Administrar asociaciones
-          </small>
+          <small className="text-gray-500 mt-2 text-center">Administrar asociaciones</small>
         </Card>
         <Card className="bg-gradient-to-br from-pink-100 to-white shadow-lg p-4 flex flex-col items-center justify-center">
           <Link className="w-full" href="/reportes">
@@ -180,9 +159,7 @@ export default function Home() {
               <ReportsIcon /> Reportes
             </Button>
           </Link>
-          <small className="text-gray-500 mt-2 text-center">
-            Ver reportes y estadísticas
-          </small>
+          <small className="text-gray-500 mt-2 text-center">Ver reportes y estadísticas</small>
         </Card>
       </div>
 
@@ -192,10 +169,7 @@ export default function Home() {
           <h2 className="text-xl font-bold mb-4">Estado de las asociaciones</h2>
           <div className="space-y-3">
             {estados.map((estado) => (
-              <div
-                key={estado.label}
-                className="flex justify-between items-center"
-              >
+              <div key={estado.label} className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
                   <div className={`w-3 h-3 rounded-full ${estado.color}`} />
                   <span className="text-gray-700">{estado.label}</span>

@@ -1,10 +1,10 @@
-import { ModeloNegocio } from "./modeloNegocio";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { ModeloNegocio } from './modeloNegocio';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface InversionRequest {
   descripcion: string;
-  tipoInversion: "Inicial" | "Diferida" | "Capital de trabajo";
+  tipoInversion: 'Inicial' | 'Diferida' | 'Capital de trabajo';
   modelo_negocio?: number | string;
   locale?: string;
 }
@@ -13,7 +13,7 @@ export interface Inversion {
   id: number;
   documentId: string;
   descripcion: string;
-  tipoInversion: "Inicial" | "Diferida" | "Capital de trabajo";
+  tipoInversion: 'Inicial' | 'Diferida' | 'Capital de trabajo';
   modelo_negocio: { data: ModeloNegocio };
   createdAt: string;
   updatedAt: string;

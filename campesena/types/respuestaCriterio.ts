@@ -1,7 +1,7 @@
-import { EvaluacionDiagnostico } from "./evaluacionDiagnostico";
-import { CriterioEvaluacion } from "./criterioEvaluacion";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { EvaluacionDiagnostico } from './evaluacionDiagnostico';
+import { CriterioEvaluacion } from './criterioEvaluacion';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface RespuestaCriterioRequest {
   puntaje: number;

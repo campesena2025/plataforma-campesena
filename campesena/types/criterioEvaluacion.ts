@@ -1,7 +1,7 @@
-import { SeccionDiagnostico } from "./seccionDiagnostico";
-import { RespuestaCriterio } from "./respuestaCriterio";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { SeccionDiagnostico } from './seccionDiagnostico';
+import { RespuestaCriterio } from './respuestaCriterio';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface CriterioEvaluacionRequest {
   textoPregunta: string;

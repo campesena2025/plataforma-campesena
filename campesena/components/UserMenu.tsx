@@ -1,13 +1,7 @@
-"use client";
-import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-  Avatar,
-} from "@heroui/react";
+'use client';
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar } from '@heroui/react';
 
-import { useAuth } from "@/app/auth-provider";
+import { useAuth } from '@/app/auth-provider';
 
 export default function UserMenu() {
   const { user, logout } = useAuth();
@@ -35,11 +29,7 @@ export default function UserMenu() {
         </DropdownItem>
         <DropdownItem key="settings">Configuración</DropdownItem>
         <DropdownItem key="help">Ayuda</DropdownItem>
-        <DropdownItem
-          key="logout"
-          color="danger"
-          onClick={() => handleLogout()}
-        >
+        <DropdownItem key="logout" color="danger" onClick={() => handleLogout()}>
           Cerrar sesión
         </DropdownItem>
       </DropdownMenu>

@@ -1,6 +1,6 @@
-import api from "./api/axios-interceptor";
+import api from './api/axios-interceptor';
 
-import ApiClientOpen from "@/app/api/axios/apiClientOpen";
+import ApiClientOpen from '@/app/api/axios/apiClientOpen';
 
 const getAllGeografia = async () => {
   //   const strapi = new Strapi({
@@ -23,15 +23,13 @@ const getAllGeografia = async () => {
 
   //   const data = response1.data;
 
-  const response = await ApiClientOpen.get(
-    "api/departamentos?populate=municipios.veredas",
-  );
+  const response = await ApiClientOpen.get('api/departamentos?populate=municipios.veredas');
 
   return response.data;
 };
 
 export const getAllMunicipios = async () => {
-  const response = await api.get("api/municipios");
+  const response = await api.get('api/municipios');
 
   const data = response.data;
 
@@ -39,7 +37,7 @@ export const getAllMunicipios = async () => {
 };
 
 export const getAllVeredas = async () => {
-  const response = await api.get("api/veredas");
+  const response = await api.get('api/veredas');
 
   const data = response.data;
 

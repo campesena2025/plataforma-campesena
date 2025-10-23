@@ -1,11 +1,11 @@
-"use client";
-import React, { useState, useCallback, useEffect } from "react";
-import { useDropzone } from "react-dropzone";
-import { Image } from "@heroui/image";
+'use client';
+import React, { useState, useCallback, useEffect } from 'react';
+import { useDropzone } from 'react-dropzone';
+import { Image } from '@heroui/image';
 
-import { ImageIcon } from "./icons";
+import { ImageIcon } from './icons';
 
-import { Media } from "@/types/media";
+import { Media } from '@/types/media';
 
 interface FileDetails {
   name: string;
@@ -20,10 +20,7 @@ interface FotoUploadProps {
   initialImageUrl?: Media;
 }
 
-export const FotoUpload: React.FC<FotoUploadProps> = ({
-  onFileChange,
-  initialImageUrl,
-}) => {
+export const FotoUpload: React.FC<FotoUploadProps> = ({ onFileChange, initialImageUrl }) => {
   const [preview, setPreview] = useState<string | null>(null);
   const [fileDetails, setFileDetails] = useState<FileDetails | null>(null);
   const [dataUrl, setDataUrl] = useState<string | null>(null);
@@ -43,14 +40,12 @@ export const FotoUpload: React.FC<FotoUploadProps> = ({
         // Check if file is defined before accessing its properties
         const file = (event.target as HTMLInputElement).files?.[0];
 
-        const fileName = file
-          ? file.name
-          : initialImageUrl.url.split("/").pop();
+        const fileName = file ? file.name : initialImageUrl.url.split('/').pop();
 
         setFileDetails({
-          name: fileName || "unknown",
+          name: fileName || 'unknown',
           size: `${(file?.size ? file.size / 1024 : 0).toFixed(2)} KB`,
-          type: file?.type || "unknown",
+          type: file?.type || 'unknown',
           width: img.width,
           height: img.height,
         });
@@ -60,7 +55,7 @@ export const FotoUpload: React.FC<FotoUploadProps> = ({
 
   useEffect(() => {
     if (dataUrl && file) {
-      const img = document.createElement("img");
+      const img = document.createElement('img');
 
       img.src = dataUrl;
       img.onload = () => {
@@ -98,7 +93,7 @@ export const FotoUpload: React.FC<FotoUploadProps> = ({
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      "image/*": [".jpeg", ".jpg", ".png", ".gif"],
+      'image/*': ['.jpeg', '.jpg', '.png', '.gif'],
     },
     multiple: false,
   });
@@ -107,7 +102,7 @@ export const FotoUpload: React.FC<FotoUploadProps> = ({
     <div
       {...getRootProps()}
       className={`border-2 border-dashed rounded-lg p-4 text-center cursor-pointer relative ${
-        isDragActive ? "border-primary" : "border-gray-300"
+        isDragActive ? 'border-primary' : 'border-gray-300'
       }`}
     >
       <input {...getInputProps()} />
@@ -142,8 +137,8 @@ export const FotoUpload: React.FC<FotoUploadProps> = ({
           <ImageIcon className="w-16 h-16 text-gray-400" />
           <p className="mt-2 text-sm text-gray-500">
             {isDragActive
-              ? "Suelta la foto aquí..."
-              : "Arrastra y suelta una foto aquí, o haz clic para seleccionarla."}
+              ? 'Suelta la foto aquí...'
+              : 'Arrastra y suelta una foto aquí, o haz clic para seleccionarla.'}
           </p>
         </div>
       )}

@@ -1,10 +1,10 @@
-import { PlanDeAccion } from "./planDeAccion";
-import { SeguimientoActividad } from "./seguimientoActividad";
-import { User } from "./user";
-import { Pagination } from "./pagination";
+import { PlanDeAccion } from './planDeAccion';
+import { SeguimientoActividad } from './seguimientoActividad';
+import { User } from './user';
+import { Pagination } from './pagination';
 
 export interface ActividadPlanRequest {
-  aspecto: "Operacion" | "Mercadeo" | "Finanzas" | "Administracion";
+  aspecto: 'Operacion' | 'Mercadeo' | 'Finanzas' | 'Administracion';
   hallazgo: string;
   actividadPropuesta: string;
   plan_de_accion?: number | string;
@@ -15,7 +15,7 @@ export interface ActividadPlanRequest {
 export interface ActividadPlan {
   id: number;
   documentId: string;
-  aspecto: "Operacion" | "Mercadeo" | "Finanzas" | "Administracion";
+  aspecto: 'Operacion' | 'Mercadeo' | 'Finanzas' | 'Administracion';
   hallazgo: string;
   actividadPropuesta: string;
   plan_de_accion: { data: PlanDeAccion };

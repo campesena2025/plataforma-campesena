@@ -1,43 +1,40 @@
-import qs from "qs";
+import qs from 'qs';
 
-import { saveSession } from "../auth";
+import { saveSession } from '../auth';
 
-import api, { withAuth } from "./axios-interceptor";
+import api, { withAuth } from './axios-interceptor';
 
-import ApiClientOpen from "@/app/api/axios/apiClientOpen";
-import { useAsociacionesStore } from "@/store/asociaciones.store";
-import { User } from "@/types/user";
+import ApiClientOpen from '@/app/api/axios/apiClientOpen';
+import { useAsociacionesStore } from '@/store/asociaciones.store';
+import { User } from '@/types/user';
 
 export interface LoginResponse {
   jwt: string;
   user: User;
 }
 
-export async function login(
-  email: string,
-  password: string,
-): Promise<LoginResponse> {
+export async function login(email: string, password: string): Promise<LoginResponse> {
   try {
     const query = qs.stringify(
       {
         populate: [
-          "role",
-          "asociacions",
-          "asociacions.departamento",
-          "asociacions.municipio",
-          "asociacions.vereda",
-          "asociacions.participantes",
-          "asociacions.representanteLegal",
-          "asociacions.foto",
+          'role',
+          'asociacions',
+          'asociacions.departamento',
+          'asociacions.municipio',
+          'asociacions.vereda',
+          'asociacions.participantes',
+          'asociacions.representanteLegal',
+          'asociacions.foto',
         ],
-        sort: ["asociacions.nombreAsociacion:asc"],
+        sort: ['asociacions.nombreAsociacion:asc'],
       },
       {
         encodeValuesOnly: true,
       },
     );
 
-    const response = await ApiClientOpen.post("/api/auth/local", {
+    const response = await ApiClientOpen.post('/api/auth/local', {
       identifier: email,
       password,
     });
@@ -46,10 +43,7 @@ export async function login(
 
     saveSession(loginResponse);
 
-    const populatedUserResponse = await api.get(
-      `/users/me?${query}`,
-      withAuth(),
-    );
+    const populatedUserResponse = await api.get(`/users/me?${query}`, withAuth());
 
     loginResponse.user = populatedUserResponse.data;
     saveSession(loginResponse); // Update session with populated user

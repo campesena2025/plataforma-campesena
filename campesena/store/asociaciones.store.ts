@@ -1,11 +1,11 @@
-import { create } from "zustand";
-import { devtools } from "zustand/middleware";
-import { persist, createJSONStorage } from "zustand/middleware";
-import { immer } from "zustand/middleware/immer";
+import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import { immer } from 'zustand/middleware/immer';
 
-import { Asociacion } from "@/types/asociacion";
-import { Participante } from "@/types/participante";
-import { getAllAsociaciones } from "@/services/asociaciones.service";
+import { Asociacion } from '@/types/asociacion';
+import { Participante } from '@/types/participante';
+import { getAllAsociaciones } from '@/services/asociaciones.service';
 
 interface AsociacionesState {
   data: Asociacion[];
@@ -14,15 +14,9 @@ interface AsociacionesState {
   fetchAsociaciones: () => Promise<void>;
   invalidate: () => Promise<void>;
   addAsociacion: (newAsociacion: Asociacion) => void;
-  updateAsociacion: (
-    asociacionId: string,
-    updatedFields: Partial<Asociacion>,
-  ) => void;
+  updateAsociacion: (asociacionId: string, updatedFields: Partial<Asociacion>) => void;
   addAsociado: (asociacionId: number, newAsociado: Participante) => void;
-  updateAsociado: (
-    asociacionId: number,
-    updatedAsociado: Partial<Participante> & { id: number },
-  ) => void;
+  updateAsociado: (asociacionId: number, updatedAsociado: Partial<Participante> & { id: number }) => void;
   reset: () => void;
 }
 
@@ -37,8 +31,7 @@ export const useAsociacionesStore = create(
       immer<AsociacionesState>((set, get) => ({
         ...initialState,
 
-        setAsociaciones: (asociaciones) =>
-          set({ data: asociaciones, loading: false }),
+        setAsociaciones: (asociaciones) => set({ data: asociaciones, loading: false }),
 
         fetchAsociaciones: async () => {
           if (get().data.length > 0) return;
@@ -71,9 +64,7 @@ export const useAsociacionesStore = create(
 
         updateAsociacion: (asociacionId, updatedFields) => {
           set((state) => {
-            const asociacion = state.data.find(
-              (a) => a.documentId === asociacionId,
-            );
+            const asociacion = state.data.find((a) => a.documentId === asociacionId);
 
             if (asociacion) {
               Object.assign(asociacion, updatedFields);
@@ -100,9 +91,7 @@ export const useAsociacionesStore = create(
             const asociacion = state.data.find((a) => a.id === asociacionId);
 
             if (asociacion && asociacion.participantes) {
-              const participanteIndex = asociacion.participantes.findIndex(
-                (p) => p.id === updatedAsociado.id,
-              );
+              const participanteIndex = asociacion.participantes.findIndex((p) => p.id === updatedAsociado.id);
 
               if (participanteIndex !== -1) {
                 asociacion.participantes[participanteIndex] = {
@@ -120,7 +109,7 @@ export const useAsociacionesStore = create(
         },
       })),
       {
-        name: "asociaciones-store",
+        name: 'asociaciones-store',
         storage: createJSONStorage(() => localStorage),
         partialize: (state) => ({ data: state.data }),
       },
