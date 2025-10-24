@@ -6,6 +6,7 @@ import {
   TrashIcon,
   UserPlusIcon,
   ArrowDownTrayIcon,
+  ArrowUpOnSquareStackIcon,
 } from '@heroicons/react/24/solid';
 import {
   Button,
@@ -22,6 +23,7 @@ import {
   useDisclosure,
 } from '@heroui/react';
 import * as XLSX from 'xlsx';
+import { addToast } from '@heroui/toast';
 
 import { AddAssociateModal } from './AddAssociateModal';
 import { EditAssociateModal } from './EditAssociateModal';
@@ -30,6 +32,7 @@ import { UploadAssociatesModal } from './UploadAssociatesModal';
 import { Participante } from '@/types/participante';
 import { useAsociacionesStore } from '@/store/asociaciones.store';
 import { setRepresentanteLegalId } from '@/services/asociaciones.service';
+import { deleteAsociado } from '@/services/asociado.service';
 import { Asociacion } from '@/types/asociacion';
 
 interface AsociadosTableProps {
@@ -69,6 +72,24 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
   const handleEdit = (associate: Participante) => {
     setSelectedAssociate(associate);
     onEditOpen();
+  };
+
+  const handleDelete = async (associate: Participante) => {
+    const confirmDelete = confirm(`¿Estás seguro de que deseas eliminar al asociado ${associate.nombreCompleto}?`);
+
+    if (confirmDelete) {
+      try {
+        await deleteAsociado(asociacion, associate.documentId);
+        addToast({
+          title: 'Asociado eliminado',
+          description: 'El asociado se ha eliminado correctamente.',
+          color: 'success',
+        });
+        // La actualización del store se hace dentro de deleteAsociado
+      } catch (error) {
+        alert('Hubo un error al eliminar el asociado. Por favor, inténtalo de nuevo.');
+      }
+    }
   };
 
   const handleDownloadExcel = () => {
@@ -113,7 +134,12 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
                 >
                   Editar
                 </DropdownItem>
-                <DropdownItem key={'2'} color="danger" startContent={<TrashIcon className="w-4 h-4" />}>
+                <DropdownItem
+                  key={'2'}
+                  color="danger"
+                  startContent={<TrashIcon className="w-4 h-4" />}
+                  onPress={() => handleDelete(item)}
+                >
                   Borrar
                 </DropdownItem>
                 <DropdownItem
@@ -144,10 +170,15 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
         <Button color="primary" startContent={<UserPlusIcon className="w-5 h-5" />} onPress={onAddOpen}>
           Crear Asociado
         </Button>
-        <Button color="primary" startContent={<UserPlusIcon className="w-5 h-5" />} onPress={onUploadOpen}>
+        <Button
+          color="warning"
+          startContent={<ArrowUpOnSquareStackIcon className="w-5 h-5 text-white" />}
+          variant="solid"
+          onPress={onUploadOpen}
+        >
           Cargue Asociados
         </Button>
-        <Button color="primary" startContent={<ArrowDownTrayIcon className="w-5 h-5" />} onPress={handleDownloadExcel}>
+        <Button color="success" startContent={<ArrowDownTrayIcon className="w-5 h-5" />} onPress={handleDownloadExcel}>
           Descargar Excel
         </Button>
       </div>
@@ -168,6 +199,7 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
       <div className="overflow-x-auto">
         <Table aria-label="Tabla de asociados" className="min-w-full divide-y divide-gray-200">
           <TableHeader>
+            <TableColumn key="actions">Acciones</TableColumn>
             <TableColumn key="tipoDocumento">Tipo documento</TableColumn>
             <TableColumn key="numeroDocumento">Documento</TableColumn>
             <TableColumn key="nombreCompleto">Nombre Completo</TableColumn>
@@ -177,7 +209,6 @@ export default function AsociadosTable({ initialAssociates, asociacion }: Asocia
             <TableColumn key="tipoPoblacion">Tipo de Población</TableColumn>
             <TableColumn key="edad">Edad</TableColumn>
             <TableColumn key="nivelEstudio">Nivel de Estudio</TableColumn>
-            <TableColumn key="actions">Acciones</TableColumn>
           </TableHeader>
           <TableBody items={associates}>
             {(item) => (

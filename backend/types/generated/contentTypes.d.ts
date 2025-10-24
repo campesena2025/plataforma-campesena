@@ -947,15 +947,15 @@ export interface ApiModeloNegocioModeloNegocio
     draftAndPublish: false;
   };
   attributes: {
-    actividadesClave: Schema.Attribute.Text;
-    alianzas: Schema.Attribute.Text;
-    canales: Schema.Attribute.Text;
+    actividadesClave: Schema.Attribute.JSON;
+    alianzas: Schema.Attribute.JSON;
+    canales: Schema.Attribute.JSON;
     costos: Schema.Attribute.Relation<'oneToMany', 'api::costo.costo'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    estructuraCosto: Schema.Attribute.Text;
-    FuentesIngreso: Schema.Attribute.Text;
+    estructuraCosto: Schema.Attribute.JSON;
+    fuentesIngreso: Schema.Attribute.JSON;
     inversions: Schema.Attribute.Relation<
       'oneToMany',
       'api::inversion.inversion'
@@ -967,15 +967,15 @@ export interface ApiModeloNegocioModeloNegocio
     > &
       Schema.Attribute.Private;
     mision: Schema.Attribute.Text;
-    propuestaValor: Schema.Attribute.Text;
+    propuestaValor: Schema.Attribute.JSON;
     proyeccion_financieras: Schema.Attribute.Relation<
       'oneToMany',
       'api::proyeccion-financiera.proyeccion-financiera'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    recursosClave: Schema.Attribute.Text;
-    relacionesClientes: Schema.Attribute.Text;
-    segmentosMercado: Schema.Attribute.Text;
+    recursosClave: Schema.Attribute.JSON;
+    relacionesClientes: Schema.Attribute.JSON;
+    segmentosMercado: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

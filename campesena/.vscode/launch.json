@@ -1,0 +1,60 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Next.js (Turbopack)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "env": {
+        "NODE_OPTIONS": "--inspect=0.0.0.0:9229"
+      },
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Debug Next.js (Standard)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run debug",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Debug Next.js - Attach",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "restart": true,
+      "protocol": "inspector"
+    },
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Next.js: debug server-side",
+      "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+      "args": [
+        "dev",
+        "--turbo=false"
+      ],
+      "env": {
+        "NODE_OPTIONS": "--inspect=0.0.0.0:9229",
+        "NEXT_DEBUG": "1"
+      },
+      "console": "integratedTerminal",
+      "protocol": "inspector",
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}

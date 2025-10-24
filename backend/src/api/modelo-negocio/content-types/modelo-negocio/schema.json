@@ -17,33 +17,6 @@
     "vision": {
       "type": "text"
     },
-    "alianzas": {
-      "type": "text"
-    },
-    "actividadesClave": {
-      "type": "text"
-    },
-    "propuestaValor": {
-      "type": "text"
-    },
-    "relacionesClientes": {
-      "type": "text"
-    },
-    "segmentosMercado": {
-      "type": "text"
-    },
-    "recursosClave": {
-      "type": "text"
-    },
-    "canales": {
-      "type": "text"
-    },
-    "estructuraCosto": {
-      "type": "text"
-    },
-    "FuentesIngreso": {
-      "type": "text"
-    },
     "proyeccion_financieras": {
       "type": "relation",
       "relation": "oneToMany",
@@ -61,6 +34,33 @@
       "relation": "oneToMany",
       "target": "api::inversion.inversion",
       "mappedBy": "modelo_negocio"
+    },
+    "alianzas": {
+      "type": "json"
+    },
+    "actividadesClave": {
+      "type": "json"
+    },
+    "propuestaValor": {
+      "type": "json"
+    },
+    "relacionesClientes": {
+      "type": "json"
+    },
+    "segmentosMercado": {
+      "type": "json"
+    },
+    "recursosClave": {
+      "type": "json"
+    },
+    "canales": {
+      "type": "json"
+    },
+    "estructuraCosto": {
+      "type": "json"
+    },
+    "fuentesIngreso": {
+      "type": "json"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-23T16:08:57.529Z"
+    "x-generation-date": "2025-10-24T16:12:29.092Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -27302,33 +27302,6 @@
               "vision": {
                 "type": "string"
               },
-              "alianzas": {
-                "type": "string"
-              },
-              "actividadesClave": {
-                "type": "string"
-              },
-              "propuestaValor": {
-                "type": "string"
-              },
-              "relacionesClientes": {
-                "type": "string"
-              },
-              "segmentosMercado": {
-                "type": "string"
-              },
-              "recursosClave": {
-                "type": "string"
-              },
-              "canales": {
-                "type": "string"
-              },
-              "estructuraCosto": {
-                "type": "string"
-              },
-              "FuentesIngreso": {
-                "type": "string"
-              },
               "proyeccion_financieras": {
                 "type": "array",
                 "items": {
@@ -27918,6 +27891,15 @@
                   }
                 }
               },
+              "alianzas": {},
+              "actividadesClave": {},
+              "propuestaValor": {},
+              "relacionesClientes": {},
+              "segmentosMercado": {},
+              "recursosClave": {},
+              "canales": {},
+              "estructuraCosto": {},
+              "fuentesIngreso": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -28151,33 +28133,6 @@
                     "type": "string"
                   },
                   "vision": {
-                    "type": "string"
-                  },
-                  "alianzas": {
-                    "type": "string"
-                  },
-                  "actividadesClave": {
-                    "type": "string"
-                  },
-                  "propuestaValor": {
-                    "type": "string"
-                  },
-                  "relacionesClientes": {
-                    "type": "string"
-                  },
-                  "segmentosMercado": {
-                    "type": "string"
-                  },
-                  "recursosClave": {
-                    "type": "string"
-                  },
-                  "canales": {
-                    "type": "string"
-                  },
-                  "estructuraCosto": {
-                    "type": "string"
-                  },
-                  "FuentesIngreso": {
                     "type": "string"
                   },
                   "proyeccion_financieras": {
@@ -28625,6 +28580,15 @@
                       }
                     }
                   },
+                  "alianzas": {},
+                  "actividadesClave": {},
+                  "propuestaValor": {},
+                  "relacionesClientes": {},
+                  "segmentosMercado": {},
+                  "recursosClave": {},
+                  "canales": {},
+                  "estructuraCosto": {},
+                  "fuentesIngreso": {},
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -42151,33 +42115,6 @@
               "vision": {
                 "type": "string"
               },
-              "alianzas": {
-                "type": "string"
-              },
-              "actividadesClave": {
-                "type": "string"
-              },
-              "propuestaValor": {
-                "type": "string"
-              },
-              "relacionesClientes": {
-                "type": "string"
-              },
-              "segmentosMercado": {
-                "type": "string"
-              },
-              "recursosClave": {
-                "type": "string"
-              },
-              "canales": {
-                "type": "string"
-              },
-              "estructuraCosto": {
-                "type": "string"
-              },
-              "FuentesIngreso": {
-                "type": "string"
-              },
               "proyeccion_financieras": {
                 "type": "array",
                 "items": {
@@ -42767,6 +42704,15 @@
                   }
                 }
               },
+              "alianzas": {},
+              "actividadesClave": {},
+              "propuestaValor": {},
+              "relacionesClientes": {},
+              "segmentosMercado": {},
+              "recursosClave": {},
+              "canales": {},
+              "estructuraCosto": {},
+              "fuentesIngreso": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -42899,33 +42845,6 @@
               "vision": {
                 "type": "string"
               },
-              "alianzas": {
-                "type": "string"
-              },
-              "actividadesClave": {
-                "type": "string"
-              },
-              "propuestaValor": {
-                "type": "string"
-              },
-              "relacionesClientes": {
-                "type": "string"
-              },
-              "segmentosMercado": {
-                "type": "string"
-              },
-              "recursosClave": {
-                "type": "string"
-              },
-              "canales": {
-                "type": "string"
-              },
-              "estructuraCosto": {
-                "type": "string"
-              },
-              "FuentesIngreso": {
-                "type": "string"
-              },
               "proyeccion_financieras": {
                 "type": "array",
                 "items": {
@@ -42968,6 +42887,15 @@
                   "example": "string or id"
                 }
               },
+              "alianzas": {},
+              "actividadesClave": {},
+              "propuestaValor": {},
+              "relacionesClientes": {},
+              "segmentosMercado": {},
+              "recursosClave": {},
+              "canales": {},
+              "estructuraCosto": {},
+              "fuentesIngreso": {},
               "locale": {
                 "type": "string"
               },
@@ -43039,33 +42967,6 @@
           "vision": {
             "type": "string"
           },
-          "alianzas": {
-            "type": "string"
-          },
-          "actividadesClave": {
-            "type": "string"
-          },
-          "propuestaValor": {
-            "type": "string"
-          },
-          "relacionesClientes": {
-            "type": "string"
-          },
-          "segmentosMercado": {
-            "type": "string"
-          },
-          "recursosClave": {
-            "type": "string"
-          },
-          "canales": {
-            "type": "string"
-          },
-          "estructuraCosto": {
-            "type": "string"
-          },
-          "FuentesIngreso": {
-            "type": "string"
-          },
           "proyeccion_financieras": {
             "type": "array",
             "items": {
@@ -43093,33 +42994,6 @@
                       "type": "string"
                     },
                     "vision": {
-                      "type": "string"
-                    },
-                    "alianzas": {
-                      "type": "string"
-                    },
-                    "actividadesClave": {
-                      "type": "string"
-                    },
-                    "propuestaValor": {
-                      "type": "string"
-                    },
-                    "relacionesClientes": {
-                      "type": "string"
-                    },
-                    "segmentosMercado": {
-                      "type": "string"
-                    },
-                    "recursosClave": {
-                      "type": "string"
-                    },
-                    "canales": {
-                      "type": "string"
-                    },
-                    "estructuraCosto": {
-                      "type": "string"
-                    },
-                    "FuentesIngreso": {
                       "type": "string"
                     },
                     "proyeccion_financieras": {
@@ -43567,6 +43441,15 @@
                         }
                       }
                     },
+                    "alianzas": {},
+                    "actividadesClave": {},
+                    "propuestaValor": {},
+                    "relacionesClientes": {},
+                    "segmentosMercado": {},
+                    "recursosClave": {},
+                    "canales": {},
+                    "estructuraCosto": {},
+                    "fuentesIngreso": {},
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -43781,6 +43664,15 @@
               }
             }
           },
+          "alianzas": {},
+          "actividadesClave": {},
+          "propuestaValor": {},
+          "relacionesClientes": {},
+          "segmentosMercado": {},
+          "recursosClave": {},
+          "canales": {},
+          "estructuraCosto": {},
+          "fuentesIngreso": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -56445,33 +56337,6 @@
               "vision": {
                 "type": "string"
               },
-              "alianzas": {
-                "type": "string"
-              },
-              "actividadesClave": {
-                "type": "string"
-              },
-              "propuestaValor": {
-                "type": "string"
-              },
-              "relacionesClientes": {
-                "type": "string"
-              },
-              "segmentosMercado": {
-                "type": "string"
-              },
-              "recursosClave": {
-                "type": "string"
-              },
-              "canales": {
-                "type": "string"
-              },
-              "estructuraCosto": {
-                "type": "string"
-              },
-              "FuentesIngreso": {
-                "type": "string"
-              },
               "proyeccion_financieras": {
                 "type": "array",
                 "items": {
@@ -57061,6 +56926,15 @@
                   }
                 }
               },
+              "alianzas": {},
+              "actividadesClave": {},
+              "propuestaValor": {},
+              "relacionesClientes": {},
+              "segmentosMercado": {},
+              "recursosClave": {},
+              "canales": {},
+              "estructuraCosto": {},
+              "fuentesIngreso": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"

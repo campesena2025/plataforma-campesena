@@ -31,3 +31,16 @@ export const updateAsociado = async (asociacionId: number, asociado: Participant
 
   return response;
 };
+
+export const deleteAsociado = async (asociacionId: number, participanteDocumentId: string) => {
+  try {
+    const { data: response } = await ApiClient.delete(`/participantes/${participanteDocumentId}`);
+
+    // Una vez eliminado en el backend, actualizamos el estado en el frontend
+    useAsociacionesStore.getState().removeAsociado(asociacionId, participanteDocumentId);
+
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};

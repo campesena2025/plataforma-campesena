@@ -17,6 +17,7 @@ interface AsociacionesState {
   updateAsociacion: (asociacionId: string, updatedFields: Partial<Asociacion>) => void;
   addAsociado: (asociacionId: number, newAsociado: Participante) => void;
   updateAsociado: (asociacionId: number, updatedAsociado: Partial<Participante> & { id: number }) => void;
+  removeAsociado: (asociacionId: number, participanteDocumentId: string) => void;
   reset: () => void;
 }
 
@@ -101,6 +102,17 @@ export const useAsociacionesStore = create(
               } else {
                 asociacion.participantes.push(updatedAsociado as Participante);
               }
+            }
+          });
+        },
+        removeAsociado: (asociacionId, participanteDocumentId) => {
+          set((state) => {
+            const asociacion = state.data.find((a) => a.id === asociacionId);
+
+            if (asociacion && asociacion.participantes) {
+              asociacion.participantes = asociacion.participantes.filter(
+                (participante) => participante.documentId !== participanteDocumentId,
+              );
             }
           });
         },

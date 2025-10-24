@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Plus, Search, Filter, FileText, Calendar, User, Edit, Trash2, Eye, Loader } from 'lucide-react';
+import { Plus, FileText, Edit, Eye, Loader } from 'lucide-react';
 import { useParams } from 'next/navigation';
 
 import { FormularioProyecto } from './FormularioProyecto';
@@ -10,7 +10,6 @@ import {
   getProyectoProductivoByAsociacion,
   createProyectoProductivo,
   updateProyectoProductivo,
-  deleteProyectoProductivo,
 } from '@/services/formulacion.service';
 import { ProyectoProductivo, ProyectoProductivoRequest } from '@/types/proyectoProductivo';
 
@@ -84,20 +83,6 @@ export const Dashboard: React.FC = () => {
     setVistaActual('detalle');
   };
 
-  const manejarEliminarProyecto = async (id: number) => {
-    const asociacionId = Number(params.id);
-
-    if (!asociacionId) return;
-    if (confirm('¿Está seguro de que desea eliminar este proyecto?')) {
-      try {
-        await deleteProyectoProductivo(id);
-        fetchProyectos(asociacionId);
-      } catch (error: any) {
-        setError(error.message);
-      }
-    }
-  };
-
   const proyectosFiltrados = proyectos.filter((proyecto) => {
     const coincideNombre = proyecto.nombreProyecto.toLowerCase().includes(filtro.toLowerCase());
     const coincideEstado = filtroEstado === 'todos' || proyecto.estado.toLowerCase() === filtroEstado;
@@ -166,7 +151,7 @@ export const Dashboard: React.FC = () => {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6 p-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Sistema de Proyectos Productivos</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Proyectos Productivos</h1>
               <p className="text-gray-600">Gestione y formule sus proyectos productivos de manera integral</p>
             </div>
             <button
@@ -179,74 +164,6 @@ export const Dashboard: React.FC = () => {
               <Plus className="h-4 w-4 mr-2" />
               Nuevo Proyecto
             </button>
-          </div>
-        </div>
-
-        {/* Estadísticas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-center">
-              <FileText className="h-8 w-8 text-blue-600" />
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Total Proyectos</p>
-                <p className="text-2xl font-bold text-gray-900">{proyectos.length}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-center">
-              <Calendar className="h-8 w-8 text-green-600" />
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Completados</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  {proyectos.filter((p) => p.estado === 'Completado').length}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-center">
-              <User className="h-8 w-8 text-purple-600" />
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">En Borrador</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  {proyectos.filter((p) => p.estado === 'Borrador').length}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Filtros y búsqueda */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6 p-4">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex-1">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <input
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Buscar proyectos..."
-                  type="text"
-                  value={filtro}
-                  onChange={(e) => setFiltro(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <Filter className="h-4 w-4 text-gray-400" />
-              <select
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                value={filtroEstado}
-                onChange={(e) => setFiltroEstado(e.target.value)}
-              >
-                <option value="todos">Todos los estados</option>
-                <option value="borrador">Borrador</option>
-                <option value="completado">Completado</option>
-                <option value="en revisión">En Revisión</option>
-              </select>
-            </div>
           </div>
         </div>
 
@@ -308,13 +225,6 @@ export const Dashboard: React.FC = () => {
                         onClick={() => manejarEditarProyecto(proyecto)}
                       >
                         <Edit className="h-4 w-4" />
-                      </button>
-                      <button
-                        className="p-2 text-gray-400 hover:text-red-600 transition-colors"
-                        title="Eliminar proyecto"
-                        onClick={() => manejarEliminarProyecto(proyecto.id!)}
-                      >
-                        <Trash2 className="h-4 w-4" />
                       </button>
                     </div>
                   </div>
