@@ -1,10 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Plus, FileText, Edit, Eye, Loader } from 'lucide-react';
+import { Plus, FileText, Loader } from 'lucide-react';
 import { useParams } from 'next/navigation';
 
 import { FormularioProyecto } from './FormularioProyecto';
 import { VistaProyecto } from './VistaProyecto';
+import { CardProyectoProductivo } from './CardProyectoProductivo';
 
 import {
   getProyectoProductivoByAsociacion,
@@ -194,41 +195,14 @@ export const Dashboard: React.FC = () => {
           ) : (
             <div className="divide-y divide-gray-200">
               {proyectosFiltrados.map((proyecto) => (
-                <div key={proyecto.id} className="p-6 hover:bg-gray-50 transition-colors">
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-lg font-medium text-gray-900 mb-1">{proyecto.nombreProyecto}</h3>
-                      <div className="flex items-center space-x-4 text-sm text-gray-500">
-                        <span>Duración: {proyecto.tiempoEstimado} meses</span>
-                        <span>•</span>
-                        <span>Creado: {new Date(proyecto.createdAt).toLocaleDateString()}</span>
-                        <span
-                          className={`px-2 py-1 rounded-full text-xs font-medium ${obtenerColorEstado(
-                            proyecto.estado,
-                          )}`}
-                        >
-                          {obtenerTextoEstado(proyecto.estado)}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <button
-                        className="p-2 text-gray-400 hover:text-blue-600 transition-colors"
-                        title="Ver proyecto"
-                        onClick={() => manejarVerProyecto(proyecto)}
-                      >
-                        <Eye className="h-4 w-4" />
-                      </button>
-                      <button
-                        className="p-2 text-gray-400 hover:text-blue-600 transition-colors"
-                        title="Editar proyecto"
-                        onClick={() => manejarEditarProyecto(proyecto)}
-                      >
-                        <Edit className="h-4 w-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <CardProyectoProductivo
+                  key={proyecto.id}
+                  obtenerColorEstado={obtenerColorEstado}
+                  obtenerTextoEstado={obtenerTextoEstado}
+                  proyecto={proyecto}
+                  onEditar={manejarEditarProyecto}
+                  onVer={manejarVerProyecto}
+                />
               ))}
             </div>
           )}
