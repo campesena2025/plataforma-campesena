@@ -22,6 +22,7 @@ export interface ModeloNegocioRequest {
   inversions?: (number | string)[];
   proyecto_productivo?: number | string;
   locale?: string;
+  asociacion?: string;
 }
 
 export interface ModeloNegocio {

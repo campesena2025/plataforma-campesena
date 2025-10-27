@@ -14,7 +14,7 @@ import {
 } from '@/services/formulacion.service';
 import { ProyectoProductivo, ProyectoProductivoRequest } from '@/types/proyectoProductivo';
 
-export const Dashboard: React.FC = () => {
+export const ProyectosProductivosList: React.FC = () => {
   const [proyectos, setProyectos] = useState<ProyectoProductivo[]>([]);
   const [vistaActual, setVistaActual] = useState<'lista' | 'formulario' | 'detalle'>('lista');
   const [proyectoSeleccionado, setProyectoSeleccionado] = useState<ProyectoProductivo | undefined>();

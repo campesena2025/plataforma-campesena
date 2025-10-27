@@ -3,6 +3,8 @@ import React from 'react';
 import { Eye, Edit } from 'lucide-react';
 import { Card, CardBody } from '@heroui/card';
 import { Button } from '@heroui/button';
+import { useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import { ProyectoProductivo } from '@/types/proyectoProductivo';
 
@@ -21,15 +23,18 @@ export const CardProyectoProductivo: React.FC<CardProyectoProductivoProps> = ({
   obtenerColorEstado,
   obtenerTextoEstado,
 }) => {
+  const router = useRouter();
+  const params = useParams();
+  
   // Placeholder functions for the new buttons
-  const handleModeloNegocio = () => console.log('Modelo de Negocio clicked', proyecto.nombreProyecto);
+  const handleModeloNegocio = () => router.push(`/asociaciones/${params.id}/formulacion/modeloNegocio`);
   const handleCostos = () => console.log('Costos clicked', proyecto.nombreProyecto);
   const handleVentas = () => console.log('Ventas clicked', proyecto.nombreProyecto);
-  const handleFlujoCaja = () => console.log('Flujo de Caja clicked', proyecto.nombreProyecto);
+  const handleFlujoCaja = () => router.push('/flujo-caja');
   const handlePresupuesto = () => console.log('Presupuesto clicked', proyecto.nombreProyecto);
   const handleFichaProducto = () => console.log('Ficha Producto clicked', proyecto.nombreProyecto);
   const handleFichaServicio = () => console.log('Ficha Servicio clicked', proyecto.nombreProyecto);
-  const handlePlanAccion = () => console.log('Plan de Acción clicked', proyecto.nombreProyecto);
+  const handlePlanAccion = () => router.push('/plan-accion');
   const handlePlanMercadeo = () => console.log('Plan de Mercadeo clicked', proyecto.nombreProyecto);
 
   return (

@@ -21,33 +21,7 @@ interface CanvasCardProps {
     tall?: boolean;
 }
 
-function CanvasCard({ section, onEdit, onRemove, isEditing, newItem, setNewItem, onAdd, tall, updateSectionContent }: CanvasCardProps & { updateSectionContent: (sectionId: string, newContent: string[]) => void }) {
-    const [editingIndex, setEditingIndex] = useState<number | null>(null);
-    const [editValue, setEditValue] = useState('');
-
-    const startEditing = (index: number, currentValue: string) => {
-        setEditingIndex(index);
-        setEditValue(currentValue);
-    };
-
-    const saveEdit = (sectionId: string, index: number) => {
-        if (editValue.trim()) {
-            const newContent = [...section.content];
-            newContent[index] = editValue.trim();
-            updateSectionContent(sectionId, newContent);
-        }
-        setEditingIndex(null);
-    };
-
-    const handleKeyDown = (e: React.KeyboardEvent, sectionId: string, index: number) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            saveEdit(sectionId, index);
-        } else if (e.key === 'Escape') {
-            setEditingIndex(null);
-        }
-    };
-
+function CanvasCard({ section, onEdit, onRemove, isEditing, newItem, setNewItem, onAdd, tall }: CanvasCardProps) {
     return (
         <div
             className={`${section.color} border-2 rounded-xl shadow-md p-4 transition-all hover:shadow-lg flex flex-col ${tall ? 'min-h-[415px] max-h-[415px]' : 'min-h-[200px] max-h-[200px]'}`}
@@ -65,33 +39,14 @@ function CanvasCard({ section, onEdit, onRemove, isEditing, newItem, setNewItem,
             </div>
 
             <div
-                className={`space-y-1 flex-grow overflow-y-auto ${section.content.length > 4 ? 'overflow-y-auto pr-2' : ''}`}
+                className={`space-y-2 flex-grow overflow-y-auto ${section.content.length > 4 ? 'overflow-y-auto pr-2' : ''}`}
             >
                 {section.content.map((item, index) => (
                     <div
                         key={index}
                         className="bg-white/70 rounded-lg p-2 text-xs text-slate-700 flex items-start justify-between group"
                     >
-                        {editingIndex === index ? (
-                            <div className="flex-1 flex">
-                                <input
-                                    type="text"
-                                    autoFocus
-                                    value={editValue}
-                                    onChange={(e) => setEditValue(e.target.value)}
-                                    onKeyDown={(e) => handleKeyDown(e, section.id, index)}
-                                    onBlur={() => saveEdit(section.id, index)}
-                                    className="flex-1 px-2 py-1 text-xs border border-slate-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                />
-                            </div>
-                        ) : (
-                            <span 
-                                className="flex-1 cursor-text"
-                                onClick={() => startEditing(index, item)}
-                            >
-                                {item}
-                            </span>
-                        )}
+                        <span className="flex-1">{item}</span>
                         <button
                             className="opacity-0 group-hover:opacity-100 text-red-500 hover:text-red-700 transition-opacity ml-2"
                             onClick={() => onRemove(section.id, index)}
@@ -104,7 +59,6 @@ function CanvasCard({ section, onEdit, onRemove, isEditing, newItem, setNewItem,
                 {isEditing && (
                     <div className="mt-2">
                         <textarea
-                            autoFocus
                             className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                             placeholder="Agregar nuevo elemento..."
                             rows={2}
@@ -138,11 +92,11 @@ function CanvasCard({ section, onEdit, onRemove, isEditing, newItem, setNewItem,
     );
 }
 
-interface PageProps {
-    params: {
+type PageProps = {
+    params: Promise<{
         id: string;
-    };
-}
+    }>;
+};
 
 export default function ModeloNegocioPage({ params }: PageProps) {
     const [canvasData, setCanvasData] = useState<CanvasSection[]>([
@@ -182,14 +136,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
         );
     };
 
-    const updateSectionContent = (sectionId: string, newContent: string[]) => {
-        setCanvasData((prev) =>
-            prev.map((section) =>
-                section.id === sectionId ? { ...section, content: newContent } : section,
-            ),
-        );
-    };
-
     const exportData = () => {
         const data = {
             mision,
@@ -225,9 +171,12 @@ export default function ModeloNegocioPage({ params }: PageProps) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                        <label className="block text-sm font-semibold text-slate-700 mb-2">Misión</label>
+                        <label className="block text-sm font-semibold text-slate-700 mb-2" htmlFor="mision">
+                            Misión
+                        </label>
                         <textarea
                             className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                            id="mision"
                             placeholder="Define la misión de tu negocio..."
                             rows={3}
                             value={mision}
@@ -236,7 +185,9 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                     </div>
 
                     <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                        <label className="block text-sm font-semibold text-slate-700 mb-2">Visión</label>
+                        <label className="block text-sm font-semibold text-slate-700 mb-2" htmlFor="vision">
+                            Visión
+                        </label>
                         <textarea
                             className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                             placeholder="Define la visión de tu negocio..."
@@ -258,7 +209,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                             onAdd={addItem}
                             onEdit={setEditingSection}
                             onRemove={removeItem}
-                            updateSectionContent={updateSectionContent}
                         />
                     </div>
 
@@ -271,7 +221,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                             onAdd={addItem}
                             onEdit={setEditingSection}
                             onRemove={removeItem}
-                            updateSectionContent={updateSectionContent}
                         />
                         <CanvasCard
                             isEditing={editingSection === canvasData[2].id}
@@ -281,7 +230,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                             onAdd={addItem}
                             onEdit={setEditingSection}
                             onRemove={removeItem}
-                            updateSectionContent={updateSectionContent}
                         />
                     </div>
 
@@ -295,7 +243,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                             onAdd={addItem}
                             onEdit={setEditingSection}
                             onRemove={removeItem}
-                            updateSectionContent={updateSectionContent}
                         />
                     </div>
 
@@ -308,7 +255,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                             onAdd={addItem}
                             onEdit={setEditingSection}
                             onRemove={removeItem}
-                            updateSectionContent={updateSectionContent}
                         />
                         <CanvasCard
                             isEditing={editingSection === canvasData[5].id}
@@ -318,7 +264,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                             onAdd={addItem}
                             onEdit={setEditingSection}
                             onRemove={removeItem}
-                            updateSectionContent={updateSectionContent}
                         />
                     </div>
 
@@ -332,7 +277,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                             onAdd={addItem}
                             onEdit={setEditingSection}
                             onRemove={removeItem}
-                            updateSectionContent={updateSectionContent}
                         />
                     </div>
                 </div>
@@ -346,7 +290,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                         onAdd={addItem}
                         onEdit={setEditingSection}
                         onRemove={removeItem}
-                        updateSectionContent={updateSectionContent}
                     />
                     <CanvasCard
                         isEditing={editingSection === canvasData[8].id}
@@ -356,7 +299,6 @@ export default function ModeloNegocioPage({ params }: PageProps) {
                         onAdd={addItem}
                         onEdit={setEditingSection}
                         onRemove={removeItem}
-                        updateSectionContent={updateSectionContent}
                     />
                 </div>
             </div>

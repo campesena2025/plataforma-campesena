@@ -20,12 +20,6 @@
         "Inicial",
         "Capital de Trabajo"
       ]
-    },
-    "modelo_negocio": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::modelo-negocio.modelo-negocio",
-      "inversedBy": "inversions"
     }
   }
 }

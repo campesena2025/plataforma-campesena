@@ -15,6 +15,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
       documentId: 'sec-001',
       nombreSeccion: 'Liderazgo y Gobernanza',
       puntajeSeccion: 0,
+      participacion: null,
       respuesta_diagnosticos: [
         {
           id: 1,
@@ -22,6 +23,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿La organización tiene una misión y visión claramente definidas?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
         {
           id: 2,
@@ -29,6 +32,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿Existe un consejo directivo activo y comprometido?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
         {
           id: 3,
@@ -36,6 +41,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿Se realizan reuniones periódicas de seguimiento a la gestión?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
       ],
     },
@@ -44,6 +51,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
       documentId: 'sec-002',
       nombreSeccion: 'Gestión Financiera',
       puntajeSeccion: 0,
+      participacion: null,
       respuesta_diagnosticos: [
         {
           id: 4,
@@ -51,6 +59,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿La organización cuenta con estados financieros auditados?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
         {
           id: 5,
@@ -58,6 +68,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿Existe un presupuesto anual y se hace seguimiento mensual?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
         {
           id: 6,
@@ -65,6 +77,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿Se diversifican las fuentes de ingresos de la organización?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
       ],
     },
@@ -73,6 +87,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
       documentId: 'sec-003',
       nombreSeccion: 'Operaciones y Procesos',
       puntajeSeccion: 0,
+      participacion: null,
       respuesta_diagnosticos: [
         {
           id: 7,
@@ -80,6 +95,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿Los procesos operativos están documentados y son conocidos por el equipo?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
         {
           id: 8,
@@ -87,6 +104,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿Se utilizan indicadores para medir la eficiencia de las operaciones?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
       ],
     },
@@ -95,6 +114,7 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
       documentId: 'sec-004',
       nombreSeccion: 'Talento Humano',
       puntajeSeccion: 0,
+      participacion: null,
       respuesta_diagnosticos: [
         {
           id: 9,
@@ -102,6 +122,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿La organización tiene una estructura organizacional clara?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
         {
           id: 10,
@@ -109,6 +131,8 @@ export const mockDiagnostic: DiagnosticoAsociacion = {
           textoPregunta: '¿Se realizan evaluaciones de desempeño periódicas al personal?',
           respuesta: '',
           puntaje: 0,
+          participacion: null,
+          cumplimiento: null,
         },
       ],
     },

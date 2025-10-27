@@ -12,4 +12,6 @@ export interface CursoAsignado {
   codigoFicha: string;
   fechaInicio: string;
   estado: 'programado' | 'activo' | 'finalizado';
+  regional: string;
+  centro: string;
 }

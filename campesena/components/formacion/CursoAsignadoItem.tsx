@@ -1,6 +1,6 @@
 import { Calendar, FileText, MapPin } from 'lucide-react';
 
-import { CursoAsignado } from './types';
+import { CursoAsignado } from '@/types/curso';
 
 interface CursoAsignadoItemProps {
   cursoAsignado: CursoAsignado;

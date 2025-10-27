@@ -68,6 +68,7 @@ interface AddAssociateModalProps {
 export const AddAssociateModal = ({ isOpen, onOpenChange, asociacionId }: AddAssociateModalProps) => {
   // Estado inicial del formulario para agregar un asociado
   const [formData, setFormData] = useState<ParticipanteRequest>({
+    tipoDocumento: 'Cédula de Ciudadanía',
     numeroDocumento: '',
     nombreCompleto: '',
     genero: 'Masculino',

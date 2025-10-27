@@ -26,12 +26,6 @@
         "Costo Fijo",
         "Costo Variable"
       ]
-    },
-    "modelo_negocio": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::modelo-negocio.modelo-negocio",
-      "inversedBy": "costos"
     }
   }
 }

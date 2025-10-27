@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 
 import { DiagnosticoAsociacion } from '@/types/diagnostico';
 import { saveDiagnosticoAsociacion } from '@/services/diagnostico.service';
-import Diagnostico from '@/components/DiagnosticoEvaluado/diagnostico';
+import Diagnostico from '@/components/diagnosticoEvaluado/diagnostico';
 import { useDiagnosticStore } from '@/store/diagnostico.store';
 
 export default function DiagnosticoPage() {

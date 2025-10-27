@@ -48,13 +48,20 @@ export const FormularioProyecto: React.FC<Props> = ({ proyecto, onGuardar, onCan
     if (campo.includes('.')) {
       const [seccion, subcampo] = campo.split('.');
 
-      setFormData((prev) => ({
-        ...prev,
-        [seccion]: {
-          ...(prev[seccion as keyof ProyectoProductivo] as any),
-          [subcampo]: valor,
-        },
-      }));
+      setFormData((prev) => {
+        const currentSection = prev[seccion as keyof Partial<ProyectoProductivoRequest>];
+        const sectionObject = typeof currentSection === 'object' && currentSection !== null 
+          ? currentSection as Record<string, any> 
+          : {};
+          
+        return {
+          ...prev,
+          [seccion]: {
+            ...sectionObject,
+            [subcampo]: valor,
+          },
+        };
+      });
     } else {
       setFormData((prev) => ({
         ...prev,

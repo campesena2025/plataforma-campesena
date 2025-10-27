@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Dashboard } from '@/components/formulacion/Dashboard';
+import { ProyectosProductivosList } from '@/components/formulacion/ProyectosProductivosList';
 
 function Proyecto() {
-  return <Dashboard />;
+  return <ProyectosProductivosList />;
 }
 
 export default Proyecto;

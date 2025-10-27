@@ -72,6 +72,12 @@
       "relation": "manyToOne",
       "target": "api::asociacion.asociacion",
       "inversedBy": "proyecto_productivos"
+    },
+    "modelo_negocio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::modelo-negocio.modelo-negocio",
+      "mappedBy": "proyecto_productivo"
     }
   }
 }

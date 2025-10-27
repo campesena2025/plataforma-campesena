@@ -592,10 +592,6 @@ export interface ApiCostoCosto extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::costo.costo'> &
       Schema.Attribute.Private;
-    modelo_negocio: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::modelo-negocio.modelo-negocio'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     tipo: Schema.Attribute.Enumeration<['Costo Fijo', 'Costo Variable']>;
     updatedAt: Schema.Attribute.DateTime;
@@ -921,10 +917,6 @@ export interface ApiInversionInversion extends Struct.CollectionTypeSchema {
       'api::inversion.inversion'
     > &
       Schema.Attribute.Private;
-    modelo_negocio: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::modelo-negocio.modelo-negocio'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     tipoInversion: Schema.Attribute.Enumeration<
       ['Inicial', 'Capital de Trabajo']
@@ -950,16 +942,11 @@ export interface ApiModeloNegocioModeloNegocio
     actividadesClave: Schema.Attribute.JSON;
     alianzas: Schema.Attribute.JSON;
     canales: Schema.Attribute.JSON;
-    costos: Schema.Attribute.Relation<'oneToMany', 'api::costo.costo'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     estructuraCosto: Schema.Attribute.JSON;
     fuentesIngreso: Schema.Attribute.JSON;
-    inversions: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::inversion.inversion'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -968,9 +955,9 @@ export interface ApiModeloNegocioModeloNegocio
       Schema.Attribute.Private;
     mision: Schema.Attribute.Text;
     propuestaValor: Schema.Attribute.JSON;
-    proyeccion_financieras: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::proyeccion-financiera.proyeccion-financiera'
+    proyecto_productivo: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::proyecto-productivo.proyecto-productivo'
     >;
     publishedAt: Schema.Attribute.DateTime;
     recursosClave: Schema.Attribute.JSON;
@@ -1402,10 +1389,6 @@ export interface ApiProyeccionFinancieraProyeccionFinanciera
       'api::proyeccion-financiera.proyeccion-financiera'
     > &
       Schema.Attribute.Private;
-    modelo_negocio: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::modelo-negocio.modelo-negocio'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1454,6 +1437,10 @@ export interface ApiProyectoProductivoProyectoProductivo
       'api::proyecto-productivo.proyecto-productivo'
     > &
       Schema.Attribute.Private;
+    modelo_negocio: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::modelo-negocio.modelo-negocio'
+    >;
     nombreProyecto: Schema.Attribute.Text;
     planteamiento: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
