@@ -8,7 +8,6 @@ import { useAsociacionesStore } from '@/store/asociaciones.store';
 
 export default function AsociacionesPage() {
   const router = useRouter();
-<<<<<<< Updated upstream
   const { data, loading } = useAsociacionesStore();
 =======
   const { data, fetchAsociaciones, loading } = useAsociacionesStore();
