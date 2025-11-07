@@ -108,16 +108,14 @@ export default function Home() {
 
   const estados = useMemo(() => {
     const estadosMap: { [key: string]: { value: number; color: string } } = {
-      Registradas: { value: 0, color: 'bg-violet-500' },
-      Diagnosticadas: { value: 0, color: 'bg-blue-500' },
-      'Asignadas a servicio': { value: 0, color: 'bg-green-500' },
+      Registrada: { value: 0, color: 'bg-violet-500' },
+      Diagnosticada: { value: 0, color: 'bg-blue-500' },
       'En formación': { value: 0, color: 'bg-yellow-500' },
       'En formulación de proyecto': { value: 0, color: 'bg-pink-500' },
       'En evaluación de proyecto': { value: 0, color: 'bg-indigo-500' },
-      'Evaluada en impactos': { value: 0, color: 'bg-red-500' },
-      'En entrega de insumos': { value: 0, color: 'bg-teal-500' },
     };
 
+    console.log('estadosMap inicial:', estadosMap);
     asociaciones.forEach((asociacion) => {
       if (estadosMap[asociacion.estado.trim()]) {
         estadosMap[asociacion.estado.trim()].value++;
@@ -133,7 +131,7 @@ export default function Home() {
 
   return (
     <section className="flex flex-col gap-8 py-3 md:py-10 w-full">
-      <h1 className="text-2xl font-bold">Programa campesena</h1>
+      <h1 className="text-2xl font-bold">Programa campeSENA</h1>
       {/* Fila 1: Indicadores Principales */}
       <div className="grid grid-cols-1 md:grid-cols-1 gap-4 w-full">
         <Card className="bg-gradient-to-br from-violet-100 to-white shadow-lg p-4 flex flex-col items-center justify-center">
