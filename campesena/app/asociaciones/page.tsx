@@ -8,7 +8,18 @@ import { useAsociacionesStore } from '@/store/asociaciones.store';
 
 export default function AsociacionesPage() {
   const router = useRouter();
+<<<<<<< Updated upstream
   const { data, loading } = useAsociacionesStore();
+=======
+  const { data, fetchAsociaciones, loading } = useAsociacionesStore();
+
+  useEffect(() => {
+    debugger;
+    if (getSession()?.jwt) {
+      fetchAsociaciones();
+    }
+  }, []);
+>>>>>>> Stashed changes
 
   const procedimientoListener = (accion: string, id: string | number) => {
     router.push(`/asociaciones/${id}/${accion}`);
